@@ -1,0 +1,4560 @@
+# translation of te.po to Telugu
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Krishna Babu K <kkrothap@redhat.com>, 2009, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: te\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-03-29 13:13+0530\n"
+"PO-Revision-Date: 2010-04-05 15:00+0530\n"
+"Last-Translator: Krishna Babu K <kkrothap@redhat.com>\n"
+"Language-Team: Telugu <en@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
+"\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: ../data/gnome-packagekit.schemas.in.h:1
+msgid "Allow applications to invoke the codec installer"
+msgstr "అనువర్తనములను codec సంస్థాపకిని మేలుకొలుపుటకు అనుమతించుము"
+
+#: ../data/gnome-packagekit.schemas.in.h:2
+msgid "Allow applications to invoke the font installer"
+msgstr "అనువర్తనములను font సంస్థాపకిని మేలుకొలుపుటకు అనుమతించుము"
+
+#: ../data/gnome-packagekit.schemas.in.h:3
+msgid "Allow applications to invoke the mime type installer"
+msgstr "అనువర్తనములను mime type సంస్థాపకిని మేలుకొలుపుటకు అనుమతించుము"
+
+#: ../data/gnome-packagekit.schemas.in.h:4
+msgid "Ask the user if additional firmware should be installed"
+msgstr "అదనపు ఫర్మ్‍‌వేర్‌ను సంస్థాపించవలెనంటే వినియోగదారిని అడుగుము"
+
+#: ../data/gnome-packagekit.schemas.in.h:5
+msgid "Ask the user if additional hardware drivers should be installed"
+msgstr "అదనపు హార్డువేర్ డ్రైవర్లను సంస్థాపించవలెనంటే వినియోగదారిని అడుగుము"
+
+#: ../data/gnome-packagekit.schemas.in.h:6
+msgid "Ask the user if additional packages should be installed"
+msgstr "అదనపు ప్యాకేజీలను సంస్థాపించవలెనంటే వినియోగదారిని అడుగుము"
+
+#: ../data/gnome-packagekit.schemas.in.h:7
+msgid "Ask the user if files should be copied to a non-private directory"
+msgstr "దస్త్రములు వ్యక్తిగతము-కాని డైరెక్టరీకు నకలుతీయ వలెనేమో వినియోగదారిని అడుగుము"
+
+#: ../data/gnome-packagekit.schemas.in.h:8
+msgid ""
+"Ask the user if files should be copied to a non-private directory when "
+"installing from a FUSE mount"
+msgstr ""
+"FUSE మౌంటునుండి సంస్థాపించుతున్నప్పుడు దస్త్రములు వ్యక్తిగతము-కాని డైరెక్టరీనకు నకలుతీయవలెనేమో "
+"వినియోగదారిను అడుగుము"
+
+#: ../data/gnome-packagekit.schemas.in.h:9
+msgid "Automatically update these types of updates"
+msgstr "ఈ రకమైన నవీకరణలను స్వయంచాలకంగా నవీకరించుము"
+
+#: ../data/gnome-packagekit.schemas.in.h:10
+msgid ""
+"Automatically update these types of updates. Options are \"all\", \"security"
+"\", or \"none\""
+msgstr "ఈ రకమైన నవీకరణలను స్వయంచాలకంగా నవీకరించుము. ఐచ్చికాలు \"అన్నీ\", \"రక్షణ\", లేదా \"ఏదీకాదు\""
+
+#: ../data/gnome-packagekit.schemas.in.h:11
+msgid "Devices that should be ignored"
+msgstr "వదివేయవలసిన పరికరములు"
+
+#: ../data/gnome-packagekit.schemas.in.h:12
+msgid ""
+"Devices that should be ignored, separated by commas. These can include '*' "
+"and '?' characters"
+msgstr "వదిలివేయవలసిన పరికరములు, కామాలతో వేరుచేయబడినవి. ఇవి '*' మరియు '?' అక్షరములను కలిగివుండగలవు."
+
+#: ../data/gnome-packagekit.schemas.in.h:13
+msgid "Filter package lists using basename in gpk-application"
+msgstr "ప్యాకేజీ జాబితాలను బేస్‌నామము వుపయోగిస్తూ gpk-application నందు వడపోయుము"
+
+#: ../data/gnome-packagekit.schemas.in.h:14
+msgid "Filter using basename in gpk-application"
+msgstr "బేస్‌నామము వుపయోగిస్తూ gpk-application నందు వడపోయుము"
+
+#: ../data/gnome-packagekit.schemas.in.h:15
+msgid "Firmware files that should not be searched for"
+msgstr "ఫర్మ్‍‌వేర్ ఫైళ్ళు దీనికొరకు శోధించబడకూడదు"
+
+#: ../data/gnome-packagekit.schemas.in.h:16
+msgid ""
+"Firmware files that should not be searched for, separated by commas. These "
+"can include '*' and '?' characters"
+msgstr ""
+"ఫర్మ్‍‌వేర్ దస్త్రములు శోధించబడకూడనివి, కామాతో వేరు చేయబడినవి. ఇవి '*' మరియు '?' అక్షరములను "
+"కలిగివుండగలవు"
+
+#: ../data/gnome-packagekit.schemas.in.h:17
+msgid "GTK+ module for font installation"
+msgstr "ఫాంటు సంస్థాపన కొరకు GTK+ మాడ్యూల్"
+
+#: ../data/gnome-packagekit.schemas.in.h:18
+msgid "Get the update list when the session starts"
+msgstr "సెషన్ ప్రారంభమైనప్పుడు నవీకరణ జాబితా పొందుము"
+
+#: ../data/gnome-packagekit.schemas.in.h:19
+msgid ""
+"Get the update list when the session starts, even if not scheduled to. This "
+"ensures the user has up to date and valid data in the tray at startup."
+msgstr ""
+"సెషన్ ప్రారంభమైనప్పుడు నవీకరణ జాబితా పొందుము, కనీసం మనము దానికి ప్రణాళిక చేయకపోయినా. ఇది వినియోగదారి "
+"ప్రారంభమునందు నవీనమైన మరియు విలువైన డాటాను ట్రేనందు కలిగివుండునట్లు చేస్తుంది."
+
+#: ../data/gnome-packagekit.schemas.in.h:20
+msgid "How often to check for distribution upgrades"
+msgstr "పంపిణీ నవీకరణలకొరకు మనము యెంత తరుచుగా పరిశీలించాలి"
+
+#: ../data/gnome-packagekit.schemas.in.h:21
+msgid "How often to check for distribution upgrades. Value is in seconds."
+msgstr "పంపిణీ నవీకరణలకొరకు మనము యెంత తరుచుగా పరిశీలించాలి. విలువ సెకనులలో."
+
+#: ../data/gnome-packagekit.schemas.in.h:22
+msgid "How often to check for updates"
+msgstr "నవీకరణలకొరకు మనము యెంతతరచుగా పరిశీలించవలెను"
+
+#: ../data/gnome-packagekit.schemas.in.h:23
+msgid "How often to check for updates. Value is in seconds."
+msgstr "నవీకరణలకొరకు మనము యెంతతరచుగా పరిశీలించవలెను. విలువ సెకనులలో."
+
+#: ../data/gnome-packagekit.schemas.in.h:24
+msgid "How often to refresh the package cache"
+msgstr "ప్యాకేజీ క్యాచీని మనము యెంతతరచుగా రీఫ్రెష్‌చేయాలి"
+
+#: ../data/gnome-packagekit.schemas.in.h:25
+msgid "How often to refresh the package cache. Value is in seconds."
+msgstr "ప్యాకేజీ క్యాచీని మనము యెంతతరచుగా రీఫ్రెష్‌చేయాలి. విలువ సెకనులలో."
+
+#: ../data/gnome-packagekit.schemas.in.h:26
+msgid "If search terms should be completed automatically"
+msgstr "శోధన పదములు స్వయంచాలకంగా పూర్తవవలెనంటే"
+
+#: ../data/gnome-packagekit.schemas.in.h:27
+msgid "Install updates automatically when running on battery power"
+msgstr "బ్యాటరీ పవర్‌నందు నడుచుచున్నప్పుడు స్వయంచాలకంగా నవీకరణలు సంస్థాపించుము"
+
+#. TRANSLATORS: An interaction mode is the level of user interaction
+#. that is allowed. See ./docs/DBusInterface.txt for more information
+#: ../data/gnome-packagekit.schemas.in.h:30
+msgid "Interaction modes that must be used, overriding requests from client"
+msgstr "తప్పక వుపయోగించవలసిన యింటరాక్షన్ రీతులు, కక్షిదారినుండి ఓవర్‌రైడ్ అభ్యర్ధనలు"
+
+#. TRANSLATORS: An interaction mode is the level of user interaction
+#. that is allowed. See ./docs/DBusInterface.txt for more information
+#: ../data/gnome-packagekit.schemas.in.h:33
+msgid "Interaction modes to use by default"
+msgstr "అప్రమేయంగా వుపయోగించుటకు యింటరాక్షన్ రీతులు"
+
+#: ../data/gnome-packagekit.schemas.in.h:34
+msgid "Messages that should be ignored"
+msgstr "వదివేయవలసిన సందేశములు"
+
+#: ../data/gnome-packagekit.schemas.in.h:35
+msgid ""
+"Messages that should be ignored, separated by commas. These can include '*' "
+"and '?' characters"
+msgstr "వదిలివేయవలసిన సందేశములను, కామాలతో వేరుచేయబడినవి. ఇవి '*' మరియు '?' అక్షరములను కలిగివుండగలవు."
+
+#: ../data/gnome-packagekit.schemas.in.h:36
+msgid ""
+"Notify the user before a large update is done on a mobile broadband "
+"connection"
+msgstr "మొబైల్ బ్రాడ్‌బాండ్ అనుసంధానమునందు పెద్ద నవీకరణ అగుటకు ముందుగా తెలియపరచుము"
+
+#: ../data/gnome-packagekit.schemas.in.h:37
+msgid "Notify the user for completed updates"
+msgstr "పూర్తైన నవీకరణలకొరకు వినియోదారికి తెలియజేయుము"
+
+#: ../data/gnome-packagekit.schemas.in.h:38
+msgid "Notify the user for completed updates where the user needs to restart"
+msgstr "నవీకరణ పూర్తై మరియు పునఃప్రారంభము అవసరమైనప్పుడు వినియోగదారికి తెలియజేయుము"
+
+#: ../data/gnome-packagekit.schemas.in.h:39
+msgid "Notify the user when a task is complete"
+msgstr "కర్తవ్యంముగిసినప్పుడు వినియోగదారికి తెలియజేయుము"
+
+#: ../data/gnome-packagekit.schemas.in.h:40
+msgid "Notify the user when an update has failed"
+msgstr "నవీకరణలు విఫలమైనప్పుడు వినియోగదారికి తెలియజేయుము"
+
+#: ../data/gnome-packagekit.schemas.in.h:41
+msgid "Notify the user when distribution upgrades are available"
+msgstr "పంపిణీ నవీకరణలు అందుబాటులో వున్నప్పుడు వినియోగదారికి సూచించుము"
+
+#: ../data/gnome-packagekit.schemas.in.h:42
+msgid "Notify the user when security updates are available"
+msgstr "రక్షణ నవీకరణలు అందుబాటులో వున్నప్పుడు వినియోగదారికి తెలియచేయుము"
+
+#: ../data/gnome-packagekit.schemas.in.h:43
+msgid "Notify the user when the automatic update was not started on battery power"
+msgstr "బ్యాటరీ పవర్‌పైన స్వయంచాలక-నవీకరణము ప్రారంభించనప్పుడు వినియోగదారికి తెలియజేయుము"
+
+#: ../data/gnome-packagekit.schemas.in.h:44
+msgid ""
+"Notify the user when the update was not automatically started while running "
+"on battery power"
+msgstr "బ్యాటరీ పవర్‌నందు నడుచుచున్నప్పుడు నవీకరణ స్వయంచాలకంగా ప్రారంభించబడక పోతే వినియోగదారికి తెలియజేయుము"
+
+#: ../data/gnome-packagekit.schemas.in.h:45
+msgid "Notify the user when the update was started"
+msgstr "నవీకరణ ప్రారంభమైనప్పుడు వినియోగదారికి తెలియజేయుము"
+
+#: ../data/gnome-packagekit.schemas.in.h:46
+msgid "Notify the user when there are errors"
+msgstr "దోషములు వున్నప్పుడు వినియోదారికి తెలియజేయుము"
+
+#: ../data/gnome-packagekit.schemas.in.h:47
+msgid "Notify the user when there are messages"
+msgstr "సందేశములు వున్నప్పుడు వినియోగదారికి తెలియజేయుము"
+
+#: ../data/gnome-packagekit.schemas.in.h:48
+msgid "Notify the user when there are messages from the package manager"
+msgstr "ప్యేకేజీ నిర్వాహికనుండి సందేశములు వున్నప్పుడు వినియోగదారికి తెలియజేయుము"
+
+#: ../data/gnome-packagekit.schemas.in.h:49
+msgid "Notify the user when updates are available"
+msgstr "నవీకరణలు అందుబాటులో వున్నప్పుడు వినియోగదారికి తెలియజేయుము"
+
+#: ../data/gnome-packagekit.schemas.in.h:50
+msgid "Only show native packages in the file lists"
+msgstr "దస్త్రము జాబితాలనందు నేటివ్ ప్యాకేజీలను మాత్రమే చూపుము"
+
+#: ../data/gnome-packagekit.schemas.in.h:51
+msgid "Only show native packages maching the machine architecture in the file lists"
+msgstr "దస్త్రముల జాబితాలనందు మిషన్ ఆకృతికి సరిపోలు నేటివ్ ప్యాకేజీలను మాత్రమే చూపుము"
+
+#: ../data/gnome-packagekit.schemas.in.h:52
+msgid "Only show the newest packages in the file lists"
+msgstr "దస్త్రము జాబితాలనందు కొత్త ప్యాకేజీలను మాత్రమే చూపుము"
+
+#: ../data/gnome-packagekit.schemas.in.h:53
+msgid ""
+"Only show the newest packages in the update list, and filter out older "
+"updates that are still available."
+msgstr ""
+"నవీకరణ జాబితానందు కొత్త ప్యాకేజీలను మాత్రమే చూపుము, యిప్పటికి కూడా అందుబాటులో వున్న పాత నవీకరణలను "
+"వడపోయుము."
+
+#: ../data/gnome-packagekit.schemas.in.h:54
+msgid "Only show the newest updates in the list"
+msgstr "జాబితానందు కొత్త నవీకరణలను మాత్రమే చూపము"
+
+#: ../data/gnome-packagekit.schemas.in.h:55
+msgid "Scroll to packages as they are downloaded"
+msgstr "డౌనులోడైన ప్యాజీలవెంబడి స్క్రాలు చేయుము"
+
+#: ../data/gnome-packagekit.schemas.in.h:56
+msgid "Scroll to packages in the update list as they are downloaded or installed."
+msgstr "నవీకరణ జాబితానందు డౌనులోడైన లేదా సంస్థాపించిన ప్యాకేజీల వెంబడి స్క్రాలు చేయుము."
+
+#: ../data/gnome-packagekit.schemas.in.h:57
+msgid "Show all repositories in the software source viewer"
+msgstr "సాఫ్ట్‍‌వేర్ మూల దర్శనినందు అన్ని రిపోజిటరీలను చూపుము"
+
+#: ../data/gnome-packagekit.schemas.in.h:58
+msgid "Show the category group menu"
+msgstr "వర్గీకరణ సమూహపు మెనూను చూపుము"
+
+#: ../data/gnome-packagekit.schemas.in.h:59
+msgid ""
+"Show the category group menu. This is more complete and custom to the "
+"distribution, but takes longer to populate"
+msgstr ""
+"వర్గీకరణ సమూహపు మెనూను చూపుము. ఇది పంపిణీకి యెక్కువ సమంజసము మరియు వీలగునది, అయితే పాప్యులేట్ "
+"చేయుటకుయెక్కువ సమయం తీసుకొంటుంది"
+
+#. TRANSLATORS:
+#. The original application is the program that was opened by the user,
+#. and that requested the PackageKit action.
+#. If the user then closes the application, but the task is still running
+#. (for instance, updating the system) then the original application is
+#. marked as not running.
+#. This is the only time we should show the progress icon in the tray,
+#. as the user would have no other way to interact with, or cancel the task.
+#.
+#. Some people like being able to interact with the task for debugging
+#. or just because they want to know what is happening in other user sessions.
+#. Those sort of people (not typical users) should enable this option.
+#.
+#: ../data/gnome-packagekit.schemas.in.h:73
+msgid ""
+"Show the transaction progress icon in the tray when the original application "
+"is still running."
+msgstr "వాస్తవ అనువర్తనము యింకా నడుచుచున్నప్పుడు వ్యవహారపు పురోగతి ప్రతిమను ట్రేనందు చూపుము."
+
+#: ../data/gnome-packagekit.schemas.in.h:74
+msgid "Show transactions that have the original application running"
+msgstr "నడుస్తున్న వాస్తవ అనువర్తనము కలిగివున్న వ్యవహారములను చూపుము"
+
+#: ../data/gnome-packagekit.schemas.in.h:75
+msgid "The number of seconds at session startup to wait before checking for updates"
+msgstr "సెషన్ ప్రారంభమువద్ద నవీకరణల కొరకు పరిశీలించుటకు ముందుగా వేచివుండవలసిన సమయం సెకనులలో"
+
+#: ../data/gnome-packagekit.schemas.in.h:76
+msgid "The search mode used by default"
+msgstr "అప్రమేయంగా వుపయోగించిన శోధన రీతి"
+
+#: ../data/gnome-packagekit.schemas.in.h:77
+msgid ""
+"The search mode used by default. Options are \"name\", \"details\", or \"file"
+"\""
+msgstr "అప్రమేయంగా వుపయోగించిన శోధన రీతి. \"నామము\", \"వివరములు\", లేదా \"దస్త్రము\" యివి ఐచ్చికములు"
+
+#: ../data/gnome-packagekit.schemas.in.h:78
+msgid "This key determines if applications should be able to prompt for fonts"
+msgstr "అనువర్తనములు ఫాంట్ల కొరకు అడుగగల వలెనేమో ఈ కీ నిర్ణయిస్తుంది"
+
+#: ../data/gnome-packagekit.schemas.in.h:79
+msgid "Use WiFi (wireless LAN) connections to check for updates"
+msgstr "నవీకరణలకొరకు పరిశీలించుటకు WiFi (వైర్‌లెస్ LAN) అనుసంధానములను వుపయోగించుము"
+
+#: ../data/gnome-packagekit.schemas.in.h:80
+msgid "Use WiFi connections"
+msgstr "WiFi అనుసంధానములను వుపయోగించుము"
+
+#: ../data/gnome-packagekit.schemas.in.h:81
+msgid "Use mobile broadband connections"
+msgstr "మొబైల్ బ్రాడ్‌బాండ్ అనుసంధానములను వుపయోగించుము"
+
+#: ../data/gnome-packagekit.schemas.in.h:82
+msgid "Use mobile broadband connections such as GSM and CDMA to check for updates"
+msgstr "నవీకరణల కొరకు పరిశీలించుటకు GSM మరియు CDMA వంటి మొబైల్ బ్రాడ్‌బాండ్ అనుసంధానములను వుపయోగించుము"
+
+#: ../data/gnome-packagekit.schemas.in.h:83
+msgid ""
+"When displaying UI from a session DBus request, automatically use these "
+"options by default"
+msgstr ""
+"సెషన్ DBus అభ్యర్ధననుండి UI ను ప్రదర్శించుతున్నప్పుడు, స్వయంచాలకంగా ఈ ఐచ్చికములను అప్రమేయంగా "
+"వుపయోగించుము"
+
+#: ../data/gnome-packagekit.schemas.in.h:84
+msgid ""
+"When displaying UI from a session DBus request, force these options to be "
+"turned on"
+msgstr "సెషన్ DBus అభ్యర్ధననుండి UIను ప్రదర్శిస్తున్నప్పుడు, ఈ ఐచ్చికములు ఆన్ అగునట్లు బలవంతం చేయుము"
+
+#: ../data/gpk-application.desktop.in.h:1
+msgid "Add or remove software installed on the system"
+msgstr "ఈ సిస్టమ్‌నందు సంస్థాపించిన సాఫ్టువేర్‌ను జతచేయుము లేదా తీసీవేయుము"
+
+#. TRANSLATORS: short name for gpk-update-viewer
+#: ../data/gpk-application.desktop.in.h:2 ../data/gpk-application.ui.h:2
+#: ../src/gpk-application-main.c:97 ../src/gpk-log.c:486
+msgid "Add/Remove Software"
+msgstr "సాఫ్టువేర్ జతచేయి/తీసివేయి"
+
+#: ../data/gpk-application.ui.h:1
+msgid "About this software"
+msgstr "ఈ సాఫ్ట్‍‌వేర్ గురించి"
+
+#: ../data/gpk-application.ui.h:3
+msgid "Edit list of software sources"
+msgstr "సాఫ్ట్‍‌వేర్ మూలాల జాబితాను సరిచేయుము"
+
+#: ../data/gpk-application.ui.h:4
+msgid "Execute graphical applications"
+msgstr "గ్రాఫికల్ అనువర్తనములను నిర్వర్తించుము"
+
+#: ../data/gpk-application.ui.h:5
+msgid "Fi_nd"
+msgstr "కనుగొనుము (_n)"
+
+#: ../data/gpk-application.ui.h:6
+msgid "Help with this software"
+msgstr "ఈ సాఫ్ట్‍‌వేర్‌తో సహాయపడుము"
+
+#: ../data/gpk-application.ui.h:7
+msgid "Only _available"
+msgstr "అందుబాటులో వున్నవిమాత్రమే (_a)"
+
+#: ../data/gpk-application.ui.h:8
+msgid "Only _development"
+msgstr "అభివృద్ది మాత్రమే (_d)"
+
+#: ../data/gpk-application.ui.h:9
+msgid "Only _end user files"
+msgstr "చివర వినియోగదారి ఫైళ్ళు మాత్రమే (_e)"
+
+#: ../data/gpk-application.ui.h:10
+msgid "Only _installed"
+msgstr "సంస్థాపించినవి మాత్రమే (_i)"
+
+#: ../data/gpk-application.ui.h:11
+msgid "Only _newest packages"
+msgstr "కొత్త ప్యాకేజీలు మాత్రమే (_n)"
+
+#: ../data/gpk-application.ui.h:12
+msgid "Only _non-free software"
+msgstr "ఉచితము-కాని సాఫ్ట్‍‌వేర్ మాత్రమే (_n)"
+
+#: ../data/gpk-application.ui.h:13
+msgid "Only _non-sourcecode"
+msgstr "నాన్-సోర్సుకొడ్ మాత్రమే (_n)"
+
+#: ../data/gpk-application.ui.h:14
+msgid "Only n_ative packages"
+msgstr "నేటివ్ ప్యాకేజీలు మాత్రమే (_a)"
+
+#: ../data/gpk-application.ui.h:15
+msgid "Only show one package, not subpackages"
+msgstr "ఒక ప్యాకేజీని మాత్రమే చూపుము, వుపప్యాకేజీలను కాదు"
+
+#: ../data/gpk-application.ui.h:16
+msgid "Only show packages matching the machine architecture"
+msgstr "మిషన్ ఆకృతికి సరిపోలు ప్యాకేజీలను మాత్రమే చూపుము"
+
+#: ../data/gpk-application.ui.h:17
+msgid "Only show the newest available package"
+msgstr "కొత్తగా అందుబాటులో వున్న ప్యాకేజీమాత్రమే చూపుము"
+
+#: ../data/gpk-application.ui.h:18
+msgid "Refresh the list of packages on the system"
+msgstr "సిస్టమ్‌నందు ప్యాకేజీలయొక్క జాబితాను రీఫ్రెష్‌చేయుము"
+
+#: ../data/gpk-application.ui.h:19
+msgid "S_election"
+msgstr "ఎంపిక (_e)"
+
+#: ../data/gpk-application.ui.h:20
+msgid "Software log"
+msgstr "సాఫ్టువేరు లాగ్"
+
+#: ../data/gpk-application.ui.h:21
+msgid "View previously added or removed software"
+msgstr "గతంలో జతచేసిన లేదా తీసివేసిన సాఫ్టువేరును దర్శించుము"
+
+#: ../data/gpk-application.ui.h:22
+msgid "Visit the project homepage"
+msgstr "ప్రాజెక్టు నివాసపేజీని దర్శించుము"
+
+#: ../data/gpk-application.ui.h:23
+msgid "_Development"
+msgstr "అభివృద్ది (_D)"
+
+#: ../data/gpk-application.ui.h:24
+msgid "_Filters"
+msgstr "వడపోతలు (_F)"
+
+#: ../data/gpk-application.ui.h:25
+msgid "_Free"
+msgstr "ఉచిత (_F)"
+
+#: ../data/gpk-application.ui.h:26
+msgid "_Graphical"
+msgstr "గ్రాఫికల్ (_G)"
+
+#. TRANSLATORS: context menu to open the offline help file
+#: ../data/gpk-application.ui.h:27 ../src/gpk-check-update.c:299
+msgid "_Help"
+msgstr "సహాయం (_H)"
+
+#: ../data/gpk-application.ui.h:28
+msgid "_Hide subpackages"
+msgstr "ఉపప్యాకేజీలను మరుగుపరచుము (_H)"
+
+#: ../data/gpk-application.ui.h:29
+msgid "_Installed"
+msgstr "సంస్థాపించి (_I)"
+
+#: ../data/gpk-application.ui.h:30
+msgid "_No filter"
+msgstr "వడపోత లేదు (_N)"
+
+#: ../data/gpk-application.ui.h:31
+msgid "_Only free software"
+msgstr "ఉచిత సాఫ్టువేరు మాత్రమే (_O)"
+
+#: ../data/gpk-application.ui.h:32
+msgid "_Only graphical"
+msgstr "గ్రాఫికల్ మాత్రమే (_O)"
+
+#: ../data/gpk-application.ui.h:33
+msgid "_Only sourcecode"
+msgstr "సోర్సుకోడ్ మాత్రమే (_O)"
+
+#: ../data/gpk-application.ui.h:34
+msgid "_Only text"
+msgstr "పాఠ్యము మాత్రమే (_O)"
+
+#: ../data/gpk-application.ui.h:35
+msgid "_Source"
+msgstr "మూలము (_S)"
+
+#: ../data/gpk-application.ui.h:36
+msgid "_System"
+msgstr "సిస్టమ్ (_S)"
+
+#: ../data/gpk-backend-status.ui.h:1
+msgid "Backend Status"
+msgstr "బ్యాకెండ్ స్థితి"
+
+#: ../data/gpk-backend-status.ui.h:2
+msgid "Backend author:"
+msgstr "బ్యాకెండ్ ఆథర్:"
+
+#: ../data/gpk-backend-status.ui.h:3
+msgid "Backend name:"
+msgstr "బ్యాకెండ్ నామము:"
+
+#: ../data/gpk-client.ui.h:1
+msgid "Install Package"
+msgstr "ప్యాకేజీ సంస్థాపించుము"
+
+#: ../data/gpk-error.ui.h:1
+msgid "More details"
+msgstr "మరిన్ని వివరములు"
+
+#: ../data/gpk-eula.ui.h:1
+msgid "License Agreement Required"
+msgstr "లైసెన్సు వొప్పదం అవసరమైంది"
+
+#: ../data/gpk-eula.ui.h:2
+msgid "_Accept Agreement"
+msgstr "ఒప్పదం ఆమోదించబడింది (_A)"
+
+#. TRANSLATORS: program name: application to install a catalog of software
+#: ../data/gpk-install-catalog.desktop.in.h:1 ../src/gpk-install-catalog.c:71
+#: ../src/gpk-install-catalog.c:73
+msgid "Catalog Installer"
+msgstr "కాటలాగ్ సంస్థాపకి"
+
+#: ../data/gpk-install-catalog.desktop.in.h:2
+msgid "Install a catalog of software on the system"
+msgstr "సిస్టమ్‌నందు సాఫ్టువేర్‌యొక్క కాటలాగ్‌ను సంస్థాపించుము"
+
+#: ../data/gpk-install-file.desktop.in.h:1
+msgid "Install selected software on the system"
+msgstr "సిస్టమ్‌నందు యెంపికచేసిన సాఫ్ట్‍‌వేర్‌ను సంస్థాపించుము"
+
+#: ../data/gpk-install-file.desktop.in.h:2
+msgid "Package Installer"
+msgstr "ప్యాకేజీ సంస్థాపకి"
+
+#: ../data/gpk-log.desktop.in.h:1 ../data/gpk-log.ui.h:2 ../src/gpk-log.c:666
+msgid "Software Log Viewer"
+msgstr "సాఫ్ట్‍‌వేర్ లాగ్ దర్శిని"
+
+#: ../data/gpk-log.desktop.in.h:2
+msgid "View past package management tasks"
+msgstr "గత ప్యాకేజీ నిర్వహణ కర్తవ్యాలను దర్శించుము"
+
+#: ../data/gpk-log.ui.h:1
+msgid "Filter"
+msgstr "వడపోత"
+
+#: ../data/gpk-prefs.desktop.in.h:1
+msgid "Change software update preferences"
+msgstr "సాఫ్టువేర్ నవీకరణ అభీష్టాలను మార్చుము"
+
+#: ../data/gpk-prefs.desktop.in.h:2
+msgid "Software Updates"
+msgstr "సాఫ్ట్‍‌వేర్ నవీకరణలు"
+
+#: ../data/gpk-prefs.ui.h:1
+msgid "C_heck for updates:"
+msgstr "నవీకరణల కొరకు పరిశీలించుము (_h):"
+
+#: ../data/gpk-prefs.ui.h:2
+msgid "Check for major _upgrades:"
+msgstr "పెద్ద నవీకరణలకొరకు పరిశీలించుము (_u):"
+
+#: ../data/gpk-prefs.ui.h:3
+msgid "Check for updates when using mobile broadband"
+msgstr "మొబైల్ బ్రాడ్‌బ్యాండ్‌ను వుపయోగిస్తున్నప్పుడు నవీకరణల కొరకు పరిశీలించుము"
+
+#: ../data/gpk-prefs.ui.h:4
+msgid "Currently using mobile broadband"
+msgstr "ప్రస్తుతము వినియోగించుచున్న మొబైల్ బ్రాడ్‌బాండ్"
+
+#. TRANSLATORS: program name, an application to set per-user policy for updates
+#: ../data/gpk-prefs.ui.h:5 ../src/gpk-prefs.c:422
+msgid "Software Update Preferences"
+msgstr "సాఫ్ట్‍‌వేర్ నవీకరణ అభీష్టాలు"
+
+#: ../data/gpk-prefs.ui.h:6
+msgid "Update Settings"
+msgstr "నవీకరణ అమర్పులు"
+
+#: ../data/gpk-prefs.ui.h:7
+msgid "_Automatically install:"
+msgstr "స్వయంచాలకంగా సంస్థాపించుము (_A):"
+
+#: ../data/gpk-repo.desktop.in.h:1
+msgid "Enable or disable software sources"
+msgstr "సాఫ్టువేర్ మూలాలను చేతనము లేదా అచేతనము చేయుము"
+
+#: ../data/gpk-repo.desktop.in.h:2 ../data/gpk-repo.ui.h:2
+msgid "Software Sources"
+msgstr "సాఫ్ట్‍‌వేర్ మూలాలు"
+
+#: ../data/gpk-repo.ui.h:1
+msgid "Shows more software sources that may be interesting"
+msgstr "ఆసక్తిగా వుండబోవు యెక్కువ సాఫ్టువేర్ మూలాలను చూపుము"
+
+#. shows extra -source, -debuginfo, and -devel software sources
+#: ../data/gpk-repo.ui.h:4
+msgid "_Show debug and development software sources"
+msgstr "డీబగ్ మరియు అభివృద్ది సాఫ్టువేర్ మూలాలను చూపము (_S)"
+
+#. TRANSLATORS: column for what was done, e.g. update-system
+#: ../data/gpk-service-pack.ui.h:1 ../src/gpk-log.c:303
+msgid "Action"
+msgstr "చర్య"
+
+#: ../data/gpk-service-pack.ui.h:2
+msgid "Create"
+msgstr "సృష్టించు"
+
+#: ../data/gpk-service-pack.ui.h:3
+msgid "Create a copy of this computers package list"
+msgstr "ఈ కంప్యూటర్ల ప్యాకేజీ జాబితాయొక్క నకలును సృష్టించుము"
+
+#: ../data/gpk-service-pack.ui.h:4
+msgid "Create an archive of a specific package"
+msgstr "ఫలానా ప్యాకేజీయొక్క అర్చివ్‌ను సృష్టించుము"
+
+#: ../data/gpk-service-pack.ui.h:5
+msgid "Create an archive of all the pending updates"
+msgstr "వాయిదాలోవున్న అన్ని నవీకరణలయొక్క ఆర్చివ్‌ను సృష్టించుము"
+
+#: ../data/gpk-service-pack.ui.h:6
+msgid "Destination package list:"
+msgstr "గమ్యపు ప్యాకేజీ జాబితా:"
+
+#. TRANSLATORS: column for what packages were upgraded
+#. TRANSLATORS: column for the message description
+#: ../data/gpk-service-pack.ui.h:7 ../src/gpk-log.c:330 ../src/gpk-watch.c:935
+msgid "Details"
+msgstr "వివరణలు"
+
+#: ../data/gpk-service-pack.ui.h:8
+msgid "Multiple packages can be specified using a comma delimited list"
+msgstr "కామా వుపయోగించి బహుళ ప్యాకేజీలను తెలుపవచ్చు"
+
+#: ../data/gpk-service-pack.ui.h:9
+msgid "Output directory:"
+msgstr "అవుట్‌పుట్ సంచయం:"
+
+#: ../data/gpk-service-pack.ui.h:10
+msgid "Progress"
+msgstr "పురొగతి"
+
+#: ../data/gpk-service-pack.ui.h:11
+msgid "Save New Service Pack"
+msgstr "కొత్త సేవా ప్యాక్‌ను భద్రపరచుము"
+
+#: ../data/gpk-service-pack.ui.h:12
+msgid "Select A Package List File"
+msgstr "ఒక ప్యాకేజీ జాబితా దస్త్రమును యెంపికచేయుము"
+
+#. TRANSLATORS: program description, an application to create service packs
+#: ../data/gpk-service-pack.ui.h:13 ../src/gpk-service-pack.c:624
+msgid "Service Pack Creator"
+msgstr "సేవా ప్యాక్ సృష్టికర్త"
+
+#: ../data/gpk-signature.ui.h:1
+msgid "Do you recognise the user and trust this key?"
+msgstr "మీరు ఈ వినియోగదారిని గుర్తించారా మరియు ఈ కీను నమ్ముతున్నారా?"
+
+#: ../data/gpk-signature.ui.h:2
+msgid "Do you trust the source of the packages?"
+msgstr "ప్యాకేజీలయొక్క మూలాలను మీరు నమ్ముతారా?"
+
+#: ../data/gpk-signature.ui.h:3
+msgid "Package:"
+msgstr "ప్యాకేజి:"
+
+#: ../data/gpk-signature.ui.h:4
+msgid "Repository name:"
+msgstr "రిపోజిటరీ నామము:"
+
+#: ../data/gpk-signature.ui.h:5
+msgid "Signature URL:"
+msgstr "సంతకము URL:"
+
+#: ../data/gpk-signature.ui.h:6
+msgid "Signature identifier:"
+msgstr "సంతకము గుర్తింపుకారి:"
+
+#: ../data/gpk-signature.ui.h:7
+msgid "Signature user identifier:"
+msgstr "సంతకము వినియోగదారి గుర్తింపుకారి"
+
+#: ../data/gpk-signature.ui.h:8
+msgid "Software signature is required"
+msgstr "సాఫ్టువేరు సంతకము అవసరమైనది"
+
+#: ../data/gpk-update-icon.desktop.in.h:1
+msgid "PackageKit Update Applet"
+msgstr "PackageKit నవీకరణము ఆప్లెట్"
+
+#: ../data/gpk-update-viewer.desktop.in.h:1 ../data/gpk-update-viewer.ui.h:1
+msgid "Software Update"
+msgstr "సాప్ట్ వేర్ నవీకరణ"
+
+#. TRANSLATORS: program name, a simple app to view pending updates
+#. TRANSLATORS: title to pass to to the user if there are not enough privs
+#: ../data/gpk-update-viewer.desktop.in.h:2 ../src/gpk-update-viewer.c:2875
+#: ../src/gpk-update-viewer.c:2890
+msgid "Software Update Viewer"
+msgstr "సాఫ్టువేర్ నవీకరణము దర్శని"
+
+#: ../data/gpk-update-viewer.desktop.in.h:3
+msgid "Update software installed on the system"
+msgstr "సిస్టమ్‌నందు సంస్థాపించిన సాఫ్టువేర్‌ను నవీకరించుము"
+
+#: ../data/gpk-update-viewer.ui.h:2
+msgid ""
+"Software updates correct errors, eliminate security vulnerabilities and "
+"provide new features."
+msgstr "సాఫ్టువేరు నవీకరణలు దోషములను సరిదిద్దుతాయి, భద్రతా రాహిత్యతలను తీసివేసి మరియు కొత్త సౌలభ్యాలను అందిస్తాయి."
+
+#: ../data/gpk-update-viewer.ui.h:3
+msgid "_Upgrade"
+msgstr "నవీకరించుము (_U)"
+
+#. TRANSLATORS: expander label in the error dialog
+#: ../python/packagekit/gtkwidgets.py:413
+msgid "_Details"
+msgstr "వివరాలు (_D)"
+
+#. Application column (icon, name, description)
+#. TRANSLATORS: column for the application name
+#. TRANSLATORS: column for the package name
+#: ../python/packagekit/gtkwidgets.py:510 ../src/gpk-helper-chooser.c:149
+#: ../src/gpk-helper-run.c:191
+msgid "Package"
+msgstr "ప్యాకేజీ"
+
+#: ../python/packagekit/gtkwidgets.py:609
+msgid "_Remove"
+msgstr "తీసివేయుము (_R)"
+
+#: ../python/packagekit/gtkwidgets.py:610
+#, python-format
+msgid "Remove %i additional package?"
+msgid_plural "Remove %i additional packages?"
+msgstr[0] "అదనపు %i ప్యాకేజీను తీసివేయాలా?"
+msgstr[1] "అదనపు %i ప్యాకేజీను తీసివేయాలా?"
+
+#: ../python/packagekit/gtkwidgets.py:615
+msgid ""
+"The software which you want to remove is required to run other software, "
+"which will be removed too."
+msgstr "మీరు తీసివేయాలని అనుకొనుచున్న సాఫ్టువేరు వేరొక సాఫ్టువేరు నడువుటకు అవసరం, అది కూడా తీసివేయబడుతుంది."
+
+#. TRANSLATORS: button label, install
+#: ../python/packagekit/gtkwidgets.py:646 ../src/gpk-helper-chooser.c:291
+msgid "_Install"
+msgstr "సంస్థాపించు (_I)"
+
+#: ../python/packagekit/gtkwidgets.py:647
+#, python-format
+msgid "Install %i additional package?"
+msgid_plural "Install %i additional packages?"
+msgstr[0] "అదనపు %i ప్యాకేజీను సంస్థాపించాలా?"
+msgstr[1] "అదనపు %i ప్యాకేజీను సంస్థాపించాలా?"
+
+#: ../python/packagekit/gtkwidgets.py:652
+msgid ""
+"The software that you want to install requires additional software to run "
+"correctly."
+msgstr "మీరు సంస్థాపించాలని అనుకొనుచున్న సాఫ్టువేరు సరిగా నడువుటకు అదనపు సాప్టువేరు అవసరము."
+
+#. TRANSLATORS: the repo name is invalid or not found, fall back to this
+#: ../src/gpk-application.c:804
+msgid "Invalid"
+msgstr "సరికాని"
+
+#. TRANSLATORS: the type of package is a collection (metagroup)
+#: ../src/gpk-application.c:936
+msgid "Type"
+msgstr "రకం"
+
+#: ../src/gpk-application.c:936
+msgid "Collection"
+msgstr "సంపుటము"
+
+#. TRANSLATORS: tooltip: go to the web address
+#: ../src/gpk-application.c:944
+#, c-format
+msgid "Visit %s"
+msgstr "దర్శించు %s"
+
+#. TRANSLATORS: add an entry to go to the project home page
+#: ../src/gpk-application.c:949
+msgid "Project"
+msgstr "ప్రోజెక్టు"
+
+#: ../src/gpk-application.c:949
+msgid "Homepage"
+msgstr "నివాసపేజీ"
+
+#. TRANSLATORS: the group the package belongs in
+#: ../src/gpk-application.c:963
+msgid "Group"
+msgstr "సమూహం"
+
+#. TRANSLATORS: the licence string for the package
+#: ../src/gpk-application.c:969
+msgid "License"
+msgstr "లైసెన్సు"
+
+#. TRANSLATORS: the path in the menu, e.g. Applications -> Games
+#: ../src/gpk-application.c:978
+msgid "Menu"
+msgstr "మెనూ"
+
+#. TRANSLATORS: the size of the meta package
+#. TRANSLATORS: a column that has size of each package
+#: ../src/gpk-application.c:996 ../src/gpk-update-viewer.c:1150
+msgid "Size"
+msgstr "పరిమాణం"
+
+#. TRANSLATORS: the installed size in bytes of the package
+#: ../src/gpk-application.c:999
+msgid "Installed size"
+msgstr "సంస్థాపించిన పరిమాణము"
+
+#. TRANSLATORS: the download size of the package
+#: ../src/gpk-application.c:1002
+msgid "Download size"
+msgstr "డౌనులోడు పరిమాణము"
+
+#. TRANSLATORS: where the package came from, the software source name
+#: ../src/gpk-application.c:1011
+msgid "Source"
+msgstr "వనరు"
+
+#. TRANSLATORS: no results were found for this search
+#: ../src/gpk-application.c:1157
+msgid "No results were found."
+msgstr "ఎటువంటి ఫలితాలు కనబడలేదు"
+
+#. TRANSLATORS: be helpful, but this shouldn't happen
+#: ../src/gpk-application.c:1165
+msgid "Try entering a package name in the search bar."
+msgstr "శోధన పట్టీనందు ప్యాకేజీ నామమును ప్రవేశపెట్టుటకు ప్రయత్నించుము."
+
+#. TRANSLATORS: nothing in the package queue
+#: ../src/gpk-application.c:1168
+msgid "There are no packages queued to be installed or removed."
+msgstr "సంస్థాపించుటకు లేదా తొలగించుటకు అక్కడ యెటువంటి ప్యాకేజీలు క్యూచేసిలేవు."
+
+#. TRANSLATORS: tell the user to switch to details search mode
+#: ../src/gpk-application.c:1173
+msgid ""
+"Try searching package descriptions by clicking the icon next to the search "
+"text."
+msgstr "శోధన పాఠ్యముకు తరువాతనవున్న ప్రతిమను నొక్కుటద్వారా శోధన ప్యాకేజీ వివరణలను ప్రయత్నించుము."
+
+#. TRANSLATORS: tell the user to try harder
+#: ../src/gpk-application.c:1176
+msgid "Try again with a different search term."
+msgstr "వేరొక శోధన పదముతొ మరలా ప్రయత్నించుము"
+
+#. TRANSLATORS: no packages returned
+#: ../src/gpk-application.c:1220 ../src/gpk-application.c:1282
+msgid "No packages"
+msgstr "ఎటువంటి ప్యాకేజీలులేవు"
+
+#. TRANSLATORS: this package does not depend on any others
+#: ../src/gpk-application.c:1222
+msgid "This package does not depends on any others"
+msgstr "ఈ ప్యాకేజీ ఏ యితర ప్యాకేజీలపైనా ఆధారపడదు"
+
+#. TRANSLATORS: title: show the number of other packages we depend on
+#: ../src/gpk-application.c:1230
+#, c-format
+msgid "%i additional package is required for %s"
+msgid_plural "%i additional packages are required for %s"
+msgstr[0] "%i అదనపు ప్యాకేజీలు %sకు అవసరము"
+msgstr[1] "%i అదనపు ప్యాకేజీలు %sకు అవసరము"
+
+#. TRANSLATORS: message: show the list of dependant packages for this package
+#: ../src/gpk-application.c:1235
+#, c-format
+msgid "Packages listed below are required for %s to function correctly."
+msgid_plural "Packages listed below are required for %s to function correctly."
+msgstr[0] "క్రిందన జాబితాచేసివున్న ప్యాకేజీలు %s సరిగాపనిచేయుటకు అవసరము"
+msgstr[1] "క్రిందన జాబితాచేసివున్న ప్యాకేజీలు %s సరిగాపనిచేయుటకు అవసరము"
+
+#. TRANSLATORS: this package is not required by any others
+#: ../src/gpk-application.c:1284
+msgid "No other packages require this package"
+msgstr "ఏ యితర ప్యాకేజీలకు ఈ ప్యాకీజీ అవసరములేదు"
+
+#. TRANSLATORS: title: how many packages require this package
+#: ../src/gpk-application.c:1292
+#, c-format
+msgid "%i package requires %s"
+msgid_plural "%i packages require %s"
+msgstr[0] "%i ప్యాకేజీకు %s అవసరము"
+msgstr[1] "%i ప్యాకేజీకు %s అవసరము"
+
+#. TRANSLATORS: show a list of packages for the package
+#: ../src/gpk-application.c:1297
+#, c-format
+msgid "Packages listed below require %s to function correctly."
+msgid_plural "Packages listed below require %s to function correctly."
+msgstr[0] "క్రింద జాబితాచేసివున్న ప్యాకేజీలు సరిగా పనిచేయుటకు %s అవసరము"
+msgstr[1] "క్రింద జాబితాచేసివున్న ప్యాకేజీలు సరిగా పనిచేయుటకు %s అవసరము"
+
+#. TRANSLATORS: title: invlid text in the search bar
+#: ../src/gpk-application.c:1649
+msgid "Invalid search text"
+msgstr "సరికాని శోధన పాఠ్యము"
+
+#. TRANSLATORS: message: tell the user that's not allowed
+#: ../src/gpk-application.c:1651
+msgid "The search text contains invalid characters"
+msgstr "శోధన పాఠ్యము సరికాని అక్షరములను కలిగివుంది"
+
+#. TRANSLATORS: title: we failed to execute the mthod
+#: ../src/gpk-application.c:1686
+msgid "The search could not be completed"
+msgstr "శోధన పూర్తవలేక పోయింది"
+
+#. TRANSLATORS: low level failure, details to follow
+#. TRANSLATORS: low level failure
+#: ../src/gpk-application.c:1688 ../src/gpk-application.c:1732
+msgid "Running the transaction failed"
+msgstr "వ్యవహారమును నడుపుట విఫలమైంది"
+
+#. TRANSLATORS: title: could not get group data
+#: ../src/gpk-application.c:1730
+msgid "The group could not be queried"
+msgstr "ఆ సమూహం క్వరీ చేయబడలేదు"
+
+#. TRANSLATORS: title: warn the user they are quitting with unapplied changes
+#: ../src/gpk-application.c:1830
+msgid "Changes not applied"
+msgstr "మార్పులు ఆపాదించలేదు"
+
+#: ../src/gpk-application.c:1831
+msgid "Close _Anyway"
+msgstr "ఏమైనా మూసివేయి (_A)"
+
+#. TRANSLATORS: tell the user the problem
+#: ../src/gpk-application.c:1835
+msgid "You have made changes that have not yet been applied."
+msgstr "మీరు చేసిన మార్పులు యింకనూ ఆపాదించబడలేదు."
+
+#: ../src/gpk-application.c:1836
+msgid "These changes will be lost if you close this window."
+msgstr "ఈ విండోను మూసివేసినట్లైతే ఈ మార్పులు పోతాయి."
+
+#. TRANSLATORS: column for installed status
+#. TRANSLATORS: The state of a package
+#. TRANSLATORS: The action of the package, in past tense
+#: ../src/gpk-application.c:2109 ../src/gpk-enum.c:1133 ../src/gpk-enum.c:1206
+msgid "Installed"
+msgstr "సంస్థాపించిన"
+
+#. TRANSLATORS: column for package name
+#. TRANSLATORS: column for group name
+#. TRANSLATORS: column for the package name
+#: ../src/gpk-application.c:2125 ../src/gpk-application.c:2147
+#: ../src/gpk-dialog.c:146 ../src/gpk-modal-dialog.c:714
+msgid "Name"
+msgstr "నామము"
+
+#. TRANSLATORS: this is a menu group of packages in the queue
+#: ../src/gpk-application.c:2343
+msgid "Selected packages"
+msgstr "ఎంపికచేసిన ప్యాకేజీలు"
+
+#. TRANSLATORS: entry tooltip: basic search
+#: ../src/gpk-application.c:2395
+msgid "Searching by name"
+msgstr "నామము ద్వారా శోధన"
+
+#. TRANSLATORS: entry tooltip: detailed search
+#: ../src/gpk-application.c:2418
+msgid "Searching by description"
+msgstr "వివరణము ద్వారా శోధన"
+
+#. TRANSLATORS: entry tooltip: file search
+#: ../src/gpk-application.c:2441
+msgid "Searching by file"
+msgstr "దస్త్రము ద్వారా శోధన"
+
+#. TRANSLATORS: context menu item for the search type icon
+#: ../src/gpk-application.c:2466
+msgid "Search by name"
+msgstr "నామము ద్వారా శోధన"
+
+#. TRANSLATORS: context menu item for the search type icon
+#: ../src/gpk-application.c:2477
+msgid "Search by description"
+msgstr "వివరణము ద్వారా శోధన"
+
+#. TRANSLATORS: context menu item for the search type icon
+#: ../src/gpk-application.c:2488
+msgid "Search by file name"
+msgstr "దస్త్రము నామము ద్వారా శోధన"
+
+#. TRANSLATORS: packaging problem, failed to show link
+#. TRANSLATORS: normally a packaging error, cannot launch link
+#: ../src/gpk-application.c:2532 ../src/gpk-check-update.c:203
+#: ../src/gpk-watch.c:766
+msgid "Failed to show url"
+msgstr "url చూపుటకు విఫలమైంది"
+
+#: ../src/gpk-application.c:2569 ../src/gpk-check-update.c:227
+#: ../src/gpk-watch.c:786
+msgid "Licensed under the GNU General Public License Version 2"
+msgstr "GNU జనరల్ పబ్లిక్ లైసెన్సు వర్షన్ 2 క్రింద లైసెన్సు పొందబడిఉంది"
+
+#: ../src/gpk-application.c:2570 ../src/gpk-check-update.c:228
+#: ../src/gpk-watch.c:787
+msgid ""
+"PackageKit is free software; you can redistribute it and/or modify it under "
+"the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version."
+msgstr ""
+"ప్యాకేజ్‌కిట్ ఉచిత సాఫ్టువేర్; ఉచిత సాఫ్టువేర్ సంస్థ తరుపున ప్రచురితమైన GNU జనరల్ పబ్లిక్ లైసెన్సు కు "
+"లోబడి దీనిని మీరు పునఃపంపిణి మరియు/లేదా సవరణ చేయవచ్చు; మీరు అనుసరించవలిసినది లైసెన్సు యొక్క వర్షన్ 2, "
+"లేదా (మీ ఐచ్చికం వద్ద) దాని తరువాతి వర్షన్ కాని."
+
+#: ../src/gpk-application.c:2574 ../src/gpk-check-update.c:232
+#: ../src/gpk-watch.c:791
+msgid ""
+"PackageKit is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
+"more details."
+msgstr ""
+"ప్యాకేజికిట్ అది ఉపయోగపడుతుందనే నమ్మకం తో పంపిణీ చేయబడింది, అయితే ఏ హామి లేదు; వ్యాపారసంబంధితంగా కాని లేదా "
+"ప్రతిపాదిత ప్రయోజనం కొరకు కాని హామీ లేదు. అధికవివరములకొరకు GNU జనరల్ పబ్లిక్ లైసెన్సు ను చూడండి."
+
+#: ../src/gpk-application.c:2578 ../src/gpk-check-update.c:236
+#: ../src/gpk-watch.c:795
+msgid ""
+"You should have received a copy of the GNU General Public License along with "
+"this program; if not, write to the Free Software Foundation, Inc., 51 "
+"Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
+msgstr ""
+"ఈ ప్రోగ్రాముతో తో మీరు GNU జనరల్ పబ్లిక్ లైసెన్సు నకలు ను పొంది ఉంటారు;పొందకపోతే, Free Software "
+"Foundation, Inc., 51 Franklin Street, FifthFloor, Boston. MA02110-1301, USA "
+"కు వ్రాయండి."
+
+#. TRANSLATORS: put your own name here -- you deserve credit!
+#: ../src/gpk-application.c:2584 ../src/gpk-check-update.c:241
+#: ../src/gpk-watch.c:800
+msgid "translator-credits"
+msgstr ""
+"Prajasakti Localisation Team <localisation@prajasakti.com>\n"
+"Pramod <pramodfsf@gmail.com>"
+
+#. TRANSLATORS: website label
+#: ../src/gpk-application.c:2610 ../src/gpk-check-update.c:261
+#: ../src/gpk-watch.c:819
+msgid "PackageKit Website"
+msgstr "PackageKit వెబ్‌సైటు"
+
+#. TRANSLATORS: description of application, gpk-application that is
+#: ../src/gpk-application.c:2613
+msgid "Package Manager for GNOME"
+msgstr "GNOME కొరకు ప్యాకేజీ నిర్వాహిక"
+
+#. TRANSLATORS: single column for the package details, not visible at the moment
+#: ../src/gpk-application.c:3352
+msgid "Text"
+msgstr "పాఠ్యము"
+
+#. TRANSLATORS: welcome text if we can click the group list
+#: ../src/gpk-application.c:3375
+msgid "Enter a package name and then click find, or click a group to get started."
+msgstr "ప్యాకేజీనామమును ప్రవేశపెట్టి కనుగొనుము నొక్కుము, లేదా ప్రారంభమగుటకు సమూహంను నొక్కుము."
+
+#. TRANSLATORS: welcome text if we have to search by name
+#: ../src/gpk-application.c:3378
+msgid "Enter a package name and then click find to get started."
+msgstr "ప్రారంభమగుటకు ప్యాకేజీనామమును ప్రవేశపెట్టి కనుగొనుము నొక్కుము."
+
+#. TRANSLATORS: title: all of the packages on the system and availble in sources
+#: ../src/gpk-application.c:3413 ../src/gpk-application.c:3482
+msgid "All packages"
+msgstr "అన్ని ప్యాకేజీలు"
+
+#. TRANSLATORS: tooltip: all packages
+#: ../src/gpk-application.c:3415 ../src/gpk-application.c:3484
+msgid "Show all packages"
+msgstr "అన్ని ప్యాకేజీలను చూపుము"
+
+#. TRANSLATORS: title: how many files are installed by the application
+#: ../src/gpk-application.c:3661
+#, c-format
+msgid "%i file installed by %s"
+msgid_plural "%i files installed by %s"
+msgstr[0] "%i ఫైళ్ళు %sచేత సంస్థాపించబడినవి"
+msgstr[1] "%i ఫైళ్ళు %sచేత సంస్థాపించబడినవి"
+
+#. TRANSLATORS: tooltip on the clear button
+#: ../src/gpk-application.c:3868
+msgid "Clear current selection"
+msgstr "ప్రస్తుత యెంపికను శుభ్రముచేయుము"
+
+#. TRANSLATORS: tooltip on the apply button
+#: ../src/gpk-application.c:3893
+msgid "Changes are not applied instantly, this button applies all changes"
+msgstr "మార్పులన్నీ సత్వరమే ఆపాదించబడవు, ఈ బటన్ అన్ని మార్పులను ఆపాదిస్తుంది."
+
+#. TRANSLATORS: tooltip on the homepage button
+#: ../src/gpk-application.c:3919
+msgid "Visit home page for selected package"
+msgstr "ఎంపికకాబడిన ప్యాకేజీకొరకు నివాసపేజీని దర్శించుము"
+
+#. TRANSLATORS: tooltip on the find button
+#: ../src/gpk-application.c:4063
+msgid "Find packages"
+msgstr "ప్యాకేజీలను కనుగొనుము"
+
+#. TRANSLATORS: tooltip on the cancel button
+#: ../src/gpk-application.c:4070
+msgid "Cancel search"
+msgstr "శోధనను రద్దుచేయుము"
+
+#. TRANSLATORS: show the debug data on the console
+#: ../src/gpk-application-main.c:78 ../src/gpk-backend-status.c:84
+#: ../src/gpk-install-catalog.c:53 ../src/gpk-install-local-file.c:52
+#: ../src/gpk-install-mime-type.c:52 ../src/gpk-install-package-name.c:52
+#: ../src/gpk-install-provide-file.c:52 ../src/gpk-log.c:644
+#: ../src/gpk-prefs.c:400 ../src/gpk-repo.c:520 ../src/gpk-service-pack.c:595
+#: ../src/gpk-update-icon.c:128 ../src/gpk-update-viewer.c:2856
+msgid "Show extra debugging information"
+msgstr "అధిక డీబగ్గింగ్ సమాచారాన్ని చూపుము"
+
+#. TRANSLATORS: show the program version
+#: ../src/gpk-application-main.c:81 ../src/gpk-backend-status.c:86
+#: ../src/gpk-prefs.c:402 ../src/gpk-update-icon.c:132
+#: ../src/gpk-update-viewer.c:2858
+msgid "Show the program version and exit"
+msgstr "ప్రోగ్రామ్ వర్షన్‌ను చూపుము మరియు నిష్క్రమించుము"
+
+#. are we running privileged
+#: ../src/gpk-application-main.c:111
+msgid "Package installer"
+msgstr "ప్యాకేజీ సంస్థాపకి"
+
+#: ../src/gpk-backend-status.c:103
+msgid "PackageKit Backend Details Viewer"
+msgstr "PackageKit బ్యాకెండ్ వివరముల వీక్షణి"
+
+#. TRANSLATORS: backend is broken, and won't tell us what it supports
+#: ../src/gpk-backend-status.c:126
+msgid "Exiting as backend details could not be retrieved"
+msgstr "బ్యాకెండ్ వివరములుగా నిష్క్రమించినవి తిరిగిపొందబడలేవు"
+
+#. TRANSLATORS: context menu to open the preferences
+#: ../src/gpk-check-update.c:287
+msgid "_Preferences"
+msgstr "అభీష్టాలు(_P)"
+
+#. TRANSLATORS: context menu to show the about screen
+#. TRANSLATORS: this is the right click menu item
+#: ../src/gpk-check-update.c:307 ../src/gpk-watch.c:846
+msgid "_About"
+msgstr "గురించి (_A)"
+
+#. TRANSLATORS: title in the libnotify popup
+#: ../src/gpk-check-update.c:514
+msgid "Security update available"
+msgid_plural "Security updates available"
+msgstr[0] "రక్షణ నవీకరణాలు అందుబాటులోవున్నాయి"
+msgstr[1] "రక్షణ నవీకరణాలు అందుబాటులోవున్నాయి"
+
+#. TRANSLATORS: message when there are security updates
+#: ../src/gpk-check-update.c:519
+msgid "The following important update is available for your computer:"
+msgid_plural "The following important updates are available for your computer:"
+msgstr[0] "ఈక్రింది ముఖ్యమైన నవీకరణములు మీ కంప్యూటర్‌కొరకు అందుబాటులోవున్నాయి:"
+msgstr[1] "ఈక్రింది ముఖ్యమైన నవీకరణములు మీ కంప్యూటర్‌కొరకు అందుబాటులోవున్నాయి:"
+
+#. TRANSLATORS: button: only security updates
+#: ../src/gpk-check-update.c:542
+msgid "Install only security updates"
+msgstr "రక్షణ నవీకరణలను మాత్రమే సంస్థాపించుము"
+
+#. TRANSLATORS: button: open the update viewer
+#: ../src/gpk-check-update.c:548
+msgid "Show all software updates"
+msgstr "అన్ని సాఫ్టువేరు నవీకరణలను చూపుము"
+
+#. TRANSLATORS: policy says update, but we are on battery and so prompt
+#: ../src/gpk-check-update.c:660
+msgid ""
+"Automatic updates are not being installed as the computer is running on "
+"battery power"
+msgstr "కంప్యూటర్ బ్యాటరీ పవర్‌పైవున్నప్పుడు స్వయంచాలక నవీకరణలు సంస్థాపించబడలేవు"
+
+#. TRANSLATORS: informs user will not install by default
+#: ../src/gpk-check-update.c:662
+msgid "Updates not installed"
+msgstr "నవీకరణలు సంస్థాపించబడలేదు"
+
+#. TRANSLATORS: to hell with my battery life, just do it
+#: ../src/gpk-check-update.c:672
+msgid "Install the updates anyway"
+msgstr "ఏమైనాసరే నవీకరణలను సంస్థాపించుము"
+
+#. TRANSLATORS: title: notification when we scheduled an automatic update
+#: ../src/gpk-check-update.c:754
+msgid "Updates are being installed"
+msgstr "నవీకరణలు సంస్థాపించబడినవి"
+
+#. TRANSLATORS: tell the user why the hard disk is grinding...
+#: ../src/gpk-check-update.c:756
+msgid "Updates are being automatically installed on your computer"
+msgstr "మీ కంప్యూటర్‌నందు నవీకరణలు స్వయంచాలకంగా సంస్థాపించబడినవి"
+
+#: ../src/gpk-check-update.c:762
+msgid "Cancel update"
+msgstr "నవీకరణను రద్దుచేయి"
+
+#. TRANSLATORS: we have a notification that won't fit, so append on how many other we are not showing
+#: ../src/gpk-check-update.c:859
+#, c-format
+msgid "and %d other security update"
+msgid_plural "and %d other security updates"
+msgstr[0] "మరియు %d యితర రక్షణ నవీకరణలు"
+msgstr[1] "మరియు %d యితర రక్షణ నవీకరణలు"
+
+#. TRANSLATORS: tooltip: how many updates are waiting to be applied
+#: ../src/gpk-check-update.c:875
+#, c-format
+msgid "There is %d update available"
+msgid_plural "There are %d updates available"
+msgstr[0] "అక్కడ %d నవీకరణ అందుబాటులోవుంది"
+msgstr[1] "అక్కడ %d నవీకరణ అందుబాటులోవుంది"
+
+#. TRANSLATORS: this is the application name for libcanberra
+#: ../src/gpk-check-update.c:904 ../src/gpk-check-update.c:926
+#: ../src/gpk-check-update.c:1508
+msgid "GNOME PackageKit Update Icon"
+msgstr "GNOME PackageKit నవీకరణపు ప్రతిమ"
+
+#. TRANSLATORS: this is the sound description
+#: ../src/gpk-check-update.c:906
+msgid "Update available"
+msgstr "నవీకరణము అందుబాటులోవుంది"
+
+#. TRANSLATORS: this is the sound description
+#: ../src/gpk-check-update.c:928
+msgid "Update available (on battery)"
+msgstr "నవీకరణము అందుబాటులోవుంది (బ్యాటరీ పైన)"
+
+#. TRANSLATORS: a distro update is available, e.g. Fedora 8 to Fedora 9
+#: ../src/gpk-check-update.c:1179
+msgid "Distribution upgrades available"
+msgstr "పంపిణీ నవీకరణలు అందుబాటులోవున్నాయి"
+
+#. TRANSLATORS: provides more information about the upgrade
+#. TRANSLATORS: button: show the user a button to get more help finding stuff
+#. TRANSLATORS: button: a link to the help file
+#. TRANSLATORS: button text
+#. TRANSLATORS: button: show the user a button to get more help finding stuff
+#: ../src/gpk-check-update.c:1189 ../src/gpk-dbus-task.c:801
+#: ../src/gpk-dbus-task.c:838 ../src/gpk-dbus-task.c:1054
+#: ../src/gpk-dbus-task.c:2653 ../src/gpk-dbus-task.c:3089
+msgid "More information"
+msgstr "ఎక్కువ సమాచారము"
+
+#. TRANSLATORS: hides forever
+#. TRANSLATORS: don't show this option again (when finished)
+#. add a checkbutton for deps screen
+#. TRANSLATORS: don't pop-up the same message twice
+#: ../src/gpk-check-update.c:1192 ../src/gpk-check-update.c:1433
+#: ../src/gpk-dialog.c:301 ../src/gpk-hardware.c:175 ../src/gpk-watch.c:561
+msgid "Do not show this again"
+msgstr "దీనిని మరలా చూపవద్దు"
+
+#. TRANSLATORS: we did the update, but some updates were skipped and not applied
+#: ../src/gpk-check-update.c:1387
+msgid "One package was skipped:"
+msgid_plural "Some packages were skipped:"
+msgstr[0] "ఒక ప్యాకేజీ వదిలివేయబడింది:"
+msgstr[1] "ఒక ప్యాకేజీ వదిలివేయబడింది:"
+
+#. TRANSLATORS: title: system update completed all okay
+#: ../src/gpk-check-update.c:1418
+msgid "The system update has completed"
+msgstr "సిస్టమ్ నవీకరణ పూర్తైనది"
+
+#. TRANSLATORS: restart computer as system packages need update
+#: ../src/gpk-check-update.c:1426
+msgid "Restart computer now"
+msgstr "కంప్యూటర్‌ను యిప్పుడు పునఃప్రారంభించుము"
+
+#. TRANSLATORS: this is the sound description
+#: ../src/gpk-check-update.c:1510 ../src/gpk-update-viewer.c:1925
+msgid "Updated successfully"
+msgstr "విజయవంతంగా నవీకరించబడింది"
+
+#. TRANSLATORS: these tools cannot run as root (unknown name)
+#: ../src/gpk-common.c:394
+msgid "This application is running as a privileged user"
+msgstr "అనువర్తనము అనుమతిగల వినియోగదారిగా నడుచుచున్నది"
+
+#. TRANSLATORS: cannot run as root user, and we display the applicaiton name
+#: ../src/gpk-common.c:397
+#, c-format
+msgid "%s is running as a privileged user"
+msgstr "%s అనునది అనుమతిగల వినియోగదారిగా నడుచుచున్నది"
+
+#. TRANSLATORS: tell the user off
+#: ../src/gpk-common.c:400
+msgid "Package management applications are security sensitive."
+msgstr "ప్యాకేజీ నిర్వహణ అనువర్తనములు రక్షణ సంభందమైనవి."
+
+#. TRANSLATORS: and explain why
+#: ../src/gpk-common.c:402
+msgid ""
+"Running graphical applications as a privileged user should be avoided for "
+"security reasons."
+msgstr "భద్రతా కారణాలదృష్ట్యా గ్రాఫికల్ అనువర్తనములను అనుమతిగల వినియోగదారిలా నడుపుట తిరస్కరించబడింది."
+
+#. TRANSLATORS: button: allow the user to run this, even when insecure
+#: ../src/gpk-common.c:408
+msgid "Continue _Anyway"
+msgstr "ఏమైనాసరే కొనసాగించుము (_A)"
+
+#. TRANSLATORS: The actions has just literally happened
+#: ../src/gpk-common.c:478 ../src/gpk-common.c:528
+#, c-format
+msgid "Now"
+msgstr "ఇప్పుడు"
+
+#. TRANSLATORS: time
+#: ../src/gpk-common.c:488 ../src/gpk-common.c:538
+#, c-format
+msgid "%i second"
+msgid_plural "%i seconds"
+msgstr[0] "%i సేకనులు"
+msgstr[1] "%i సేకనులు"
+
+#. TRANSLATORS: time
+#: ../src/gpk-common.c:498 ../src/gpk-common.c:551
+#, c-format
+msgid "%i minute"
+msgid_plural "%i minutes"
+msgstr[0] "%i నిమిషం"
+msgstr[1] "%i నిమిషం"
+
+#. TRANSLATORS: time
+#: ../src/gpk-common.c:504 ../src/gpk-common.c:570
+#, c-format
+msgid "%i hour"
+msgid_plural "%i hours"
+msgstr[0] "%i గంట"
+msgstr[1] "%i గంట"
+
+#. TRANSLATOR: "%i %s %i %s" are "%i minutes %i seconds"
+#. * Swap order with "%2$s %2$i %1$s %1$i if needed
+#. TRANSLATOR: "%i %s %i %s" are "%i hours %i minutes"
+#. * Swap order with "%2$s %2$i %1$s %1$i if needed
+#: ../src/gpk-common.c:557 ../src/gpk-common.c:576
+#, c-format
+msgid "%i %s %i %s"
+msgstr "%i %s %i %s"
+
+#: ../src/gpk-common.c:558 ../src/gpk-common.c:578
+msgid "minute"
+msgid_plural "minutes"
+msgstr[0] "నిమిషం"
+msgstr[1] "నిమిషం"
+
+#: ../src/gpk-common.c:559
+msgid "second"
+msgid_plural "seconds"
+msgstr[0] "రెండోది"
+msgstr[1] "రెండోది"
+
+#: ../src/gpk-common.c:577
+msgid "hour"
+msgid_plural "hours"
+msgstr[0] "గంట"
+msgstr[1] "గంట"
+
+#: ../src/gpk-common.c:604
+#, c-format
+msgid "%s and %s"
+msgstr "%s మరియు %s"
+
+#: ../src/gpk-common.c:607
+#, c-format
+msgid "%s, %s and %s"
+msgstr "%s, %s మరియు %s"
+
+#: ../src/gpk-common.c:610
+#, c-format
+msgid "%s, %s, %s and %s"
+msgstr "%s, %s, %s మరియు %s"
+
+#: ../src/gpk-common.c:614
+#, c-format
+msgid "%s, %s, %s, %s and %s"
+msgstr "%s, %s, %s, %s మరియు %s"
+
+#: ../src/gpk-dbus-task.c:315
+msgid "EULA required"
+msgstr "EULA అవసరము"
+
+#: ../src/gpk-dbus-task.c:337
+msgid "Signature required"
+msgstr "సంతకము అవసరమైనది"
+
+#: ../src/gpk-dbus-task.c:365
+msgid "Install untrusted"
+msgstr "నమ్మదగనిది సంస్థాపించుము"
+
+#. TRANSLATORS: we failed to install
+#: ../src/gpk-dbus-task.c:400
+msgid "Failed to install software"
+msgstr "సాఫ్టువేర్ సంస్థాపించుటకు విఫలమైంది"
+
+#. TRANSLATORS: we didn't select any applications that were returned
+#: ../src/gpk-dbus-task.c:402
+msgid "No applications were chosen to be installed"
+msgstr "సంస్థాపించుటకు యెటువంటి అనువర్తనములు యెంచుకొనబడలేదు"
+
+#. TRANSLATORS: detailed text about the error
+#. TRANSLATORS: The detailed error if the user clicks "more info"
+#: ../src/gpk-dbus-task.c:431 ../src/gpk-watch.c:418
+msgid "Error details"
+msgstr "దోషము వివరణలు"
+
+#: ../src/gpk-dbus-task.c:431
+msgid "Package Manager error details"
+msgstr "ప్యాకేజీ నిర్వాహకుని దోష వివరములు"
+
+#. TRANSLATORS: default fallback error -- this should never happen
+#: ../src/gpk-dbus-task.c:445
+msgid ""
+"Unknown error. Please refer to the detailed report and report in your "
+"distribution bugtracker."
+msgstr "తెలియని దోషము. విశదీకృతమైన నివేదికను దయచేసి చూడుము మరియు మీ పంపిణి బగ్‌ట్రాకర్‌నందు నివేదించుము."
+
+#. TRANSLATORS: failed authentication
+#: ../src/gpk-dbus-task.c:459
+msgid "You don't have the necessary privileges to perform this action."
+msgstr "ఈ చర్యను జరుపుటకు మీరు అవసరమైన అనుమతులను కలిగిలేరు."
+
+#. TRANSLATORS: could not start system service
+#: ../src/gpk-dbus-task.c:463
+msgid "The packagekitd service could not be started."
+msgstr "packagekitd సేవ ప్రారంభిచబడలేక పోయింది."
+
+#. TRANSLATORS: the user tried to query for something invalid
+#: ../src/gpk-dbus-task.c:467
+msgid "The query is not valid."
+msgstr "క్వరీ చెల్లునది కాదు."
+
+#. TRANSLATORS: the user tried to install a file that was not compatable or broken
+#: ../src/gpk-dbus-task.c:471
+msgid "The file is not valid."
+msgstr "దస్త్రము చెల్లునది కాదు."
+
+#. TRANSLATORS: title: installing packages
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-dbus-task.c:505 ../src/gpk-enum.c:936
+msgid "Installing packages"
+msgstr "ప్యాకేజీలను సంస్థాపించుచున్నది"
+
+#. TRANSLATORS: this should never happen, low level failure
+#: ../src/gpk-dbus-task.c:513 ../src/gpk-dbus-task.c:1348
+msgid "Failed to reset client to perform action"
+msgstr "చర్యను జరుపుటకు కక్షిదారిని తిరిగివుంచుటలో విఫలమైంది"
+
+#. TRANSLATORS: error: failed to install, detailed error follows
+#. TRANSLATORS: failed to install, shouldn't be shown
+#: ../src/gpk-dbus-task.c:529 ../src/gpk-dbus-task.c:1101
+msgid "Failed to install package"
+msgstr "ప్యాకేజీని సంస్థాపించుటకు విఫలమైంది"
+
+#. TRANSLATORS: finding a list of packages that we would also need to download
+#: ../src/gpk-dbus-task.c:584 ../src/gpk-dbus-task.c:2070
+msgid "Finding other packages we require"
+msgstr "మనకు కావలిసిన యితర ప్యాకేజీలను కనుగొనుచున్నది"
+
+#. TRANSLATORS: this is an internal error, and should not be seen
+#: ../src/gpk-dbus-task.c:595 ../src/gpk-dbus-task.c:2081
+#: ../src/gpk-dbus-task.c:2265 ../src/gpk-dbus-task.c:2377
+#: ../src/gpk-dbus-task.c:2793 ../src/gpk-dbus-task.c:3041
+msgid "Failed to reset client"
+msgstr "కక్షిదారిని తిరిగి అమర్చుటకు విఫలమైంది"
+
+#. TRANSLATORS: error: could not get the extra package list when installing a package
+#: ../src/gpk-dbus-task.c:612 ../src/gpk-dbus-task.c:2095
+msgid "Could not work out what packages would be also installed"
+msgstr "ఏఏ ప్యాకేజీలు సంస్థాపించబడాలో యింకాతేల్చలేదు"
+
+#. TRANSLATORS: title
+#: ../src/gpk-dbus-task.c:796
+msgid "Failed to find software"
+msgstr "సాఫ్టువేర్ కనుగొనుటలో విఫలమైంది"
+
+#. TRANSLATORS: nothing found in the software sources that helps
+#: ../src/gpk-dbus-task.c:798
+msgid "No new applications can be found to handle this type of file"
+msgstr "ఈ రకమైన దస్త్రము సంభాలించుటకు యెటువంటి కొత్త అనువర్తనములు కనగొనబడలేదు"
+
+#. TRANSLATORS: failed to fild the package for thefile
+#: ../src/gpk-dbus-task.c:833
+msgid "Failed to find package"
+msgstr "ప్యాకేజీని కనుగొనుటలో విఫలమైంది"
+
+#. TRANSLATORS: nothing found
+#: ../src/gpk-dbus-task.c:835
+msgid "The file could not be found in any packages"
+msgstr "ఆ దస్త్రము యేప్యాకేజీనందు కనుగొనబడలేదు"
+
+#. TRANSLATORS: we've already got a package that provides this file
+#: ../src/gpk-dbus-task.c:866
+#, c-format
+msgid "The %s package already provides this file"
+msgstr "%s ప్యాకేజీ యిప్పటికే ఈ దస్త్రమును అందించుచున్నది"
+
+#. TRANSLATORS: title
+#. TRANSLATORS: title: detailed internal error why the file install failed
+#: ../src/gpk-dbus-task.c:869 ../src/gpk-dbus-task.c:1362
+msgid "Failed to install file"
+msgid_plural "Failed to install files"
+msgstr[0] "ఫైళ్ళను సంస్థాపించుటకు విఫలమైంది"
+msgstr[1] "ఫైళ్ళను సంస్థాపించుటకు విఫలమైంది"
+
+#. TRANSLATORS: title: tell the user we have to install additional packages
+#: ../src/gpk-dbus-task.c:929 ../src/gpk-helper-deps-install.c:121
+#, c-format
+msgid "%i additional package also has to be installed"
+msgid_plural "%i additional packages also have to be installed"
+msgstr[0] "%i అదనపు ప్యాకేజీలుకూడా సంస్థాపించబడాలి"
+msgstr[1] "%i అదనపు ప్యాకేజీలుకూడా సంస్థాపించబడాలి"
+
+#. TRANSLATORS: message: explain to the user what we are doing in more detail
+#. TRANSLATORS: message: describe in detail why it must happen
+#: ../src/gpk-dbus-task.c:946 ../src/gpk-helper-deps-install.c:129
+#, c-format
+msgid "To install %s, an additional package also has to be downloaded."
+msgid_plural "To install %s, additional packages also have to be downloaded."
+msgstr[0] "%s సంస్థాపించుటకు, అదనపు ప్యాకేజీలుకూడా డౌనులోడుచేయాలి."
+msgstr[1] "%s సంస్థాపించుటకు, అదనపు ప్యాకేజీలుకూడా డౌనులోడుచేయాలి."
+
+#. TRANSLATORS: title: installing package
+#. TRANSLATORS: title: installing local files
+#. TRANSLATORS: button: confirm to search for packages
+#. TRANSLATORS: button: install codecs
+#. TRANSLATORS: button: install a font
+#. TRANSLATORS: button: install catalog
+#. TRANSLATORS: button: install packages in catalog
+#. gtk_dialog_add_button (GTK_DIALOG (dialog), "help", GTK_RESPONSE_HELP);
+#. TRANSLATORS: this is button text
+#. TRANSLATORS: if the update should be installed
+#: ../src/gpk-dbus-task.c:957 ../src/gpk-dbus-task.c:1699
+#: ../src/gpk-dbus-task.c:2243 ../src/gpk-dbus-task.c:2359
+#: ../src/gpk-dbus-task.c:2684 ../src/gpk-dbus-task.c:3115
+#: ../src/gpk-dbus-task.c:3198 ../src/gpk-dbus-task.c:3258
+#: ../src/gpk-helper-deps-install.c:140 ../src/gpk-helper-deps-update.c:127
+#: ../src/gpk-update-viewer.c:1080
+msgid "Install"
+msgstr "సంస్థాపించుము"
+
+#: ../src/gpk-dbus-task.c:985
+msgid "The following packages were installed:"
+msgstr "ఈ క్రింది ప్యాకేజీలు సంస్థాపించబడినవి:"
+
+#. FIXME: shows package_id in UI
+#. TRANSLATORS: couldn't resolve name to package
+#: ../src/gpk-dbus-task.c:1042
+#, c-format
+msgid "Could not find packages"
+msgstr "ప్యాకేజీలను కనుగొనలేక పోయింది"
+
+#. TRANSLATORS: message: could not find
+#: ../src/gpk-dbus-task.c:1051
+msgid "The packages could not be found in any software source"
+msgstr "ఆ ప్యాకేజీ ఏ సాఫ్టువేరు మూలమునందు కనుగొనలేక పోయింది"
+
+#: ../src/gpk-dbus-task.c:1085
+msgid "Failed to install packages"
+msgstr "ప్యాకేజీలను సంస్థాపించుటలో విఫలమైంది"
+
+#. TRANSLATORS: message: package is already installed
+#: ../src/gpk-dbus-task.c:1087 ../src/gpk-enum.c:361
+msgid "The package is already installed"
+msgstr "ఆ ప్యాకేజీ యిప్పటికే సంస్థాపించబడివుంది"
+
+#. TRANSLATORS: the search gave us the wrong result. internal error. barf.
+#. TRANSLATORS: we failed to find the package, this shouldn't happen
+#: ../src/gpk-dbus-task.c:1103 ../src/gpk-dbus-task.c:2281
+msgid "Incorrect response from search"
+msgstr "శోధననుండి సరికాని స్పందన"
+
+#. TRANSLATORS: button: show details about the error
+#. TRANSLATORS: This is a link in a libnotify bubble that shows the detailed error
+#: ../src/gpk-dbus-task.c:1258 ../src/gpk-watch.c:633
+msgid "Show details"
+msgstr "వివరములను చూపుము"
+
+#. TRANSLATORS: title: we have to copy the private files to a public location
+#: ../src/gpk-dbus-task.c:1583
+msgid "Do you want to copy this file?"
+msgid_plural "Do you want to copy these files?"
+msgstr[0] "మీరు ఈ దస్త్రమును నకలు తీద్దామని అనుకొంటున్నారా?"
+msgstr[1] "మీరు ఈ దస్త్రమును నకలు తీద్దామని అనుకొంటున్నారా?"
+
+#. TRANSLATORS: message: explain to the user what we are doing
+#: ../src/gpk-dbus-task.c:1586
+msgid ""
+"This package file has to be copied from a private directory so it can be "
+"installed:"
+msgid_plural ""
+"Several package files have to be copied from a private directory so they can "
+"be installed:"
+msgstr[0] "ఒక ప్యాకేజీ దస్త్రము వ్యక్తిగత డైరెక్టరీనుండి నకలుతీయాలి అలా అది సంస్థాపించబడుతుంది:"
+msgstr[1] "ఒక ప్యాకేజీ దస్త్రము వ్యక్తిగత డైరెక్టరీనుండి నకలుతీయాలి అలా అది సంస్థాపించబడుతుంది:"
+
+#. TRANSLATORS: button: copy file from one directory to another
+#: ../src/gpk-dbus-task.c:1597
+msgid "Copy file"
+msgid_plural "Copy files"
+msgstr[0] "దస్త్రమును నకలుతీయి"
+msgstr[1] "దస్త్రమును నకలుతీయి"
+
+#. TRANSLATORS: title: we are about to copy files, which may take a few seconds
+#: ../src/gpk-dbus-task.c:1614
+msgid "Copying file"
+msgid_plural "Copying files"
+msgstr[0] "దస్త్రమును నకలుతీయుచున్నది"
+msgstr[1] "దస్త్రమును నకలుతీయుచున్నది"
+
+#. TRANSLATORS: title: tell the user we failed
+#: ../src/gpk-dbus-task.c:1653
+msgid "The file could not be copied"
+msgid_plural "The files could not be copied"
+msgstr[0] "ఆ దస్త్రము నకలుతీయబడలేక పోయింది"
+msgstr[1] "ఆ దస్త్రము నకలుతీయబడలేక పోయింది"
+
+#. TRANSLATORS: title: confirm the user want's to install a local file
+#: ../src/gpk-dbus-task.c:1690
+msgid "Do you want to install this file?"
+msgid_plural "Do you want to install these files?"
+msgstr[0] "మీరు ఈ దస్త్రమును సంస్థాపించవలెనని అనుకొనుచున్నారా?"
+msgstr[1] "మీరు ఈ దస్త్రమును సంస్థాపించవలెనని అనుకొనుచున్నారా?"
+
+#. TRANSLATORS: title: we couldn't find the file -- very hard to get this
+#: ../src/gpk-dbus-task.c:1747
+msgid "File was not found!"
+msgid_plural "Files were not found!"
+msgstr[0] "దస్త్రము కనుగొనబడలేదు!"
+msgstr[1] "దస్త్రము కనుగొనబడలేదు!"
+
+#. TRANSLATORS: message: explain what went wrong
+#: ../src/gpk-dbus-task.c:1751
+msgid "The following file was not found:"
+msgid_plural "The following files were not found:"
+msgstr[0] "ఈ క్రింది దస్త్రము కనబడలేదు:"
+msgstr[1] "ఈ క్రింది దస్త్రము కనబడలేదు:"
+
+#. TRANSLATORS: title: we couldn't find the file -- very hard to get this
+#: ../src/gpk-dbus-task.c:1865
+msgid "File was not recognised!"
+msgid_plural "Files were not recognised!"
+msgstr[0] "దస్త్రము గుర్తించబడలేదు!"
+msgstr[1] "దస్త్రము గుర్తించబడలేదు!"
+
+#. TRANSLATORS: message: the backend would not be able to handle the mime-type
+#: ../src/gpk-dbus-task.c:1869
+msgid "The following file is not recognised by the packaging system:"
+msgid_plural "The following files are not recognised by the packaging system:"
+msgstr[0] "ఈ క్రింది దస్త్రము ప్యాకేజింగ్ సిస్టమ్ ద్వారా గుర్తించబడలేదు:"
+msgstr[1] "ఈ క్రింది దస్త్రము ప్యాకేజింగ్ సిస్టమ్ ద్వారా గుర్తించబడలేదు:"
+
+#. TRANSLATORS: title: installing a local file
+#: ../src/gpk-dbus-task.c:2026
+msgid "Install local file"
+msgid_plural "Install local files"
+msgstr[0] "స్థానిక దస్త్రమును సంస్థాపించుము"
+msgstr[1] "స్థానిక దస్త్రమును సంస్థాపించుము"
+
+#. TRANSLATORS: a program needs a package, for instance openoffice-clipart
+#: ../src/gpk-dbus-task.c:2227
+msgid "An additional package is required:"
+msgid_plural "Additional packages are required:"
+msgstr[0] "ఒక అదనపు ప్యాకేజీ అవసరమైంది"
+msgstr[1] "ఒక అదనపు ప్యాకేజీ అవసరమైంది"
+
+#. TRANSLATORS: ask the user if it's okay to search
+#: ../src/gpk-dbus-task.c:2230
+msgid "Do you want to search for and install this package now?"
+msgid_plural "Do you want to search for and install these packages now?"
+msgstr[0] "మీరు ఈ ప్యాకేజీ కొరకు శోధించి దానిని సంస్థాపించాలని అనుకొనుచున్నారా?"
+msgstr[1] "మీరు ఈ ప్యాకేజీ కొరకు శోధించి దానిని సంస్థాపించాలని అనుకొనుచున్నారా?"
+
+#. TRANSLATORS: string is a program name, e.g. "Movie Player"
+#: ../src/gpk-dbus-task.c:2236
+#, c-format
+msgid "%s wants to install a package"
+msgid_plural "%s wants to install packages"
+msgstr[0] "%s ఒక ప్యాకేజీను సంస్థాపించవలెనని కోరుకొనుచున్నది"
+msgstr[1] "%s ఒక ప్యాకేజీను సంస్థాపించవలెనని కోరుకొనుచున్నది"
+
+#. TRANSLATORS: a random program which we can't get the name wants to do something
+#: ../src/gpk-dbus-task.c:2239
+msgid "A program wants to install a package"
+msgid_plural "A program wants to install packages"
+msgstr[0] "ప్రోగ్రామ్ ప్యాకేజీను సంస్థాపించుదామని కోరుకొనుచున్నది"
+msgstr[1] "ప్రోగ్రామ్ ప్యాకేజీను సంస్థాపించుదామని కోరుకొనుచున్నది"
+
+#. TRANSLATORS: title, searching
+#: ../src/gpk-dbus-task.c:2255
+msgid "Searching for packages"
+msgstr "ప్యాకేజీలకొరకు శోధిస్తోంది"
+
+#. TRANSLATORS: a program wants to install a file, e.g. /lib/moo.so
+#: ../src/gpk-dbus-task.c:2344
+msgid "The following file is required:"
+msgid_plural "The following files are required:"
+msgstr[0] "ఈ క్రింది దస్త్రము అవసరమైంది:"
+msgstr[1] "ఈ క్రింది దస్త్రము అవసరమైంది:"
+
+#. TRANSLATORS: confirm with the user
+#: ../src/gpk-dbus-task.c:2347
+msgid "Do you want to search for this file now?"
+msgid_plural "Do you want to search for these files now?"
+msgstr[0] "మీరు ఈ దస్త్రము కొరకు శోధించాలని అనుకొనుచున్నారా?"
+msgstr[1] "మీరు ఈ దస్త్రము కొరకు శోధించాలని అనుకొనుచున్నారా?"
+
+#. TRANSLATORS: string is a program name, e.g. "Movie Player"
+#: ../src/gpk-dbus-task.c:2352
+#, c-format
+msgid "%s wants to install a file"
+msgid_plural "%s wants to install files"
+msgstr[0] "%s ఒక దస్త్రము సంస్థాపించుదామని కోరుకొనుచున్నది"
+msgstr[1] "%s ఒక దస్త్రము సంస్థాపించుదామని కోరుకొనుచున్నది"
+
+#. TRANSLATORS: a random program which we can't get the name wants to do something
+#: ../src/gpk-dbus-task.c:2355
+msgid "A program wants to install a file"
+msgid_plural "A program wants to install files"
+msgstr[0] "ఒక ప్రోగ్రామ్ దస్త్రమును సంస్థాపించుదామని కోరుకొనుచున్నది"
+msgstr[1] "ఒక ప్రోగ్రామ్ దస్త్రమును సంస్థాపించుదామని కోరుకొనుచున్నది"
+
+#. TRANSLATORS: searching for the package that provides the file
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-dbus-task.c:2370 ../src/gpk-enum.c:1268
+msgid "Searching for file"
+msgstr "దస్త్రము కొరకు శోధిస్తున్నది"
+
+#. TRANSLATORS: we failed to find the package, this shouldn't happen
+#: ../src/gpk-dbus-task.c:2393
+msgid "Failed to search for file"
+msgstr "దస్త్రము కొరకు శోధించుట విఫలమైంది"
+
+#. TRANSLATORS: title, searching for codecs
+#: ../src/gpk-dbus-task.c:2429
+#, c-format
+msgid "Searching for plugin: %s"
+msgstr "ఈప్లగ్‌యిన్ కొరకు శోధిస్తోంది: %s"
+
+#. TRANSLATORS: we are listing the plugins in a box
+#: ../src/gpk-dbus-task.c:2502
+msgid "The following plugin is required:"
+msgid_plural "The following plugins are required:"
+msgstr[0] "ఈ క్రింది ప్లగ్‌యిన్‌లు అవసరము:"
+msgstr[1] "ఈ క్రింది ప్లగ్‌యిన్‌లు అవసరము:"
+
+#. TRANSLATORS: ask for confirmation
+#: ../src/gpk-dbus-task.c:2520
+msgid "Do you want to search for this now?"
+msgid_plural "Do you want to search for these now?"
+msgstr[0] "మీరు వీటికొరకు శోధించుదామని అనుకొంటున్నారా?"
+msgstr[1] "మీరు వీటికొరకు శోధించుదామని అనుకొంటున్నారా?"
+
+#. TRANSLATORS: a program wants to decode something (unknown) -- string is a program name, e.g. "Movie Player"
+#: ../src/gpk-dbus-task.c:2533
+#, c-format
+msgid "%s requires an additional plugin to decode this file"
+msgid_plural "%s requires additional plugins to decode this file"
+msgstr[0] "ఈ ఫైలు డీకోడు చేయుటకు %sకు అదనపు ప్లగ్‌యిన్లు అవసరము"
+msgstr[1] "ఈ ఫైలు డీకోడు చేయుటకు %sకు అదనపు ప్లగ్‌యిన్లు అవసరము"
+
+#. TRANSLATORS: a program wants to encode something (unknown) -- string is a program name, e.g. "Movie Player"
+#: ../src/gpk-dbus-task.c:2537
+#, c-format
+msgid "%s requires an additional plugin to encode this file"
+msgid_plural "%s requires additional plugins to encode this file"
+msgstr[0] "ఈ ఫైలును ఎన్కోడు చేయుటకు %sకు అదనపు ప్లగ్‌యిన్ అవసరము"
+msgstr[1] "ఈ ఫైలును ఎన్కోడు చేయుటకు %sకు అదనపు ప్లగ్‌యిన్ అవసరము"
+
+#. TRANSLATORS: a program wants to do something (unknown) -- string is a program name, e.g. "Movie Player"
+#: ../src/gpk-dbus-task.c:2541
+#, c-format
+msgid "%s requires an additional plugin for this operation"
+msgid_plural "%s requires additional plugins for this operation"
+msgstr[0] "ఈ ఆపరేషన్‌కు %sకు అదనపు ప్లగ్‌యిన్ అవసరము"
+msgstr[1] "ఈ ఆపరేషన్‌కు %sకు అదనపు ప్లగ్‌యిన్ అవసరము"
+
+#. TRANSLATORS: a random program which we can't get the name wants to decode something
+#: ../src/gpk-dbus-task.c:2547
+msgid "A program requires an additional plugin to decode this file"
+msgid_plural "A program requires additional plugins to decode this file"
+msgstr[0] "ఈ ఫైలును డీకోడ్ చేయుటకు వొక ప్రోగ్రాముకు అదనపు ప్లగ్‌యిన్ అవసరము"
+msgstr[1] "ఈ ఫైలును డీకోడ్ చేయుటకు వొక ప్రోగ్రాముకు అదనపు ప్లగ్‌యిన్ అవసరము"
+
+#. TRANSLATORS: a random program which we can't get the name wants to encode something
+#: ../src/gpk-dbus-task.c:2551
+msgid "A program requires an additional plugin to encode this file"
+msgid_plural "A program requires additional plugins to encode this file"
+msgstr[0] "ఈ ఫైలు యెన్కోడు చేయుటకు వొక ప్రోగ్రాముకు అదనపు ప్లగ్‌యిన్ అవసరము"
+msgstr[1] "ఈ ఫైలు యెన్కోడు చేయుటకు వొక ప్రోగ్రాముకు అదనపు ప్లగ్‌యిన్ అవసరము"
+
+#. TRANSLATORS: a random program which we can't get the name wants to do something (unknown)
+#: ../src/gpk-dbus-task.c:2555
+msgid "A program requires an additional plugin for this operation"
+msgid_plural "A program requires additional plugins for this operation"
+msgstr[0] "ఈ ఆపరేషన్ కొరకు వొక ప్రోగ్రాముకు అదనపు ప్లగ్‌యిన్ అవసరము"
+msgstr[1] "ఈ ఆపరేషన్ కొరకు వొక ప్రోగ్రాముకు అదనపు ప్లగ్‌యిన్ అవసరము"
+
+#. TRANSLATORS: button: confirm to search for packages
+#: ../src/gpk-dbus-task.c:2561 ../src/gpk-dbus-task.c:2769
+#: ../src/gpk-dbus-task.c:3012
+msgid "Search"
+msgstr "శోధన"
+
+#. TRANSLATORS: search for codec
+#: ../src/gpk-dbus-task.c:2619
+msgid "Searching for plugins"
+msgstr "ప్లగ్‌యిన్‌ల కొరకు శోధిస్తోంది"
+
+#. TRANSLATORS: failed to search for codec
+#: ../src/gpk-dbus-task.c:2647
+msgid "Failed to search for plugin"
+msgstr "ప్లగ్‌యిన్ కొరకు శోధించుటకు విఫలమైంది"
+
+#. TRANSLATORS: no software sources have the wanted codec
+#: ../src/gpk-dbus-task.c:2649
+msgid "Could not find plugin in any configured software source"
+msgstr "ఏ ఆకృతీకరించిన సాఫ్టువేర్ మూలమునందు ప్లగ్‌యిన్ కనుగొనలేక పోయింది"
+
+#: ../src/gpk-dbus-task.c:2675
+msgid "Install the following plugin"
+msgid_plural "Install the following plugins"
+msgstr[0] "క్రింది ప్లగ్‌యిన్‌లు సంస్థాపించుము"
+msgstr[1] "క్రింది ప్లగ్‌యిన్‌లు సంస్థాపించుము"
+
+#. TRANSLATORS: title: show a list of fonts
+#: ../src/gpk-dbus-task.c:2676 ../src/gpk-dbus-task.c:3108
+msgid "Do you want to install this package now?"
+msgid_plural "Do you want to install these packages now?"
+msgstr[0] "మీరు ఈ ప్యాకేజీలను సంస్థాపించుదామని అనుకొనుచున్నారా?"
+msgstr[1] "మీరు ఈ ప్యాకేజీలను సంస్థాపించుదామని అనుకొనుచున్నారా?"
+
+#. TRANSLATORS: message: mime type opener required
+#: ../src/gpk-dbus-task.c:2751
+msgid "An additional program is required to open this type of file:"
+msgstr "ఈ రకమైన దస్త్రమును తెరువుటకు వొక అదనపు ప్రోగ్రామ్ అవసరము:"
+
+#. TRANSLATORS: message: confirm with the user
+#: ../src/gpk-dbus-task.c:2754
+msgid "Do you want to search for a program to open this file type now?"
+msgstr "ఈ రకమైన దస్త్రము రకమును తెరువుటకు మీరు ప్రోగ్రమ్‌కొరకు శోధించుదామని అనుకొనుచున్నారా?"
+
+#. TRANSLATORS: string is a program name, e.g. "Movie Player"
+#: ../src/gpk-dbus-task.c:2762
+#, c-format
+msgid "%s requires a new mime type"
+msgid_plural "%s requires new mime types"
+msgstr[0] "%sకు కొత్త మైమ్ రకము అవసరము"
+msgstr[1] "%sకు కొత్త మైమ్ రకము అవసరము"
+
+#. TRANSLATORS: a random program which we can't get the name wants to do something
+#: ../src/gpk-dbus-task.c:2765
+msgid "A program requires a new mime type"
+msgid_plural "A program requires new mime types"
+msgstr[0] "ఒక ప్రోగ్రామ్‌కు కొత్త మైమ్ రకము అవసరము"
+msgstr[1] "ఒక ప్రోగ్రామ్‌కు కొత్త మైమ్ రకము అవసరము"
+
+#. TRANSLATORS: title: searching for mime type handlers
+#: ../src/gpk-dbus-task.c:2781
+msgid "Searching for file handlers"
+msgstr "దస్త్రము సంభాలికలకొరకు శోధిస్తోంది"
+
+#. TRANSLATORS: we failed to find the package, this shouldn't happen
+#: ../src/gpk-dbus-task.c:2810 ../src/gpk-dbus-task.c:3060
+msgid "Failed to search for provides"
+msgstr "అందిపులకొరకు శోధించుటలో వైఫల్యము"
+
+#. TRANSLATORS: we could not parse the ISO639 code from the fontconfig tag name
+#: ../src/gpk-dbus-task.c:2885
+msgid "Language tag not parsed"
+msgstr "భాషా టాగ్ పార్శ్ కాలేదు"
+
+#. TRANSLATORS: we could not find en_US string for ISO639 code
+#: ../src/gpk-dbus-task.c:2893
+msgid "Language code not matched"
+msgstr "భాషా కోడ్ సరిపోల లేదు"
+
+#. TRANSLATORS: we need to download a new font package to display a document
+#: ../src/gpk-dbus-task.c:2991
+msgid "An additional font is required to view this document correctly."
+msgid_plural "Additional fonts are required to view this document correctly."
+msgstr[0] "ఈ రకమైన పత్రమును సరిగా దర్శించుటకు వొక అదనపు ఫాంటు అవసరము"
+msgstr[1] "ఈ రకమైన పత్రమును సరిగా దర్శించుటకు వొక అదనపు ఫాంటు అవసరము"
+
+#. TRANSLATORS: we need to download a new font package to display a document
+#: ../src/gpk-dbus-task.c:2995
+msgid "Do you want to search for a suitable package now?"
+msgid_plural "Do you want to search for suitable packages now?"
+msgstr[0] "సరిపోవు ప్యాకేజీ కొరకు మీరు యిప్పుడు శోధించుదామని అనుకొంటున్నారా?"
+msgstr[1] "సరిపోవు ప్యాకేజీ కొరకు మీరు యిప్పుడు శోధించుదామని అనుకొంటున్నారా?"
+
+#. TRANSLATORS: string is a program name, e.g. "Movie Player"
+#: ../src/gpk-dbus-task.c:3005
+#, c-format
+msgid "%s wants to install a font"
+msgid_plural "%s wants to install fonts"
+msgstr[0] "%s ఫాంటును సంస్థాపించాలని కోరుకొనుచున్నది"
+msgstr[1] "%s ఫాంటును సంస్థాపించాలని కోరుకొనుచున్నది"
+
+#. TRANSLATORS: a random program which we can't get the name wants to do something
+#: ../src/gpk-dbus-task.c:3008
+msgid "A program wants to install a font"
+msgid_plural "A program wants to install fonts"
+msgstr[0] "ఒక ప్రోగ్రామ్ ఫాంటును సంస్థాపించాలని కొరుకొంటోంది"
+msgstr[1] "ఒక ప్రోగ్రామ్ ఫాంటును సంస్థాపించాలని కొరుకొంటోంది"
+
+#. TRANSLATORS: title to show when searching for font files
+#: ../src/gpk-dbus-task.c:3023
+msgid "Searching for font"
+msgid_plural "Searching for fonts"
+msgstr[0] "ఫాంటు కొరకు శోధించుచున్నది"
+msgstr[1] "ఫాంటు కొరకు శోధించుచున్నది"
+
+#. TRANSLATORS: title: cannot find in sources
+#: ../src/gpk-dbus-task.c:3078
+msgid "Failed to find font"
+msgid_plural "Failed to find fonts"
+msgstr[0] "ఫాంటు కనుగొనుటలో విఫలమైంది"
+msgstr[1] "ఫాంటు కనుగొనుటలో విఫలమైంది"
+
+#. TRANSLATORS: message: tell the user we suck
+#: ../src/gpk-dbus-task.c:3086
+msgid "No new fonts can be found for this document"
+msgstr "ఈ పత్రముకొరకు యేకొత్త ఫైంటులు కనుగొనబడలేదు"
+
+#. TRANSLATORS: finding the package names for a catalog
+#: ../src/gpk-dbus-task.c:3153
+#, c-format
+msgid "Finding package name: %s"
+msgstr "ప్యాకేజీ నామమును కనుగొనుచున్నది: %s"
+
+#. TRANSLATORS: finding a package for a file for a catalog
+#: ../src/gpk-dbus-task.c:3156
+#, c-format
+msgid "Finding file name: %s"
+msgstr "దస్త్రము నామమును కనుగొనుచున్నది: %s"
+
+#. TRANSLATORS: finding a package which can provide a virtual provide
+#: ../src/gpk-dbus-task.c:3159
+#, c-format
+msgid "Finding a package to provide: %s"
+msgstr "అందించుటకు ప్యాకేజీని కనుగొనుచున్నది: %s"
+
+#. TRANSLATORS: title to install package catalogs
+#: ../src/gpk-dbus-task.c:3189
+msgid "Do you want to install this catalog?"
+msgid_plural "Do you want to install these catalogs?"
+msgstr[0] "మీరు ఈ కాటలాగ్‌ను సంస్థాపించాలని అనుకొనుచున్నారా?"
+msgstr[1] "మీరు ఈ కాటలాగ్‌ను సంస్థాపించాలని అనుకొనుచున్నారా?"
+
+#. TRANSLATORS: title: install package catalogs, that is, instructions for installing
+#: ../src/gpk-dbus-task.c:3214
+msgid "Install catalogs"
+msgstr "కాటలాగ్స్‍‌ను సంస్థాపించుము"
+
+#: ../src/gpk-dbus-task.c:3234
+msgid "No packages need to be installed"
+msgstr "ఎటువంటి ప్యాకేజీలు సంస్థాపించవలసిన అవసరములేదు"
+
+#. TRANSLATORS: title: allow user to confirm
+#: ../src/gpk-dbus-task.c:3252
+msgid "Install packages in catalog?"
+msgstr "కాటలాగ్‌నందలి ప్యాకేజీలను సంస్థాపించాలా?"
+
+#. TRANSLATORS: display a list of packages to install
+#: ../src/gpk-dbus-task.c:3254
+msgid "The following packages are marked to be installed from the catalog:"
+msgstr "కాటలాగ్‌నుండి సంస్థాపించుటకు ఈ క్రింది ప్యాకేజీలు గుర్తుంచబడినవి:"
+
+#. TRANSLATORS: the menu item, Applications, Places, System etc
+#: ../src/gpk-desktop.c:114
+msgid "Applications"
+msgstr "అనువర్తనములు"
+
+#. TRANSLATORS: the path in the menu, e.g. Applications -> Games
+#. TRANSLATORS: The group type
+#: ../src/gpk-desktop.c:119 ../src/gpk-desktop.c:126 ../src/gpk-enum.c:1590
+msgid "System"
+msgstr "సిస్టమ్"
+
+#: ../src/gpk-desktop.c:119
+msgid "Preferences"
+msgstr "అభీష్టాలు"
+
+#: ../src/gpk-desktop.c:126
+msgid "Administration"
+msgstr "నిర్వహణ"
+
+#. TRANSLATORS: This is when we have over 5 items, and we're not interested in detail
+#: ../src/gpk-dialog.c:74
+msgid "many packages"
+msgstr "చాలా ప్యాకేజీలు"
+
+#: ../src/gpk-dialog.c:238
+msgid "No files"
+msgstr "ఎటువంటి ఫైళ్ళులేవు"
+
+#. TRANSLATORS: this is compact disk (CD) media
+#: ../src/gpk-enum.c:305
+msgid "CD"
+msgstr "CD"
+
+#. TRANSLATORS: this is digital versatile disk (DVD) media
+#: ../src/gpk-enum.c:309
+msgid "DVD"
+msgstr "DVD"
+
+#. TRANSLATORS: this is either CD or DVD media
+#: ../src/gpk-enum.c:313
+msgid "disc"
+msgstr "డిస్కు"
+
+#. TRANSLATORS: this is generic media of unknown type that we will install from
+#: ../src/gpk-enum.c:317
+msgid "media"
+msgstr "మాధ్యమం"
+
+#: ../src/gpk-enum.c:334
+msgid "No network connection available"
+msgstr "నెట్వర్కు అనుసంధానము అందుబాటులోలేదు"
+
+#: ../src/gpk-enum.c:337
+msgid "No package cache is available."
+msgstr "ఎటువంటి ప్యాకేజీ క్యాచీ అందుబాటులోలేదు."
+
+#: ../src/gpk-enum.c:340
+msgid "Out of memory"
+msgstr "మెమొరీ మించినది"
+
+#: ../src/gpk-enum.c:343
+msgid "Failed to create a thread"
+msgstr "తంతిని సృష్టించుటకు విఫలమైంది"
+
+#: ../src/gpk-enum.c:346
+msgid "Not supported by this backend"
+msgstr "ఈ బ్యాక్‌యెండ్ చేత మద్దతీయబడుటలేదు"
+
+#: ../src/gpk-enum.c:349
+msgid "An internal system error has occurred"
+msgstr "అంతర్గత సిస్టమ్ దోషము యెదురైంది"
+
+#: ../src/gpk-enum.c:352
+msgid "A security signature is not present"
+msgstr "సురక్షితా సంతకము లేదు"
+
+#: ../src/gpk-enum.c:355
+msgid "The package is not installed"
+msgstr "ప్యాకేజీ సంస్థాపించబడిలేదు"
+
+#: ../src/gpk-enum.c:358
+msgid "The package was not found"
+msgstr "ప్యాకేజీ కనబడలేదు"
+
+#: ../src/gpk-enum.c:364 ../src/gpk-enum.c:884
+msgid "The package download failed"
+msgstr "ప్యాకేజీ డౌనులోడు విఫలమైంది"
+
+#: ../src/gpk-enum.c:367
+msgid "The group was not found"
+msgstr "సమూహము కనుగొనబడలేదు"
+
+#: ../src/gpk-enum.c:370
+msgid "The group list was invalid"
+msgstr "సమూహపు జాబితా సరికానిది"
+
+#: ../src/gpk-enum.c:373
+msgid "Dependency resolution failed"
+msgstr "ఆధారాల పరిష్కారం విఫలమైంది"
+
+#: ../src/gpk-enum.c:376
+msgid "Search filter was invalid"
+msgstr "శోధన ఫిల్టర్ చెల్లనిది"
+
+#: ../src/gpk-enum.c:379
+msgid "The package identifier was not well formed"
+msgstr "ప్యాకేజీ గుర్తింపుకారి సరిగా యేర్పాటు కాలేదు"
+
+#: ../src/gpk-enum.c:382
+msgid "Transaction error"
+msgstr "వ్యవహారపు దోషము"
+
+#: ../src/gpk-enum.c:385
+msgid "Repository name was not found"
+msgstr "రిపోజిటరీ నామము కనబడలేదు"
+
+#: ../src/gpk-enum.c:388
+msgid "Could not remove a protected system package"
+msgstr "రక్షిత సిస్టమ్ ప్యాకేజీని తొలగించలేక పోయింది"
+
+#: ../src/gpk-enum.c:391
+msgid "The action was canceled"
+msgstr "చర్య రద్దుచేయబడింది"
+
+#: ../src/gpk-enum.c:394
+msgid "The action was forcibly canceled"
+msgstr "చర్య బలవంతంగా రద్దుచేయబడింది"
+
+#: ../src/gpk-enum.c:397
+msgid "Reading the configuration file failed"
+msgstr "ఆకృతీకరణ దస్త్రము చదువుట విఫలమైంది"
+
+#: ../src/gpk-enum.c:400
+msgid "The action cannot be canceled"
+msgstr "చర్య రద్దుచేయబడదు"
+
+#: ../src/gpk-enum.c:403
+msgid "Source packages cannot be installed"
+msgstr "మూలపు ప్యాకేజీలు సంస్థాపించబడలేవు"
+
+#: ../src/gpk-enum.c:406
+msgid "The license agreement failed"
+msgstr "లైసెన్సు వొప్పందము విఫలమైంది"
+
+#: ../src/gpk-enum.c:409
+msgid "Local file conflict between packages"
+msgstr "ప్యాకేజీల మద్యన స్థానిక దస్త్రము విభేదిస్తోంది"
+
+#: ../src/gpk-enum.c:412
+msgid "Packages are not compatible"
+msgstr "ప్యాకేజీలు సారూప్యమైనవి కావు"
+
+#: ../src/gpk-enum.c:415
+msgid "Problem connecting to a software source"
+msgstr "సాఫ్టువేర్ మూలముకు అనుసంధానించబడుటలో సమస్య"
+
+#: ../src/gpk-enum.c:418
+msgid "Failed to initialize"
+msgstr "సిద్ధీకరణకు విఫలమైంది"
+
+#: ../src/gpk-enum.c:421
+msgid "Failed to finalise"
+msgstr "అంతిమనిర్ణయంకు విఫలమైంది"
+
+#: ../src/gpk-enum.c:424
+msgid "Cannot get lock"
+msgstr "లాక్ చేయబడలేదు"
+
+#: ../src/gpk-enum.c:427
+msgid "No packages to update"
+msgstr "నవీకరణకు ఏ ప్యాకేజీలులేవు"
+
+#: ../src/gpk-enum.c:430
+msgid "Cannot write repository configuration"
+msgstr "రిపోజిటరీ ఆకృతీకరణను వ్రాయలేదు"
+
+#: ../src/gpk-enum.c:433
+msgid "Local install failed"
+msgstr "స్థానిక సంస్థాపన విఫలమైంది"
+
+#: ../src/gpk-enum.c:436
+msgid "Bad security signature"
+msgstr "చెడ్డ రక్షణ సంతకము"
+
+#: ../src/gpk-enum.c:439
+msgid "Missing security signature"
+msgstr "తప్పిపోయిన రక్షణ సంతకము"
+
+#: ../src/gpk-enum.c:442
+msgid "Repository configuration invalid"
+msgstr "రిపోజిటరీ ఆకృతీకరణ చెల్లనిది"
+
+#: ../src/gpk-enum.c:445
+msgid "Invalid package file"
+msgstr "చెల్లని ప్యాకేజీ దస్త్రము"
+
+#: ../src/gpk-enum.c:448
+msgid "Package install blocked"
+msgstr "ప్యాకేజీ సంస్థాపన బ్లాకైంది"
+
+#: ../src/gpk-enum.c:451
+msgid "Package is corrupt"
+msgstr "ప్యాకేజీ పాడైనది"
+
+#: ../src/gpk-enum.c:454
+msgid "All packages are already installed"
+msgstr "అన్ని ప్యాకేజీలు యిప్పటికే సంస్థాపించబడివున్నాయి"
+
+#: ../src/gpk-enum.c:457
+msgid "The specified file could not be found"
+msgstr "తెలుబడిన దస్త్రము కనుగొనబడలేక పోయింది"
+
+#: ../src/gpk-enum.c:460
+msgid "No more mirrors are available"
+msgstr "ఎటువంటి మిర్రర్‌లు అందుబాటులోలేవు"
+
+#: ../src/gpk-enum.c:463
+msgid "No distribution upgrade data is available"
+msgstr "ఎటువంటి పంపిణీ నవీకరణ ‍డాటా అందుబాటులోలేదు"
+
+#: ../src/gpk-enum.c:466
+msgid "Package is incompatible with this system"
+msgstr "ఈ సిస్టమ్‌తో ప్యాకేజీ అసారూప్యంగావుంది"
+
+#: ../src/gpk-enum.c:469
+msgid "No space is left on the disk"
+msgstr "డిస్కునందు జాగాలేదు"
+
+#. TRANSLATORS: this is the window title when a new cd or dvd is required
+#: ../src/gpk-enum.c:472 ../src/gpk-helper-media-change.c:73
+msgid "A media change is required"
+msgstr "ఒక మాధ్యమం మార్పు అవసరమైంది"
+
+#: ../src/gpk-enum.c:475
+msgid "Authorization failed"
+msgstr "ధృవీకరణము విఫలమైంది"
+
+#: ../src/gpk-enum.c:478
+msgid "Update not found"
+msgstr "నవీకరణము కనుగొనబడలేదు"
+
+#: ../src/gpk-enum.c:481
+msgid "Cannot install from untrusted source"
+msgstr "నమ్మదగని మూలమునుండి సంస్థాపించలేదు"
+
+#: ../src/gpk-enum.c:484
+msgid "Cannot update from untrusted source"
+msgstr "నమ్మదగని మూలమునుండి నవీకరించలేము"
+
+#: ../src/gpk-enum.c:487
+msgid "Cannot get the file list"
+msgstr "దస్త్రముల జాబితాను పొందలేక పోయింది"
+
+#: ../src/gpk-enum.c:490
+msgid "Cannot get package requires"
+msgstr "అవసరమైన ప్యాకేజీను పొందలేక పోయింది"
+
+#: ../src/gpk-enum.c:493
+msgid "Cannot disable source"
+msgstr "మూలమును అచేతనము చేయలేక పోయింది"
+
+#: ../src/gpk-enum.c:496
+msgid "The download failed"
+msgstr "డౌన్‌లోడు విఫలమైంది"
+
+#: ../src/gpk-enum.c:499
+msgid "Package failed to configure"
+msgstr "ఆకృతీకరించుటకు ప్యాకేజీ విఫలమైంది"
+
+#: ../src/gpk-enum.c:502
+msgid "Package failed to build"
+msgstr "నిర్మించుటకు ప్యాకేజి విఫలమైంది"
+
+#: ../src/gpk-enum.c:505
+msgid "Package failed to install"
+msgstr "సంస్థాపించుటకు ప్యాకేజి విఫలమైంది"
+
+#: ../src/gpk-enum.c:508
+msgid "Package failed to be removed"
+msgstr "తీసివేయుటకు ప్యాకేజీ విఫలమైంది"
+
+#: ../src/gpk-enum.c:525
+msgid ""
+"There is no network connection available.\n"
+"Please check your connection settings and try again."
+msgstr ""
+"అక్కడ యెటువంటి నెట్వర్కు అనుసంధానము అందుబాటులోలేదు.\n"
+"మీ అనుసంధానం అమరికలను సరిచూసుకొని మరలా ప్రయత్నించండి"
+
+#: ../src/gpk-enum.c:529
+msgid ""
+"The package list needs to be rebuilt.\n"
+"This should have been done by the backend automatically."
+msgstr ""
+"ప్యాకేజీ జాబితా పునఃనిర్మితము కావలిసివుంది.\n"
+"ఇది బ్యాకెండ్‌నందు స్వయంచాలకంగా జరుగవలెను."
+
+#: ../src/gpk-enum.c:533
+msgid ""
+"The service that is responsible for handling user requests is out of "
+"memory.\n"
+"Please restart your computer."
+msgstr ""
+"వినియోగదారి అభ్యర్దనలను సంభాలించు భాద్యతగలిగిన సేవ మెమొరీ అయిపోయింది.\n"
+"దయచేసి మీ కంప్యూటర్‌ను పునఃప్రారంభించుము."
+
+#: ../src/gpk-enum.c:537
+msgid "A thread could not be created to service the user request."
+msgstr "వినియోగదారి అభ్యర్ధనకు సేవచేయుటకు తంతి సృష్టించబడ లేకపోయింది."
+
+#: ../src/gpk-enum.c:540
+msgid ""
+"The action is not supported by this backend.\n"
+"Please report a bug in your distribution bugtracker as this should not have "
+"happened."
+msgstr ""
+"ఈ బ్యాకెండ్ ద్వారా చర్య మద్దతీయబడదు.\n"
+"మీ పంపిణీ బగ్‌ట్రాకర్ నందు దయచేసి బగ్‌ను నివేదించండి."
+
+#: ../src/gpk-enum.c:544
+msgid ""
+"A problem that we were not expecting has occurred.\n"
+"Please report this bug in your distribution bugtracker with the error "
+"description."
+msgstr ""
+"మనము అనుకోని సమస్య వచ్చింది.\n"
+"మీ పంపిణీ బగ్‌ట్రాకర్‌నందు దయచేసి ఈ బగ్‌ను దోషపు వివరణతోసహా నివేదించండి."
+
+#: ../src/gpk-enum.c:548
+msgid ""
+"A security trust relationship could not be made with software source.\n"
+"Please check your security settings."
+msgstr ""
+"సాఫ్టువేరు మూలముతో విశ్వాశమైన భద్రతా సంభందము యేర్పడలేక పోయింది.\n"
+"దయచేసి మీ భద్రతా అమరికలను పరిశీలించుము."
+
+#: ../src/gpk-enum.c:552
+msgid "The package that is trying to be removed or updated is not already installed."
+msgstr "తొలగించుటకు లేదా నవీకరించుటకు ప్రయత్నిస్తున్న ప్యాకేజీ యింకా సంస్థాపించిలేదు."
+
+#: ../src/gpk-enum.c:555
+msgid ""
+"The package that is being modified was not found on your system or in any "
+"software source."
+msgstr "సవరింపబడుతున్న ప్యాకేజీ మీసిస్టమ్‌నందుకాని లేదా యేయితర సాఫ్టువేర్ మూలమునందుకాని కనబడుటలేదు."
+
+#: ../src/gpk-enum.c:558
+msgid "The package that is trying to be installed is already installed."
+msgstr "సంస్థాపించుటకు ప్రయత్నిస్తున్న ప్యాకేజీ యిప్పటికే సంస్థాపించబడివుంది."
+
+#: ../src/gpk-enum.c:561
+msgid ""
+"The package download failed.\n"
+"Please check your network connectivity."
+msgstr ""
+"ప్యాకేజీ డౌనులోడు విఫలమైంది.\n"
+"దయచేసి మీ నెట్వర్కు అనుసంధానతను పరిశీలించుము."
+
+#: ../src/gpk-enum.c:565
+msgid ""
+"The group type was not found.\n"
+"Please check your group list and try again."
+msgstr ""
+"సమూహపు రకము కనుగొనబడలేదు.\n"
+"మీ సమూహ జాబితాను పరిశీలించుము మరియు తిరిగి ప్రయత్నించుము."
+
+#: ../src/gpk-enum.c:569
+msgid ""
+"The group list could not be loaded.\n"
+"Refreshing your cache may help, although this is normally a software source "
+"error."
+msgstr ""
+"సమూహ జాబితా లోడుకాబడలేదు.\n"
+"మీ క్యాచీని రీఫ్రెష్ చేయుట సహాయపడగలదు, అదీ యిది సాదారణంగా సాఫ్టువేర్ మూలపు దోషము."
+
+#: ../src/gpk-enum.c:574
+msgid ""
+"A package could not be found that allows the action to complete.\n"
+"More information is available in the detailed report."
+msgstr ""
+"చర్య పూర్తిచేయు ప్యాకేజీ కనుగొన లేకపోయింది.\n"
+"విశదీకృత నివేదికనందు యెక్కువ సమాచారము అందుబాటులోవుంది."
+
+#: ../src/gpk-enum.c:578
+msgid "The search filter was not correctly formed."
+msgstr "శోధన ఫిల్టర్ సరిగా యేర్పడలేదు."
+
+#: ../src/gpk-enum.c:581
+msgid ""
+"The package identifier was not well formed when sent to the server.\n"
+"This normally indicates an internal error and should be reported."
+msgstr ""
+"సేవికకు పంపుతున్నప్పుడు ప్యాకేజీ గుర్తింపుదారి సరిగా రూపీకరించబడలేదు.\n"
+"ఇది సాదారణముగా అంతర్గత దోషమును సూచిస్తుంది మరియు తప్పక నివేదించాలి."
+
+#: ../src/gpk-enum.c:585
+msgid ""
+"An unspecified transaction error has occurred.\n"
+"More information is available in the detailed report."
+msgstr ""
+"తెలుపబడని వ్యవహార దోషము యెదురైంది.\n"
+"విశదీకృత నివేదికనందు యెక్కువ సమాచారము అందుబాటలో వుంటుంది."
+
+#: ../src/gpk-enum.c:589
+msgid ""
+"The remote software source name was not found.\n"
+"You may need to enable an item in Software Sources."
+msgstr ""
+"దూూరస్థ సాఫ్టువేరు మూలపు నామము కనబడలేదు.\n"
+"సాఫ్టువేరు మూలములనందు మీరు వొక అంశమును చేతనపరచవలసి రావచ్చ.ు"
+
+#: ../src/gpk-enum.c:593
+msgid "Removing a protected system package is not allowed."
+msgstr "రక్షిత సిస్టమ్ ప్యాకేజీని తొలగించుట అనుమతించబడదు."
+
+#: ../src/gpk-enum.c:596
+msgid "The action was canceled successfully and no packages were changed."
+msgstr "ఆ చర్య విజయవంతంగా రద్దుచేయబడింది మరియు యెటువంటి ప్యాకేజీలు మార్చబడలేదు."
+
+#: ../src/gpk-enum.c:599
+msgid ""
+"The action was canceled successfully and no packages were changed.\n"
+"The backend did not exit cleanly."
+msgstr ""
+"చర్య విజయవంతంగా రద్దుచేయబడింది మరియు యెటువంటి ప్యాకేజీలు మార్చబడలేదు.\n"
+"బ్యాకెండ్ శుభ్రముగా నిష్క్రమింపబడలేదు."
+
+#: ../src/gpk-enum.c:603
+msgid ""
+"The native package configuration file could not be opened.\n"
+"Please make sure configuration is valid."
+msgstr ""
+"స్వాభావిక ప్యాకేజీ ఆకృతీకరణ దస్త్రము తెరువబడ లేకపోయింది.\n"
+"ఆకృతీకరణ చెల్లునదిగా చూసుకొనుము."
+
+#: ../src/gpk-enum.c:607
+msgid "The action cannot be canceled at this time."
+msgstr "ఈ సమయంలో చర్య రద్దుచేయ బడలేదు."
+
+#: ../src/gpk-enum.c:610
+msgid ""
+"Source packages are not normally installed this way.\n"
+"Check the extension of the file you are trying to install."
+msgstr ""
+"సాదారణముగా మూలపు ప్యాకేజీలు ఈవిధముగా సంస్థాపించబడవు.\n"
+"మీరు సంస్థాపించుదామని అనుకొనుచున్న దస్త్రముయొక్క పొడిగింపును పరిశీలించుము."
+
+#: ../src/gpk-enum.c:614
+msgid ""
+"The license agreement was not agreed to.\n"
+"To use this software you have to accept the license."
+msgstr ""
+"లెసెన్సు వొప్పందము ఆమోదించబడలేదు.\n"
+"ఈ సాఫ్టువేరును వుపయోగించుటకు మీరు లైసెన్సును ఆమోదించాలి."
+
+#: ../src/gpk-enum.c:618
+msgid ""
+"Two packages provide the same file.\n"
+"This is usually due to mixing packages from different software sources."
+msgstr ""
+"రెండు ప్యాకేజీలు వొకే దస్త్రమును అందిస్తున్నాయి.\n"
+"ఇది సాదారణముగా ప్యాకేజీలను వేర్వేరు సాఫ్టువేరు మూలాలనుండి మిళితం చేయుటవలన."
+
+#: ../src/gpk-enum.c:622
+msgid ""
+"Multiple packages exist that are not compatible with each other.\n"
+"This is usually due to mixing packages from different software sources."
+msgstr ""
+"ఒకదానితో వొకటి సారూప్యంకాని బహళ ప్యాకేజీలు వున్నాయి.\n"
+"ఇది సాదారణముగా ప్యాకేజీలను వేర్వేరు సాఫ్టువేరు మూలాలనుండి మిళితం చేయుటవలన."
+
+#: ../src/gpk-enum.c:626
+msgid ""
+"There was a (possibly temporary) problem connecting to a software source.\n"
+"Please check the detailed error for further details."
+msgstr ""
+"సాఫ్టువేరు మూలముకు అనుసంధానించబడుటలో అక్కడ వొక (బహుశా తాత్కాలికం) సమస్యవుంది\n"
+"దయచేసి యితర వివరములకొరకు విశదీకృత దోషమును పరిశీలించుము."
+
+#: ../src/gpk-enum.c:630
+msgid ""
+"Failed to initialize packaging backend.\n"
+"This may occur if other packaging tools are being used simultaneously."
+msgstr ""
+"ప్యాకేజింగ్ బ్యాకెండ్ సిద్దపరచుటలో విఫలమైంది.\n"
+"ఒకే సమయంలో యితర ప్యాకేజింగ్ సాధనములుకూడా వుపయోగిస్తుంటే యిది సంభవిస్తుంది."
+
+#: ../src/gpk-enum.c:634
+msgid ""
+"Failed to close down the backend instance.\n"
+"This error can normally be ignored."
+msgstr ""
+"బ్యాకెండ్ యిన్‌స్టాన్స్‍ మూసివేయుటలో విఫలమైంది.\n"
+"ఈ దోషమును సాదారణముగా వదిలివేయవచ్చు."
+
+#: ../src/gpk-enum.c:638
+msgid ""
+"Cannot get the exclusive lock on the packaging backend.\n"
+"Please close any other legacy packaging tools that may be open."
+msgstr ""
+"ప్యాకేజింగ్ బ్యాకెండ్‌నందు విశిష్ట లాక్‌ను పొందలేదు.\n"
+"దయచేసి యేవైనా యితర లెగసీ ప్యాకేజింగ్ సాధనములు తెరిచివుంటే మూసివేయుము."
+
+#: ../src/gpk-enum.c:642
+msgid "None of the selected packages could be updated."
+msgstr "ఎంపికచేసిన యొవొక్క ప్యాకేజీ నవీకరించబడ లేదు."
+
+#: ../src/gpk-enum.c:645
+msgid "The repository configuration could not be modified."
+msgstr "రిపోజిటరీ ఆకృతీకరణ  సవరించ లేకపోయింది."
+
+#: ../src/gpk-enum.c:648
+msgid ""
+"Installing the local file failed.\n"
+"More information is available in the detailed report."
+msgstr ""
+"స్థానిక దస్త్రము సంస్థాపించుట విఫలమైంది.\n"
+"విశదీకృత నివేదికనందు యెక్కువ సమాచారము అందుబాటులోవుంది."
+
+#: ../src/gpk-enum.c:652
+msgid "The package security signature could not be verified."
+msgstr "ప్యాకేజీ రక్షణా సంతకం నిర్ధారించ లేకపోయింది."
+
+#: ../src/gpk-enum.c:655
+msgid ""
+"The package security signature is missing and this package is untrusted.\n"
+"This package was not signed when created."
+msgstr ""
+"ప్యాకేజీ సంతకము తప్పిపోయినది మరియు ఈ ప్యాకేజీ నమ్మలేనిది.\n"
+"ప్యాకేజీ సృష్టించబడునప్పుడు సంతకము చేయబడిలేదు."
+
+#: ../src/gpk-enum.c:659
+msgid "Repository configuration was invalid and could not be read."
+msgstr "రిపోజిటరీ ఆకృతీకరణ చెల్లనిది మరియు చదువ లేకపోయింది."
+
+#: ../src/gpk-enum.c:662
+msgid ""
+"The package you are attempting to install is not valid.\n"
+"The package file could be corrupt, or not a proper package."
+msgstr ""
+"మీరు సంస్థాపించుటకు ప్రయత్నిస్తున్న ప్యాకేజీ చెల్లునదికాదు.\n"
+"ప్యాకేజీ దస్త్రము చెడిపోయివుండ వచ్చు, లేదా సరైన ప్యాకేజీ కాదు."
+
+#: ../src/gpk-enum.c:666
+msgid ""
+"Installation of this package prevented by your packaging system's "
+"configuration."
+msgstr "ఈ ప్యాకేజీయొక్క సంస్థాపన మీ ప్యాకేజింగ్ సిస్టమ్‌యొక్క ఆకృతీకరణచేత నిరోదించబడింది."
+
+#: ../src/gpk-enum.c:669
+msgid "The package that was downloaded is corrupt and needs to be downloaded again."
+msgstr "డౌనులోడు చేసిన ప్యాకేజీ చెడిపోయింది మరియు తిరిగి డౌనులోడు చేయవలసివుంది."
+
+#: ../src/gpk-enum.c:672
+msgid "All of the packages selected for install are already installed on the system."
+msgstr "సంస్థాపనకు యెంపికచేసిన అన్ని ప్యాకేజీలు సిస్టమ్‌నందు యిప్పటికే సంస్థాపించబడివున్నాయి."
+
+#: ../src/gpk-enum.c:675
+msgid ""
+"The specified file could not be found on the system.\n"
+"Check the file still exists and has not been deleted."
+msgstr ""
+"తెలుపబడిన దస్త్రము సిస్టమ్‌నందు కనుగొనబడలేదు.\n"
+"తొలగించకుండా ఫైలూ యింకా వుందా లేదా పరిశీలించుము."
+
+#: ../src/gpk-enum.c:679
+msgid ""
+"Required data could not be found on any of the configured software sources.\n"
+"There were no more download mirrors that could be tried."
+msgstr ""
+"ఆకృతీకరించిన ఏ సాఫ్టువేరు మూలాలనందు కావలిసిన డాటా కనుగొనబడలేదు.\n"
+"ప్రయత్నించదగునటువంటి మిర్రర్‌ను యింకా లేవు."
+
+#: ../src/gpk-enum.c:683
+msgid ""
+"Required upgrade data could not be found in any of the configured software "
+"sources.\n"
+"The list of distribution upgrades will be unavailable."
+msgstr ""
+"ఆకృతీకరించిన ఏ సాఫ్టువేరు మూలాలనందు కావలిసిన నవీకరణ డాటా కనుగొనబడలేదు.\n"
+"పంపిణీ నవీకరణల జాబితా అందుబాటులో వుండబోదు."
+
+#: ../src/gpk-enum.c:687
+msgid "The package that is trying to be installed is incompatible with this system."
+msgstr "సంస్థాపించుటకు ప్రయత్నిస్తున్న ప్యాకేజీ ఈ సిస్టమ్‌కు సారూప్యమైంది కాదు."
+
+#: ../src/gpk-enum.c:690
+msgid ""
+"There is insufficient space on the device.\n"
+"Free some space on the system disk to perform this operation."
+msgstr ""
+"పరికరమునందు సరిపోవు జాగా లేదు.\n"
+"ఈ కార్యక్రమము నిర్వహించుటకు సిస్టమ్ డిస్కునందలి కొంత జాగాను ఖాళీచేయుము."
+
+#: ../src/gpk-enum.c:694
+msgid "Additional media is required to complete the transaction."
+msgstr "వ్యవహారమును పూర్తిచేయుటకు అదనపు మాధ్యమం అవసరమైంది."
+
+#: ../src/gpk-enum.c:697
+msgid ""
+"You have failed to provide correct authentication.\n"
+"Please check any passwords or account settings."
+msgstr ""
+"సరైన దృవీకరణము అందించుటలో మీరు విఫలమైనారు.\n"
+"సంకేతపదములను మరియు ఖాతా అమరికలను దయచేసి సరిచూసుకోండి."
+
+#: ../src/gpk-enum.c:701
+msgid ""
+"The specified update could not be found.\n"
+"It could have already been installed or no longer available on the remote "
+"server."
+msgstr ""
+"తెలుపబడిన నవీకరణము కనుగొనబడలేక పోయింది.\n"
+"అది యిప్పటికే సంస్థాపించబడివుంటుంది లేదా దూరస్థ సేవికనందు అందుబాటులో వుండి వుండదు."
+
+#: ../src/gpk-enum.c:705
+msgid "The package could not be installed from untrusted source."
+msgstr "నమ్మదగని మూలమునుండి ప్యాకేజీను సంస్థాపించలేము."
+
+#: ../src/gpk-enum.c:708
+msgid "The package could not be updated from untrusted source."
+msgstr "నమ్మదగని మూలమునుండి ప్యాకేజీను నవీకరించలేము."
+
+#: ../src/gpk-enum.c:711
+msgid "The file list is not available for this package."
+msgstr "ఈ ప్యాకేజీ కొరకు దస్త్రము జాబీతా అందుబాటులో లేదు."
+
+#: ../src/gpk-enum.c:714
+msgid "The information about what requires this package could not be obtained."
+msgstr "ఈ ప్యాకేజీకు యేది అవసరమో అనేదానిపై సమాచారము పొందలేక పోయింది."
+
+#: ../src/gpk-enum.c:717
+msgid "The specified software source could not be disabled."
+msgstr "తెలుపబడిన సాఫ్టువేరు మూలము అచేతనము చేయబడలేక పోయింది."
+
+#: ../src/gpk-enum.c:720
+msgid ""
+"The download could not be done automatically and should be done manually.\n"
+"More information is available in the detailed report."
+msgstr ""
+"డౌనులోడు స్వయంచాలకంగా జరుగలేక పోయింది మరియు మానవీయంగా జరగాలి. \n"
+"విశదీకృత నివేదికనందు మరింత సమాచారము అందుబాటలో వుంటుంది."
+
+#: ../src/gpk-enum.c:724
+msgid ""
+"One of the selected packages failed to configure correctly.\n"
+"More information is available in the detailed report."
+msgstr ""
+"ఎంపికచేసిన ప్యాకేజీలలో వొకటి సరిగా ఆకృతీకరించుటకు విఫలమైంది.\n"
+"విశదీకృత నివేదికనందు మరింత సమాచారము అందుబాటులో వుంటుంది."
+
+#: ../src/gpk-enum.c:728
+msgid ""
+"One of the selected packages failed to build correctly.\n"
+"More information is available in the detailed report."
+msgstr ""
+"ఎంపికచేసిన ప్యాకేజీలలో వొకటి సరిగా నిర్మించుటకు విఫలమైంది.\n"
+"విశదీకృత నివేదికనందు మరింత సమాచారము అందుబాటులో వుంటుంది."
+
+#: ../src/gpk-enum.c:732
+msgid ""
+"One of the selected packages failed to install correctly.\n"
+"More information is available in the detailed report."
+msgstr ""
+"ఎంపికచేసిన ప్యాకేజీలలో వొకటి సరిగా సంస్థాపించుటకు విఫలమైంది.\n"
+"విశదీకృత నివేదికనందు మరింత సమాచారము అందుబాటులో వుంటుంది."
+
+#: ../src/gpk-enum.c:736
+msgid ""
+"One of the selected packages failed to be removed correctly.\n"
+"More information is available in the detailed report."
+msgstr ""
+"ఎంపికచేసిన ప్యాకేజీలలో వొకటి సరిగా తీసివేయుటకు విఫలమైంది.\n"
+"విశదీకృత నివేదికనందు మరింత సమాచారము అందుబాటులో వుంటుంది."
+
+#: ../src/gpk-enum.c:755
+msgid "No restart is necessary."
+msgstr "ఎటువంటి పునఃప్రారంభము అవసరములేదు."
+
+#: ../src/gpk-enum.c:758
+msgid "You will be required to restart this application."
+msgstr "ఈ అనువర్తనమును మీరు పునఃప్రారంభించవలసి వుంది."
+
+#: ../src/gpk-enum.c:761
+msgid "You will be required to log out and back in."
+msgstr "మీరు లాగవుట్ అయ్యి మరలా లాగిన్ అవ్వవలసి వుంటుంది."
+
+#: ../src/gpk-enum.c:764
+msgid "A restart will be required."
+msgstr "పునఃప్రారంభము అవసరమౌతుంది."
+
+#: ../src/gpk-enum.c:767
+msgid "You will be required to log out and back in due to a security update."
+msgstr "మీరు లాగవుట్ అయ్యి మరలా లాగిన్ అవ్వవలసి వుంటుంది."
+
+#: ../src/gpk-enum.c:770
+msgid "A restart will be required due to a security update."
+msgstr "పునఃప్రారంభము అవసరమౌతుంది."
+
+#: ../src/gpk-enum.c:787
+msgid "No restart is required."
+msgstr "పునఃప్రారంభము అవసరములేదు."
+
+#: ../src/gpk-enum.c:790
+msgid "A restart is required."
+msgstr "పునఃప్రారంభము అవసరమైంది."
+
+#: ../src/gpk-enum.c:793
+msgid "You need to log out and log back in."
+msgstr "మీరు లాగ్ అవుట్ అయ్యి లాగిన్ కావలసివుంటుంది."
+
+#: ../src/gpk-enum.c:796
+msgid "You need to restart the application."
+msgstr "మీరు అనువర్తనమును పునఃప్రారంభించవలసివుంది."
+
+#: ../src/gpk-enum.c:799
+msgid "You need to log out and log back in to remain secure."
+msgstr "సురక్షితముగా వుండుటకు మీరు లాగ్ అవుట్ అయ్యి లాగిన్ కావలసివుంటుంది."
+
+#: ../src/gpk-enum.c:802
+msgid "A restart is required to remain secure."
+msgstr "సురక్షితముగా వుండుటకు పునఃప్రారంభము అవసరమైంది."
+
+#. TRANSLATORS: A distribution stability level
+#: ../src/gpk-enum.c:820
+msgid "Stable"
+msgstr "స్థిరమైన"
+
+#. TRANSLATORS: A distribution stability level
+#: ../src/gpk-enum.c:824
+msgid "Unstable"
+msgstr "అస్థిరమైన"
+
+#. TRANSLATORS: A distribution stability level
+#: ../src/gpk-enum.c:828
+msgid "Testing"
+msgstr "పరిశీలించుచున్న"
+
+#: ../src/gpk-enum.c:845
+msgid "A mirror is possibly broken"
+msgstr "మిర్రర్ బహశా విరిగిపోయి వుండవచ్చు"
+
+#: ../src/gpk-enum.c:848
+msgid "The connection was refused"
+msgstr "అనుసంధానము తిరస్కరించబడి వుండవచ్చు"
+
+#: ../src/gpk-enum.c:851
+msgid "The parameter was invalid"
+msgstr "పారామితి చెల్లనిది"
+
+#: ../src/gpk-enum.c:854
+msgid "The priority was invalid"
+msgstr "ప్రాముఖ్యత చెల్లనిది"
+
+#: ../src/gpk-enum.c:857
+msgid "Backend warning"
+msgstr "బ్యాకెండ్ హెచ్చరిక"
+
+#: ../src/gpk-enum.c:860
+msgid "Daemon warning"
+msgstr "డెమోన్ హెచ్చరిక"
+
+#: ../src/gpk-enum.c:863
+msgid "The package list cache is being rebuilt"
+msgstr "ప్యాకేజీ జాబితా క్యాచీ పునఃనిర్మితమౌతోంది"
+
+#: ../src/gpk-enum.c:866
+msgid "An untrusted package was installed"
+msgstr "నమ్మలేని ప్యాకేజీ సంస్థాపించబడింది"
+
+#: ../src/gpk-enum.c:869
+msgid "A newer package exists"
+msgstr "కొత్త ప్యాకేజీ వుంది"
+
+#: ../src/gpk-enum.c:872
+msgid "Could not find package"
+msgstr "ప్యాకేజీ కనుగొన లేకపోయింది"
+
+#: ../src/gpk-enum.c:875
+msgid "Configuration files were changed"
+msgstr "ఆకృతీకరణ ఫైళ్ళు మార్చబడినవి"
+
+#: ../src/gpk-enum.c:878
+msgid "Package is already installed"
+msgstr "ప్యాకేజీ యిప్పటికే సంస్థాపించబడినది"
+
+#: ../src/gpk-enum.c:881
+msgid "Automatic cleanup is being ignored"
+msgstr "స్వయంచాలక క్లీనప్ వదిలివేయబడుచున్నది"
+
+#. TRANSLATORS: This is when the status is not known
+#: ../src/gpk-enum.c:904
+msgid "Unknown state"
+msgstr "తెలియని స్థితి"
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:908
+msgid "Starting"
+msgstr "ప్రారంభిస్తోంది"
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:912
+msgid "Waiting in queue"
+msgstr "క్యూనందు వేచివుంది"
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:916
+msgid "Running"
+msgstr "నడుపుతోంది"
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:920
+msgid "Querying"
+msgstr "క్వరీచేస్తోంది"
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:924
+msgid "Getting information"
+msgstr "సమాచారమును పొందుతోంది"
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:928
+msgid "Removing packages"
+msgstr "ప్యాకేజీలను తొలగిస్తోంది"
+
+#. TRANSLATORS: The transaction state
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:932 ../src/gpk-enum.c:1348
+msgid "Downloading packages"
+msgstr "ప్యాకేజీలను డౌనులోడుచేస్తోంది"
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:940
+msgid "Refreshing software list"
+msgstr "సాఫ్టువేరు జాబితాను రీఫ్రెష్‌చేస్తోంది"
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:944
+msgid "Installing updates"
+msgstr "నవీకరణలను సంస్థాపించుచున్నది"
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:948
+msgid "Cleaning up packages"
+msgstr "ప్యాకేజీలకొరకు తుడిచివేస్తోంది"
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:952
+msgid "Obsoleting packages"
+msgstr "ప్యాకేజీలను వాడుకనుండి తీసివేస్తోంది"
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:956
+msgid "Resolving dependencies"
+msgstr "ఆధారములను పరిష్కరిస్తోంది"
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:960
+msgid "Checking signatures"
+msgstr "సంతకములను పరిశీలిస్తోంది"
+
+#. TRANSLATORS: The transaction state
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:964 ../src/gpk-enum.c:1308
+msgid "Rolling back"
+msgstr "వెనుకకు తీసుకొస్తోంది"
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:968
+msgid "Testing changes"
+msgstr "మార్పులను పరిశీలిస్తోంది"
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:972
+msgid "Committing changes"
+msgstr "మార్పులను శాశ్వతపరుస్తోంది"
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:976
+msgid "Requesting data"
+msgstr "డాటాను అభ్యర్దిస్తోంది"
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:980
+msgid "Finished"
+msgstr "ముగిసినది"
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:984
+msgid "Cancelling"
+msgstr "రద్దుచేయుచున్నది"
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:988
+msgid "Downloading repository information"
+msgstr "రిపోజిటరీ సమాచారమును డౌనులోడు చేస్తోంది"
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:992
+msgid "Downloading list of packages"
+msgstr "ప్యాకేజీల జాబితాను డౌనులోడు చేస్తోంది"
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:996
+msgid "Downloading file lists"
+msgstr "దస్త్రము జాబితాలను డౌనులోడుచేస్తోంది"
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:1000
+msgid "Downloading lists of changes"
+msgstr "మార్పుల జాబితాలను డౌనులోడుచేస్తోంది"
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:1004
+msgid "Downloading groups"
+msgstr "సమూహాలను డౌనులోడుచేస్తోంది"
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:1008
+msgid "Downloading update information"
+msgstr "నవీకరణ సమాచారమును డౌనులోడుచేస్తోంది"
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:1012
+msgid "Repackaging files"
+msgstr "ఫైళ్ళను పునఃసంకలనము(రీపాకేజింగ్) చేస్తోంది"
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:1016
+msgid "Loading cache"
+msgstr "క్యాచీని లోడుచేస్తోంది"
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:1020
+msgid "Scanning installed applications"
+msgstr "సంస్థాపిత అనువర్తనములను స్కానింగ్‌చేస్తోంది"
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:1024
+msgid "Generating package lists"
+msgstr "ప్యాకేజీ జాబితాలను వుద్భవింపచేస్తోంది"
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:1028
+msgid "Waiting for package manager lock"
+msgstr "ప్యాకేజ్ నిర్వాహిక లాక్ కొరకు వేచివుంది"
+
+#. TRANSLATORS: waiting for user to type in a password
+#: ../src/gpk-enum.c:1032
+msgid "Waiting for authentication"
+msgstr "దృవీకరణము కొరకు వేచివుంది"
+
+#. TRANSLATORS: we are updating the list of processes
+#: ../src/gpk-enum.c:1036
+msgid "Updating the list of running applications"
+msgstr "నడుస్తున్న అనువర్తనములయొక్క జాబితాను నవీకరించుచున్నది"
+
+#. TRANSLATORS: we are checking executable files in use
+#: ../src/gpk-enum.c:1040
+msgid "Checking for applications currently in use"
+msgstr "అనువర్తనముల కొరకు పరిశీలన ప్రస్తుతము వుపయోగంలో వుంది"
+
+#. TRANSLATORS: we are checking for libraries in use
+#: ../src/gpk-enum.c:1044
+msgid "Checking for libraries currently in use"
+msgstr "లైబ్రరీల కొరకు పరిశీలన ప్రస్తుతము వుపయోగంలోవుంది"
+
+#. TRANSLATORS: type of update
+#: ../src/gpk-enum.c:1062
+#, c-format
+msgid "%i trivial update"
+msgid_plural "%i trivial updates"
+msgstr[0] "%i ట్రైవల్ నవీకరణలు"
+msgstr[1] "%i ట్రైవల్ నవీకరణలు"
+
+#. TRANSLATORS: type of update in the case that we don't have any data
+#: ../src/gpk-enum.c:1066
+#, c-format
+msgid "%i update"
+msgid_plural "%i updates"
+msgstr[0] "%i నవీకరణలు"
+msgstr[1] "%i నవీకరణలు"
+
+#. TRANSLATORS: type of update
+#: ../src/gpk-enum.c:1070
+#, c-format
+msgid "%i important update"
+msgid_plural "%i important updates"
+msgstr[0] "%i ముఖ్యమైన నవీకరణలు"
+msgstr[1] "%i ముఖ్యమైన నవీకరణలు"
+
+#. TRANSLATORS: type of update
+#: ../src/gpk-enum.c:1074
+#, c-format
+msgid "%i security update"
+msgid_plural "%i security updates"
+msgstr[0] "%i రక్షణ నవీకరణలు"
+msgstr[1] "%i రక్షణ నవీకరణలు"
+
+#. TRANSLATORS: type of update
+#: ../src/gpk-enum.c:1078
+#, c-format
+msgid "%i bug fix update"
+msgid_plural "%i bug fix updates"
+msgstr[0] "%i బగ్ ఫిక్స్‍ నవీకరణలు"
+msgstr[1] "%i బగ్ ఫిక్స్‍ నవీకరణలు"
+
+#. TRANSLATORS: type of update
+#: ../src/gpk-enum.c:1082
+#, c-format
+msgid "%i enhancement update"
+msgid_plural "%i enhancement updates"
+msgstr[0] "%i విస్తరింపు నవీకరణలు"
+msgstr[1] "%i విస్తరింపు నవీకరణలు"
+
+#. TRANSLATORS: number of updates that cannot be installed due to deps
+#: ../src/gpk-enum.c:1086
+#, c-format
+msgid "%i blocked update"
+msgid_plural "%i blocked updates"
+msgstr[0] "%i బ్లాక్‌డ్ నవీకరణలు"
+msgstr[1] "%i బ్లాక్‌డ్ నవీకరణలు"
+
+#. TRANSLATORS: The type of update
+#: ../src/gpk-enum.c:1104
+msgid "Trivial update"
+msgstr "ట్రైవల్ నవీకరణ"
+
+#. TRANSLATORS: The type of update
+#: ../src/gpk-enum.c:1108
+msgid "Normal update"
+msgstr "సాదారణ నవీకరణ"
+
+#. TRANSLATORS: The type of update
+#: ../src/gpk-enum.c:1112
+msgid "Important update"
+msgstr "ముఖ్యమైన నవీకరణ"
+
+#. TRANSLATORS: The type of update
+#: ../src/gpk-enum.c:1116
+msgid "Security update"
+msgstr "రక్షణ నవీకరణ"
+
+#. TRANSLATORS: The type of update
+#: ../src/gpk-enum.c:1120
+msgid "Bug fix update"
+msgstr "బగ్ ఫిక్స్‍ నవీకరణ"
+
+#. TRANSLATORS: The type of update
+#: ../src/gpk-enum.c:1124
+msgid "Enhancement update"
+msgstr "విస్తరణ నవీకరణ"
+
+#. TRANSLATORS: The type of update
+#: ../src/gpk-enum.c:1128
+msgid "Blocked update"
+msgstr "బ్లాక్‌డ్ నవీకరణ"
+
+#. TRANSLATORS: The state of a package, i.e. not installed
+#: ../src/gpk-enum.c:1138
+msgid "Available"
+msgstr "అందుబాటులోవుంది"
+
+#. TRANSLATORS: The action of the package, in present tense
+#. TRANSLATORS: This is the package name that is being downloaded
+#: ../src/gpk-enum.c:1156 ../src/gpk-service-pack.c:148
+msgid "Downloading"
+msgstr "దిగుమతి అవుతున్నది"
+
+#. TRANSLATORS: The action of the package, in present tense
+#: ../src/gpk-enum.c:1160
+msgid "Updating"
+msgstr "నవీకరిస్తోంది"
+
+#. TRANSLATORS: The action of the package, in present tense
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1164 ../src/gpk-enum.c:1284
+msgid "Installing"
+msgstr "సంస్థాపిస్తోంది"
+
+#. TRANSLATORS: The action of the package, in present tense
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1168 ../src/gpk-enum.c:1280
+msgid "Removing"
+msgstr "తొలగిస్తోంది"
+
+#. TRANSLATORS: The action of the package, in present tense
+#: ../src/gpk-enum.c:1172
+msgid "Cleaning up"
+msgstr "శుభ్రపరుస్తోంది"
+
+#. TRANSLATORS: The action of the package, in present tense
+#: ../src/gpk-enum.c:1176
+msgid "Obsoleting"
+msgstr "తొలగిస్తోంది"
+
+#. TRANSLATORS: The action of the package, in present tense
+#: ../src/gpk-enum.c:1180
+msgid "Reinstalling"
+msgstr "పునఃసంస్థాపించుచున్నది"
+
+#. TRANSLATORS: The action of the package, in past tense
+#: ../src/gpk-enum.c:1198
+msgid "Downloaded"
+msgstr "డౌనులోడైంది"
+
+#. TRANSLATORS: The action of the package, in past tense
+#: ../src/gpk-enum.c:1202
+msgid "Updated"
+msgstr "తాజాపరచబడిన"
+
+#. TRANSLATORS: The action of the package, in past tense
+#: ../src/gpk-enum.c:1210
+msgid "Removed"
+msgstr "తీసివేయబడింది"
+
+#. TRANSLATORS: The action of the package, in past tense
+#: ../src/gpk-enum.c:1214
+msgid "Cleaned up"
+msgstr "శుభ్రముచేయబడింది"
+
+#. TRANSLATORS: The action of the package, in past tense
+#: ../src/gpk-enum.c:1218
+msgid "Obsoleted"
+msgstr "తొలగించబడింది"
+
+#. TRANSLATORS: The action of the package, in past tense
+#: ../src/gpk-enum.c:1222
+msgid "Reinstalled"
+msgstr "పునఃసంస్థాపించిన"
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1240 ../src/gpk-enum.c:1396
+msgid "Unknown role type"
+msgstr "తెలియని పాత్ర రకము"
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1244
+msgid "Getting dependencies"
+msgstr "ఆధారములను పొందుతోంది"
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1248
+msgid "Getting update detail"
+msgstr "నవీకరణ వివరమును పొందుతోంది"
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1252
+msgid "Getting details"
+msgstr "వివరములను పొందుతోంది"
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1256
+msgid "Getting requires"
+msgstr "అవసరములను పొందుతోంది"
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1260
+msgid "Getting updates"
+msgstr "నవీకరణలను పొందుతోంది"
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1264
+msgid "Searching details"
+msgstr "వివరములను శోధించుచున్నది"
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1272
+msgid "Searching groups"
+msgstr "సమూహములను శోధించుచున్నది"
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1276
+msgid "Searching for package name"
+msgstr "ప్యాకేజీనామము కొరకు శోధిస్తున్నది"
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1288
+msgid "Installing file"
+msgstr "దస్త్రమును సంస్థాపిస్తున్నది"
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1292
+msgid "Refreshing package cache"
+msgstr "ప్యాకేజి క్యాచీని రీఫ్రెష్‌చేస్తోంది"
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1296
+msgid "Updating packages"
+msgstr "ప్యాకేజీలను నవీకరిస్తోంది"
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1300
+msgid "Updating system"
+msgstr "సిస్టమ్‌ను నవీకరిస్తోంది"
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1304
+msgid "Canceling"
+msgstr "రద్దుచేస్తోంది"
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1312
+msgid "Getting list of repositories"
+msgstr "రిపోజిటరీలయొక్క జాబితాను పొందుతోంది"
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1316
+msgid "Enabling repository"
+msgstr "రిపోజిటరీని చేతనపరుస్తోంది"
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1320
+msgid "Setting repository data"
+msgstr "రిపోజిటరీ డాటాను అమర్చుతోంది"
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1324
+msgid "Resolving"
+msgstr "పరిష్కరిస్తోంది"
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1328
+msgid "Getting file list"
+msgstr "పైలు జాబితాను పొందుతోంది"
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1332
+msgid "Getting what provides"
+msgstr "ఏది అందిస్తోందో పొందుతోంది"
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1336
+msgid "Installing signature"
+msgstr "సంతకమును సంస్థాపించుతున్నది"
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1340
+msgid "Getting package lists"
+msgstr "ప్యాకేజీ జాబితాలను పొందుతోంది"
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1344
+msgid "Accepting EULA"
+msgstr "EULA ఆమోదిస్తోంది"
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1352
+msgid "Getting distribution upgrade information"
+msgstr "పంపిణీ నవీకరణ సమాచారము పొందుచున్నది"
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1356
+msgid "Getting categories"
+msgstr "వర్గీకరణలను పొందుచున్నది"
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1360
+msgid "Getting old transactions"
+msgstr "పాత వ్యవహారములను పొందుచున్నది"
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1364
+msgid "Simulating the install of files"
+msgstr "ఫైళ్ళను సంస్థాపనను అభినయించుచున్నది"
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1368
+msgid "Simulating the install"
+msgstr "సంస్థాపనను అభినయించుచున్నది"
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1372
+msgid "Simulating the remove"
+msgstr "తీసివేతను అభినయించుచున్నది"
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1376
+msgid "Simulating the update"
+msgstr "నవీకరణను అభినయించుచున్నది"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1400
+msgid "Got dependencies"
+msgstr "ఆధారములను పొందుతోంది"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1404
+msgid "Got update detail"
+msgstr "నవీకరణ వివరమును పొందింది"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1408
+msgid "Got details"
+msgstr "వివరములను పొందింది"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1412
+msgid "Got requires"
+msgstr "అవసరమైనవి పొందింది"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1416
+msgid "Got updates"
+msgstr "నవీకరణలు పొందింది"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1420
+msgid "Searched for package details"
+msgstr "ప్యాకేజీ వివరముల కొరకు శోధించింది"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1424
+msgid "Searched for file"
+msgstr "దస్త్రము కొరకు శోధించింది"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1428
+msgid "Searched groups"
+msgstr "శోధించిన సమూహాలు"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1432
+msgid "Searched for package name"
+msgstr "ప్యాకేజీ నామముకొరకు శోధించింది"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1436
+msgid "Removed packages"
+msgstr "తొలగించిన ప్యాకేజీలు"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1440
+msgid "Installed packages"
+msgstr "సంస్థాపించిన ప్యాకేజీలు"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1444
+msgid "Installed local files"
+msgstr "సంస్థాపించిన స్థానిక ఫైళ్ళు"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1448
+msgid "Refreshed package cache"
+msgstr "రీఫ్రెష్ చేసిన ప్యాకేజీ క్యాచీ"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1452
+msgid "Updated packages"
+msgstr "నవీకరించిన ప్యాకేజీలు"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1456
+msgid "Updated system"
+msgstr "నవీకరించిన సిస్టమ్"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1460
+msgid "Canceled"
+msgstr "రద్దుచేయబడినది"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1464
+msgid "Rolled back"
+msgstr "వెనుకకు తెచ్చిన"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1468
+msgid "Got list of repositories"
+msgstr "రిపోజిటరీల జాబితాను పొందింది"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1472
+msgid "Enabled repository"
+msgstr "చేతనపరచబడిన రిపోజిటరీ"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1476
+msgid "Set repository data"
+msgstr "రిపోజిటరీ డాటాను అమర్చుము"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1480
+msgid "Resolved"
+msgstr "పరిష్కరించిన"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1484
+msgid "Got file list"
+msgstr "దస్త్రము జాబితాను పొందింది"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1488
+msgid "Got what provides"
+msgstr "ఏది అందిస్తోందో పొందింది"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1492
+msgid "Installed signature"
+msgstr "సంస్థాపించిన సంతకము"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1496
+msgid "Got package lists"
+msgstr "ప్యాకేజీ జాబితాలను పొందింది"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1500
+msgid "Accepted EULA"
+msgstr "ఆమోదించిన EULA"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1504
+msgid "Downloaded packages"
+msgstr "డౌనులోడుచేసిన ప్యాకేజీలు"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1508
+msgid "Got distribution upgrades"
+msgstr "పంపిణీ నవీకరణలను పొందింది"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1512
+msgid "Got categories"
+msgstr "వర్గీకరణలను పొందింది"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1516
+msgid "Got old transactions"
+msgstr "పాత వ్యవహారములను పొందినది"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1520
+msgid "Simulated the install of files"
+msgstr "ఫైళ్ళ సంస్థాపనను అభినయింపచేసెను"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1524
+msgid "Simulated the install"
+msgstr "సంస్థాపనను అభినయింపచేసెను"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1528
+msgid "Simulated the remove"
+msgstr "తీసివేతను అభినయింపచేసెను"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1532
+msgid "Simulated the update"
+msgstr "నవీకరణను అభినయింపచేసెను"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1550
+msgid "Accessibility"
+msgstr "యాక్సెస్‌బులిటి"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1554
+msgid "Accessories"
+msgstr "యాక్సెసరీస్"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1558
+msgid "Education"
+msgstr "విధ్య"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1562
+msgid "Games"
+msgstr "ఆటలు"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1566
+msgid "Graphics"
+msgstr "గ్రాఫిక్స్‍"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1570
+msgid "Internet"
+msgstr "ఇంటర్నెట్"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1574
+msgid "Office"
+msgstr "కార్యాలయము"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1578
+msgid "Other"
+msgstr "ఇతర"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1582
+msgid "Programming"
+msgstr "ప్రోగ్రామింగ్"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1586
+msgid "Multimedia"
+msgstr "బహుళమాధ్యమం"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1594
+msgid "GNOME desktop"
+msgstr "GNOME డెస్కుటాప్"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1598
+msgid "KDE desktop"
+msgstr "KDE డెస్కుటాప్"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1602
+msgid "XFCE desktop"
+msgstr "XFCE డెస్కుటాప్"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1606
+msgid "Other desktops"
+msgstr "ఇతర డెస్కుటాప్లు"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1610
+msgid "Publishing"
+msgstr "ప్రచురించుచున్న"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1614
+msgid "Servers"
+msgstr "సేవికలు"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1618
+msgid "Fonts"
+msgstr "అక్షర శైలిలు"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1622
+msgid "Admin tools"
+msgstr "నిర్వహణ సాధనములు"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1626
+msgid "Legacy"
+msgstr "లెగసీ"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1630
+msgid "Localization"
+msgstr "స్థనికీకరణ"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1634
+msgid "Virtualization"
+msgstr "వర్చ్యులైజేషన్"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1638
+msgid "Security"
+msgstr "రక్షణ"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1642
+msgid "Power management"
+msgstr "పవర్ నిర్వహణ"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1646
+msgid "Communication"
+msgstr "సంప్రదింపు"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1650
+msgid "Network"
+msgstr "నెట్ వర్క్"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1654
+msgid "Maps"
+msgstr "మాప్లు"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1658
+msgid "Software sources"
+msgstr "సాఫ్టువేర్ మూలాలు"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1662
+msgid "Science"
+msgstr "సాంకేతికత"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1666
+msgid "Documentation"
+msgstr "పత్రికీకరణము"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1670
+msgid "Electronics"
+msgstr "ఎలక్ట్రానిక్స్‍"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1674
+msgid "Package collections"
+msgstr "ప్యాకేజీ ప్రోగులు"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1678
+msgid "Vendor"
+msgstr "అమ్మకందారు"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1682
+msgid "Newest packages"
+msgstr "సరికొత్త ప్యాకేజీలు"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1686
+msgid "Unknown group"
+msgstr "తెలియని సమూహము"
+
+#. TRANSLATORS: we need another package to keep udev quiet
+#: ../src/gpk-firmware.c:439
+msgid ""
+"Additional firmware is required to make hardware in this computer function "
+"correctly."
+msgstr "ఈ కంప్యూటర్‌నందలి హార్డువేరు సరిగా పనిచేయుటకు అదనపు ఫర్మువేర్ అవసరము."
+
+#. TRANSLATORS: title of libnotify bubble
+#: ../src/gpk-firmware.c:453
+msgid "Additional firmware required"
+msgstr "అదనపు ఫర్మువేర్ అవసరమైంది"
+
+#. TRANSLATORS: button label
+#: ../src/gpk-firmware.c:458
+msgid "Install firmware"
+msgstr "ఫర్మువేర్‌ను సంస్థాపించుము"
+
+#. TRANSLATORS: we should ignore this device and not ask anymore
+#: ../src/gpk-firmware.c:461
+msgid "Ignore devices"
+msgstr "పరికరములను వదిలివేయుము"
+
+#. TRANSLATORS: we need to restart so the new hardware can re-request the firmware
+#: ../src/gpk-firmware.c:653
+msgid ""
+"You will need to restart this computer before the hardware will work "
+"correctly."
+msgstr "హార్డువేరు సరిగా పనిచేయుటకు ముందుగా మీరు మీ కంప్యూటరను పునఃప్రారంభించవలసి వుంది."
+
+#. TRANSLATORS: title of libnotify bubble
+#: ../src/gpk-firmware.c:656 ../src/gpk-firmware.c:691
+#: ../src/gpk-firmware.c:718
+msgid "Additional software was installed"
+msgstr "అదనపు సాఫ్టువేరు సంస్థాపించబడింది"
+
+#. TRANSLATORS: button label
+#: ../src/gpk-firmware.c:665
+msgid "Restart now"
+msgstr "ఇప్పుడు పునఃప్రారంభించుము"
+
+#. TRANSLATORS: we need to remove an replug so the new hardware can re-request the firmware
+#: ../src/gpk-firmware.c:688
+msgid ""
+"You will need to remove and then reinsert the hardware before it will work "
+"correctly."
+msgstr "హార్డువేరు సరిగా పనిచేయుటకు ముందుగా మీరు దానిని తీసివేసి మరలా ప్రవేశపెట్టవలసి వుంటుంది."
+
+#. TRANSLATORS: we need to remove an replug so the new hardware can re-request the firmware
+#: ../src/gpk-firmware.c:715
+msgid "Your hardware has been set up and is now ready to use."
+msgstr "మీ హార్డువేరు అమర్చబడింది మరియు వుపయోగించుటకు సిద్దముగావుంది."
+
+#. TODO: tell the user what hardware, NOT JUST A UDI
+#. TRANSLATORS: we can install an extra package so this hardware works, e.g. firmware
+#: ../src/gpk-hardware.c:164
+msgid "Additional packages can be installed to support this hardware"
+msgstr "ఈ హార్డువేరుకు మద్దతిచ్చుటకు అదనపు ప్యాకేజీలు సంస్థాపించగలము"
+
+#. TRANSLATORS: a new bit of hardware has been plugged in
+#: ../src/gpk-hardware.c:166
+msgid "New hardware attached"
+msgstr "కొత్త హార్డువేర్ అనుబందించబడింది"
+
+#. TRANSLATORS: button text, install the packages needed for the hardware to work
+#. TRANSLATORS: button tooltip
+#: ../src/gpk-hardware.c:172 ../src/gpk-helper-chooser.c:295
+msgid "Install package"
+msgstr "ప్యాకేజీ సంస్థాపించుము"
+
+#. TRANSLATORS: column for the application icon
+#: ../src/gpk-helper-chooser.c:142 ../src/gpk-helper-run.c:184
+msgid "Icon"
+msgstr "ప్రతిమ"
+
+#: ../src/gpk-helper-chooser.c:279
+msgid "Applications that can open this type of file"
+msgstr "ఈ రకమైన దస్త్రమును తెరువగల అనువర్తనము"
+
+#. TRANSLATORS: title: show the number of other packages we depend on
+#: ../src/gpk-helper-deps-remove.c:90
+#, c-format
+msgid "%i additional package also has to be removed"
+msgid_plural "%i additional packages also have to be removed"
+msgstr[0] "%i అదనపు ప్యాకేజీలనుకూడా తొలగించాలి"
+msgstr[1] "%i అదనపు ప్యాకేజీలనుకూడా తొలగించాలి"
+
+#. TRANSLATORS: message: describe in detail why it must happen
+#: ../src/gpk-helper-deps-remove.c:98
+#, c-format
+msgid "To remove %s other packages that depend on it must also be removed."
+msgid_plural "To remove %s other packages that depend on them must also be removed."
+msgstr[0] "%sను తొలగించుటకు వానిపై ఆధారపడివున్న యితర ప్యాకేజీలనుకూడా తొలగించాలి."
+msgstr[1] "%sను తొలగించుటకు వానిపై ఆధారపడివున్న యితర ప్యాకేజీలనుకూడా తొలగించాలి."
+
+#. gtk_dialog_add_button (GTK_DIALOG (dialog), "help", GTK_RESPONSE_HELP);
+#. TRANSLATORS: this is button text
+#: ../src/gpk-helper-deps-remove.c:109
+msgid "Remove"
+msgstr "తీసివేయుము"
+
+#. TRANSLATORS: title: tell the user we have to install additional updates
+#: ../src/gpk-helper-deps-update.c:112
+#, c-format
+msgid "%i additional update also has to be installed"
+msgid_plural "%i additional update also have to be installed"
+msgstr[0] "%i అదనపు నవీకరణ కూడా సంస్థాపించాలి"
+msgstr[1] "%i అదనపు నవీకరణ కూడా సంస్థాపించాలి"
+
+#. TRANSLATORS: message: describe in detail why it must happen
+#: ../src/gpk-helper-deps-update.c:117
+msgid "To perform this update, an additional package also has to be downloaded."
+msgid_plural "To perform this update, additional packages also have to be downloaded."
+msgstr[0] "ఈ నవీకరణను జరుపుటకు, ఒక అదనపు ప్యాకేజీకూడా డౌన్‌లోడు చేయవలసివుంటుంది."
+msgstr[1] "ఈ నవీకరణను జరుపుటకు, ఒక అదనపు ప్యాకేజీకూడా డౌన్‌లోడు చేయవలసివుంటుంది."
+
+#. TRANSLATORS: dialog body, explains to the user that they need to insert a disk to continue. The first replacement is DVD, CD etc
+#: ../src/gpk-helper-media-change.c:69
+#, c-format
+msgid "Additional media is required. Please insert the %s labeled '%s' to continue."
+msgstr "అదనపు మాధ్యమం అవసరము. దయచేసి కొనసాగించుటకు %s లేబుల్‌తో వున్న '%s' ప్రవేశపెట్టుము."
+
+#. TRANSLATORS: this is button text
+#: ../src/gpk-helper-media-change.c:77
+msgid "Continue"
+msgstr "కొనసాగించుము"
+
+#. TRANSLATORS: window title: do we want to execute a program we just installed?
+#: ../src/gpk-helper-run.c:481
+msgid "Run new application?"
+msgstr "కొత్త అనువర్తనమును నడుపవలెనా?"
+
+#. add run button
+#: ../src/gpk-helper-run.c:484
+msgid "_Run"
+msgstr "నడుపు (_R)"
+
+#. TRANSLATORS: is not GPG signed
+#: ../src/gpk-helper-untrusted.c:100 ../src/gpk-helper-untrusted.c:110
+msgid "The software is not signed by a trusted provider."
+msgstr "ఈ సాఫ్ట్ వేర్ నమ్మదగిన వుత్పత్తిదారిచేత సంతకం చేసిలేదు."
+
+#. TRANSLATORS: user has to trust provider -- I know, this sucks
+#: ../src/gpk-helper-untrusted.c:102
+msgid "Do not update this package unless you are sure it is safe to do so."
+msgstr "మీకు దీనిని నవీకరించుట సురక్షితమేనని ఖచ్చితముగా తెలిస్తేతప్ప ఈ ప్యాకేజీను నవీకరించవద్దు."
+
+#. TRANSLATORS: warn the user that all bets are off
+#: ../src/gpk-helper-untrusted.c:104 ../src/gpk-helper-untrusted.c:114
+msgid "Malicious software can damage your computer or cause other harm."
+msgstr "చెడ్డ సాఫ్టువేర్ మీ కంప్యూటర్‌కు హాని కలిగిస్తుంది లేదా యితర హాని చేకూరుస్తుంది."
+
+#. TRANSLATORS: ask if they are absolutely sure they want to do this
+#: ../src/gpk-helper-untrusted.c:106
+msgid "Are you <b>sure</b> you want to update this package?"
+msgstr "మీరు<b>ఖచ్చితంగా</b> ఈ ప్యాకేజీని నవీకరించుదామని అనుకొనుచున్నారా?"
+
+#. TRANSLATORS: user has to trust provider -- I know, this sucks
+#: ../src/gpk-helper-untrusted.c:112
+msgid "Do not install this package unless you are sure it is safe to do so."
+msgstr "మీకు దీనిని సంస్థాపించుట సురక్షితమేనని ఖచ్చితముగా తెలిస్తేతప్ప దీనిని సంస్థాపించవద్దు."
+
+#. TRANSLATORS: ask if they are absolutely sure they want to do this
+#: ../src/gpk-helper-untrusted.c:116
+msgid "Are you <b>sure</b> you want to install this package?"
+msgstr "మీరు<b>ఖచ్చితంగా</b> ఈ ప్యాకేజీని సంస్థాపించుదామని అనుకొనుచున్నారా?"
+
+#. TRANSLATORS: button label, force the install, even though it's untrusted
+#: ../src/gpk-helper-untrusted.c:207
+msgid "_Force install"
+msgstr "బలవంతపు సంస్థాపన (_F)"
+
+#. TRANSLATORS: button tooltip
+#: ../src/gpk-helper-untrusted.c:211
+msgid "Force installing package"
+msgstr "ప్యాకేజీ బలవంతపు సంస్థాపన"
+
+#. app-id
+#. xid
+#. TRANSLATORS: the reason why we've inhibited it
+#: ../src/gpk-inhibit.c:99
+msgid "A transaction that cannot be interrupted is running"
+msgstr "ఆటంకపరచలేని వ్యవహారము నడుచుచున్నది"
+
+#. TRANSLATORS: command line option: a list of catalogs to install
+#: ../src/gpk-install-catalog.c:56
+msgid "Catalogs files to install"
+msgstr "సంస్థాపించుటకు కాటలాగ్ దస్త్రములు"
+
+#. are we running privileged
+#: ../src/gpk-install-catalog.c:82
+msgid "Catalog installer"
+msgstr "కాటలాగ్ సంస్థాపకి"
+
+#: ../src/gpk-install-catalog.c:87
+msgid "Failed to install catalog"
+msgstr "కాటలాగ్ సంస్థాపించుటకు విఫలమైంది"
+
+#. TRANSLATORS: no filename was supplied
+#: ../src/gpk-install-catalog.c:89
+msgid "You need to specify a file name to install"
+msgstr "సంస్థాపించుటకు మీరు దస్త్రము నామమును తెలుపవలసివుంది"
+
+#. TRANSLATORS: This is when the specified DBus method did not execute successfully
+#: ../src/gpk-install-catalog.c:122 ../src/gpk-install-local-file.c:122
+#: ../src/gpk-install-mime-type.c:122 ../src/gpk-install-package-name.c:121
+#: ../src/gpk-install-provide-file.c:122
+msgid "The action could not be completed"
+msgstr "చర్య పూర్తి కాలేకపోయింది"
+
+#. TRANSLATORS: we don't have anything more useful to translate. sorry.
+#: ../src/gpk-install-catalog.c:124 ../src/gpk-install-local-file.c:124
+#: ../src/gpk-install-mime-type.c:124 ../src/gpk-install-package-name.c:123
+#: ../src/gpk-install-provide-file.c:124
+msgid "The request failed. More details are available in the detailed report."
+msgstr "అభ్యర్ధన విఫలమైంది. మరిన్ని వివరములు విశదీకృత నివేదికనందు అందుబాటులో వున్నాయి."
+
+#. TRANSLATORS: command line option: a list of files to install
+#: ../src/gpk-install-local-file.c:55
+msgid "Files to install"
+msgstr "సంస్థాపించుటకు దస్త్రములు"
+
+#. TRANSLATORS: program name: application to install a package to provide a file
+#: ../src/gpk-install-local-file.c:70 ../src/gpk-install-local-file.c:72
+msgid "PackageKit File Installer"
+msgstr "ప్యాకేజీకిట్ దస్త్రము సంస్థాపకి"
+
+#. TRANSLATORS: title to pass to to the user if there are not enough privs
+#: ../src/gpk-install-local-file.c:81
+msgid "Local file installer"
+msgstr "స్థానిక దస్త్రము సంస్థాపకి"
+
+#. TRANSLATORS: could not install a package that contained the file we wanted
+#. TRANSLATORS: nothing done
+#: ../src/gpk-install-local-file.c:87 ../src/gpk-install-provide-file.c:87
+msgid "Failed to install a package to provide a file"
+msgstr "దస్త్రమును అందివ్వుటకు ప్యాకేజీని సంస్థాపించుటకు విఫలమైంది"
+
+#. TRANSLATORS: nothing selected
+#: ../src/gpk-install-local-file.c:89
+msgid "You need to specify a file to install"
+msgstr "సంస్థాపించుటకు మీరు దస్త్రమును తెలుపవలసివుంది"
+
+#. TRANSLATORS: command line option: a list of catalogs to install
+#: ../src/gpk-install-mime-type.c:55
+msgid "Mime types to install"
+msgstr "సంస్థాపించుటకు Mime రకములు"
+
+#. TRANSLATORS: program name: application to install a package to provide a mime type
+#: ../src/gpk-install-mime-type.c:70 ../src/gpk-install-mime-type.c:72
+msgid "Mime Type Installer"
+msgstr "మైమ్ రకము సంస్థాపకి"
+
+#. TRANSLATORS: title to pass to to the user if there are not enough privs
+#: ../src/gpk-install-mime-type.c:81
+msgid "Mime type installer"
+msgstr "మైమ్ రకము సంస్థాపకి"
+
+#. TRANSLATORS: could not install program supporting this type
+#: ../src/gpk-install-mime-type.c:87
+msgid "Failed to install a program to handle this file type"
+msgstr "ఈ దస్త్రపు రకమును సంభాలించుటకు ప్రోగ్రామ్‌ను సంస్థాపించుటలో విఫలమైంది"
+
+#. TRANSLATORS: no type given
+#: ../src/gpk-install-mime-type.c:89
+msgid "You need to specify a mime-type to install"
+msgstr "సంస్థాపించుటకు మీరు మైమ్-రకమును తెలుపవలసివుంది"
+
+#: ../src/gpk-install-package-name.c:54
+msgid "Packages to install"
+msgstr "సంస్థాపించుటకు ప్యాకేజీలు"
+
+#. TRANSLATORS: program name: installs a package (or packages) by name
+#. TRANSLATORS: application name to pass to to the user if there are not enough privs
+#: ../src/gpk-install-package-name.c:69 ../src/gpk-install-package-name.c:71
+#: ../src/gpk-install-package-name.c:80
+msgid "Package Name Installer"
+msgstr "ప్యాకేజీ నామపు సంస్థాపకి"
+
+#. TRANSLATORS: failed
+#: ../src/gpk-install-package-name.c:86
+msgid "Failed to install package from name"
+msgstr "ప్యాకేజీని నామమునుండి సంస్థాపించుటకు విఫలమైంది"
+
+#. TRANSLATORS: nothing was specified
+#: ../src/gpk-install-package-name.c:88
+msgid "You need to specify a package to install"
+msgstr "సంస్థాపించుటకు మీరు ప్యాకేజీని తెలుపవలిసిన అవసరమువుంది"
+
+#. TRANSLATORS: command line option: a list of files to install
+#: ../src/gpk-install-provide-file.c:55
+msgid "Local files to install"
+msgstr "సంస్థాపించుటకు స్థానిక దస్త్రములు"
+
+#. TRANSLATORS: program name, an application to install a file that is needed by an application and is provided by packages
+#. TRANSLATORS: application name to pass to to the user if there are not enough privs
+#: ../src/gpk-install-provide-file.c:70 ../src/gpk-install-provide-file.c:72
+#: ../src/gpk-install-provide-file.c:81
+msgid "Single File Installer"
+msgstr "ఒంటరి దస్త్రపు సంస్థాపకి"
+
+#. TRANSLATORS: nothig was specified
+#: ../src/gpk-install-provide-file.c:89
+msgid "You need to specify a filename to install"
+msgstr "సంస్థాపించుటకు మీరు దస్త్రము నామమును తెలుపవలసివుంది"
+
+#. TRANSLATORS: strftime formatted please
+#: ../src/gpk-log.c:177
+msgid "%A, %d %B %Y"
+msgstr "%A, %d %B %Y"
+
+#. TRANSLATORS: column for the date
+#: ../src/gpk-log.c:294
+msgid "Date"
+msgstr "తేది"
+
+#. TRANSLATORS: column for the username, e.g. Richard Hughes
+#: ../src/gpk-log.c:336
+msgid "Username"
+msgstr "వినియోగదారినామము"
+
+#. TRANSLATORS: column for the application used for the install, e.g. Add/Remove Programs
+#: ../src/gpk-log.c:343
+msgid "Application"
+msgstr "అనువర్తనము"
+
+#. TRANSLATORS: short name for pkcon
+#: ../src/gpk-log.c:483
+msgid "Command line client"
+msgstr "ఆదేశ వరుస కక్షిదారి"
+
+#. TRANSLATORS: short name for gpk-update-viewer
+#: ../src/gpk-log.c:489
+msgid "Update System"
+msgstr "సిస్టమ్ నవీకరించుము"
+
+#. TRANSLATORS: short name for gpk-update-icon
+#: ../src/gpk-log.c:492
+msgid "Update Icon"
+msgstr "నవీకరణ ప్రతిమ"
+
+#. TRANSLATORS: preset the GtktextBox with this filter text
+#: ../src/gpk-log.c:647
+msgid "Set the filter to this value"
+msgstr "ఈ విలువకు వడపోతను అమర్చుము"
+
+#. TRANSLATORS: we can make this modal (stay on top of) another window
+#: ../src/gpk-log.c:650 ../src/gpk-prefs.c:405 ../src/gpk-repo.c:523
+msgid "Set the parent window to make this modal"
+msgstr "పేరెంట్ విండోను ఈ రీతిని తయారుచేయుటకు అమర్చుము"
+
+#. are we running privileged
+#: ../src/gpk-log.c:675
+msgid "Log viewer"
+msgstr "లాగ్ వీక్షణి"
+
+#: ../src/gpk-modal-dialog.c:438
+#, c-format
+msgid "Remaining time : %s"
+msgstr "మిగిలివున్న సమయం: %s"
+
+#. TRANSLATORS: check once an hour
+#: ../src/gpk-prefs.c:44
+msgid "Hourly"
+msgstr "గంటలుగా"
+
+#. TRANSLATORS: check once a day
+#: ../src/gpk-prefs.c:46
+msgid "Daily"
+msgstr "రోజుగా"
+
+#. TRANSLATORS: check once a week
+#: ../src/gpk-prefs.c:48
+msgid "Weekly"
+msgstr "వారముగా"
+
+#. TRANSLATORS: never check for updates/upgrades
+#: ../src/gpk-prefs.c:50
+msgid "Never"
+msgstr "ఎప్పటికివద్దు"
+
+#. TRANSLATORS: update everything
+#: ../src/gpk-prefs.c:53
+msgid "All updates"
+msgstr "అన్ని నవీకరణలు"
+
+#. TRANSLATORS: update just security updates
+#: ../src/gpk-prefs.c:55
+msgid "Only security updates"
+msgstr "రక్షణ నవీకరణములు మాత్రమే"
+
+#. TRANSLATORS: don't update anything
+#: ../src/gpk-prefs.c:57
+msgid "Nothing"
+msgstr "ఏదీకాదు"
+
+#. TRANSLATORS: column if the source is enabled
+#: ../src/gpk-repo.c:261
+msgid "Enabled"
+msgstr "క్రియాశీలీకరించిన"
+
+#. TRANSLATORS: column for the source description
+#: ../src/gpk-repo.c:270
+msgid "Software Source"
+msgstr "సాఫ్టువేరు మూలము"
+
+#. TRANSLATORS: for one reason or another, we could not enable or disable a software source
+#: ../src/gpk-repo.c:388
+msgid "Failed to change status"
+msgstr "స్థితి మార్చుటకు విఫలమైంది"
+
+#: ../src/gpk-repo.c:539
+msgid "Software Source Viewer"
+msgstr "సాఫ్టువేరు మూలపు వీక్షణి"
+
+#. TRANSLATORS: title to pass to to the user if there are not enough privs
+#: ../src/gpk-repo.c:548
+msgid "Software source viewer"
+msgstr "సాఫ్టువేరు మూలపు వీక్షణి"
+
+#: ../src/gpk-repo.c:665
+msgid "Getting software source list not supported by backend"
+msgstr "సాఫ్టువేరు మూలపు జాబితాను పొందుట బ్యాకెండ్‌చేత మద్దతీయదు"
+
+#. TRANSLATORS: cannot resolve name to package name
+#: ../src/gpk-service-pack.c:290
+#, c-format
+msgid "Could not find any packages named '%s'"
+msgstr "'%s' నామముతో వున్న ఏ ప్యాకేజీలను కనుగొనలేక పోయింది"
+
+#. TRANSLATORS: cannot find any valid package names
+#: ../src/gpk-service-pack.c:302
+#, c-format
+msgid "Could not find any valid package names"
+msgstr "చెల్లునటువంటి ప్యాకేజీ నామములను కనుగొన లేకపోయింది"
+
+#. TRANSLATORS: internal error
+#: ../src/gpk-service-pack.c:331
+#, c-format
+msgid "Could not reset client: %s"
+msgstr "కక్షిదారిని తిరిగివుంచలేక పోయింది: %s"
+
+#. TRANSLATORS: cannot get package list
+#: ../src/gpk-service-pack.c:340
+#, c-format
+msgid "Could not get list of installed packages: %s"
+msgstr "సంస్థాపించిన ప్యాకేజీల జాబితా పొందలేక పోయింది: %s"
+
+#. TRANSLATORS: we could not write to the destination directory for some reason
+#: ../src/gpk-service-pack.c:352
+#, c-format
+msgid "Could not write package list"
+msgstr "ప్యాకేజీ జాబితాను వ్రాయలేకపోయింది"
+
+#. TRANSLATORS: Could not create package list
+#. TRANSLATORS: we could not read the file list for the destination computer
+#. TRANSLATORS: we could not create the pack file, generic error
+#: ../src/gpk-service-pack.c:398 ../src/gpk-service-pack.c:419
+#: ../src/gpk-service-pack.c:428 ../src/gpk-service-pack.c:468
+#: ../src/gpk-service-pack.c:487
+msgid "Create error"
+msgstr "సృష్టీకరణ దోషము"
+
+#: ../src/gpk-service-pack.c:398
+msgid "Cannot copy system package list"
+msgstr "సిస్టమ్ ప్యాకేజీ జాబితాను నకలు తీయలేకపోయింది"
+
+#: ../src/gpk-service-pack.c:419
+msgid "No package name selected"
+msgstr "యెటువంటి ప్యాకేజీ నామము యెంపికకాలేదు"
+
+#. TRANSLATORS: we could not reset internal state
+#: ../src/gpk-service-pack.c:441 ../src/gpk-service-pack.c:456
+msgid "Refresh error"
+msgstr "రీఫ్రెష్ దోషము"
+
+#: ../src/gpk-service-pack.c:441
+msgid "Could not reset client"
+msgstr "కక్షిదారిని తిరిగివుంచలేక పోయింది"
+
+#. TRANSLATORS: progressbar text
+#: ../src/gpk-service-pack.c:449
+msgid "Refreshing system package list"
+msgstr "సిస్టమ్ ప్యాకేజీ జాబితాను రీఫ్రెష్ చేస్తున్నది"
+
+#: ../src/gpk-service-pack.c:456
+msgid "Could not refresh package list"
+msgstr "ప్యాకేజీ జాబితాను రీఫ్రెష్ చేయలేక పోయింది"
+
+#: ../src/gpk-service-pack.c:468
+msgid "Cannot read destination package list"
+msgstr "గమ్యపు ప్యాకేజీ జాబితాను చదువలేదు"
+
+#: ../src/gpk-service-pack.c:487
+msgid "Cannot create service pack"
+msgstr "సేవా ప్యాక్‌ను సృష్టించలేదు"
+
+#. TRANSLATORS: the constants should not be translated
+#: ../src/gpk-service-pack.c:598
+msgid "Set the option, allowable values are 'list', 'updates' and 'package'"
+msgstr "ఐచ్చికాన్ని అమర్చుము, 'జాబితా', 'నవీకరణలు' మరియు 'ప్యాకేజీ' యివి అనుమతించబడతాయి"
+
+#. TRANSLATORS: this refers to the GtkTextEntry in gpk-service-pack
+#: ../src/gpk-service-pack.c:601
+msgid "Add the package name to the text entry box"
+msgstr "టెక్స్టు ప్రవేశపు పెట్టెకు ప్యాకేజీ నామమును జతచేయుము"
+
+#. TRANSLATORS: this is the destination computer package list
+#: ../src/gpk-service-pack.c:604
+msgid "Set the remote package list filename"
+msgstr "దూరస్థ ప్యాకేజీ జాబితా దస్త్రమునామమును అమర్చుము"
+
+#. TRANSLATORS: this is the file output directory
+#: ../src/gpk-service-pack.c:607
+msgid "Set the default output directory"
+msgstr "అప్రమేయ అవుట్‌పుట్ డైరెక్టరీని అమర్చుము"
+
+#. TRANSLATORS: file search type, lists of packages
+#: ../src/gpk-service-pack.c:672
+msgid "Package list files"
+msgstr "ప్యాకేజీ జాబితా ఫైళ్ళు"
+
+#. TRANSLATORS: file search type, service pack destination file type
+#: ../src/gpk-service-pack.c:679
+msgid "Service pack files"
+msgstr "సేవా పాక్ ఫైళ్ళు"
+
+#: ../src/gpk-update-icon.c:130
+msgid "Exit after a small delay"
+msgstr "చిన్న నిడివి తర్వాత నిష్క్రమించుము"
+
+#. TRANSLATORS: program name, a session wide daemon to watch for updates and changing system state
+#: ../src/gpk-update-icon.c:149 ../src/gpk-update-icon.c:151
+msgid "Update Applet"
+msgstr "ఆప్లెట్‌ను నవీకరించుము"
+
+#. TRANSLATORS: title to pass to to the user if there are not enough privs
+#: ../src/gpk-update-icon.c:165
+msgid "Update applet"
+msgstr "ఆప్లెట్‌ను నవీకరించుము"
+
+#: ../src/gpk-update-viewer.c:222
+msgid "Cannot cancel running task"
+msgstr "నడుస్తున్న కర్తవ్యాన్ని రద్దుచేయలేదు"
+
+#: ../src/gpk-update-viewer.c:229
+msgid "There are tasks that cannot be cancelled."
+msgstr "రద్దుచేయలేని కర్తవ్యాలు అక్కడ వున్నాయి."
+
+#: ../src/gpk-update-viewer.c:316
+msgid "Detected wireless broadband connection"
+msgstr "వైర్‌లెస్ బ్రాడ్‌బ్యాండ్ అనుసంధానమును గుర్తించినది."
+
+#. TRANSLATORS: this is the button text when we check if it's okay to download
+#: ../src/gpk-update-viewer.c:319
+msgid "Update anyway"
+msgstr "ఏమైనాసరే నవీకరించుము"
+
+#. TRANSLATORS, the %s is a size, e.g. 13.3Mb
+#: ../src/gpk-update-viewer.c:323
+#, c-format
+msgid ""
+"Connectivity is being provided by wireless broadband, and it may be "
+"expensive to download %s."
+msgstr "అనుసంధానము వైర్‌లెస్ బ్రాడ్‌బ్యాండ్ ద్వారా అందించబడుతోంది, %sను డౌనులోడు చేయుటకు ఖర్చుకావచ్చు."
+
+#. TRANSLATORS: we clicked apply, but had no packages selected
+#: ../src/gpk-update-viewer.c:408
+msgid "No updates selected"
+msgstr "ఎటువంచి నవీకరణలు యెంపికకాలేదు"
+
+#: ../src/gpk-update-viewer.c:409
+msgid "No updates are selected"
+msgstr "ఎటువంటి నవీకరణలు యెంపికకాలేదు"
+
+#. TRANSLATORS: this is the button text when we have updates
+#: ../src/gpk-update-viewer.c:773
+msgid "_Install Update"
+msgid_plural "_Install Updates"
+msgstr[0] "నవీకరణనను సంస్థాపించుము (_I)"
+msgstr[1] "నవీకరణనను సంస్థాపించుము (_I)"
+
+#. TRANSLATORS: there are no updates
+#: ../src/gpk-update-viewer.c:786
+msgid "There are no updates available"
+msgstr "అక్కడ యెటువంటి నవీకరణలు అందుబాటులోలేవు"
+
+#. TRANSLATORS: title: warn the user they are quitting with unapplied changes
+#: ../src/gpk-update-viewer.c:795
+msgid "All software is up to date"
+msgstr "సాఫ్ట్ వేర్ అంతా నవీనంగావుంది"
+
+#. TRANSLATORS: tell the user the problem
+#: ../src/gpk-update-viewer.c:799
+msgid "There are no software updates available for your computer at this time."
+msgstr "మీ కంప్యూటర్ కొరకు ఈ సమయంలో యెటువంటి నవీకరణలు అందుబాటులో లేవు"
+
+#: ../src/gpk-update-viewer.c:835
+#, c-format
+msgid "There is %i update available"
+msgid_plural "There are %i updates available"
+msgstr[0] "అక్కడ %i నవీకరణ అందుబాటులోవుంది"
+msgstr[1] "అక్కడ %i నవీకరణ అందుబాటులోవుంది"
+
+#. TRANSLATORS: how many updates are selected in the UI
+#: ../src/gpk-update-viewer.c:851
+#, c-format
+msgid "%i update selected"
+msgid_plural "%i updates selected"
+msgstr[0] "%i నవీకరణ యెంపికకాబడింది"
+msgstr[1] "%i నవీకరణ యెంపికకాబడింది"
+
+#. TRANSLATORS: how many updates are selected in the UI, and the size of packages to download
+#: ../src/gpk-update-viewer.c:859
+#, c-format
+msgid "%i update selected (%s)"
+msgid_plural "%i updates selected (%s)"
+msgstr[0] "%i నవీకరణ యెంపికకాబడింది (%s)"
+msgstr[1] "%i నవీకరణ యెంపికకాబడింది (%s)"
+
+#. TRANSLATORS: querying update list
+#: ../src/gpk-update-viewer.c:921
+msgid "Getting the list of updates"
+msgstr "నవీకరణల జాబితాను పొందుచున్నది"
+
+#. TRANSLATORS: a column that has name of the package that will be updated
+#: ../src/gpk-update-viewer.c:1111
+msgid "Software"
+msgstr "సాఫ్టువేరు"
+
+#. TRANSLATORS: a column that has state of each package
+#: ../src/gpk-update-viewer.c:1121
+msgid "Status"
+msgstr "స్థితి"
+
+#. TRANSLATORS: this is the update type, e.g. security
+#: ../src/gpk-update-viewer.c:1265
+msgid "This update will fix bugs and other non-critical problems."
+msgstr "ఈ నవీకరణ బగ్‌లను మరియు యితర సంక్లష్టం-కాని సమస్యలను పరిష్కరిస్తుంది."
+
+#. TRANSLATORS: this is the update type, e.g. security
+#: ../src/gpk-update-viewer.c:1269
+msgid "This update is important as it may solve critical problems."
+msgstr "ఈ నవీకరణ ముఖ్యమైంది యిది సంక్లిష్ట సమస్యలను పరిష్కరించవచ్చును."
+
+#. TRANSLATORS: this is the update type, e.g. security
+#: ../src/gpk-update-viewer.c:1273
+msgid "This update is needed to fix a security vulnerability with this package."
+msgstr "ఈ ప్యాకేజీతో వున్న రక్షణ రాహిత్యతను పరిష్కరించుటకు ఈ నవీకరణ అవసరమైంది."
+
+#. TRANSLATORS: this is the update type, e.g. security
+#: ../src/gpk-update-viewer.c:1277
+msgid "This update is blocked."
+msgstr "ఈ నవీకరణ ఆపివేయబడింది."
+
+#. TRANSLATORS: this is when the notification was issued and then updated
+#: ../src/gpk-update-viewer.c:1286
+#, c-format
+msgid "This notification was issued on %s and last updated on %s."
+msgstr "ఈ నోటీసు %sన యివ్వబడింది మరియు ఆఖరి నవీకరణ %sనందు."
+
+#. TRANSLATORS: this is when the update was issued
+#: ../src/gpk-update-viewer.c:1295
+#, c-format
+msgid "This notification was issued on %s."
+msgstr "ఈ నోటీసు %sన యివ్వబడింది."
+
+#. TRANSLATORS: this is a list of vendor URLs
+#: ../src/gpk-update-viewer.c:1318
+msgid "For more information about this update please visit this website:"
+msgid_plural "For more information about this update please visit these websites:"
+msgstr[0] "ఈ నవీకరణ గురించి అధిక సమాచారము కొరకు దయచేసి ఈ వెబ్‌సైటును దర్శించండి:"
+msgstr[1] "ఈ నవీకరణ గురించి అధిక సమాచారము కొరకు దయచేసి ఈ వెబ్‌సైటును దర్శించండి:"
+
+#. TRANSLATORS: this is a list of bugzilla URLs
+#: ../src/gpk-update-viewer.c:1327
+msgid ""
+"For more information about bugs fixed by this update please visit this "
+"website:"
+msgid_plural ""
+"For more information about bugs fixed by this update please visit these "
+"websites:"
+msgstr[0] "ఈ నవీకరణ చేత పరిష్కరించబడు బగ్‌ల అదిక సమాచారము కొరకు ఈ వెబ్‌సైటు దర్శించండి:"
+msgstr[1] "ఈ నవీకరణ చేత పరిష్కరించబడు బగ్‌ల అదిక సమాచారము కొరకు ఈ వెబ్‌సైటు దర్శించండి:"
+
+#. TRANSLATORS: this is a list of CVE (security) URLs
+#: ../src/gpk-update-viewer.c:1336
+msgid "For more information about this security update please visit this website:"
+msgid_plural "For more information about this security update please visit these websites:"
+msgstr[0] "ఈ రక్షణ నవీకరణ విడుదల గురించి అదిక సమాచారము కొరకు ఈ వెబ్‌సైటును దర్శించండి:"
+msgstr[1] "ఈ రక్షణ నవీకరణ విడుదల గురించి అదిక సమాచారము కొరకు ఈ వెబ్‌సైటును దర్శించండి:"
+
+#. TRANSLATORS: reboot required
+#: ../src/gpk-update-viewer.c:1346
+msgid ""
+"The computer will have to be restarted after the update for the changes to "
+"take effect."
+msgstr "నవీకరణ తర్వాత మార్పులు ప్రభావితం కావుటకు కంప్యూటర్ పునఃప్రారంభించవలసి వుటుంది."
+
+#. TRANSLATORS: log out required
+#: ../src/gpk-update-viewer.c:1350
+msgid ""
+"You will need to log out and back in after the update for the changes to "
+"take effect."
+msgstr "ఈ నవీకరణ తర్వాత మార్పులు ప్రభావితం కావుటకు మీరు లాగ్ అవుట్ అయ్యి లాగిన్ అవ్వవలసి వుటుంది."
+
+#. TRANSLATORS: this is the stability status of the update
+#: ../src/gpk-update-viewer.c:1357
+msgid ""
+"The classifaction of this update is unstable which means it is not designed "
+"for production use."
+msgstr "ఈ నవీకరణయొక్క వర్గీకరణ స్థిరముగా లేదు అంటే ఇది వుత్పాదన అవసరము కొరకు రూపొందించలేదు."
+
+#. TRANSLATORS: this is the stability status of the update
+#: ../src/gpk-update-viewer.c:1361
+msgid ""
+"This is a test update, and is not designed for normal use. Please report any "
+"problems or regressions you encounter."
+msgstr ""
+"ఇది పరిశీలనా నవీకరణ, మరియు సాదారణ వినియోగం కొరకు రూపొందించలేదు. దయచేసి మీరు యెదుర్కొనిన సమస్యలను "
+"నివేదించండి."
+
+#. TRANSLATORS: this is a ChangeLog
+#: ../src/gpk-update-viewer.c:1370
+msgid ""
+"The developer logs will be shown as no description is available for this "
+"update:"
+msgstr "ఈ నవీకరణకొరకు యెటువంటి విశదీకరణ అందుబాటులోలేదు అని అభివృద్దికారి లాగ్స్ చూయించబడతాయి:"
+
+#. set loading text
+#: ../src/gpk-update-viewer.c:1393
+msgid "Loading..."
+msgstr "లోడుచేస్తోంది..."
+
+#. TRANSLATORS: we failed to install all the updates we requested
+#: ../src/gpk-update-viewer.c:1449
+msgid "Some updates were not installed"
+msgstr "కొన్ని నవీకరణలు సంస్థాపించబడిలేవు"
+
+#. TRANSLATORS: the message text for the restart
+#: ../src/gpk-update-viewer.c:1577
+msgid ""
+"Some of the updates that were installed require the computer to be restarted "
+"before the changes will be applied."
+msgstr "సంస్థాపించబడిన వాటిలో కొన్ని నవీకరణలు ఆపాదించుట కొరకు మీ కంప్యూటర్ పునఃప్రారంభించవలసి వుంటుంది."
+
+#. TRANSLATORS: the button text for the restart
+#: ../src/gpk-update-viewer.c:1579 ../src/gpk-update-viewer.c:1585
+msgid "Restart Computer"
+msgstr "కంప్యూటర్‌ను పునఃప్రారంభించుము"
+
+#. TRANSLATORS: the message text for the restart
+#: ../src/gpk-update-viewer.c:1583
+msgid ""
+"Some of the updates that were installed require the computer to be restarted "
+"to remain secure."
+msgstr ""
+"సురక్షితముగా వుండుట కొరకు సంస్థాపించబడిన వాటిలో కొన్ని నవీకరణలకు మీ కంప్యూటర్ పునఃప్రారంభించవలసి "
+"వుంటుంది."
+
+#. TRANSLATORS: the message text for the logout
+#: ../src/gpk-update-viewer.c:1589
+msgid ""
+"Some of the updates that were installed require you to log out and back in "
+"before the changes will be applied."
+msgstr "సంస్థాపించిన నవీకరణలలో కొన్ని ఆపాదించబడుటకు మీరు లాగ్ అవుట్ అయ్యి తిరిగి లాగిన్ అవ్వవలసి వుంటుంది"
+
+#. TRANSLATORS: the button text for the logout
+#: ../src/gpk-update-viewer.c:1591 ../src/gpk-update-viewer.c:1597
+msgid "Log Out"
+msgstr "లాగ్ అవుట్"
+
+#. TRANSLATORS: the message text for the logout
+#: ../src/gpk-update-viewer.c:1595
+msgid ""
+"Some of the updates that were installed require you to log out and back in "
+"to remain secure."
+msgstr ""
+"సురక్షితముగా వుండట కొరకు సంస్థాపించిన నవీకరణలలో కొన్నిటికి కొరకు మీరు లాగ్ అవుట్ అయ్యి తిరిగి లాగిన్ "
+"అవ్వవలసి వుంటుంది."
+
+#. TRANSLATORS: this is the application name for libcanberra
+#: ../src/gpk-update-viewer.c:1923 ../src/gpk-update-viewer.c:1989
+msgid "GNOME PackageKit Update Viewer"
+msgstr "GNOME PackageKit నవీకరణము దర్శని"
+
+#. TRANSLATORS: completed all updates
+#: ../src/gpk-update-viewer.c:1954
+msgid "All selected updates installed..."
+msgstr "ఎంపికకాబడిన అన్ని నవీకరణలు సంస్థాపించబడినవి..."
+
+#. TRANSLATORS: title: all updates installed okay
+#: ../src/gpk-update-viewer.c:1963
+msgid "All selected updates installed"
+msgstr "ఎంపికకాబడిన అన్ని నవీకరణలు సంస్థాపించబడినవి"
+
+#. TRANSLATORS: software updates installed okay
+#: ../src/gpk-update-viewer.c:1967
+msgid "All selected updates were successfully installed."
+msgstr "ఎంపికకాబడిన అన్ని నవీకరణలు విజయవంతంగా సంస్థాపించబడినవి"
+
+#. TRANSLATORS: this is the sound description
+#: ../src/gpk-update-viewer.c:1991
+msgid "Failed to update"
+msgstr "నవీకరణకు విఫలమైంది"
+
+#. TRANSLATORS: right click menu, select all the updates
+#: ../src/gpk-update-viewer.c:2339
+msgid "Select all"
+msgstr "అన్నిటిని యెంపికచేయుము"
+
+#. TRANSLATORS: right click menu, unselect all the updates
+#: ../src/gpk-update-viewer.c:2347
+msgid "Unselect all"
+msgstr "అన్నిటి యెంపికనుతీయుము"
+
+#. TRANSLATORS: right click menu, select only security updates
+#: ../src/gpk-update-viewer.c:2354
+msgid "Select security updates"
+msgstr "రక్షణ నవీకరణములను యెంపికచేయుము"
+
+#. TRANSLATORS: right click option, ignore this update name, not currently used
+#: ../src/gpk-update-viewer.c:2360
+msgid "Ignore this update"
+msgstr "ఈ నవీకరణను వదిలివేయుము"
+
+#. TRANSLATORS: this is the header
+#: ../src/gpk-update-viewer.c:2448
+msgid "Checking for updates..."
+msgstr "నవీకరణల కొరకు పరిశీలించుచున్నది..."
+
+#. TRANSLATORS: new distro available, e.g. F9 to F10
+#: ../src/gpk-update-viewer.c:2611
+#, c-format
+msgid "New distribution upgrade release '%s' is available"
+msgstr "కొత్త పంపిణీ నవీకరణ విడుదల '%s' అందుబాటులోవుంది"
+
+#. TRANSLATORS: a list of packages is shown that need to restarted
+#: ../src/gpk-watch.c:156
+#, c-format
+msgid "This is due to the %s package being updated."
+msgid_plural "This is due to the following packages being updated: %s."
+msgstr[0] "ఇది %s ప్యాకేజీ నవీకరించబడుట వలన."
+msgstr[1] "ఇది %s ప్యాకేజీ నవీకరించబడుట వలన."
+
+#. TRANSLATORS: over 5 packages require the system to be restarted, don't list them all here
+#: ../src/gpk-watch.c:160
+#, c-format
+msgid "This is because %i package has been updated."
+msgid_plural "This is because %i packages have been updated."
+msgstr[0] "ఇది %i ప్యాకేజీ నవీకరించబడుట వలన."
+msgstr[1] "ఇది %i ప్యాకేజీ నవీకరించబడుట వలన."
+
+#: ../src/gpk-watch.c:212
+#, c-format
+msgid "%i message from the package manager"
+msgid_plural "%i messages from the package manager"
+msgstr[0] "ప్యాకేజీ నిర్వాహిక నుండి %i సందేశము"
+msgstr[1] "ప్యాకేజీ నిర్వాహిక నుండి %i సందేశము"
+
+#. TRANSLATORS: if the menu won't fit, inform the user there are a few more things waiting
+#: ../src/gpk-watch.c:239
+#, c-format
+msgid "(%i more task)"
+msgid_plural "(%i more tasks)"
+msgstr[0] "(%i ఎక్కువ కర్తవ్యం)"
+msgstr[1] "(%i ఎక్కువ కర్తవ్యం)"
+
+#: ../src/gpk-watch.c:418
+msgid "Package manager error details"
+msgstr "ప్యాకేజీ నిర్వాహకి దోష వివరములు"
+
+#. TRANSLATORS: This is the message in the libnotify body
+#: ../src/gpk-watch.c:544
+#, c-format
+msgid "Package '%s' has been removed"
+msgstr "ప్యాకేజీ '%s' తొలగించబడింది"
+
+#. TRANSLATORS: This is the message in the libnotify body
+#: ../src/gpk-watch.c:547
+#, c-format
+msgid "Package '%s' has been installed"
+msgstr "ప్యాకేజీ '%s' సంస్థాపించబడింది"
+
+#. TRANSLATORS: This is the message in the libnotify body
+#: ../src/gpk-watch.c:550
+msgid "System has been updated"
+msgstr "సిస్టమ్ నవీకరించబడింది"
+
+#. TRANSLATORS: title: an action has finished, and we are showing the libnotify bubble
+#: ../src/gpk-watch.c:557
+msgid "Task completed"
+msgstr "కర్తవ్యము పూర్తైనది"
+
+#. TRANSLATORS: Prefix to the title shown in the libnotify popup
+#: ../src/gpk-watch.c:625
+msgid "Package Manager"
+msgstr "ప్యాకేజీ నిర్వాహిక"
+
+#. do the bubble
+#: ../src/gpk-watch.c:732
+msgid "New package manager message"
+msgstr "కొత్త ప్యాకేజీ నిర్వాహిక సందేశము"
+
+#. TRANSLATORS: We couldn't launch the tool, normally a packaging problem
+#: ../src/gpk-watch.c:766
+msgid "Internal error"
+msgstr "అంతర్గత దోషము"
+
+#: ../src/gpk-watch.c:893
+msgid "Package Manager Messages"
+msgstr "ప్యాకేజీ నిర్వాహిక సందేశములు"
+
+#. TRANSLATORS: column for the message type
+#: ../src/gpk-watch.c:923
+msgid "Message"
+msgstr "సందేశము"
+
+#. TRANSLATORS: messages from the transaction
+#: ../src/gpk-watch.c:1330
+msgid "_Show messages"
+msgstr "సందేశములను చూపుము (_S)"
+
+#. TRANSLATORS: log out of the session
+#: ../src/gpk-watch.c:1343
+msgid "_Log out"
+msgstr "లాగవుట్ (_L)"
+
+#. TRANSLATORS: this menu item restarts the computer after an update
+#: ../src/gpk-watch.c:1358
+msgid "_Restart computer"
+msgstr "కంప్యూటర్‌ను పునఃప్రారంభించుము (_R)"
+
+#. TRANSLATORS: This hides the 'restart required' icon
+#: ../src/gpk-watch.c:1370
+msgid "_Hide this icon"
+msgstr "ఈ ప్రతిమను మరుగునపెట్టుము (_H)"
+

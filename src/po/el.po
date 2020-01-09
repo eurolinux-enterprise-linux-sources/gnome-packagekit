@@ -1,0 +1,4709 @@
+# translation of gnome-packagekit.master.po to Greek
+# translation of gnome-packagekit.HEAD.po to
+# Translation of gnome-packagekit.el.po to Greek
+# Copyright (C) 2008 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Giannis Katsampirhs <giannis1)86@hotmail.com>, 2008.
+# Jennie Petoumenou <epetoumenou@gmail.com>, 2008, 2009.
+# Simos Xenitellis <simos@gnome.org>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-packagekit.master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-packagekit&component=general\n"
+"POT-Creation-Date: 2009-09-04 14:24+0000\n"
+"PO-Revision-Date: 2009-09-06 00:42+0200\n"
+"Last-Translator: nikosCharonitakis <nikosx@gmail.com>\n"
+"Language-Team: Greek <team@gnome.gr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: ../data/gnome-packagekit.schemas.in.h:1
+msgid "Allow applications to invoke the codec installer"
+msgstr "Να επιτρέπεται στις εφαρμογές να εκκινούν το εργαλείο εγκατάστασης αποκωδικοποιητών"
+
+#: ../data/gnome-packagekit.schemas.in.h:2
+msgid "Allow applications to invoke the font installer"
+msgstr "Να επιτρέπεται στις εφαρμογές να εκκινούν το εργαλείο εγκατάστασης γραμματοσειρών"
+
+#: ../data/gnome-packagekit.schemas.in.h:3
+msgid "Allow applications to invoke the mime type installer"
+msgstr "Να επιτρέπεται στις εφαρμογές να εκκινούν το εργαλείο εγκατάστασης τύπων mime"
+
+#: ../data/gnome-packagekit.schemas.in.h:4
+msgid "Ask the user if additional firmware should be installed"
+msgstr "Να ερωτάται ο χρήστης αν απαιτείται εγκατάσταση επιπλέον υλικολογισμικού"
+
+#: ../data/gnome-packagekit.schemas.in.h:5
+msgid "Ask the user if additional hardware drivers should be installed"
+msgstr "Να ερωτάται ο χρήστης αν απαιτείται εγκατάσταση επιπλέον οδηγών υλικού"
+
+#: ../data/gnome-packagekit.schemas.in.h:6
+msgid "Ask the user if additional packages should be installed"
+msgstr "Να ερωτάται ο χρήστης αν απαιτείται εγκατάσταση επιπλέον πακέτων"
+
+#: ../data/gnome-packagekit.schemas.in.h:7
+msgid "Ask the user if files should be copied to a non-private directory"
+msgstr "Να ερωτάται ο χρήστης αν απαιτείται αντιγραφή αρχείων σε μη ιδιωτικό κατάλογο"
+
+#: ../data/gnome-packagekit.schemas.in.h:8
+msgid "Ask the user if files should be copied to a non-private directory when installing from a FUSE mount"
+msgstr "Να ερωτάται ο χρήστης αν απαιτείται αντιγραφή αρχείων σε μη ιδιωτικό κατάλογο κατά την εγκατάσταση από κατάτμηση FUSE"
+
+#: ../data/gnome-packagekit.schemas.in.h:9
+msgid "Automatically update these types of updates"
+msgstr "Αυτόματη ενημέρωση για τους παρακάτω τύπους ενημερώσεων"
+
+#: ../data/gnome-packagekit.schemas.in.h:10
+msgid "Automatically update these types of updates. Options are \"all\", \"security\", or \"none\""
+msgstr "Αυτόματη ενημέρωση για τους παρακάτω τύπους ενημερώσεων. Οι επιλογές είναι \"όλες\", \"ασφαλείας\" και \"ποτέ\""
+
+#: ../data/gnome-packagekit.schemas.in.h:11
+#, fuzzy
+#| msgid "Messages that should be ignored"
+msgid "Devices that should be ignored"
+msgstr "Μηνύματα που θα πρέπει να αγνοούνται"
+
+#: ../data/gnome-packagekit.schemas.in.h:12
+#, fuzzy
+#| msgid ""
+#| "Messages that should be ignored, separated by commas. These can include "
+#| "'*' and '?' characters"
+msgid "Devices that should be ignored, separated by commas. These can include '*' and '?' characters"
+msgstr "Μηνύματα που θα πρέπει να αγνοούνται, χωρισμένα με κόμμα. Επιτρέπονται οι χαρακτήρες '*' και '?'"
+
+#: ../data/gnome-packagekit.schemas.in.h:13
+msgid "Filter package lists using basename in gpk-application"
+msgstr "Να φιλτράρονται οι λίστες πακέτων με βάση το βασικό όνομα στο gpk-application"
+
+#: ../data/gnome-packagekit.schemas.in.h:14
+msgid "Filter using basename in gpk-application"
+msgstr "Να φιλτράρονται με βάση το βασικό όνομα στο gpk-application"
+
+#: ../data/gnome-packagekit.schemas.in.h:15
+msgid "Firmware files that should not be searched for"
+msgstr "Αρχεία υλικολογισμικού που δεν πρέπει να αναζητούνται"
+
+#: ../data/gnome-packagekit.schemas.in.h:16
+msgid "Firmware files that should not be searched for, separated by commas. These can include '*' and '?' characters"
+msgstr "Αρχεία υλικολογισμικού που δεν πρέπει να αναζητούνται, χωρισμένα με κόμμα. Επιτρέπονται οι χαρακτήρες '*' και '?'"
+
+#: ../data/gnome-packagekit.schemas.in.h:17
+msgid "GTK+ module for font installation"
+msgstr "Άρθρωμα GTK+ για την εγκατάσταση γραμματοσειρών"
+
+#: ../data/gnome-packagekit.schemas.in.h:18
+msgid "Get the update list when the session starts"
+msgstr "Λήψη της λίστας ενημερώσεων κατά την έναρξη της συνεδρίας"
+
+#: ../data/gnome-packagekit.schemas.in.h:19
+msgid "Get the update list when the session starts, even if not scheduled to. This ensures the user has up to date and valid data in the tray at startup."
+msgstr "Λήψη της λίστας ενημερώσεων κατά την έναρξη της συνεδρίας, ακόμη και αν δεν είναι προγραμματισμένο. Έτσι, διασφαλίζουμε ότι ο χρήστης θα βλέπει επικαιροποιημένα και έγκυρα δεδομένα στην περιοχή ειδοποιήσεων κατά την εκκίνηση του συστήματος."
+
+#: ../data/gnome-packagekit.schemas.in.h:20
+msgid "How often to check for distribution upgrades"
+msgstr "Κάθε πότε θα γίνεται έλεγχος για αναβαθμίσεις της διανομής."
+
+#: ../data/gnome-packagekit.schemas.in.h:21
+msgid "How often to check for distribution upgrades. Value is in seconds."
+msgstr "Κάθε πότε θα γίνεται έλεγχος για αναβαθμίσεις της διανομής. Τιμή σε δευτερόλεπτα."
+
+#: ../data/gnome-packagekit.schemas.in.h:22
+msgid "How often to check for updates"
+msgstr "Κάθε πότε θα γίνεται έλεγχος για ενημερώσεις"
+
+#: ../data/gnome-packagekit.schemas.in.h:23
+msgid "How often to check for updates. Value is in seconds."
+msgstr "Κάθε πότε θα γίνεται έλεγχος για ενημερώσεις. Τιμή σε δευτερόλεπτα."
+
+#: ../data/gnome-packagekit.schemas.in.h:24
+msgid "How often to refresh the package cache"
+msgstr "Κάθε πότε θα ανανεώνεται η μνήμη πακέτων"
+
+#: ../data/gnome-packagekit.schemas.in.h:25
+msgid "How often to refresh the package cache. Value is in seconds."
+msgstr "Κάθε πότε θα ανανεώνεται η μνήμη πακέτων. Τιμή σε δευτερόλεπτα."
+
+#: ../data/gnome-packagekit.schemas.in.h:26
+msgid "If search terms should be completed automatically"
+msgstr "Αυτόματη συμπλήρωση όρων στο πεδίο αναζήτησης"
+
+#: ../data/gnome-packagekit.schemas.in.h:27
+msgid "Install updates automatically when running on battery power"
+msgstr "Αυτόματη εγκατάσταση ενημερώσεων, όταν το σύστημα τροφοδοτείται από μπαταρία"
+
+#. TRANSLATORS: An interaction mode is the level of user interaction
+#. that is allowed. See ./docs/DBusInterface.txt for more information
+#: ../data/gnome-packagekit.schemas.in.h:30
+msgid "Interaction modes that must be used, overriding requests from client"
+msgstr "Υποχρεωτικοί τρόποι διάδρασης· υπερισχύουν των αιτημάτων του πελάτη"
+
+#. TRANSLATORS: An interaction mode is the level of user interaction
+#. that is allowed. See ./docs/DBusInterface.txt for more information
+#: ../data/gnome-packagekit.schemas.in.h:33
+msgid "Interaction modes to use by default"
+msgstr "Προεπιλεγμένοι τρόποι διάδρασης"
+
+#: ../data/gnome-packagekit.schemas.in.h:34
+msgid "Messages that should be ignored"
+msgstr "Μηνύματα που θα πρέπει να αγνοούνται"
+
+#: ../data/gnome-packagekit.schemas.in.h:35
+msgid "Messages that should be ignored, separated by commas. These can include '*' and '?' characters"
+msgstr "Μηνύματα που θα πρέπει να αγνοούνται, χωρισμένα με κόμμα. Επιτρέπονται οι χαρακτήρες '*' και '?'"
+
+#: ../data/gnome-packagekit.schemas.in.h:36
+msgid "Notify the user before a large update is done on a mobile broadband connection"
+msgstr "Ειδοποίηση του χρήστη πριν τη λήψη μεγάλων ενημερώσεων μέσω κινητής ευρυζωνικής σύνδεσης"
+
+#: ../data/gnome-packagekit.schemas.in.h:37
+msgid "Notify the user for completed updates"
+msgstr "Ειδοποίηση του χρήστη μετά την ολοκλήρωση των ενημερώσεων"
+
+#: ../data/gnome-packagekit.schemas.in.h:38
+msgid "Notify the user for completed updates where the user needs to restart"
+msgstr "Ειδοποίηση του χρήστη μετά την ολοκλήρωση των ενημερώσεων, αν απαιτείται επανεκκίνηση του συστήματος"
+
+#: ../data/gnome-packagekit.schemas.in.h:39
+msgid "Notify the user when a task is complete"
+msgstr "Ειδοποίηση του χρήστη μετά την ολοκλήρωση της εργασίας"
+
+#: ../data/gnome-packagekit.schemas.in.h:40
+msgid "Notify the user when an update has failed"
+msgstr "Ειδοποίηση του χρήστη σε περίπτωση αποτυχίας μιας ενημέρωσης"
+
+#: ../data/gnome-packagekit.schemas.in.h:41
+msgid "Notify the user when distribution upgrades are available"
+msgstr "Ειδοποίηση του χρήστη για την ύπαρξη διαθέσιμων αναβαθμίσεων της διανομής"
+
+#: ../data/gnome-packagekit.schemas.in.h:42
+msgid "Notify the user when security updates are available"
+msgstr "Ειδοποίηση του χρήστη για την ύπαρξη διαθέσιμων ενημερώσεων ασφαλείας"
+
+#: ../data/gnome-packagekit.schemas.in.h:43
+msgid "Notify the user when the automatic update was not started on battery power"
+msgstr "Ειδοποίηση του χρήστη αν δεν ξεκινήσει η αυτόματη ενημέρωση, όταν το σύστημα τροφοδοτείται από μπαταρία"
+
+#: ../data/gnome-packagekit.schemas.in.h:44
+msgid "Notify the user when the update was not automatically started while running on battery power"
+msgstr "Ειδοποίηση του χρήστη αν δεν ξεκινήσει η αυτόματη ενημέρωση, όταν το σύστημα τροφοδοτείται από μπαταρία"
+
+#: ../data/gnome-packagekit.schemas.in.h:45
+msgid "Notify the user when the update was started"
+msgstr "Ειδοποίηση του χρήστη όταν ξεκινήσει η ενημέρωση"
+
+#: ../data/gnome-packagekit.schemas.in.h:46
+msgid "Notify the user when there are errors"
+msgstr "Ειδοποίηση του χρήστη για την ύπαρξη σφαλμάτων"
+
+#: ../data/gnome-packagekit.schemas.in.h:47
+msgid "Notify the user when there are messages"
+msgstr "Ειδοποίηση του χρήστη για την ύπαρξη μηνυμάτων"
+
+#: ../data/gnome-packagekit.schemas.in.h:48
+msgid "Notify the user when there are messages from the package manager"
+msgstr "Ειδοποίηση του χρήστη για την ύπαρξη μηνυμάτων της εφαρμογής διαχείρισης πακέτων"
+
+#: ../data/gnome-packagekit.schemas.in.h:49
+msgid "Notify the user when updates are available"
+msgstr "Ειδοποίηση του χρήστη για την ύπαρξη διαθέσιμων ενημερώσεων"
+
+#: ../data/gnome-packagekit.schemas.in.h:50
+msgid "Only show native packages in the file lists"
+msgstr "Να εμφανίζονται μόνο τα εγγενή πακέτα στις λίστες αρχείων"
+
+#: ../data/gnome-packagekit.schemas.in.h:51
+msgid "Only show native packages maching the machine architecture in the file lists"
+msgstr "Να εμφανίζονται στις λίστες αρχείων μόνο τα κατάλληλα εγγενή πακέτα για την αρχιτεκτονική του συστήματος"
+
+#: ../data/gnome-packagekit.schemas.in.h:52
+msgid "Only show the newest packages in the file lists"
+msgstr "Να εμφανίζονται μόνο τα νεότερα πακέτα στις λίστες αρχείων"
+
+#: ../data/gnome-packagekit.schemas.in.h:53
+msgid "Only show the newest packages in the update list, and filter out older updates that are still available."
+msgstr "Να εμφανίζονται μόνο τα νεότερα πακέτα στη λίστα ενημερώσεων και να αποκρύπτονται οι παλαιότερες ενημερώσεις που παραμένουν διαθέσιμες."
+
+#: ../data/gnome-packagekit.schemas.in.h:54
+msgid "Only show the newest updates in the list"
+msgstr "Να εμφανίζονται μόνο τα νεότερα πακέτα στη λίστα"
+
+#: ../data/gnome-packagekit.schemas.in.h:55
+msgid "Scroll to packages as they are downloaded"
+msgstr "Να προβάλλονται τα πακέτα που λαμβάνονται τη συγκεκριμένη στιγμή"
+
+#: ../data/gnome-packagekit.schemas.in.h:56
+msgid "Scroll to packages in the update list as they are downloaded or installed."
+msgstr "Στη λίστα ενημερώσεων, να προβάλλονται τα πακέτα που λαμβάνονται ή εγκαθίστανται τη συγκεκριμένη στιγμή."
+
+#: ../data/gnome-packagekit.schemas.in.h:57
+msgid "Show all repositories in the software source viewer"
+msgstr "Να εμφανίζονται όλα τα αποθετήρια στο εργαλείο προβολής πηγών λογισμικού"
+
+#: ../data/gnome-packagekit.schemas.in.h:58
+msgid "Show the category group menu"
+msgstr "Να εμφανίζεται το ομαδικό μενού της κατηγορίας"
+
+#: ../data/gnome-packagekit.schemas.in.h:59
+msgid "Show the category group menu. This is more complete and custom to the distribution, but takes longer to populate"
+msgstr "Να εμφανίζεται το ομαδικό μενού της κατηγορίας. Αυτό το μενού είναι πιο ολοκληρωμένο και προσαρμοσμένο στην εκάστοτε διανομή. Χρειάζεται, ωστόσο, περισσότερο χρόνο για να εμφανιστεί"
+
+#. TRANSLATORS:
+#. The original application is the program that was opened by the user,
+#. and that requested the PackageKit action.
+#. If the user then closes the application, but the task is still running
+#. (for instance, updating the system) then the original application is
+#. marked as not running.
+#. This is the only time we should show the progress icon in the tray,
+#. as the user would have no other way to interact with, or cancel the task.
+#.
+#. Some people like being able to interact with the task for debugging
+#. or just because they want to know what is happening in other user sessions.
+#. Those sort of people (not typical users) should enable this option.
+#.
+#: ../data/gnome-packagekit.schemas.in.h:73
+msgid "Show the transaction progress icon in the tray when the original application is still running."
+msgstr "Εμφάνιση εικονιδίου προόδου στην περιοχή ειδοποιήσεων, αν εξακολουθεί να εκτελείται η αρχική εφαρμογή."
+
+#: ../data/gnome-packagekit.schemas.in.h:74
+msgid "Show transactions that have the original application running"
+msgstr "Εμφάνιση εργασιών που απαιτούν τη συνέχιση της εκτέλεσης της αρχικής εφαρμογής"
+
+#: ../data/gnome-packagekit.schemas.in.h:75
+msgid "The number of seconds at session startup to wait before checking for updates"
+msgstr "Αριθμός δευτερολέπτων που μεσολαβούν από την εκκίνηση της συνεδρίας μέχρι τον έλεγχο για ενημερώσεις"
+
+#: ../data/gnome-packagekit.schemas.in.h:76
+msgid "The search mode used by default"
+msgstr "Προεπιλεγμένη λειτουργία αναζήτησης"
+
+#: ../data/gnome-packagekit.schemas.in.h:77
+msgid "The search mode used by default. Options are \"name\", \"details\", or \"file\""
+msgstr "Η προεπιλεγμένη λειτουργία αναζήτησης. Οι επιλογές είναι \"όνομα\", \"λεπτομέρειες\" ή \"αρχείο\""
+
+#: ../data/gnome-packagekit.schemas.in.h:78
+msgid "This key determines if applications should be able to prompt for fonts"
+msgstr "Αυτό το κλειδί καθορίζει αν οι εφαρμογές θα μπορούν να ζητούν την εγκατάσταση γραμματοσειρών"
+
+#: ../data/gnome-packagekit.schemas.in.h:79
+msgid "Use WiFi (wireless LAN) connections to check for updates"
+msgstr "Χρήση συνδέσεων WiFi (ασύρματα δίκτυα) για τον έλεγχο για ενημερώσεις"
+
+#: ../data/gnome-packagekit.schemas.in.h:80
+msgid "Use WiFi connections"
+msgstr "Χρήση συνδέσεων Wifi"
+
+#: ../data/gnome-packagekit.schemas.in.h:81
+msgid "Use mobile broadband connections"
+msgstr "Χρήση κινητών ευρυζωνικών συνδέσεων"
+
+#: ../data/gnome-packagekit.schemas.in.h:82
+msgid "Use mobile broadband connections such as GSM and CDMA to check for updates"
+msgstr "Χρήση κινητών ευρυζωνικών συνδέσεων (π.χ., GSM, CDMA) για τον έλεγχο για ενημερώσεις"
+
+#: ../data/gnome-packagekit.schemas.in.h:83
+msgid "When displaying UI from a session DBus request, automatically use these options by default"
+msgstr "Αυτόματη χρήση αυτών των επιλογών, όποτε εμφανίζονται διεπαφές χρήστη εξαιτίας αιτημάτων DBus της συνεδρίας"
+
+#: ../data/gnome-packagekit.schemas.in.h:84
+msgid "When displaying UI from a session DBus request, force these options to be turned on"
+msgstr "Υποχρεωτική ενεργοποίηση αυτών των επιλογών, όποτε εμφανίζονται διεπαφές χρήστη εξαιτίας αιτημάτων DBus της συνεδρίας"
+
+#: ../data/gpk-application.desktop.in.h:1
+msgid "Add or remove software installed on the system"
+msgstr "Προσθαφαίρεση λογισμικού στο σύστημα"
+
+#. TRANSLATORS: short name for gpk-update-viewer
+#: ../data/gpk-application.desktop.in.h:2
+#: ../data/gpk-application.ui.h:2
+#: ../src/gpk-application-main.c:97
+#: ../src/gpk-log.c:486
+msgid "Add/Remove Software"
+msgstr "Προσθαφαίρεση λογισμικού"
+
+#: ../data/gpk-application.ui.h:1
+msgid "About this software"
+msgstr "Περί αυτού του λογισμικού"
+
+#: ../data/gpk-application.ui.h:3
+msgid "Edit list of software sources"
+msgstr "Επεξεργασία της λίστας πηγών λογισμικού"
+
+#: ../data/gpk-application.ui.h:4
+msgid "Execute graphical applications"
+msgstr "Εκτέλεση γραφικών εφαρμογών"
+
+#: ../data/gpk-application.ui.h:5
+msgid "Fi_nd"
+msgstr "Εύ_ρεση"
+
+#: ../data/gpk-application.ui.h:6
+msgid "Help with this software"
+msgstr "Βοήθεια για αυτό το λογισμικό"
+
+#: ../data/gpk-application.ui.h:7
+msgid "Only _available"
+msgstr "Μόνο _διαθέσιμα"
+
+#: ../data/gpk-application.ui.h:8
+msgid "Only _development"
+msgstr "Μόνο πακέτα _ανάπτυξης λογισμικού"
+
+#: ../data/gpk-application.ui.h:9
+msgid "Only _end user files"
+msgstr "Μόνο αρχεία _τελικού χρήστη"
+
+#: ../data/gpk-application.ui.h:10
+msgid "Only _installed"
+msgstr "Μόνο εγ_κατεστημένα"
+
+#: ../data/gpk-application.ui.h:11
+msgid "Only _newest packages"
+msgstr "Μόνο _νεότερα πακέτα"
+
+#: ../data/gpk-application.ui.h:12
+msgid "Only _non-free software"
+msgstr "Μόνο _μη ελεύθερο λογισμικό"
+
+#: ../data/gpk-application.ui.h:13
+msgid "Only _non-sourcecode"
+msgstr "Μόνο αρχεία μη _πηγαίου κώδικα"
+
+#: ../data/gpk-application.ui.h:14
+msgid "Only n_ative packages"
+msgstr "Μόνο ε_γγενή πακέτα"
+
+#: ../data/gpk-application.ui.h:15
+msgid "Only show one package, not subpackages"
+msgstr "Να εμφανίζεται μόνο ένα πακέτο, όχι υποπακέτα"
+
+#: ../data/gpk-application.ui.h:16
+msgid "Only show packages matching the machine architecture"
+msgstr "Να εμφανίζονται μόνο τα κατάλληλα πακέτα για την αρχιτεκτονική του συστήματος"
+
+#: ../data/gpk-application.ui.h:17
+msgid "Only show the newest available package"
+msgstr "Να εμφανίζεται μόνο το νεότερο διαθέσιμο πακέτο"
+
+#: ../data/gpk-application.ui.h:18
+msgid "Refresh the list of packages on the system"
+msgstr "Ανανέωση της λίστας πακέτων του συστήματος"
+
+#: ../data/gpk-application.ui.h:19
+msgid "S_election"
+msgstr "Επ_ιλεγμένο"
+
+#: ../data/gpk-application.ui.h:20
+msgid "Software log"
+msgstr "Καταγραφές λογισμικού"
+
+#: ../data/gpk-application.ui.h:21
+msgid "View previously added or removed software"
+msgstr "Προβολή λογισμικού που είχε προστεθεί ή αφαιρεθεί στο παρελθόν"
+
+#: ../data/gpk-application.ui.h:22
+msgid "Visit the project homepage"
+msgstr "Επίσκεψη της ιστοσελίδας του έργου"
+
+#: ../data/gpk-application.ui.h:23
+msgid "_Development"
+msgstr "Ανάπτ_υξης λογισμικού"
+
+#: ../data/gpk-application.ui.h:24
+msgid "_Filters"
+msgstr "_Φίλτρα"
+
+#: ../data/gpk-application.ui.h:25
+msgid "_Free"
+msgstr "Ε_λεύθερου λογισμικού"
+
+#: ../data/gpk-application.ui.h:26
+msgid "_Graphical"
+msgstr "_Γραφικού περιβάλλοντος"
+
+#. TRANSLATORS: context menu to open the offline help file
+#: ../data/gpk-application.ui.h:27
+#: ../src/gpk-check-update.c:299
+msgid "_Help"
+msgstr "Βοή_θεια"
+
+#: ../data/gpk-application.ui.h:28
+msgid "_Hide subpackages"
+msgstr "Απόκρυ_ψη υποπακέτων"
+
+#: ../data/gpk-application.ui.h:29
+msgid "_Installed"
+msgstr "Ε_γκατεστημένων πακέτων"
+
+#: ../data/gpk-application.ui.h:30
+msgid "_No filter"
+msgstr "_Χωρίς φίλτρο"
+
+#: ../data/gpk-application.ui.h:31
+msgid "_Only free software"
+msgstr "Μόνο ελεύ_θερο λογισμικό"
+
+#: ../data/gpk-application.ui.h:32
+msgid "_Only graphical"
+msgstr "Μόνο εφαρμογές γρα_φικού περιβάλλοντος"
+
+#: ../data/gpk-application.ui.h:33
+msgid "_Only sourcecode"
+msgstr "Μόνο αρχεία π_ηγαίου κώδικα"
+
+#: ../data/gpk-application.ui.h:34
+msgid "_Only text"
+msgstr "Μόνο εφαρμογές γ_ραμμής εντολών"
+
+#: ../data/gpk-application.ui.h:35
+msgid "_Source"
+msgstr "Πη_γή"
+
+#: ../data/gpk-application.ui.h:36
+msgid "_System"
+msgstr "_Σύστημα"
+
+#: ../data/gpk-backend-status.ui.h:1
+msgid "Backend Status"
+msgstr "Κατάσταση συστήματος υποστήριξης"
+
+#: ../data/gpk-backend-status.ui.h:2
+msgid "Backend author:"
+msgstr "Δημιουργός συστήματος υποστήριξης:"
+
+#: ../data/gpk-backend-status.ui.h:3
+msgid "Backend name:"
+msgstr "Όνομα συστήματος υποστήριξης:"
+
+#: ../data/gpk-client.ui.h:1
+msgid "Install Package"
+msgstr "Εγκατάσταση πακέτου"
+
+#: ../data/gpk-error.ui.h:1
+#, fuzzy
+#| msgid "Error details"
+msgid "More details"
+msgstr "Λεπτομέρειες σφάλματος"
+
+#: ../data/gpk-eula.ui.h:1
+msgid "License Agreement Required"
+msgstr "Απαιτείται αποδοχή άδειας χρήσης"
+
+#: ../data/gpk-eula.ui.h:2
+msgid "_Accept Agreement"
+msgstr "Α_ποδοχή άδειας"
+
+#. TRANSLATORS: program name: application to install a catalog of software
+#: ../data/gpk-install-catalog.desktop.in.h:1
+#: ../src/gpk-install-catalog.c:71
+#: ../src/gpk-install-catalog.c:73
+msgid "Catalog Installer"
+msgstr "Εγκατάσταση καταλόγων"
+
+#: ../data/gpk-install-catalog.desktop.in.h:2
+msgid "Install a catalog of software on the system"
+msgstr "Εγκατάσταση καταλόγων λογισμικού στο σύστημα"
+
+#: ../data/gpk-install-file.desktop.in.h:1
+msgid "Install selected software on the system"
+msgstr "Εγκατάσταση του επιλεγμένου λογισμικού στο σύστημα"
+
+#: ../data/gpk-install-file.desktop.in.h:2
+msgid "Package Installer"
+msgstr "Εγκατάσταση πακέτων"
+
+#: ../data/gpk-log.desktop.in.h:1
+#: ../data/gpk-log.ui.h:2
+#: ../src/gpk-log.c:668
+msgid "Software Log Viewer"
+msgstr "Προβολή καταγραφών λογισμικού"
+
+#: ../data/gpk-log.desktop.in.h:2
+msgid "View past package management tasks"
+msgstr "Προβολή παλαιότερων εργασιών διαχείρισης πακέτων"
+
+#: ../data/gpk-log.ui.h:1
+msgid "Filter"
+msgstr "Φίλτρο"
+
+#: ../data/gpk-prefs.desktop.in.h:1
+msgid "Change software update preferences"
+msgstr "Αλλαγή των προτιμήσεων των ενημερώσεων λογισμικού"
+
+#: ../data/gpk-prefs.desktop.in.h:2
+msgid "Software Updates"
+msgstr "Ενημερώσεις λογισμικού"
+
+#: ../data/gpk-prefs.ui.h:1
+msgid "C_heck for updates:"
+msgstr "Έ_λεγχος για ενημερώσεις:"
+
+#: ../data/gpk-prefs.ui.h:2
+msgid "Check for major _upgrades:"
+msgstr "Έλεγχος για _σημαντικές αναβαθμίσεις:"
+
+#: ../data/gpk-prefs.ui.h:3
+msgid "Check for updates when using mobile broadband"
+msgstr "Έλεγχος για ενημερώσεις όταν χρησιμοποιείται κινητή ευρυζωνική σύνδεση"
+
+#: ../data/gpk-prefs.ui.h:4
+#, fuzzy
+#| msgid "<i>Currently using mobile broadband</i>"
+msgid "Currently using mobile broadband"
+msgstr "<i>Χρησιμοποιείται κινητή ευρυζωνική σύνδεση</i>"
+
+#. TRANSLATORS: program name, an application to set per-user policy for updates
+#: ../data/gpk-prefs.ui.h:5
+#: ../src/gpk-prefs.c:422
+msgid "Software Update Preferences"
+msgstr "Προτιμήσεις ενημερώσεων λογισμικού"
+
+#: ../data/gpk-prefs.ui.h:6
+#, fuzzy
+#| msgid "<b>Update Settings</b>"
+msgid "Update Settings"
+msgstr "<b>Ρυθμίσεις ενημερώσεων</b>"
+
+#: ../data/gpk-prefs.ui.h:7
+msgid "_Automatically install:"
+msgstr "_Αυτόματη εγκατάσταση:"
+
+#: ../data/gpk-repo.desktop.in.h:1
+msgid "Enable or disable software sources"
+msgstr "Ενεργοποίηση ή απενεργοποίηση πηγών λογισμικού"
+
+#: ../data/gpk-repo.desktop.in.h:2
+#: ../data/gpk-repo.ui.h:2
+msgid "Software Sources"
+msgstr "Πηγές λογισμικού"
+
+#: ../data/gpk-repo.ui.h:1
+msgid "Shows more software sources that may be interesting"
+msgstr "Εμφανίζει νέες πηγές λογισμικού που ίσως σας ενδιαφέρουν"
+
+#. shows extra -source, -debuginfo, and -devel software sources
+#: ../data/gpk-repo.ui.h:4
+msgid "_Show debug and development software sources"
+msgstr ""
+"_Εμφάνιση πηγών λογισμικού για αποσφαλμάτωση \n"
+"και ανάπτυξη προγραμμάτων"
+
+#. TRANSLATORS: column for what was done, e.g. update-system
+#: ../data/gpk-service-pack.ui.h:1
+#: ../src/gpk-log.c:303
+msgid "Action"
+msgstr "Ενέργεια"
+
+#: ../data/gpk-service-pack.ui.h:2
+msgid "Create"
+msgstr "Δημιουργία"
+
+#: ../data/gpk-service-pack.ui.h:3
+msgid "Create a copy of this computers package list"
+msgstr "Δημιουργία αντιγράφου της λίστας πακέτων του υπολογιστή"
+
+#: ../data/gpk-service-pack.ui.h:4
+msgid "Create an archive of a specific package"
+msgstr "Δημιουργία αρχείου tar με το συγκεκριμένο πακέτο"
+
+#: ../data/gpk-service-pack.ui.h:5
+msgid "Create an archive of all the pending updates"
+msgstr "Δημιουργία αρχείου tar με όλες τις εκκρεμείς ενημερώσεις"
+
+#: ../data/gpk-service-pack.ui.h:6
+msgid "Destination package list:"
+msgstr "Λίστα πακέτων προορισμού:"
+
+#. TRANSLATORS: column for what packages were upgraded
+#. TRANSLATORS: column for the message description
+#: ../data/gpk-service-pack.ui.h:7
+#: ../src/gpk-log.c:330
+#: ../src/gpk-watch.c:935
+msgid "Details"
+msgstr "Λεπτομέρειες"
+
+#: ../data/gpk-service-pack.ui.h:8
+msgid "Multiple packages can be specified using a comma delimited list"
+msgstr "Μπορείτε να προσθέσετε πολλαπλά πακέτα, χωρισμένα με κόμμα"
+
+#: ../data/gpk-service-pack.ui.h:9
+msgid "Output directory:"
+msgstr "Κατάλογος εξόδου:"
+
+#: ../data/gpk-service-pack.ui.h:10
+#, fuzzy
+#| msgid "<b>Progress</b>"
+msgid "Progress"
+msgstr "<b>Πρόοδος</b>"
+
+#: ../data/gpk-service-pack.ui.h:11
+msgid "Save New Service Pack"
+msgstr "Αποθήκευση του νέου πακέτου ενημερώσεων"
+
+#: ../data/gpk-service-pack.ui.h:12
+msgid "Select A Package List File"
+msgstr "Επιλέξτε ένα αρχείο λίστας πακέτων"
+
+#. TRANSLATORS: program description, an application to create service packs
+#: ../data/gpk-service-pack.ui.h:13
+#: ../src/gpk-service-pack.c:624
+msgid "Service Pack Creator"
+msgstr "Δημιουργία πακέτων ενημερώσεων"
+
+#: ../data/gpk-signature.ui.h:1
+msgid "Do you recognise the user and trust this key?"
+msgstr "Αναγνωρίζετε το χρήστη και εμπιστεύεστε αυτό το κλειδί;"
+
+#: ../data/gpk-signature.ui.h:2
+#, fuzzy
+#| msgid "<big><b>Do you trust the source of the packages?</b></big>"
+msgid "Do you trust the source of the packages?"
+msgstr "<big><b>Εμπιστεύεστε την πηγή των πακέτων;</b></big>"
+
+#: ../data/gpk-signature.ui.h:3
+msgid "Package:"
+msgstr "Πακέτο:"
+
+#: ../data/gpk-signature.ui.h:4
+msgid "Repository name:"
+msgstr "Όνομα αποθετηρίου:"
+
+#: ../data/gpk-signature.ui.h:5
+msgid "Signature URL:"
+msgstr "Ιστοσελίδα υπογραφής:"
+
+#: ../data/gpk-signature.ui.h:6
+msgid "Signature identifier:"
+msgstr "Αναγνωριστικό υπογραφής:"
+
+#: ../data/gpk-signature.ui.h:7
+msgid "Signature user identifier:"
+msgstr "Αναγνωριστικό χρήστη υπογραφής:"
+
+#: ../data/gpk-signature.ui.h:8
+msgid "Software signature is required"
+msgstr "Απαιτείται υπογραφή λογισμικού"
+
+#: ../data/gpk-update-icon.desktop.in.h:1
+msgid "PackageKit Update Applet"
+msgstr "Μικροεφαρμογή ενημερώσεων PackageKit"
+
+#: ../data/gpk-update-viewer.desktop.in.h:1
+#: ../data/gpk-update-viewer.ui.h:1
+msgid "Software Update"
+msgstr "Ενημέρωση λογισμικού"
+
+#. TRANSLATORS: program name, a simple app to view pending updates
+#. TRANSLATORS: title to pass to to the user if there are not enough privs
+#: ../data/gpk-update-viewer.desktop.in.h:2
+#: ../src/gpk-update-viewer.c:2847
+#: ../src/gpk-update-viewer.c:2862
+msgid "Software Update Viewer"
+msgstr "Προβολή ενημερώσεων λογισμικού"
+
+#: ../data/gpk-update-viewer.desktop.in.h:3
+msgid "Update software installed on the system"
+msgstr "Ενημέρωση εγκατεστημένου λογισμικού"
+
+#: ../data/gpk-update-viewer.ui.h:2
+msgid "Software updates correct errors, eliminate security vulnerabilities and provide new features."
+msgstr "Οι ενημερώσεις λογισμικού διορθώνουν τυχόν σφάλματα, εξαλείφουν κενά ασφαλείας και παρέχουν νέες λειτουργίες."
+
+#: ../data/gpk-update-viewer.ui.h:3
+msgid "_Upgrade"
+msgstr "Ανα_βάθμιση"
+
+#. TRANSLATORS: expander label in the error dialog
+#: ../python/packagekit/gtkwidgets.py:413
+msgid "_Details"
+msgstr "_Λεπτομέρειες"
+
+#. Application column (icon, name, description)
+#. TRANSLATORS: column for the application name
+#. TRANSLATORS: column for the package name
+#: ../python/packagekit/gtkwidgets.py:510
+#: ../src/gpk-helper-chooser.c:149
+#: ../src/gpk-helper-run.c:191
+msgid "Package"
+msgstr "Πακέτο"
+
+#: ../python/packagekit/gtkwidgets.py:609
+msgid "_Remove"
+msgstr "Α_φαίρεση"
+
+#: ../python/packagekit/gtkwidgets.py:610
+#, python-format
+msgid "Remove %i additional package?"
+msgid_plural "Remove %i additional packages?"
+msgstr[0] "Να αφαιρεθεί %i επιπλέον πακέτο;"
+msgstr[1] "Να αφαιρεθούν %i επιπλέον πακέτα;"
+
+#: ../python/packagekit/gtkwidgets.py:615
+msgid "The software which you want to remove is required to run other software, which will be removed too."
+msgstr "Το λογισμικό που επιθυμείτε να αφαιρέσετε απαιτείται για τη λειτουργία άλλου λογισμικού, το οποίο επίσης θα αφαιρεθεί."
+
+#. TRANSLATORS: button label, install
+#: ../python/packagekit/gtkwidgets.py:646
+#: ../src/gpk-helper-chooser.c:291
+msgid "_Install"
+msgstr "Ε_γκατάσταση"
+
+#: ../python/packagekit/gtkwidgets.py:647
+#, python-format
+msgid "Install %i additional package?"
+msgid_plural "Install %i additional packages?"
+msgstr[0] "Να εγκατασταθεί %i επιπλέον πακέτο;"
+msgstr[1] "Να εγκατασταθούν %i επιπλέον πακέτα;"
+
+#: ../python/packagekit/gtkwidgets.py:652
+msgid "The software that you want to install requires additional software to run correctly."
+msgstr "Το λογισμικό που επιθυμείτε να εγκαταστήσετε απαιτεί επιπλέον λογισμικό για την ορθή λειτουργία του."
+
+#. TRANSLATORS: the repo name is invalid or not found, fall back to this
+#: ../src/gpk-application.c:790
+msgid "Invalid"
+msgstr "Μη έγκυρο όνομα"
+
+#. TRANSLATORS: the type of package is a collection (metagroup)
+#: ../src/gpk-application.c:922
+msgid "Type"
+msgstr "Τύπος"
+
+#: ../src/gpk-application.c:922
+msgid "Collection"
+msgstr "Συλλογή"
+
+#. TRANSLATORS: tooltip: go to the web address
+#: ../src/gpk-application.c:930
+#, c-format
+msgid "Visit %s"
+msgstr "Επίσκεψη %s"
+
+#. TRANSLATORS: add an entry to go to the project home page
+#: ../src/gpk-application.c:935
+msgid "Project"
+msgstr "Έργο"
+
+#: ../src/gpk-application.c:935
+msgid "Homepage"
+msgstr "Ιστοσελίδα"
+
+#. TRANSLATORS: the group the package belongs in
+#: ../src/gpk-application.c:949
+msgid "Group"
+msgstr "Ομάδα"
+
+#. TRANSLATORS: the licence string for the package
+#: ../src/gpk-application.c:955
+msgid "License"
+msgstr "Άδεια"
+
+#. TRANSLATORS: the path in the menu, e.g. Applications -> Games
+#: ../src/gpk-application.c:964
+msgid "Menu"
+msgstr "Μενού"
+
+#. TRANSLATORS: the size of the meta package
+#. TRANSLATORS: a column that has size of each package
+#: ../src/gpk-application.c:982
+#: ../src/gpk-update-viewer.c:1151
+msgid "Size"
+msgstr "Μέγεθος"
+
+#. TRANSLATORS: the installed size in bytes of the package
+#: ../src/gpk-application.c:985
+msgid "Installed size"
+msgstr "Μέγεθος εγκατάστασης"
+
+#. TRANSLATORS: the download size of the package
+#: ../src/gpk-application.c:988
+msgid "Download size"
+msgstr "Μέγεθος λήψης"
+
+#. TRANSLATORS: where the package came from, the software source name
+#: ../src/gpk-application.c:997
+msgid "Source"
+msgstr "Πηγή"
+
+#. TRANSLATORS: no results were found for this search
+#: ../src/gpk-application.c:1143
+msgid "No results were found."
+msgstr "Δε βρέθηκαν αποτελέσματα."
+
+#. TRANSLATORS: be helpful, but this shouldn't happen
+#: ../src/gpk-application.c:1151
+msgid "Try entering a package name in the search bar."
+msgstr "Δοκιμάστε να εισάγετε ένα όνομα πακέτου στο πεδίο αναζήτησης."
+
+#. TRANSLATORS: nothing in the package queue
+#: ../src/gpk-application.c:1154
+#, fuzzy
+#| msgid "No packages need to be installed"
+msgid "There are no packages queued to be installed or removed."
+msgstr "Δε χρειάζεται να εγκατασταθούν πακέτα"
+
+#. TRANSLATORS: tell the user to switch to details search mode
+#: ../src/gpk-application.c:1159
+msgid "Try searching package descriptions by clicking the icon next to the search text."
+msgstr ""
+"Δοκιμάστε να κάνετε αναζήτηση στις περιγραφές των πακέτων, \n"
+"κάνοντας κλικ στο εικονίδιο δίπλα στο πεδίο αναζήτησης."
+
+#. TRANSLATORS: tell the user to try harder
+#: ../src/gpk-application.c:1162
+msgid "Try again with a different search term."
+msgstr "Προσπαθήστε ξανά με διαφορετικό όρο αναζήτησης."
+
+#. TRANSLATORS: no packages returned
+#: ../src/gpk-application.c:1206
+#: ../src/gpk-application.c:1268
+msgid "No packages"
+msgstr "Κανένα πακέτο"
+
+#. TRANSLATORS: this package does not depend on any others
+#: ../src/gpk-application.c:1208
+msgid "This package does not depends on any others"
+msgstr "Αυτό το πακέτο δεν εξαρτάται από κανένα άλλο πακέτο"
+
+#. TRANSLATORS: title: show the number of other packages we depend on
+#: ../src/gpk-application.c:1216
+#, c-format
+msgid "%i additional package is required for %s"
+msgid_plural "%i additional packages are required for %s"
+msgstr[0] "%i επιπλέον πακέτο απαιτείται για το %s"
+msgstr[1] "%i επιπλέον πακέτα απαιτούνται για το %s"
+
+#. TRANSLATORS: message: show the list of dependant packages for this package
+#: ../src/gpk-application.c:1221
+#, c-format
+msgid "Packages listed below are required for %s to function correctly."
+msgid_plural "Packages listed below are required for %s to function correctly."
+msgstr[0] "Το ακόλουθο πακέτο απαιτείται για την ορθή λειτουργία του %s."
+msgstr[1] "Τα ακόλουθα πακέτα απαιτούνται για την ορθή λειτουργία του %s."
+
+#. TRANSLATORS: this package is not required by any others
+#: ../src/gpk-application.c:1270
+msgid "No other packages require this package"
+msgstr "Κανένα άλλο πακέτο δεν απαιτεί αυτό το πακέτο"
+
+#. TRANSLATORS: title: how many packages require this package
+#: ../src/gpk-application.c:1278
+#, c-format
+msgid "%i package requires %s"
+msgid_plural "%i packages require %s"
+msgstr[0] "%i πακέτο απαιτεί το %s"
+msgstr[1] "%i  πακέτα απαιτούν το %s"
+
+#. TRANSLATORS: show a list of packages for the package
+#: ../src/gpk-application.c:1283
+#, c-format
+msgid "Packages listed below require %s to function correctly."
+msgid_plural "Packages listed below require %s to function correctly."
+msgstr[0] "Τα ακόλουθα πακέτα απαιτούν το %s για την ορθή λειτουργία τους."
+msgstr[1] "Τα ακόλουθα πακέτα απαιτούν τα %s για την ορθή λειτουργία τους."
+
+#. TRANSLATORS: title: invlid text in the search bar
+#: ../src/gpk-application.c:1635
+msgid "Invalid search text"
+msgstr "Μη έγκυρο κείμενο αναζήτησης"
+
+#. TRANSLATORS: message: tell the user that's not allowed
+#: ../src/gpk-application.c:1637
+msgid "The search text contains invalid characters"
+msgstr "Το κείμενο της αναζήτησης περιέχει μη έγκυρους χαρακτήρες"
+
+#. TRANSLATORS: title: we failed to execute the mthod
+#: ../src/gpk-application.c:1672
+msgid "The search could not be completed"
+msgstr "Δεν ήταν δυνατή η ολοκλήρωση της αναζήτησης"
+
+#. TRANSLATORS: low level failure, details to follow
+#. TRANSLATORS: low level failure
+#: ../src/gpk-application.c:1674
+#: ../src/gpk-application.c:1718
+msgid "Running the transaction failed"
+msgstr "Απέτυχε η εκτέλεση της εργασίας"
+
+#. TRANSLATORS: title: could not get group data
+#: ../src/gpk-application.c:1716
+msgid "The group could not be queried"
+msgstr "Δεν ήταν δυνατή η αναζήτηση στην ομάδα"
+
+#. TRANSLATORS: title: warn the user they are quitting with unapplied changes
+#: ../src/gpk-application.c:1816
+msgid "Changes not applied"
+msgstr "Δεν εφαρμόστηκαν οι αλλαγές"
+
+#: ../src/gpk-application.c:1817
+#, fuzzy
+#| msgid "Close Anyway"
+msgid "Close _Anyway"
+msgstr "Κλείσιμο ούτως ή άλλως"
+
+#. TRANSLATORS: tell the user the problem
+#: ../src/gpk-application.c:1821
+msgid "You have made changes that have not yet been applied."
+msgstr "Κάνατε αλλαγές που δεν έχουν εφαρμοστεί ακόμη."
+
+#: ../src/gpk-application.c:1822
+msgid "These changes will be lost if you close this window."
+msgstr "Οι αλλαγές αυτές θα χαθούν, αν κλείσετε το παράθυρο."
+
+#. TRANSLATORS: column for installed status
+#. TRANSLATORS: The state of a package
+#. TRANSLATORS: The action of the package, in past tense
+#: ../src/gpk-application.c:2095
+#: ../src/gpk-enum.c:1127
+#: ../src/gpk-enum.c:1200
+msgid "Installed"
+msgstr "Εγκατεστημένο"
+
+#. TRANSLATORS: column for package name
+#. TRANSLATORS: column for group name
+#. TRANSLATORS: column for the package name
+#: ../src/gpk-application.c:2111
+#: ../src/gpk-application.c:2133
+#: ../src/gpk-dialog.c:146
+#: ../src/gpk-modal-dialog.c:714
+msgid "Name"
+msgstr "Όνομα"
+
+#. TRANSLATORS: this is a menu group of packages in the queue
+#: ../src/gpk-application.c:2331
+#, fuzzy
+#| msgid "Newest packages"
+msgid "Selected packages"
+msgstr "Νεότερα πακέτα"
+
+#. TRANSLATORS: entry tooltip: basic search
+#: ../src/gpk-application.c:2384
+msgid "Searching by name"
+msgstr "Αναζήτηση κατά όνομα..."
+
+#. TRANSLATORS: entry tooltip: detailed search
+#: ../src/gpk-application.c:2409
+msgid "Searching by description"
+msgstr "Αναζήτηση κατά περιγραφή..."
+
+#. TRANSLATORS: entry tooltip: file search
+#: ../src/gpk-application.c:2434
+msgid "Searching by file"
+msgstr "Αναζήτηση κατά αρχείο..."
+
+#. TRANSLATORS: context menu item for the search type icon
+#: ../src/gpk-application.c:2460
+msgid "Search by name"
+msgstr "Αναζήτηση κατά όνομα"
+
+#. TRANSLATORS: context menu item for the search type icon
+#: ../src/gpk-application.c:2470
+msgid "Search by description"
+msgstr "Αναζήτηση κατά περιγραφή"
+
+#. TRANSLATORS: context menu item for the search type icon
+#: ../src/gpk-application.c:2480
+msgid "Search by file name"
+msgstr "Αναζήτηση κατά όνομα αρχείου"
+
+#. TRANSLATORS: packaging problem, failed to show link
+#. TRANSLATORS: normally a packaging error, cannot launch link
+#: ../src/gpk-application.c:2523
+#: ../src/gpk-check-update.c:203
+#: ../src/gpk-watch.c:766
+msgid "Failed to show url"
+msgstr "Απέτυχε η προβολή της ιστοσελίδας"
+
+#: ../src/gpk-application.c:2560
+#: ../src/gpk-check-update.c:227
+#: ../src/gpk-watch.c:786
+msgid "Licensed under the GNU General Public License Version 2"
+msgstr "Εκδόθηκε υπό τους όρους της Γενικής Άδειας Δημόσιας Χρήσης GNU (GPL), εκδ. 2"
+
+#: ../src/gpk-application.c:2561
+#: ../src/gpk-check-update.c:228
+#: ../src/gpk-watch.c:787
+#, fuzzy
+#| msgid ""
+#| "PackageKit is free software; you can redistribute it and/or\n"
+#| "modify it under the terms of the GNU General Public License\n"
+#| "as published by the Free Software Foundation; either version 2\n"
+#| "of the License, or (at your option) any later version."
+msgid "PackageKit is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version."
+msgstr ""
+"Το PackageKit είναι ελεύθερο λογισμικό· επιτρέπεται η αναδιανομή \n"
+"ή/και τροποποίησή του υπό τους όρους της Γενικής Άδειας Δημόσιας \n"
+"Χρήσης GNU (GPL), όπως αυτή έχει δημοσιευτεί από το Ίδρυμα \n"
+"Ελεύθερου Λογισμικού (FSF) — είτε της έκδοσης 2 της Άδειας, είτε \n"
+"(κατ' επιλογήν σας) οποιασδήποτε μεταγενέστερης έκδοσης."
+
+#: ../src/gpk-application.c:2565
+#: ../src/gpk-check-update.c:232
+#: ../src/gpk-watch.c:791
+#, fuzzy
+#| msgid ""
+#| "PackageKit is distributed in the hope that it will be useful,\n"
+#| "but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+#| "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
+#| "GNU General Public License for more details."
+msgid "PackageKit is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details."
+msgstr ""
+"Το PackageKit διανέμεται με την ελπίδα ότι θα αποδειχθεί χρήσιμο, \n"
+"παρόλα αυτά ΧΩΡΙΣ ΚΑΜΙΑ ΕΓΓΥΗΣΗ — χωρίς ούτε και την σιωπηρή \n"
+"εγγύηση ΕΜΠΟΡΕΥΣΙΜΟΤΗΤΑΣ ή ΚΑΤΑΛΛΗΛΟΤΗΤΑΣ ΓΙΑ ΕΙΔΙΚΟ ΣΚΟΠΟ. \n"
+"Για περισσότερες λεπτομέρειες ανατρέξτε στη Γενική Άδεια Δημόσιας \n"
+"Χρήσης GNU (GPL)."
+
+#: ../src/gpk-application.c:2569
+#: ../src/gpk-check-update.c:236
+#: ../src/gpk-watch.c:795
+#, fuzzy
+#| msgid ""
+#| "You should have received a copy of the GNU General Public License\n"
+#| "along with this program; if not, write to the Free Software\n"
+#| "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
+#| "02110-1301, USA."
+msgid "You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
+msgstr ""
+"Θα πρέπει να έχετε λάβει ένα αντίγραφο της Γενικής Άδειας Δημόσιας \n"
+"Χρήσης GNU (GPL) μαζί με αυτό το πρόγραμμα. Αν όχι, γράψτε στο Free \n"
+"Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, \n"
+"MA 02110-1301, USA."
+
+#. TRANSLATORS: put your own name here -- you deserve credit!
+#: ../src/gpk-application.c:2575
+#: ../src/gpk-check-update.c:241
+#: ../src/gpk-watch.c:800
+msgid "translator-credits"
+msgstr ""
+"Ελληνική μεταφραστική ομάδα GNOME\n"
+" Τζένη Πετούμενου <epetoumenou@gmail.com>\n"
+" Γιάννη Κατσαμπίρης <giannis1_86@hotmail.com>\n"
+" Νίκος Χαρωνιτάκης <nikosx@gmail.com>\n"
+"\n"
+"Για περισσότερες πληροφορίες, επισκεφθείτε \n"
+"την σελίδα http://www.gnome.gr/"
+
+#. TRANSLATORS: website label
+#: ../src/gpk-application.c:2601
+#: ../src/gpk-check-update.c:261
+#: ../src/gpk-watch.c:819
+msgid "PackageKit Website"
+msgstr "Ιστοσελίδα Packagekit"
+
+#. TRANSLATORS: description of application, gpk-application that is
+#: ../src/gpk-application.c:2604
+msgid "Package Manager for GNOME"
+msgstr "Διαχείριση πακέτων για το GNOME"
+
+#. TRANSLATORS: single column for the package details, not visible at the moment
+#: ../src/gpk-application.c:3343
+msgid "Text"
+msgstr "Περιγραφή"
+
+#. TRANSLATORS: welcome text if we can click the group list
+#: ../src/gpk-application.c:3366
+msgid "Enter a package name and then click find, or click a group to get started."
+msgstr ""
+"Για να ξεκινήσετε, εισάγετε ένα όνομα πακέτου και \n"
+"πατήστε Εύρεση, ή κάντε κλικ σε μία ομάδα."
+
+#. TRANSLATORS: welcome text if we have to search by name
+#: ../src/gpk-application.c:3369
+msgid "Enter a package name and then click find to get started."
+msgstr "Για να ξεκινήσετε, εισάγετε ένα όνομα πακέτου και πατήστε Εύρεση."
+
+#. TRANSLATORS: title: all of the packages on the system and availble in sources
+#: ../src/gpk-application.c:3404
+#: ../src/gpk-application.c:3473
+msgid "All packages"
+msgstr "Όλα τα πακέτα"
+
+#. TRANSLATORS: tooltip: all packages
+#: ../src/gpk-application.c:3406
+#: ../src/gpk-application.c:3475
+msgid "Show all packages"
+msgstr "Εμφάνιση όλων των πακέτων"
+
+#. TRANSLATORS: title: how many files are installed by the application
+#: ../src/gpk-application.c:3652
+#, c-format
+msgid "%i file installed by %s"
+msgid_plural "%i files installed by %s"
+msgstr[0] "%i αρχείο εγκαταστάθηκε από το %s"
+msgstr[1] "%i αρχεία εγκαταστάθηκαν από το %s"
+
+#. TRANSLATORS: tooltip on the clear button
+#: ../src/gpk-application.c:3859
+msgid "Clear current selection"
+msgstr "Καθαρισμός όλων των επιλεγμένων"
+
+#. TRANSLATORS: tooltip on the apply button
+#: ../src/gpk-application.c:3884
+msgid "Changes are not applied instantly, this button applies all changes"
+msgstr "Οι αλλαγές δεν εφαρμόζονται αυτομάτως. Πιέζοντας αυτό το κουμπί, εφαρμόζετε όλες τις αλλαγές"
+
+#. TRANSLATORS: tooltip on the homepage button
+#: ../src/gpk-application.c:3910
+msgid "Visit home page for selected package"
+msgstr "Επισκεφθείτε την ιστοσελίδα του επιλεγμένου πακέτου"
+
+#. TRANSLATORS: tooltip on the find button
+#: ../src/gpk-application.c:4054
+msgid "Find packages"
+msgstr "Εύρεση πακέτων"
+
+#. TRANSLATORS: tooltip on the cancel button
+#: ../src/gpk-application.c:4061
+msgid "Cancel search"
+msgstr "Ακύρωση αναζήτησης"
+
+#. TRANSLATORS: show the debug data on the console
+#: ../src/gpk-application-main.c:78
+#: ../src/gpk-backend-status.c:84
+#: ../src/gpk-install-catalog.c:53
+#: ../src/gpk-install-local-file.c:52
+#: ../src/gpk-install-mime-type.c:52
+#: ../src/gpk-install-package-name.c:52
+#: ../src/gpk-install-provide-file.c:52
+#: ../src/gpk-log.c:646
+#: ../src/gpk-prefs.c:400
+#: ../src/gpk-repo.c:520
+#: ../src/gpk-service-pack.c:595
+#: ../src/gpk-update-icon.c:128
+#: ../src/gpk-update-viewer.c:2828
+msgid "Show extra debugging information"
+msgstr "Εμφάνιση επιπρόσθετων πληροφοριών αποσφαλμάτωσης"
+
+#. TRANSLATORS: show the program version
+#: ../src/gpk-application-main.c:81
+#: ../src/gpk-backend-status.c:86
+#: ../src/gpk-prefs.c:402
+#: ../src/gpk-update-icon.c:132
+#: ../src/gpk-update-viewer.c:2830
+msgid "Show the program version and exit"
+msgstr "Εμφάνιση της έκδοσης του προγράμματος και έξοδος"
+
+#. are we running privileged
+#: ../src/gpk-application-main.c:111
+msgid "Package installer"
+msgstr "Εγκατάσταση πακέτων"
+
+#: ../src/gpk-backend-status.c:103
+msgid "PackageKit Backend Details Viewer"
+msgstr "Προβολή λεπτομερειών του συστήματος υποστήριξης του PackageKit"
+
+#. TRANSLATORS: backend is broken, and won't tell us what it supports
+#: ../src/gpk-backend-status.c:126
+msgid "Exiting as backend details could not be retrieved"
+msgstr "Έξοδος, γιατί δεν ήταν δυνατή η ανάκτηση περισσότερων λεπτομερειών για το σύστημα υποστήριξης"
+
+#. TRANSLATORS: context menu to open the preferences
+#: ../src/gpk-check-update.c:287
+msgid "_Preferences"
+msgstr "Προ_τιμήσεις"
+
+#. TRANSLATORS: context menu to show the about screen
+#. TRANSLATORS: this is the right click menu item
+#: ../src/gpk-check-update.c:307
+#: ../src/gpk-watch.c:846
+msgid "_About"
+msgstr "Π_ερί"
+
+#. TRANSLATORS: title in the libnotify popup
+#: ../src/gpk-check-update.c:514
+msgid "Security update available"
+msgid_plural "Security updates available"
+msgstr[0] "Ενημέρωση ασφαλείας διαθέσιμη"
+msgstr[1] "Ενημερώσεις ασφαλείας διαθέσιμες"
+
+#. TRANSLATORS: message when there are security updates
+#: ../src/gpk-check-update.c:519
+msgid "The following important update is available for your computer:"
+msgid_plural "The following important updates are available for your computer:"
+msgstr[0] "Η ακόλουθη σημαντική ενημέρωση είναι διαθέσιμη για τον υπολογιστή σας:"
+msgstr[1] "Οι ακόλουθες σημαντικές ενημερώσεις είναι διαθέσιμες για τον υπολογιστή σας:"
+
+#. TRANSLATORS: button: only security updates
+#: ../src/gpk-check-update.c:542
+msgid "Install only security updates"
+msgstr "Εγκατάσταση μόνο των ενημερώσεων ασφαλείας"
+
+#. TRANSLATORS: button: open the update viewer
+#: ../src/gpk-check-update.c:548
+msgid "Show all software updates"
+msgstr "Εμφάνιση όλων των ενημερώσεων λογισμικού"
+
+#. TRANSLATORS: policy says update, but we are on battery and so prompt
+#: ../src/gpk-check-update.c:660
+msgid "Automatic updates are not being installed as the computer is running on battery power"
+msgstr "Οι αυτόματες ενημερώσεις δεν εγκαθίστανται τώρα, γιατί ο υπολογιστής τροφοδοτείται από τη μπαταρία"
+
+#. TRANSLATORS: informs user will not install by default
+#: ../src/gpk-check-update.c:662
+msgid "Updates not installed"
+msgstr "Δεν εγκαταστάθηκαν οι ενημερώσεις"
+
+#. TRANSLATORS: to hell with my battery life, just do it
+#: ../src/gpk-check-update.c:672
+msgid "Install the updates anyway"
+msgstr "Εγκατάσταση των ενημερώσεων ούτως ή άλλως"
+
+#. TRANSLATORS: title: notification when we scheduled an automatic update
+#: ../src/gpk-check-update.c:754
+msgid "Updates are being installed"
+msgstr "Οι ενημερώσεις εγκαθίστανται..."
+
+#. TRANSLATORS: tell the user why the hard disk is grinding...
+#: ../src/gpk-check-update.c:756
+msgid "Updates are being automatically installed on your computer"
+msgstr "Οι ενημερώσεις εγκαθίστανται αυτόματα στον υπολογιστή σας..."
+
+#: ../src/gpk-check-update.c:762
+msgid "Cancel update"
+msgstr "Ακύρωση ενημέρωσης"
+
+#. TRANSLATORS: we have a notification that won't fit, so append on how many other we are not showing
+#: ../src/gpk-check-update.c:858
+#, c-format
+msgid "and %d other security update"
+msgid_plural "and %d other security updates"
+msgstr[0] "και %i ακόμη ενημέρωση ασφαλείας"
+msgstr[1] "και %i ακόμη ενημερώσεις ασφαλείας"
+
+#. TRANSLATORS: tooltip: how many updates are waiting to be applied
+#: ../src/gpk-check-update.c:873
+#, c-format
+msgid "There is %d update available"
+msgid_plural "There are %d updates available"
+msgstr[0] "Yπάρχει %d διαθέσιμη ενημέρωση"
+msgstr[1] "Yπάρχουν %d διαθέσιμες ενημερώσεις"
+
+#. TRANSLATORS: this is the application name for libcanberra
+#: ../src/gpk-check-update.c:902
+#: ../src/gpk-check-update.c:924
+#: ../src/gpk-check-update.c:1506
+msgid "GNOME PackageKit Update Icon"
+msgstr "Εικονίδιο ενημερώσεων GNOME PackageKit"
+
+#. TRANSLATORS: this is the sound description
+#: ../src/gpk-check-update.c:904
+msgid "Update available"
+msgstr "Ενημέρωση διαθέσιμη"
+
+#. TRANSLATORS: this is the sound description
+#: ../src/gpk-check-update.c:926
+msgid "Update available (on battery)"
+msgstr "Ενημέρωση διαθέσιμη (τροφοδοσία από μπαταρία)"
+
+#. TRANSLATORS: a distro update is available, e.g. Fedora 8 to Fedora 9
+#: ../src/gpk-check-update.c:1177
+msgid "Distribution upgrades available"
+msgstr "Αναβαθμίσεις της διανομής διαθέσιμες"
+
+#. TRANSLATORS: provides more information about the upgrade
+#. TRANSLATORS: button: show the user a button to get more help finding stuff
+#. TRANSLATORS: button: a link to the help file
+#. TRANSLATORS: button text
+#. TRANSLATORS: button: show the user a button to get more help finding stuff
+#: ../src/gpk-check-update.c:1187
+#: ../src/gpk-dbus-task.c:757
+#: ../src/gpk-dbus-task.c:794
+#: ../src/gpk-dbus-task.c:1011
+#: ../src/gpk-dbus-task.c:2604
+#: ../src/gpk-dbus-task.c:3040
+msgid "More information"
+msgstr "Περισσότερες πληροφορίες"
+
+#. TRANSLATORS: hides forever
+#. TRANSLATORS: don't show this option again (when finished)
+#. add a checkbutton for deps screen
+#. TRANSLATORS: don't pop-up the same message twice
+#: ../src/gpk-check-update.c:1190
+#: ../src/gpk-check-update.c:1431
+#: ../src/gpk-dialog.c:301
+#: ../src/gpk-hardware.c:175
+#: ../src/gpk-watch.c:561
+msgid "Do not show this again"
+msgstr "Να μην εμφανιστεί αυτό ξανά"
+
+#. TRANSLATORS: we did the update, but some updates were skipped and not applied
+#: ../src/gpk-check-update.c:1385
+msgid "One package was skipped:"
+msgid_plural "Some packages were skipped:"
+msgstr[0] "Ένα πακέτο παραλείφθηκε:"
+msgstr[1] "Ορισμένα πακέτα παραλείφθηκαν:"
+
+#. TRANSLATORS: title: system update completed all okay
+#: ../src/gpk-check-update.c:1416
+msgid "The system update has completed"
+msgstr "Η ενημέρωση του συστήματος ολοκληρώθηκε"
+
+#. TRANSLATORS: restart computer as system packages need update
+#: ../src/gpk-check-update.c:1424
+msgid "Restart computer now"
+msgstr "Άμεση επανεκκίνηση υπολογιστή"
+
+#. TRANSLATORS: this is the sound description
+#: ../src/gpk-check-update.c:1508
+#: ../src/gpk-update-viewer.c:1900
+msgid "Updated successfully"
+msgstr "Ενημερώθηκε με επιτυχία"
+
+#. TRANSLATORS: these tools cannot run as root (unknown name)
+#: ../src/gpk-common.c:389
+msgid "This application is running as a privileged user"
+msgstr "Εκτελείτε αυτή την εφαρμογή ως προνομιούχος χρήστης"
+
+#. TRANSLATORS: cannot run as root user, and we display the applicaiton name
+#: ../src/gpk-common.c:392
+#, c-format
+msgid "%s is running as a privileged user"
+msgstr "Εκτελείτε την εφαρμογή %s ως προνομιούχος χρήστης"
+
+#. TRANSLATORS: tell the user off
+#: ../src/gpk-common.c:395
+msgid "Package management applications are security sensitive."
+msgstr "Οι εφαρμογές διαχείρισης πακέτων απαιτούν αυξημένη ασφάλεια."
+
+#. TRANSLATORS: and explain why
+#: ../src/gpk-common.c:397
+msgid "Running graphical applications as a privileged user should be avoided for security reasons."
+msgstr "Για λόγους ασφαλείας θα πρέπει να αποφεύγετε να εκτελείτε γραφικές εφαρμογές ως προνομιούχος χρήστης."
+
+#. TRANSLATORS: button: allow the user to run this, even when insecure
+#: ../src/gpk-common.c:403
+msgid "Continue _Anyway"
+msgstr "Συνέχεια _ούτως ή άλλως"
+
+#. TRANSLATORS: The actions has just literally happened
+#: ../src/gpk-common.c:473
+#: ../src/gpk-common.c:523
+#, c-format
+msgid "Now"
+msgstr "Τώρα"
+
+#. TRANSLATORS: time
+#: ../src/gpk-common.c:483
+#: ../src/gpk-common.c:533
+#, c-format
+msgid "%i second"
+msgid_plural "%i seconds"
+msgstr[0] "%i δευτερόλεπτο"
+msgstr[1] "%i δευτερόλεπτα"
+
+#. TRANSLATORS: time
+#: ../src/gpk-common.c:493
+#: ../src/gpk-common.c:546
+#, c-format
+msgid "%i minute"
+msgid_plural "%i minutes"
+msgstr[0] "%i λεπτό"
+msgstr[1] "%i λεπτά"
+
+#. TRANSLATORS: time
+#: ../src/gpk-common.c:499
+#: ../src/gpk-common.c:565
+#, c-format
+msgid "%i hour"
+msgid_plural "%i hours"
+msgstr[0] "%i ώρα"
+msgstr[1] "%i ώρες"
+
+#. TRANSLATOR: "%i %s %i %s" are "%i minutes %i seconds"
+#. * Swap order with "%2$s %2$i %1$s %1$i if needed
+#. TRANSLATOR: "%i %s %i %s" are "%i hours %i minutes"
+#. * Swap order with "%2$s %2$i %1$s %1$i if needed
+#: ../src/gpk-common.c:552
+#: ../src/gpk-common.c:571
+#, c-format
+msgid "%i %s %i %s"
+msgstr "%i %s %i %s"
+
+#: ../src/gpk-common.c:553
+#: ../src/gpk-common.c:573
+msgid "minute"
+msgid_plural "minutes"
+msgstr[0] "λεπτό"
+msgstr[1] "λεπτά"
+
+#: ../src/gpk-common.c:554
+msgid "second"
+msgid_plural "seconds"
+msgstr[0] "δευτερόλεπτο"
+msgstr[1] "δευτερόλεπτα"
+
+#: ../src/gpk-common.c:572
+msgid "hour"
+msgid_plural "hours"
+msgstr[0] "ώρα"
+msgstr[1] "ώρες"
+
+#: ../src/gpk-common.c:599
+#, c-format
+msgid "%s and %s"
+msgstr "%s και %s"
+
+#: ../src/gpk-common.c:602
+#, c-format
+msgid "%s, %s and %s"
+msgstr "%s, %s και %s"
+
+#: ../src/gpk-common.c:605
+#, c-format
+msgid "%s, %s, %s and %s"
+msgstr "%s, %s, %s και %s"
+
+#: ../src/gpk-common.c:609
+#, c-format
+msgid "%s, %s, %s, %s and %s"
+msgstr "%s, %s, %s, %s και %s"
+
+#: ../src/gpk-dbus-task.c:272
+msgid "EULA required"
+msgstr "Απαιτείται αποδοχή άδειας χρήσης (EULA)"
+
+#: ../src/gpk-dbus-task.c:294
+msgid "Signature required"
+msgstr "Απαιτείται υπογραφή"
+
+#: ../src/gpk-dbus-task.c:322
+msgid "Install untrusted"
+msgstr "Εγκατάσταση μη έμπιστων"
+
+#. TRANSLATORS: we failed to install
+#: ../src/gpk-dbus-task.c:357
+msgid "Failed to install software"
+msgstr "Απέτυχε η εγκατάσταση του λογισμικού"
+
+#. TRANSLATORS: we didn't select any applications that were returned
+#: ../src/gpk-dbus-task.c:359
+msgid "No applications were chosen to be installed"
+msgstr "Δεν επιλέχθηκαν εφαρμογές προς εγκατάσταση"
+
+#. TRANSLATORS: detailed text about the error
+#. TRANSLATORS: The detailed error if the user clicks "more info"
+#: ../src/gpk-dbus-task.c:388
+#: ../src/gpk-watch.c:418
+msgid "Error details"
+msgstr "Λεπτομέρειες σφάλματος"
+
+#: ../src/gpk-dbus-task.c:388
+msgid "Package Manager error details"
+msgstr "Λεπτομέρειες σφάλματος της εφαρμογής διαχείρισης πακέτων"
+
+#. TRANSLATORS: default fallback error -- this should never happen
+#: ../src/gpk-dbus-task.c:402
+msgid "Unknown error. Please refer to the detailed report and report in your distribution bugtracker."
+msgstr "Άγνωστο σφάλμα. Παρακαλώ, εξετάστε τη λεπτομερή αναφορά και αναφέρετε το σφάλμα στο σύστημα καταγραφής σφαλμάτων της διανομής σας."
+
+#. TRANSLATORS: failed authentication
+#: ../src/gpk-dbus-task.c:416
+msgid "You don't have the necessary privileges to perform this action."
+msgstr "Δεν έχετε τα προνόμια που απαιτούνται για την εκτέλεση αυτής της ενέργειας."
+
+#. TRANSLATORS: could not start system service
+#: ../src/gpk-dbus-task.c:420
+msgid "The packagekitd service could not be started."
+msgstr "Δεν ήταν δυνατή η εκκίνηση της υπηρεσίας packagekitd."
+
+#. TRANSLATORS: the user tried to query for something invalid
+#: ../src/gpk-dbus-task.c:424
+msgid "The query is not valid."
+msgstr "Δεν ήταν έγκυρη η αναζήτηση."
+
+#. TRANSLATORS: the user tried to install a file that was not compatable or broken
+#: ../src/gpk-dbus-task.c:428
+msgid "The file is not valid."
+msgstr "Δεν είναι έγκυρο το αρχείο."
+
+#. TRANSLATORS: title: installing packages
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-dbus-task.c:462
+#: ../src/gpk-enum.c:930
+msgid "Installing packages"
+msgstr "Εγκατάσταση πακέτων..."
+
+#. TRANSLATORS: this should never happen, low level failure
+#: ../src/gpk-dbus-task.c:470
+#: ../src/gpk-dbus-task.c:1305
+msgid "Failed to reset client to perform action"
+msgstr "Απέτυχε η επαναφορά του πελάτη για την εκτέλεση της ενέργειας"
+
+#. TRANSLATORS: error: failed to install, detailed error follows
+#. TRANSLATORS: failed to install, shouldn't be shown
+#: ../src/gpk-dbus-task.c:486
+#: ../src/gpk-dbus-task.c:1058
+msgid "Failed to install package"
+msgstr "Απέτυχε η εγκατάσταση του πακέτου"
+
+#. TRANSLATORS: finding a list of packages that we would also need to download
+#: ../src/gpk-dbus-task.c:540
+#: ../src/gpk-dbus-task.c:2027
+msgid "Finding other packages we require"
+msgstr "Εύρεση άλλων απαιτούμενων πακέτων..."
+
+#. TRANSLATORS: this is an internal error, and should not be seen
+#: ../src/gpk-dbus-task.c:551
+#: ../src/gpk-dbus-task.c:2038
+#: ../src/gpk-dbus-task.c:2218
+#: ../src/gpk-dbus-task.c:2330
+#: ../src/gpk-dbus-task.c:2744
+#: ../src/gpk-dbus-task.c:2992
+msgid "Failed to reset client"
+msgstr "Απέτυχε η επαναφορά του πελάτη"
+
+#. TRANSLATORS: error: could not get the extra package list when installing a package
+#: ../src/gpk-dbus-task.c:568
+#: ../src/gpk-dbus-task.c:2051
+msgid "Could not work out what packages would be also installed"
+msgstr "Δε βρέθηκε αν και ποια επιπλέον πακέτα πρέπει να εγκατασταθούν"
+
+#. TRANSLATORS: title
+#: ../src/gpk-dbus-task.c:752
+msgid "Failed to find software"
+msgstr "Δε βρέθηκε το λογισμικό"
+
+#. TRANSLATORS: nothing found in the software sources that helps
+#: ../src/gpk-dbus-task.c:754
+msgid "No new applications can be found to handle this type of file"
+msgstr "Δε βρέθηκαν εφαρμογές που να μπορούν να χειριστούν αυτόν τον τύπο αρχείου"
+
+#. TRANSLATORS: failed to fild the package for thefile
+#: ../src/gpk-dbus-task.c:789
+msgid "Failed to find package"
+msgstr "Δε βρέθηκε το πακέτο"
+
+#. TRANSLATORS: nothing found
+#: ../src/gpk-dbus-task.c:791
+msgid "The file could not be found in any packages"
+msgstr "Δε βρέθηκε το αρχείο σε κανένα πακέτο"
+
+#. TRANSLATORS: we've already got a package that provides this file
+#: ../src/gpk-dbus-task.c:822
+#, c-format
+msgid "The %s package already provides this file"
+msgstr "Το πακέτο %s ήδη παρέχει αυτό το αρχείο"
+
+#. TRANSLATORS: title
+#. TRANSLATORS: title: detailed internal error why the file install failed
+#: ../src/gpk-dbus-task.c:825
+#: ../src/gpk-dbus-task.c:1319
+msgid "Failed to install file"
+msgid_plural "Failed to install files"
+msgstr[0] "Απέτυχε η εγκατάσταση του αρχείου"
+msgstr[1] "Απέτυχε η εγκατάσταση των αρχείων"
+
+#. TRANSLATORS: title: tell the user we have to install additional packages
+#: ../src/gpk-dbus-task.c:885
+#: ../src/gpk-helper-deps-install.c:87
+#, c-format
+msgid "%i additional package also has to be installed"
+msgid_plural "%i additional packages also have to be installed"
+msgstr[0] "%i επιπλέον πακέτο πρέπει να εγκατασταθεί"
+msgstr[1] "%i επιπλέον πακέτα πρέπει να εγκατασταθούν"
+
+#. TRANSLATORS: message: explain to the user what we are doing in more detail
+#. TRANSLATORS: message: describe in detail why it must happen
+#: ../src/gpk-dbus-task.c:902
+#: ../src/gpk-helper-deps-install.c:95
+#, c-format
+msgid "To install %s, an additional package also has to be downloaded."
+msgid_plural "To install %s, additional packages also have to be downloaded."
+msgstr[0] "Για την εγκατάσταση του %s, απαιτείται η λήψη ενός επιπλέον πακέτου."
+msgstr[1] "Για την εγκατάσταση του %s, απαιτείται η λήψη επιπλέον πακέτων."
+
+#. TRANSLATORS: title: installing package
+#. TRANSLATORS: title: installing local files
+#. TRANSLATORS: button: confirm to search for packages
+#. TRANSLATORS: button: install codecs
+#. TRANSLATORS: button: install a font
+#. TRANSLATORS: button: install catalog
+#. TRANSLATORS: button: install packages in catalog
+#. gtk_dialog_add_button (GTK_DIALOG (dialog), "help", GTK_RESPONSE_HELP);
+#. TRANSLATORS: this is button text
+#. TRANSLATORS: if the update should be installed
+#: ../src/gpk-dbus-task.c:913
+#: ../src/gpk-dbus-task.c:1656
+#: ../src/gpk-dbus-task.c:2196
+#: ../src/gpk-dbus-task.c:2312
+#: ../src/gpk-dbus-task.c:2635
+#: ../src/gpk-dbus-task.c:3066
+#: ../src/gpk-dbus-task.c:3149
+#: ../src/gpk-dbus-task.c:3209
+#: ../src/gpk-helper-deps-install.c:106
+#: ../src/gpk-helper-deps-update.c:106
+#: ../src/gpk-update-viewer.c:1081
+msgid "Install"
+msgstr "Εγκατάσταση"
+
+#: ../src/gpk-dbus-task.c:941
+msgid "The following packages were installed:"
+msgstr "Εγκαταστάθηκαν τα ακόλουθα πακέτα:"
+
+#. FIXME: shows package_id in UI
+#. TRANSLATORS: couldn't resolve name to package
+#: ../src/gpk-dbus-task.c:999
+#, c-format
+msgid "Could not find packages"
+msgstr "Δε βρέθηκαν πακέτα"
+
+#. TRANSLATORS: message: could not find
+#: ../src/gpk-dbus-task.c:1008
+msgid "The packages could not be found in any software source"
+msgstr "Δε βρέθηκαν τα πακέτα σε καμία πηγή λογισμικού"
+
+#: ../src/gpk-dbus-task.c:1042
+msgid "Failed to install packages"
+msgstr "Απέτυχε η εγκατάσταση των πακέτων"
+
+#. TRANSLATORS: message: package is already installed
+#: ../src/gpk-dbus-task.c:1044
+#: ../src/gpk-enum.c:360
+msgid "The package is already installed"
+msgstr "Το πακέτο είναι ήδη εγκατεστημένο"
+
+#. TRANSLATORS: the search gave us the wrong result. internal error. barf.
+#. TRANSLATORS: we failed to find the package, this shouldn't happen
+#: ../src/gpk-dbus-task.c:1060
+#: ../src/gpk-dbus-task.c:2234
+msgid "Incorrect response from search"
+msgstr "Η αναζήτηση επέστρεψε λανθασμένη απάντηση"
+
+#. TRANSLATORS: button: show details about the error
+#. TRANSLATORS: This is a link in a libnotify bubble that shows the detailed error
+#: ../src/gpk-dbus-task.c:1215
+#: ../src/gpk-watch.c:633
+msgid "Show details"
+msgstr "Εμφάνιση λεπτομερειών"
+
+#. TRANSLATORS: title: we have to copy the private files to a public location
+#: ../src/gpk-dbus-task.c:1540
+msgid "Do you want to copy this file?"
+msgid_plural "Do you want to copy these files?"
+msgstr[0] "Θέλετε να αντιγράψετε αυτό το αρχείο;"
+msgstr[1] "Θέλετε να αντιγράψετε αυτά τα αρχεία;"
+
+#. TRANSLATORS: message: explain to the user what we are doing
+#: ../src/gpk-dbus-task.c:1543
+msgid "This package file has to be copied from a private directory so it can be installed:"
+msgid_plural "Several package files have to be copied from a private directory so they can be installed:"
+msgstr[0] "Αυτό το πακέτο πρέπει να αντιγραφεί από ιδιωτικό κατάλογο για να εγκατασταθεί:"
+msgstr[1] "Ορισμένα πακέτα πρέπει να αντιγραφούν από ιδιωτικό κατάλογο για να εγκατασταθούν:"
+
+#. TRANSLATORS: button: copy file from one directory to another
+#: ../src/gpk-dbus-task.c:1554
+msgid "Copy file"
+msgid_plural "Copy files"
+msgstr[0] "Αντιγραφή αρχείου"
+msgstr[1] "Αντιγραφή αρχείων"
+
+#. TRANSLATORS: title: we are about to copy files, which may take a few seconds
+#: ../src/gpk-dbus-task.c:1571
+msgid "Copying file"
+msgid_plural "Copying files"
+msgstr[0] "Αντιγραφή αρχείου..."
+msgstr[1] "Αντιγραφή αρχείων..."
+
+#. TRANSLATORS: title: tell the user we failed
+#: ../src/gpk-dbus-task.c:1610
+msgid "The file could not be copied"
+msgid_plural "The files could not be copied"
+msgstr[0] "Δεν ήταν δυνατή η αντιγραφή του αρχείου"
+msgstr[1] "Δεν ήταν δυνατή η αντιγραφή των αρχείων"
+
+#. TRANSLATORS: title: confirm the user want's to install a local file
+#: ../src/gpk-dbus-task.c:1647
+msgid "Do you want to install this file?"
+msgid_plural "Do you want to install these files?"
+msgstr[0] "Θέλετε να εγκαταστήσετε αυτό το αρχείο;"
+msgstr[1] "Θέλετε να εγκαταστήσετε αυτά τα αρχεία;"
+
+#. TRANSLATORS: title: we couldn't find the file -- very hard to get this
+#: ../src/gpk-dbus-task.c:1704
+msgid "File was not found!"
+msgid_plural "Files were not found!"
+msgstr[0] "Δε βρέθηκε το αρχείο!"
+msgstr[1] "Δε βρέθηκαν τα αρχεία!"
+
+#. TRANSLATORS: message: explain what went wrong
+#: ../src/gpk-dbus-task.c:1708
+msgid "The following file was not found:"
+msgid_plural "The following files were not found:"
+msgstr[0] "Δε βρέθηκε το ακόλουθο αρχείο:"
+msgstr[1] "Δε βρέθηκαν τα ακόλουθα αρχεία:"
+
+#. TRANSLATORS: title: we couldn't find the file -- very hard to get this
+#: ../src/gpk-dbus-task.c:1822
+msgid "File was not recognised!"
+msgid_plural "Files were not recognised!"
+msgstr[0] "Δεν αναγνωρίστηκε το αρχείο!"
+msgstr[1] "Δε αναγνωρίστηκαν τα αρχεία!"
+
+#. TRANSLATORS: message: the backend would not be able to handle the mime-type
+#: ../src/gpk-dbus-task.c:1826
+msgid "The following file is not recognised by the packaging system:"
+msgid_plural "The following files are not recognised by the packaging system:"
+msgstr[0] "Το ακόλουθο αρχείο δεν αναγνωρίζεται από την εφαρμογή διαχείρισης πακέτων:"
+msgstr[1] "Τα ακόλουθα αρχεία δεν αναγνωρίζονται από την εφαρμογή διαχείρισης πακέτων:"
+
+#. TRANSLATORS: title: installing a local file
+#: ../src/gpk-dbus-task.c:1983
+msgid "Install local file"
+msgid_plural "Install local files"
+msgstr[0] "Εγκατάσταση τοπικού αρχείου"
+msgstr[1] "Εγκατάσταση τοπικών αρχείων"
+
+#. TRANSLATORS: a program needs a package, for instance openoffice-clipart
+#: ../src/gpk-dbus-task.c:2180
+msgid "An additional package is required:"
+msgid_plural "Additional packages are required:"
+msgstr[0] "Απαιτείται ένα επιπλέον πακέτο:"
+msgstr[1] "Απαιτούνται επιπλέον πακέτα:"
+
+#. TRANSLATORS: ask the user if it's okay to search
+#: ../src/gpk-dbus-task.c:2183
+msgid "Do you want to search for and install this package now?"
+msgid_plural "Do you want to search for and install these packages now?"
+msgstr[0] "Θέλετε να αναζητήσετε τώρα αυτό το πακέτο και να το εγκαταστήσετε;"
+msgstr[1] "Θέλετε να αναζητήσετε τώρα αυτά τα πακέτα και να τα εγκαταστήσετε;"
+
+#. TRANSLATORS: string is a program name, e.g. "Movie Player"
+#: ../src/gpk-dbus-task.c:2189
+#, c-format
+msgid "%s wants to install a package"
+msgid_plural "%s wants to install packages"
+msgstr[0] "Το %s επιθυμεί να εγκαταστήσει ένα πακέτο"
+msgstr[1] "Το %s επιθυμεί να εγκαταστήσει πακέτα"
+
+#. TRANSLATORS: a random program which we can't get the name wants to do something
+#: ../src/gpk-dbus-task.c:2192
+msgid "A program wants to install a package"
+msgid_plural "A program wants to install packages"
+msgstr[0] "Ένα πρόγραμμα επιθυμεί να εγκαταστήσει ένα πακέτο"
+msgstr[1] "Ένα πρόγραμμα επιθυμεί να εγκαταστήσει πακέτα"
+
+#. TRANSLATORS: title, searching
+#: ../src/gpk-dbus-task.c:2208
+msgid "Searching for packages"
+msgstr "Αναζήτηση πακέτων..."
+
+#. TRANSLATORS: a program wants to install a file, e.g. /lib/moo.so
+#: ../src/gpk-dbus-task.c:2297
+msgid "The following file is required:"
+msgid_plural "The following files are required:"
+msgstr[0] "Απαιτείται το ακόλουθο αρχείο:"
+msgstr[1] "Απαιτούνται τα ακόλουθα αρχεία:"
+
+#. TRANSLATORS: confirm with the user
+#: ../src/gpk-dbus-task.c:2300
+msgid "Do you want to search for this file now?"
+msgid_plural "Do you want to search for these files now?"
+msgstr[0] "Θέλετε να αναζητήσετε τώρα αυτό το αρχείο;"
+msgstr[1] "Θέλετε να αναζητήσετε τώρα αυτά τα αρχεία;"
+
+#. TRANSLATORS: string is a program name, e.g. "Movie Player"
+#: ../src/gpk-dbus-task.c:2305
+#, c-format
+msgid "%s wants to install a file"
+msgid_plural "%s wants to install files"
+msgstr[0] "Το %s επιθυμεί να εγκαταστήσει ένα αρχείο"
+msgstr[1] "Το %s επιθυμεί να εγκαταστήσει αρχεία"
+
+#. TRANSLATORS: a random program which we can't get the name wants to do something
+#: ../src/gpk-dbus-task.c:2308
+msgid "A program wants to install a file"
+msgid_plural "A program wants to install files"
+msgstr[0] "Ένα πρόγραμμα επιθυμεί να εγκαταστήσει ένα αρχείο"
+msgstr[1] "Ένα πρόγραμμα επιθυμεί να εγκαταστήσει αρχεία"
+
+#. TRANSLATORS: searching for the package that provides the file
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-dbus-task.c:2323
+#: ../src/gpk-enum.c:1262
+msgid "Searching for file"
+msgstr "Αναζήτηση για το αρχείο..."
+
+#. TRANSLATORS: we failed to find the package, this shouldn't happen
+#: ../src/gpk-dbus-task.c:2346
+msgid "Failed to search for file"
+msgstr "Απέτυχε η αναζήτηση για το αρχείο"
+
+#. TRANSLATORS: title, searching for codecs
+#: ../src/gpk-dbus-task.c:2382
+#, c-format
+msgid "Searching for plugin: %s"
+msgstr "Αναζήτηση για πρόσθετο: %s"
+
+#. TRANSLATORS: we are listing the plugins in a box
+#: ../src/gpk-dbus-task.c:2453
+msgid "The following plugin is required:"
+msgid_plural "The following plugins are required:"
+msgstr[0] "Απαιτείται το ακόλουθο πρόσθετο:"
+msgstr[1] "Απαιτούνται τα ακόλουθα πρόσθετα:"
+
+#. TRANSLATORS: ask for confirmation
+#: ../src/gpk-dbus-task.c:2471
+msgid "Do you want to search for this now?"
+msgid_plural "Do you want to search for these now?"
+msgstr[0] "Θέλετε να το αναζητήσετε τώρα;"
+msgstr[1] "Θέλετε να τα αναζητήσετε τώρα;"
+
+#. TRANSLATORS: a program wants to decode something (unknown) -- string is a program name, e.g. "Movie Player"
+#: ../src/gpk-dbus-task.c:2484
+#, c-format
+msgid "%s requires an additional plugin to decode this file"
+msgid_plural "%s requires additional plugins to decode this file"
+msgstr[0] "Το %s απαιτεί ένα επιπλέον πρόσθετο για την αποκωδικοποίηση του αρχείου"
+msgstr[1] "Το %s απαιτεί επιπλέον πρόσθετα για την αποκωδικοποίηση του αρχείου"
+
+#. TRANSLATORS: a program wants to encode something (unknown) -- string is a program name, e.g. "Movie Player"
+#: ../src/gpk-dbus-task.c:2488
+#, c-format
+msgid "%s requires an additional plugin to encode this file"
+msgid_plural "%s requires additional plugins to encode this file"
+msgstr[0] "Το %s απαιτεί ένα επιπλέον πρόσθετο για την κωδικοποίηση του αρχείου"
+msgstr[1] "Το %s απαιτεί επιπλέον πρόσθετα για την κωδικοποίηση του αρχείου"
+
+#. TRANSLATORS: a program wants to do something (unknown) -- string is a program name, e.g. "Movie Player"
+#: ../src/gpk-dbus-task.c:2492
+#, c-format
+msgid "%s requires an additional plugin for this operation"
+msgid_plural "%s requires additional plugins for this operation"
+msgstr[0] "Το %s απαιτεί ένα επιπλέον πρόσθετο για αυτή την εργασία"
+msgstr[1] "Το %s απαιτεί επιπλέον πρόσθετα για αυτή την εργασία"
+
+#. TRANSLATORS: a random program which we can't get the name wants to decode something
+#: ../src/gpk-dbus-task.c:2498
+msgid "A program requires an additional plugin to decode this file"
+msgid_plural "A program requires additional plugins to decode this file"
+msgstr[0] "Ένα πρόγραμμα απαιτεί ένα επιπλέον πρόσθετο για την αποκωδικοποίηση αυτού του αρχείου"
+msgstr[1] "Ένα πρόγραμμα απαιτεί επιπλέον πρόσθετα για την αποκωδικοποίηση αυτού του αρχείου"
+
+#. TRANSLATORS: a random program which we can't get the name wants to encode something
+#: ../src/gpk-dbus-task.c:2502
+msgid "A program requires an additional plugin to encode this file"
+msgid_plural "A program requires additional plugins to encode this file"
+msgstr[0] "Ένα πρόγραμμα απαιτεί ένα επιπλέον πρόσθετο για την κωδικοποίηση αυτού του αρχείου"
+msgstr[1] "Ένα πρόγραμμα απαιτεί επιπλέον πρόσθετα για την κωδικοποίηση αυτού του αρχείου"
+
+#. TRANSLATORS: a random program which we can't get the name wants to do something (unknown)
+#: ../src/gpk-dbus-task.c:2506
+msgid "A program requires an additional plugin for this operation"
+msgid_plural "A program requires additional plugins for this operation"
+msgstr[0] "Ένα πρόγραμμα απαιτεί ένα επιπλέον πρόσθετο για αυτή την εργασία"
+msgstr[1] "Ένα πρόγραμμα απαιτεί επιπλέον πρόσθετα για αυτή την εργασία"
+
+#. TRANSLATORS: button: confirm to search for packages
+#: ../src/gpk-dbus-task.c:2512
+#: ../src/gpk-dbus-task.c:2720
+#: ../src/gpk-dbus-task.c:2963
+msgid "Search"
+msgstr "Αναζήτηση"
+
+#. TRANSLATORS: search for codec
+#: ../src/gpk-dbus-task.c:2570
+msgid "Searching for plugins"
+msgstr "Αναζήτηση για πρόσθετα..."
+
+#. TRANSLATORS: failed to search for codec
+#: ../src/gpk-dbus-task.c:2598
+msgid "Failed to search for plugin"
+msgstr "Απέτυχε η αναζήτηση για το πρόσθετο"
+
+#. TRANSLATORS: no software sources have the wanted codec
+#: ../src/gpk-dbus-task.c:2600
+msgid "Could not find plugin in any configured software source"
+msgstr "Δε βρέθηκε το πρόσθετο σε καμία ενεργοποιημένη πηγή λογισμικού"
+
+#: ../src/gpk-dbus-task.c:2626
+msgid "Install the following plugin"
+msgid_plural "Install the following plugins"
+msgstr[0] "Εγκατάσταση του ακόλουθου πρόσθετου"
+msgstr[1] "Εγκατάσταση των ακόλουθων πρόσθετων"
+
+#. TRANSLATORS: title: show a list of fonts
+#: ../src/gpk-dbus-task.c:2627
+#: ../src/gpk-dbus-task.c:3059
+msgid "Do you want to install this package now?"
+msgid_plural "Do you want to install these packages now?"
+msgstr[0] "Θέλετε να εγκαταστήσετε τώρα αυτό το πακέτο;"
+msgstr[1] "Θέλετε να εγκαταστήσετε τώρα αυτά τα πακέτα;"
+
+#. TRANSLATORS: message: mime type opener required
+#: ../src/gpk-dbus-task.c:2702
+msgid "An additional program is required to open this type of file:"
+msgstr "Απαιτείται ένα νέο πρόγραμμα για το άνοιγμα αυτού του τύπου αρχείου:"
+
+#. TRANSLATORS: message: confirm with the user
+#: ../src/gpk-dbus-task.c:2705
+msgid "Do you want to search for a program to open this file type now?"
+msgstr "Θέλετε να αναζητήσετε τώρα ένα πρόγραμμα που να μπορεί να ανοίξει αυτόν τον τύπο αρχείου;"
+
+#. TRANSLATORS: string is a program name, e.g. "Movie Player"
+#: ../src/gpk-dbus-task.c:2713
+#, c-format
+msgid "%s requires a new mime type"
+msgid_plural "%s requires new mime types"
+msgstr[0] "Το %s απαιτεί νέο τύπο mime"
+msgstr[1] "Το %s απαιτεί νέους τύπους mime"
+
+#. TRANSLATORS: a random program which we can't get the name wants to do something
+#: ../src/gpk-dbus-task.c:2716
+msgid "A program requires a new mime type"
+msgid_plural "A program requires new mime types"
+msgstr[0] "Ένα πρόγραμμα απαιτεί νέο τύπο mime"
+msgstr[1] "Ένα πρόγραμμα απαιτεί νέους τύπους mime"
+
+#. TRANSLATORS: title: searching for mime type handlers
+#: ../src/gpk-dbus-task.c:2732
+msgid "Searching for file handlers"
+msgstr "Αναζήτηση εφαρμογών για το χειρισμό του αρχείου..."
+
+#. TRANSLATORS: we failed to find the package, this shouldn't happen
+#: ../src/gpk-dbus-task.c:2761
+#: ../src/gpk-dbus-task.c:3011
+msgid "Failed to search for provides"
+msgstr "Απέτυχε η αναζήτηση για πακέτα που να παρέχουν το αρχείο"
+
+#. TRANSLATORS: we could not parse the ISO639 code from the fontconfig tag name
+#: ../src/gpk-dbus-task.c:2836
+msgid "Language tag not parsed"
+msgstr "Δεν αναγνωρίστηκε η ετικέτα γλώσσας"
+
+#. TRANSLATORS: we could not find en_US string for ISO639 code
+#: ../src/gpk-dbus-task.c:2844
+msgid "Language code not matched"
+msgstr "Μη αντιστοιχία κωδικού γλώσσας"
+
+#. TRANSLATORS: we need to download a new font package to display a document
+#: ../src/gpk-dbus-task.c:2942
+msgid "An additional font is required to view this document correctly."
+msgid_plural "Additional fonts are required to view this document correctly."
+msgstr[0] "Απαιτείται μια νέα γραμματοσειρά για την ορθή προβολή αυτού του εγγράφου."
+msgstr[1] "Απαιτούνται νέες γραμματοσειρές για την ορθή προβολή αυτού του εγγράφου."
+
+#. TRANSLATORS: we need to download a new font package to display a document
+#: ../src/gpk-dbus-task.c:2946
+msgid "Do you want to search for a suitable package now?"
+msgid_plural "Do you want to search for suitable packages now?"
+msgstr[0] "Θέλετε να αναζητήσετε τώρα το κατάλληλο πακέτο;"
+msgstr[1] "Θέλετε να αναζητήσετε τώρα τα κατάλληλα πακέτα;"
+
+#. TRANSLATORS: string is a program name, e.g. "Movie Player"
+#: ../src/gpk-dbus-task.c:2956
+#, c-format
+msgid "%s wants to install a font"
+msgid_plural "%s wants to install fonts"
+msgstr[0] "Το %s επιθυμεί να εγκαταστήσει μια γραμματοσειρά"
+msgstr[1] "Το %s επιθυμεί να εγκαταστήσει γραμματοσειρές"
+
+#. TRANSLATORS: a random program which we can't get the name wants to do something
+#: ../src/gpk-dbus-task.c:2959
+msgid "A program wants to install a font"
+msgid_plural "A program wants to install fonts"
+msgstr[0] "Ένα πρόγραμμα επιθυμεί να εγκαταστήσει μια γραμματοσειρά"
+msgstr[1] "Ένα πρόγραμμα επιθυμεί να εγκαταστήσει γραμματοσειρές"
+
+#. TRANSLATORS: title to show when searching for font files
+#: ../src/gpk-dbus-task.c:2974
+msgid "Searching for font"
+msgid_plural "Searching for fonts"
+msgstr[0] "Αναζήτηση γραμματοσειράς..."
+msgstr[1] "Αναζήτηση γραμματοσειρών..."
+
+#. TRANSLATORS: title: cannot find in sources
+#: ../src/gpk-dbus-task.c:3029
+msgid "Failed to find font"
+msgid_plural "Failed to find fonts"
+msgstr[0] "Δε βρέθηκε η γραμματοσειρά"
+msgstr[1] "Δε βρέθηκαν οι γραμματοσειρές"
+
+#. TRANSLATORS: message: tell the user we suck
+#: ../src/gpk-dbus-task.c:3037
+msgid "No new fonts can be found for this document"
+msgstr "Δε βρέθηκαν κατάλληλες νέες γραμματοσειρές για αυτό το έγγραφο"
+
+#. TRANSLATORS: finding the package names for a catalog
+#: ../src/gpk-dbus-task.c:3104
+#, c-format
+msgid "Finding package name: %s"
+msgstr "Εύρεση ονόματος πακέτου: %s"
+
+#. TRANSLATORS: finding a package for a file for a catalog
+#: ../src/gpk-dbus-task.c:3107
+#, c-format
+msgid "Finding file name: %s"
+msgstr "Εύρεση ονόματος αρχείου: %s"
+
+#. TRANSLATORS: finding a package which can provide a virtual provide
+#: ../src/gpk-dbus-task.c:3110
+#, c-format
+msgid "Finding a package to provide: %s"
+msgstr "Εύρεση πακέτου που να παρέχει το αρχείο: %s"
+
+#. TRANSLATORS: title to install package catalogs
+#: ../src/gpk-dbus-task.c:3140
+msgid "Do you want to install this catalog?"
+msgid_plural "Do you want to install these catalogs?"
+msgstr[0] "Θέλετε να εγκαταστήσετε αυτόν τον κατάλογο;"
+msgstr[1] "Θέλετε να εγκαταστήσετε αυτούς τους καταλόγους;"
+
+#. TRANSLATORS: title: install package catalogs, that is, instructions for installing
+#: ../src/gpk-dbus-task.c:3165
+msgid "Install catalogs"
+msgstr "Εγκατάσταση καταλόγων"
+
+#: ../src/gpk-dbus-task.c:3185
+msgid "No packages need to be installed"
+msgstr "Δε χρειάζεται να εγκατασταθούν πακέτα"
+
+#. TRANSLATORS: title: allow user to confirm
+#: ../src/gpk-dbus-task.c:3203
+msgid "Install packages in catalog?"
+msgstr "Να εγκατασταθούν τα πακέτα του καταλόγου;"
+
+#. TRANSLATORS: display a list of packages to install
+#: ../src/gpk-dbus-task.c:3205
+msgid "The following packages are marked to be installed from the catalog:"
+msgstr "Σημειώθηκαν προς εγκατάσταση τα ακόλουθα πακέτα του καταλόγου:"
+
+#. TRANSLATORS: the menu item, Applications, Places, System etc
+#: ../src/gpk-desktop.c:114
+msgid "Applications"
+msgstr "Εφαρμογές"
+
+#. TRANSLATORS: the path in the menu, e.g. Applications -> Games
+#. TRANSLATORS: The group type
+#: ../src/gpk-desktop.c:119
+#: ../src/gpk-desktop.c:126
+#: ../src/gpk-enum.c:1584
+msgid "System"
+msgstr "Σύστημα"
+
+#: ../src/gpk-desktop.c:119
+msgid "Preferences"
+msgstr "Προτιμήσεις"
+
+#: ../src/gpk-desktop.c:126
+msgid "Administration"
+msgstr "Διαχείριση"
+
+#. TRANSLATORS: This is when we have over 5 items, and we're not interested in detail
+#: ../src/gpk-dialog.c:74
+msgid "many packages"
+msgstr "πολλά πακέτα"
+
+#: ../src/gpk-dialog.c:238
+msgid "No files"
+msgstr "Κανένα αρχείο"
+
+#. TRANSLATORS: this is compact disk (CD) media
+#: ../src/gpk-enum.c:304
+msgid "CD"
+msgstr "CD"
+
+#. TRANSLATORS: this is digital versatile disk (DVD) media
+#: ../src/gpk-enum.c:308
+msgid "DVD"
+msgstr "DVD"
+
+#. TRANSLATORS: this is either CD or DVD media
+#: ../src/gpk-enum.c:312
+msgid "disc"
+msgstr "δίσκος"
+
+#. TRANSLATORS: this is generic media of unknown type that we will install from
+#: ../src/gpk-enum.c:316
+msgid "media"
+msgstr "μέσο"
+
+#: ../src/gpk-enum.c:333
+msgid "No network connection available"
+msgstr "Δεν υπάρχει διαθέσιμη σύνδεση δικτύου"
+
+#: ../src/gpk-enum.c:336
+msgid "No package cache is available."
+msgstr "Δεν υπάρχει διαθέσιμη μνήμη πακέτων."
+
+#: ../src/gpk-enum.c:339
+msgid "Out of memory"
+msgstr "Εξαντλήθηκε η μνήμη"
+
+#: ../src/gpk-enum.c:342
+msgid "Failed to create a thread"
+msgstr "Απέτυχε η δημιουργία νήματος"
+
+#: ../src/gpk-enum.c:345
+msgid "Not supported by this backend"
+msgstr "Δεν υποστηρίζεται από αυτό το σύστημα υποστήριξης"
+
+#: ../src/gpk-enum.c:348
+msgid "An internal system error has occurred"
+msgstr "Υπήρξε ένα εσωτερικό σφάλμα συστήματος"
+
+#: ../src/gpk-enum.c:351
+msgid "A security signature is not present"
+msgstr "Δεν υπάρχει υπογραφή ασφαλείας"
+
+#: ../src/gpk-enum.c:354
+msgid "The package is not installed"
+msgstr "Δεν είναι εγκατεστημένο το πακέτο"
+
+#: ../src/gpk-enum.c:357
+msgid "The package was not found"
+msgstr "Δε βρέθηκε το πακέτο"
+
+#: ../src/gpk-enum.c:363
+msgid "The package download failed"
+msgstr "Απέτυχε η λήψη του πακέτου"
+
+#: ../src/gpk-enum.c:366
+msgid "The group was not found"
+msgstr "Δε βρέθηκε η ομάδα"
+
+#: ../src/gpk-enum.c:369
+msgid "The group list was invalid"
+msgstr "Δεν ήταν έγκυρη η λίστα των ομάδων"
+
+#: ../src/gpk-enum.c:372
+msgid "Dependency resolution failed"
+msgstr "Απέτυχε ο καθορισμός των εξαρτήσεων"
+
+#: ../src/gpk-enum.c:375
+msgid "Search filter was invalid"
+msgstr "Δεν ήταν έγκυρο το φίλτρο αναζήτησης"
+
+#: ../src/gpk-enum.c:378
+msgid "The package identifier was not well formed"
+msgstr "Δεν είχε τη σωστή μορφή το αναγνωριστικό του πακέτου"
+
+#: ../src/gpk-enum.c:381
+msgid "Transaction error"
+msgstr "Σφάλμα εργασίας"
+
+#: ../src/gpk-enum.c:384
+msgid "Repository name was not found"
+msgstr "Δε βρέθηκε το όνομα του αποθετηρίου"
+
+#: ../src/gpk-enum.c:387
+msgid "Could not remove a protected system package"
+msgstr "Δεν ήταν δυνατή η αφαίρεση ενός προστατευμένου πακέτου συστήματος"
+
+#: ../src/gpk-enum.c:390
+msgid "The action was canceled"
+msgstr "Ακυρώθηκε η ενέργεια"
+
+#: ../src/gpk-enum.c:393
+msgid "The action was forcibly canceled"
+msgstr "Η ενέργεια ακυρώθηκε δια της βίας"
+
+#: ../src/gpk-enum.c:396
+msgid "Reading the configuration file failed"
+msgstr "Απέτυχε η ανάγνωση του αρχείου ρυθμίσεων"
+
+#: ../src/gpk-enum.c:399
+msgid "The action cannot be canceled"
+msgstr "Δεν είναι δυνατή η ακύρωση της ενέργειας"
+
+#: ../src/gpk-enum.c:402
+msgid "Source packages cannot be installed"
+msgstr "Δεν είναι δυνατή η εγκατάσταση των πακέτων πηγαίου κώδικα"
+
+#: ../src/gpk-enum.c:405
+msgid "The license agreement failed"
+msgstr "Απέτυχε η αποδοχή της άδειας χρήσης"
+
+#: ../src/gpk-enum.c:408
+msgid "Local file conflict between packages"
+msgstr "Σύγκρουση μεταξύ πακέτων για τοπικά αρχεία"
+
+#: ../src/gpk-enum.c:411
+msgid "Packages are not compatible"
+msgstr "Τα πακέτα δεν είναι συμβατά μεταξύ τους"
+
+#: ../src/gpk-enum.c:414
+msgid "Problem connecting to a software source"
+msgstr "Εμφανίστηκε πρόβλημα στη σύνδεση με μια πηγή λογισμικού"
+
+#: ../src/gpk-enum.c:417
+msgid "Failed to initialize"
+msgstr "Απέτυχε η αρχικοποίηση"
+
+#: ../src/gpk-enum.c:420
+msgid "Failed to finalise"
+msgstr "Απέτυχε η ολοκλήρωση"
+
+#: ../src/gpk-enum.c:423
+msgid "Cannot get lock"
+msgstr "Αδύνατη η αποκλειστική χρήση"
+
+#: ../src/gpk-enum.c:426
+msgid "No packages to update"
+msgstr "Δεν υπάρχουν πακέτα προς ενημέρωση"
+
+#: ../src/gpk-enum.c:429
+msgid "Cannot write repository configuration"
+msgstr "Δεν είναι δυνατή η εγγραφή των ρυθμίσεων των αποθετηρίων"
+
+#: ../src/gpk-enum.c:432
+msgid "Local install failed"
+msgstr "Απέτυχε η τοπική εγκατάσταση"
+
+#: ../src/gpk-enum.c:435
+msgid "Bad security signature"
+msgstr "Κακή υπογραφή ασφαλείας"
+
+#: ../src/gpk-enum.c:438
+msgid "Missing security signature"
+msgstr "Λείπει η υπογραφή ασφαλείας"
+
+#: ../src/gpk-enum.c:441
+msgid "Repository configuration invalid"
+msgstr "Μη έγκυρες ρυθμίσεις αποθετηρίων"
+
+#: ../src/gpk-enum.c:444
+msgid "Invalid package file"
+msgstr "Μη έγκυρο αρχείο πακέτου"
+
+#: ../src/gpk-enum.c:447
+msgid "Package install blocked"
+msgstr "Εφράγη η εγκατάσταση του πακέτου"
+
+#: ../src/gpk-enum.c:450
+msgid "Package is corrupt"
+msgstr "Το πακέτο είναι κατεστραμμένο"
+
+#: ../src/gpk-enum.c:453
+msgid "All packages are already installed"
+msgstr "Είναι ήδη εγκατεστημένα όλα τα πακέτα"
+
+#: ../src/gpk-enum.c:456
+msgid "The specified file could not be found"
+msgstr "Δε βρέθηκε το ζητούμενο αρχείο"
+
+#: ../src/gpk-enum.c:459
+msgid "No more mirrors are available"
+msgstr "Δεν υπάρχουν άλλοι διαθέσιμοι εναλλακτικοί συνδέσμοι"
+
+#: ../src/gpk-enum.c:462
+msgid "No distribution upgrade data is available"
+msgstr "Δεν υπάρχουν διαθέσιμες πληροφορίες για αναβαθμίσεις της διανομής"
+
+#: ../src/gpk-enum.c:465
+msgid "Package is incompatible with this system"
+msgstr "Το πακέτο δεν είναι συμβατό με το σύστημά σας"
+
+#: ../src/gpk-enum.c:468
+msgid "No space is left on the disk"
+msgstr "Δεν υπάρχει διαθέσιμος χώρος στο δίσκο"
+
+#. TRANSLATORS: this is the window title when a new cd or dvd is required
+#: ../src/gpk-enum.c:471
+#: ../src/gpk-helper-media-change.c:73
+msgid "A media change is required"
+msgstr "Απαιτείται αλλαγή μέσου"
+
+#: ../src/gpk-enum.c:474
+msgid "Authorization failed"
+msgstr "Απέτυχε η πιστοποίηση"
+
+#: ../src/gpk-enum.c:477
+msgid "Update not found"
+msgstr "Δε βρέθηκε η ενημέρωση"
+
+#: ../src/gpk-enum.c:480
+msgid "Cannot install from untrusted source"
+msgstr "Δεν είναι δυνατή η εγκατάσταση από τη μη έμπιστη πηγή"
+
+#: ../src/gpk-enum.c:483
+msgid "Cannot update from untrusted source"
+msgstr "Δεν είναι δυνατή η ενημέρωση από τη μη έμπιστη πηγή"
+
+#: ../src/gpk-enum.c:486
+msgid "Cannot get the file list"
+msgstr "Δεν είναι δυνατή η λήψη της λίστας αρχείων"
+
+#: ../src/gpk-enum.c:489
+msgid "Cannot get package requires"
+msgstr "Δεν είναι δυνατή η λήψη των απαιτούμενων του πακέτου"
+
+#: ../src/gpk-enum.c:492
+msgid "Cannot disable source"
+msgstr "Δεν είναι δυνατή η απενεργοποίηση της πηγής"
+
+#: ../src/gpk-enum.c:495
+#, fuzzy
+#| msgid "The package download failed"
+msgid "The download failed"
+msgstr "Απέτυχε η λήψη του πακέτου"
+
+#: ../src/gpk-enum.c:498
+#, fuzzy
+#| msgid "Packages are not compatible"
+msgid "Package failed to configure"
+msgstr "Τα πακέτα δεν είναι συμβατά μεταξύ τους"
+
+#: ../src/gpk-enum.c:501
+#, fuzzy
+#| msgid "Package list files"
+msgid "Package failed to build"
+msgstr "Αρχεία λίστας πακέτων"
+
+#: ../src/gpk-enum.c:504
+#, fuzzy
+#| msgid "Packages to install"
+msgid "Package failed to install"
+msgstr "Πακέτα προς εγκατάσταση"
+
+#: ../src/gpk-enum.c:507
+#, fuzzy
+#| msgid "Package '%s' has been removed"
+msgid "Package failed to be removed"
+msgstr "Αφαιρέθηκε το πακέτο '%s'"
+
+#: ../src/gpk-enum.c:524
+msgid ""
+"There is no network connection available.\n"
+"Please check your connection settings and try again."
+msgstr ""
+"Δεν υπάρχει διαθέσιμη σύνδεση δικτύου. \n"
+"Παρακαλώ, ελέγξτε τις ρυθμίσεις της σύνδεσής σας και προσπαθήστε ξανά."
+
+#: ../src/gpk-enum.c:528
+msgid ""
+"The package list needs to be rebuilt.\n"
+"This should have been done by the backend automatically."
+msgstr ""
+"Θα πρέπει να δημιουργηθεί εκ νέου η λίστα πακέτων.\n"
+"Αυτό θα έπρεπε να είχε γίνει αυτόματα από το σύστημα υποστήριξης."
+
+#: ../src/gpk-enum.c:532
+msgid ""
+"The service that is responsible for handling user requests is out of memory.\n"
+"Please restart your computer."
+msgstr ""
+"Εξαντλήθηκε η μνήμη της υπηρεσίας που διαχειρίζεται τα αιτήματα των χρηστών.\n"
+"Παρακαλώ, επανεκκινήστε τον υπολογιστή σας."
+
+#: ../src/gpk-enum.c:536
+msgid "A thread could not be created to service the user request."
+msgstr "Δεν ήταν δυνατή η δημιουργία νήματος για να ικανοποιηθεί το αίτημα του χρήστη."
+
+#: ../src/gpk-enum.c:539
+msgid ""
+"The action is not supported by this backend.\n"
+"Please report a bug in your distribution bugtracker as this should not have happened."
+msgstr "Αυτή η ενέργεια δεν υποστηρίζεται από το σύστημα υποστήριξης. Παρακαλώ, αναφέρετε το σφάλμα στο σύστημα καταγραφής σφαλμάτων της διανομής σας, γιατί δεν θα έπρεπε να είχε συμβεί."
+
+#: ../src/gpk-enum.c:543
+msgid ""
+"A problem that we were not expecting has occurred.\n"
+"Please report this bug in your distribution bugtracker with the error description."
+msgstr ""
+"Εμφανίστηκε ένα μη αναμενόμενο πρόβλημα.\n"
+"Παρακαλώ, αναφέρετε αυτό το σφάλμα και τις λεπτομέρειές του στο σύστημα καταγραφής σφαλμάτων της διανομής σας."
+
+#: ../src/gpk-enum.c:547
+msgid ""
+"A security trust relationship could not be made with software source.\n"
+"Please check your security settings."
+msgstr ""
+"Δεν ήταν δυνατή η εγκαθίδρυση σχέσης εμπιστοσύνης και ασφάλειας με την πηγή λογισμικού.\n"
+"Παρακαλώ, ελέγξτε τις ρυθμίσεις ασφαλείας σας."
+
+#: ../src/gpk-enum.c:551
+msgid "The package that is trying to be removed or updated is not already installed."
+msgstr "Το πακέτο που προσπαθείτε να αφαιρέσετε ή να ενημερώσετε δεν είναι εγκατεστημένο."
+
+#: ../src/gpk-enum.c:554
+msgid "The package that is being modified was not found on your system or in any software source."
+msgstr "Το πακέτο που προσπαθείτε να τροποποιήσετε δε βρέθηκε στο σύστημά σας ή στις πηγές λογισμικού."
+
+#: ../src/gpk-enum.c:557
+msgid "The package that is trying to be installed is already installed."
+msgstr "Το πακέτο που προσπαθείτε να εγκαταστήσετε είναι ήδη εγκατεστημένο."
+
+#: ../src/gpk-enum.c:560
+msgid ""
+"The package download failed.\n"
+"Please check your network connectivity."
+msgstr ""
+"Απέτυχε η λήψη του πακέτου.\n"
+"Παρακαλώ, ελέγξτε τη σύνδεση δικτύου."
+
+#: ../src/gpk-enum.c:564
+msgid ""
+"The group type was not found.\n"
+"Please check your group list and try again."
+msgstr ""
+"Δε βρέθηκε ο τύπος της ομάδας.\n"
+"Παρακαλώ, ελέγξτε τη λίστα των ομάδων σας και προσπαθήστε ξανά."
+
+#: ../src/gpk-enum.c:568
+msgid ""
+"The group list could not be loaded.\n"
+"Refreshing your cache may help, although this is normally a software source error."
+msgstr ""
+"Δεν ήταν δυνατή η φόρτωση της λίστας των ομάδων.\n"
+"Ίσως βοηθήσει η ανανέωση της λανθάνουσας μνήμης, αν και μάλλον πρόκειται για σφάλμα της πηγής λογισμικού."
+
+#: ../src/gpk-enum.c:573
+msgid ""
+"A package could not be found that allows the action to complete.\n"
+"More information is available in the detailed report."
+msgstr ""
+"Δε βρέθηκε στο σύστημά σας ένα πακέτο που θα επέτρεπε την ολοκλήρωση της εργασίας.\n"
+"Για περισσότερες πληροφορίες, δείτε τη λεπτομερή αναφορά."
+
+#: ../src/gpk-enum.c:577
+msgid "The search filter was not correctly formed."
+msgstr "Το φίλτρο αναζήτησης δεν είχε τη σωστή μορφή."
+
+#: ../src/gpk-enum.c:580
+msgid ""
+"The package identifier was not well formed when sent to the server.\n"
+"This normally indicates an internal error and should be reported."
+msgstr ""
+"Το αναγνωριστικό του πακέτου δεν είχε τη σωστή μορφή όταν απεστάλη στον εξυπηρετητή.\n"
+"Αυτό συνήθως υποδεικνύει εσωτερικό σφάλμα και θα έπρεπε να αναφερθεί."
+
+#: ../src/gpk-enum.c:584
+msgid ""
+"An unspecified transaction error has occurred.\n"
+"More information is available in the detailed report."
+msgstr ""
+"Εμφανίστηκε ένα ακαθόριστο σφάλμα.\n"
+"Για περισσότερες πληροφορίες, δείτε τη λεπτομερή αναφορά."
+
+#: ../src/gpk-enum.c:588
+msgid ""
+"The remote software source name was not found.\n"
+"You may need to enable an item in Software Sources."
+msgstr ""
+"Δεν βρέθηκε το όνομα της απομακρυσμένης πηγής λογισμικού\n"
+"Ίσως πρέπει να ενεργοποιήσετε κάποια επιπλέον πηγή λογισμικού."
+
+#: ../src/gpk-enum.c:592
+msgid "Removing a protected system package is not allowed."
+msgstr "Δεν επιτρέπεται η αφαίρεση προστατευμένων πακέτων συστήματος."
+
+#: ../src/gpk-enum.c:595
+msgid "The action was canceled successfully and no packages were changed."
+msgstr "Η ακύρωση της εργασίας ήταν επιτυχής και κανένα πακέτο δεν άλλαξε."
+
+#: ../src/gpk-enum.c:598
+msgid ""
+"The action was canceled successfully and no packages were changed.\n"
+"The backend did not exit cleanly."
+msgstr ""
+"Η ακύρωση της εργασίας ήταν επιτυχής και κανένα πακέτο δεν άλλαξε.\n"
+"Το σύστημα υποστήριξης δεν τερματίστηκε ομαλά."
+
+#: ../src/gpk-enum.c:602
+msgid ""
+"The native package configuration file could not be opened.\n"
+"Please make sure configuration is valid."
+msgstr ""
+"Δεν ήταν δυνατό το άνοιγμα του αρχείου ρυθμίσεων του εγγενούς πακέτου.\n"
+"Παρακαλώ, βεβαιωθείτε ότι οι ρυθμίσεις είναι έγκυρες."
+
+#: ../src/gpk-enum.c:606
+msgid "The action cannot be canceled at this time."
+msgstr "Δεν είναι δυνατή η ακύρωση της εργασίας αυτή τη στιγμή."
+
+#: ../src/gpk-enum.c:609
+msgid ""
+"Source packages are not normally installed this way.\n"
+"Check the extension of the file you are trying to install."
+msgstr "Τα πακέτα πηγαίου κώδικα συνήθως δεν εγκαθίστανται κατ' αυτόν τον τρόπο. Ελέγξτε την επέκταση του αρχείου που προσπαθείτε να εγκαταστήσετε."
+
+#: ../src/gpk-enum.c:613
+msgid ""
+"The license agreement was not agreed to.\n"
+"To use this software you have to accept the license."
+msgstr ""
+"Δεν αποδεχθήκατε την άδεια χρήσης.\n"
+"Για να χρησιμοποιήσετε αυτό το λογισμικό πρέπει να αποδεχθείτε την άδεια."
+
+#: ../src/gpk-enum.c:617
+msgid ""
+"Two packages provide the same file.\n"
+"This is usually due to mixing packages from different software sources."
+msgstr ""
+"Δύο πακέτα παρέχουν το ίδιο αρχείο.\n"
+"Αυτό συνήθως οφείλεται στην ανάμιξη πακέτων από διαφορετικές πηγές λογισμικού."
+
+#: ../src/gpk-enum.c:621
+msgid ""
+"Multiple packages exist that are not compatible with each other.\n"
+"This is usually due to mixing packages from different software sources."
+msgstr ""
+"Διάφορα πακέτα δεν είναι συμβατά μεταξύ τους.\n"
+"Αυτό συνήθως οφείλεται στην ανάμιξη πακέτων από διαφορετικές πηγές λογισμικού."
+
+#: ../src/gpk-enum.c:625
+msgid ""
+"There was a (possibly temporary) problem connecting to a software source.\n"
+"Please check the detailed error for further details."
+msgstr ""
+"Εμφανίστηκε πρόβλημα (πιθανώς προσωρινό) στη σύνδεση με μια πηγή λογισμικού\n"
+"Για περισσότερες πληροφορίες, ελέγξτε τη λεπτομερή αναφορά."
+
+#: ../src/gpk-enum.c:629
+msgid ""
+"Failed to initialize packaging backend.\n"
+"This may occur if other packaging tools are being used simultaneously."
+msgstr ""
+"Απέτυχε η αρχικοποίηση του συστήματος υποστήριξης.\n"
+"Αυτό ίσως οφείλεται στην ταυτόχρονη λειτουργία πολλαπλών εργαλείων διαχείρισης πακέτων."
+
+#: ../src/gpk-enum.c:633
+msgid ""
+"Failed to close down the backend instance.\n"
+"This error can normally be ignored."
+msgstr "Απέτυχε ο τερματισμός του συστήματος υποστήριξης. Συνήθως, αυτό το σφάλμα μπορεί να αγνοηθεί."
+
+#: ../src/gpk-enum.c:637
+msgid ""
+"Cannot get the exclusive lock on the packaging backend.\n"
+"Please close any other legacy packaging tools that may be open."
+msgstr ""
+"Αδύνατη η αποκλειστική χρήση του συστήματος υποστήριξης.\n"
+"Παρακαλώ, κλείστε οποιοδήποτε άλλο εργαλείο διαχείρισης πακέτων παραμένει ανοιχτό."
+
+#: ../src/gpk-enum.c:641
+msgid "None of the selected packages could be updated."
+msgstr "Δεν ήταν δυνατή η ενημέρωση κανενός από τα επιλεγμένα πακέτα."
+
+#: ../src/gpk-enum.c:644
+msgid "The repository configuration could not be modified."
+msgstr "Δεν ήταν δυνατή η τροποποίηση των ρυθμίσεων των αποθετηρίων."
+
+#: ../src/gpk-enum.c:647
+msgid ""
+"Installing the local file failed.\n"
+"More information is available in the detailed report."
+msgstr ""
+"Απέτυχε η εγκατάσταση του τοπικού αρχείου.\n"
+"Για περισσότερες πληροφορίες, δείτε τη λεπτομερή αναφορά."
+
+#: ../src/gpk-enum.c:651
+msgid "The package security signature could not be verified."
+msgstr "Δεν ήταν δυνατή η επαλήθευση της υπογραφής ασφαλείας του πακέτου."
+
+#: ../src/gpk-enum.c:654
+msgid ""
+"The package security signature is missing and this package is untrusted.\n"
+"This package was not signed when created."
+msgstr "Λείπει η υπογραφή ασφαλείας του πακέτου. Το πακέτο δεν είναι έμπιστο. Αυτό το πακέτο δεν υπογράφηκε κατά τη δημιουργία του."
+
+#: ../src/gpk-enum.c:658
+msgid "Repository configuration was invalid and could not be read."
+msgstr "Οι ρυθμίσεις των αποθετηρίων δεν είναι έγκυρες και δεν ήταν δυνατή η ανάγνωσή τους."
+
+#: ../src/gpk-enum.c:661
+msgid ""
+"The package you are attempting to install is not valid.\n"
+"The package file could be corrupt, or not a proper package."
+msgstr "Το πακέτο που προσπαθείτε να εγκαταστήσετε δεν είναι έγκυρο. Το αρχείο του πακέτου μπορεί να είναι κατεστραμμένο, ή να μην αποτελεί πακέτο."
+
+#: ../src/gpk-enum.c:665
+msgid "Installation of this package prevented by your packaging system's configuration."
+msgstr "Οι ρυθμίσεις του εργαλείου διαχείρισης πακέτων εμπόδισαν την εγκατάσταση αυτού του πακέτου."
+
+#: ../src/gpk-enum.c:668
+msgid "The package that was downloaded is corrupt and needs to be downloaded again."
+msgstr "Το πακέτο που ελήφθη είναι κατεστραμμένο και πρέπει να ληφθεί εκ νέου."
+
+#: ../src/gpk-enum.c:671
+msgid "All of the packages selected for install are already installed on the system."
+msgstr "Όλα τα πακέτα που επελέγησαν για εγκατάσταση είναι ήδη εγκατεστημένα στο σύστημα."
+
+#: ../src/gpk-enum.c:674
+msgid ""
+"The specified file could not be found on the system.\n"
+"Check the file still exists and has not been deleted."
+msgstr "Δε βρέθηκε το ζητούμενο αρχείο. Ελέγξτε αν όντως υπάρχει το αρχείο και δεν έχει διαγραφεί."
+
+#: ../src/gpk-enum.c:678
+msgid ""
+"Required data could not be found on any of the configured software sources.\n"
+"There were no more download mirrors that could be tried."
+msgstr ""
+"Δε βρέθηκαν τα απαιτούμενα δεδομένα σε καμία από τις ενεργοποιημένες πηγές λογισμικού.\n"
+"Δεν υπάρχουν άλλοι εναλλακτικοί σύνδεσμοι που να μπορούν να χρησιμοποιηθούν για τη λήψη."
+
+#: ../src/gpk-enum.c:682
+msgid ""
+"Required upgrade data could not be found in any of the configured software sources.\n"
+"The list of distribution upgrades will be unavailable."
+msgstr ""
+"Δε βρέθηκαν οι απαιτούμενες πληροφορίες για αναβαθμίσεις σε καμία από τις ενεργοποιημένες πηγές λογισμικού.\n"
+"Δε θα είναι διαθέσιμη η λίστα των αναβαθμίσεων της διανομής."
+
+#: ../src/gpk-enum.c:686
+msgid "The package that is trying to be installed is incompatible with this system."
+msgstr "Το πακέτο που προσπαθείτε να εγκαταστήσετε είναι ασύμβατο με αυτό το σύστημα."
+
+#: ../src/gpk-enum.c:689
+msgid ""
+"There is insufficient space on the device.\n"
+"Free some space on the system disk to perform this operation."
+msgstr ""
+"Η συσκευή δε διαθέτει αρκετό ελεύθερο χώρο. \n"
+"Απελευθερώστε χώρο στο δίσκο για να εκτελέσετε αυτή την εργασία."
+
+#: ../src/gpk-enum.c:693
+msgid "Additional media is required to complete the transaction."
+msgstr "Απαιτούνται επιπλέον μέσα για την ολοκλήρωση της συναλλαγής."
+
+#: ../src/gpk-enum.c:696
+msgid ""
+"You have failed to provide correct authentication.\n"
+"Please check any passwords or account settings."
+msgstr ""
+"Δεν παρείχατε σωστά στοιχεία πιστοποίησης.\n"
+"Παρακαλώ, ελέγξτε τα στοιχεία και το συνθηματικό του λογαριασμού σας."
+
+#: ../src/gpk-enum.c:700
+msgid ""
+"The specified update could not be found.\n"
+"It could have already been installed or no longer available on the remote server."
+msgstr ""
+"Δε βρέθηκε η ζητούμενη ενημέρωση.\n"
+"Μπορεί να έχει ήδη εγκατασταθεί, ή να μη διατίθεται πλέον από τον απομακρυσμένο εξυπηρετητή."
+
+#: ../src/gpk-enum.c:704
+msgid "The package could not be installed from untrusted source."
+msgstr "Δεν ήταν δυνατή η εγκατάσταση του πακέτου από τη μη έμπιστη πηγή."
+
+#: ../src/gpk-enum.c:707
+msgid "The package could not be updated from untrusted source."
+msgstr "Δεν ήταν δυνατή η ενημέρωση του πακέτου από τη μη έμπιστη πηγή."
+
+#: ../src/gpk-enum.c:710
+msgid "The file list is not available for this package."
+msgstr "Δεν είναι διαθέσιμη η λίστα αρχείων αυτού του πακέτου."
+
+#: ../src/gpk-enum.c:713
+msgid "The information about what requires this package could not be obtained."
+msgstr "Δεν ήταν δυνατή η λήψη πληροφοριών για το τι απαιτεί αυτό το πακέτο."
+
+#: ../src/gpk-enum.c:716
+msgid "The specified software source could not be disabled."
+msgstr "Δεν ήταν δυνατή η απενεργοποίηση της ζητούμενης πηγής λογισμικού."
+
+#: ../src/gpk-enum.c:719
+#, fuzzy
+#| msgid ""
+#| "A package could not be found that allows the action to complete.\n"
+#| "More information is available in the detailed report."
+msgid ""
+"The download could not be done automatically and should be done manually.\n"
+"More information is available in the detailed report."
+msgstr ""
+"Δε βρέθηκε στο σύστημά σας ένα πακέτο που θα επέτρεπε την ολοκλήρωση της εργασίας.\n"
+"Για περισσότερες πληροφορίες, δείτε τη λεπτομερή αναφορά."
+
+#: ../src/gpk-enum.c:723
+#, fuzzy
+#| msgid ""
+#| "Installing the local file failed.\n"
+#| "More information is available in the detailed report."
+msgid ""
+"One of the selected packages failed to configure correctly.\n"
+"More information is available in the detailed report."
+msgstr ""
+"Απέτυχε η εγκατάσταση του τοπικού αρχείου.\n"
+"Για περισσότερες πληροφορίες, δείτε τη λεπτομερή αναφορά."
+
+#: ../src/gpk-enum.c:727
+#, fuzzy
+#| msgid ""
+#| "Installing the local file failed.\n"
+#| "More information is available in the detailed report."
+msgid ""
+"One of the selected packages failed to build correctly.\n"
+"More information is available in the detailed report."
+msgstr ""
+"Απέτυχε η εγκατάσταση του τοπικού αρχείου.\n"
+"Για περισσότερες πληροφορίες, δείτε τη λεπτομερή αναφορά."
+
+#: ../src/gpk-enum.c:731
+#, fuzzy
+#| msgid ""
+#| "Installing the local file failed.\n"
+#| "More information is available in the detailed report."
+msgid ""
+"One of the selected packages failed to install correctly.\n"
+"More information is available in the detailed report."
+msgstr ""
+"Απέτυχε η εγκατάσταση του τοπικού αρχείου.\n"
+"Για περισσότερες πληροφορίες, δείτε τη λεπτομερή αναφορά."
+
+#: ../src/gpk-enum.c:735
+#, fuzzy
+#| msgid ""
+#| "An unspecified transaction error has occurred.\n"
+#| "More information is available in the detailed report."
+msgid ""
+"One of the selected packages failed to be removed correctly.\n"
+"More information is available in the detailed report."
+msgstr ""
+"Εμφανίστηκε ένα ακαθόριστο σφάλμα.\n"
+"Για περισσότερες πληροφορίες, δείτε τη λεπτομερή αναφορά."
+
+#: ../src/gpk-enum.c:754
+#, fuzzy
+#| msgid "No restart is necessary"
+msgid "No restart is necessary."
+msgstr "Δε θα χρειαστεί επανεκκίνηση"
+
+#: ../src/gpk-enum.c:757
+#, fuzzy
+#| msgid "You will be required to restart this application"
+msgid "You will be required to restart this application."
+msgstr "Θα χρειαστεί να επανεκκινήσετε την εφαρμογή"
+
+#: ../src/gpk-enum.c:760
+#, fuzzy
+#| msgid "You will be required to log out and back in"
+msgid "You will be required to log out and back in."
+msgstr "Θα χρειαστεί να αποσυνδεθείτε και να συνδεθείτε εκ νέου"
+
+#: ../src/gpk-enum.c:763
+#, fuzzy
+#| msgid "A restart will be required"
+msgid "A restart will be required."
+msgstr "Θα χρειαστεί επανεκκίνηση"
+
+#: ../src/gpk-enum.c:766
+#, fuzzy
+#| msgid "You will be required to log out and back in due to a security update"
+msgid "You will be required to log out and back in due to a security update."
+msgstr "Θα χρειαστεί να αποσυνδεθείτε και να συνδεθείτε εκ νέου, γιατί το απαιτεί μια ενημέρωση ασφαλείας"
+
+#: ../src/gpk-enum.c:769
+#, fuzzy
+#| msgid "A restart will be required due to a security update"
+msgid "A restart will be required due to a security update."
+msgstr "Θα χρειαστεί επανεκκίνηση, γιατί το απαιτεί μια ενημέρωση ασφαλείας"
+
+#: ../src/gpk-enum.c:786
+#, fuzzy
+#| msgid "No restart is required"
+msgid "No restart is required."
+msgstr "Δεν απαιτείται επανεκκίνηση"
+
+#: ../src/gpk-enum.c:789
+#, fuzzy
+#| msgid "A restart is required"
+msgid "A restart is required."
+msgstr "Απαιτείται επανεκκίνηση"
+
+#: ../src/gpk-enum.c:792
+#, fuzzy
+#| msgid "You need to log out and log back in"
+msgid "You need to log out and log back in."
+msgstr "Πρέπει να αποσυνδεθείτε και να συνδεθείτε εκ νέου"
+
+#: ../src/gpk-enum.c:795
+#, fuzzy
+#| msgid "You need to restart the application"
+msgid "You need to restart the application."
+msgstr "Απαιτείται επανεκκίνηση της εφαρμογής"
+
+#: ../src/gpk-enum.c:798
+#, fuzzy
+#| msgid "You need to log out and log back in"
+msgid "You need to log out and log back in to remain secure."
+msgstr "Πρέπει να αποσυνδεθείτε και να συνδεθείτε εκ νέου"
+
+#: ../src/gpk-enum.c:801
+#, fuzzy
+#| msgid "A restart will be required due to a security update"
+msgid "A restart is required to remain secure."
+msgstr "Θα χρειαστεί επανεκκίνηση, γιατί το απαιτεί μια ενημέρωση ασφαλείας"
+
+#. TRANSLATORS: A distribution stability level
+#: ../src/gpk-enum.c:819
+msgid "Stable"
+msgstr "Σταθερή"
+
+#. TRANSLATORS: A distribution stability level
+#: ../src/gpk-enum.c:823
+msgid "Unstable"
+msgstr "Μη σταθερή"
+
+#. TRANSLATORS: A distribution stability level
+#: ../src/gpk-enum.c:827
+msgid "Testing"
+msgstr "Δοκιμαστική"
+
+#: ../src/gpk-enum.c:844
+msgid "A mirror is possibly broken"
+msgstr "Ίσως δε λειτουργεί ένας εναλλακτικός σύνδεσμος"
+
+#: ../src/gpk-enum.c:847
+msgid "The connection was refused"
+msgstr "Η σύνδεση απορρίφθηκε"
+
+#: ../src/gpk-enum.c:850
+msgid "The parameter was invalid"
+msgstr "Δεν ήταν έγκυρη η παράμετρος"
+
+#: ../src/gpk-enum.c:853
+msgid "The priority was invalid"
+msgstr "Δεν ήταν έγκυρη η προτεραιότητα"
+
+#: ../src/gpk-enum.c:856
+msgid "Backend warning"
+msgstr "Προειδοποίηση από το σύστημα υποστήριξης"
+
+#: ../src/gpk-enum.c:859
+msgid "Daemon warning"
+msgstr "Προειδοποίηση από την υπηρεσία"
+
+#: ../src/gpk-enum.c:862
+msgid "The package list cache is being rebuilt"
+msgstr "Δημιουργείται εκ νέου η μνήμη της λίστας πακέτων"
+
+#: ../src/gpk-enum.c:865
+msgid "An untrusted package was installed"
+msgstr "Εγκαταστάθηκε ένα μη έμπιστο πακέτο"
+
+#: ../src/gpk-enum.c:868
+msgid "A newer package exists"
+msgstr "Υπάρχει νεότερο πακέτο"
+
+#: ../src/gpk-enum.c:871
+msgid "Could not find package"
+msgstr "Δε βρέθηκε το πακέτο"
+
+#: ../src/gpk-enum.c:874
+msgid "Configuration files were changed"
+msgstr "Τροποποιήθηκαν αρχεία ρυθμίσεων"
+
+#: ../src/gpk-enum.c:877
+msgid "Package is already installed"
+msgstr "Είναι ήδη εγκατεστημένο το πακέτο"
+
+#: ../src/gpk-enum.c:880
+msgid "Automatic cleanup is being ignored"
+msgstr ""
+
+#. TRANSLATORS: This is when the status is not known
+#: ../src/gpk-enum.c:898
+msgid "Unknown state"
+msgstr "Άγνωστη κατάσταση"
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:902
+msgid "Starting"
+msgstr "Εκκίνηση..."
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:906
+msgid "Waiting in queue"
+msgstr "Αναμονή στην ουρά..."
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:910
+msgid "Running"
+msgstr "Εκτέλεση..."
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:914
+msgid "Querying"
+msgstr "Αναζήτηση..."
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:918
+msgid "Getting information"
+msgstr "Λήψη πληροφοριών..."
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:922
+msgid "Removing packages"
+msgstr "Αφαίρεση πακέτων..."
+
+#. TRANSLATORS: The transaction state
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:926
+#: ../src/gpk-enum.c:1342
+msgid "Downloading packages"
+msgstr "Λήψη πακέτων..."
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:934
+msgid "Refreshing software list"
+msgstr "Ανανέωση λίστας λογισμικού..."
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:938
+msgid "Installing updates"
+msgstr "Εγκατάσταση ενημερώσεων..."
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:942
+msgid "Cleaning up packages"
+msgstr "Εκκαθάριση πακέτων..."
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:946
+msgid "Obsoleting packages"
+msgstr "Σημείωση πακέτων ως πεπαλαιωμένων..."
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:950
+msgid "Resolving dependencies"
+msgstr "Καθορισμός εξαρτήσεων..."
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:954
+msgid "Checking signatures"
+msgstr "Έλεγχος υπογραφών..."
+
+#. TRANSLATORS: The transaction state
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:958
+#: ../src/gpk-enum.c:1302
+msgid "Rolling back"
+msgstr "Επαναφορά..."
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:962
+msgid "Testing changes"
+msgstr "Δοκιμή αλλαγών..."
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:966
+msgid "Committing changes"
+msgstr "Ενσωμάτωση αλλαγών..."
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:970
+msgid "Requesting data"
+msgstr "Αίτηση για δεδομένα..."
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:974
+msgid "Finished"
+msgstr "Ολοκληρώθηκε"
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:978
+msgid "Cancelling"
+msgstr "Ακύρωση..."
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:982
+msgid "Downloading repository information"
+msgstr "Λήψη πληροφοριών αποθετηρίων..."
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:986
+msgid "Downloading list of packages"
+msgstr "Λήψη λίστας πακέτων..."
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:990
+msgid "Downloading file lists"
+msgstr "Λήψη των λιστών αρχείων..."
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:994
+msgid "Downloading lists of changes"
+msgstr "Λήψη των λιστών αλλαγών..."
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:998
+msgid "Downloading groups"
+msgstr "Λήψη ομάδων..."
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:1002
+msgid "Downloading update information"
+msgstr "Λήψη πληροφοριών ενημερώσεων..."
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:1006
+msgid "Repackaging files"
+msgstr "Επαναδημιουργία πακέτων..."
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:1010
+msgid "Loading cache"
+msgstr "Φόρτωση της λανθάνουσας μνήμης..."
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:1014
+msgid "Scanning installed applications"
+msgstr "Σάρωση των εγκατεστημένων εφαρμογών..."
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:1018
+msgid "Generating package lists"
+msgstr "Δημιουργία λιστών πακέτων..."
+
+#. TRANSLATORS: The transaction state
+#: ../src/gpk-enum.c:1022
+msgid "Waiting for package manager lock"
+msgstr "Αναμονή αποκλειστικής χρήσης της εφαρμογής διαχείρισης πακέτων..."
+
+#. TRANSLATORS: waiting for user to type in a password
+#: ../src/gpk-enum.c:1026
+msgid "Waiting for authentication"
+msgstr "Αναμονή πιστοποίησης..."
+
+#. TRANSLATORS: we are updating the list of processes
+#: ../src/gpk-enum.c:1030
+msgid "Updating the list of running applications"
+msgstr "Ενημέρωση της λίστας εκτελούμενων εφαρμογών..."
+
+#. TRANSLATORS: we are checking executable files in use
+#: ../src/gpk-enum.c:1034
+msgid "Checking for applications currently in use"
+msgstr "Έλεγχος για χρησιμοποιούμενες εφαρμογές..."
+
+#. TRANSLATORS: we are checking for libraries in use
+#: ../src/gpk-enum.c:1038
+msgid "Checking for libraries currently in use"
+msgstr "Έλεγχος για χρησιμοποιούμενες βιβλιοθήκες..."
+
+#. TRANSLATORS: type of update
+#: ../src/gpk-enum.c:1056
+#, c-format
+msgid "%i trivial update"
+msgid_plural "%i trivial updates"
+msgstr[0] "%i ενημέρωση ήσσονος σημασίας"
+msgstr[1] "%i ενημερώσεις ήσσονος σημασίας"
+
+#. TRANSLATORS: type of update in the case that we don't have any data
+#: ../src/gpk-enum.c:1060
+#, c-format
+msgid "%i update"
+msgid_plural "%i updates"
+msgstr[0] "%i ενημέρωση"
+msgstr[1] "%i ενημερώσεις"
+
+#. TRANSLATORS: type of update
+#: ../src/gpk-enum.c:1064
+#, c-format
+msgid "%i important update"
+msgid_plural "%i important updates"
+msgstr[0] "%i σημαντική ενημέρωση"
+msgstr[1] "%i σημαντικές ενημερώσεις"
+
+#. TRANSLATORS: type of update
+#: ../src/gpk-enum.c:1068
+#, c-format
+msgid "%i security update"
+msgid_plural "%i security updates"
+msgstr[0] "%i ενημέρωση ασφαλείας"
+msgstr[1] "%i ενημερώσεις ασφαλείας"
+
+#. TRANSLATORS: type of update
+#: ../src/gpk-enum.c:1072
+#, c-format
+msgid "%i bug fix update"
+msgid_plural "%i bug fix updates"
+msgstr[0] "%i ενημέρωση διόρθωσης σφαλμάτων"
+msgstr[1] "%i ενημερώσεις διόρθωσης σφαλμάτων"
+
+#. TRANSLATORS: type of update
+#: ../src/gpk-enum.c:1076
+#, c-format
+msgid "%i enhancement update"
+msgid_plural "%i enhancement updates"
+msgstr[0] "%i ενημέρωση βελτίωσης"
+msgstr[1] "%i ενημερώσεις βελτίωσης"
+
+#. TRANSLATORS: number of updates that cannot be installed due to deps
+#: ../src/gpk-enum.c:1080
+#, c-format
+msgid "%i blocked update"
+msgid_plural "%i blocked updates"
+msgstr[0] "%i φραγμένη ενημέρωση"
+msgstr[1] "%i φραγμένες ενημερώσεις"
+
+#. TRANSLATORS: The type of update
+#: ../src/gpk-enum.c:1098
+msgid "Trivial update"
+msgstr "Ενημέρωση ήσσονος σημασίας"
+
+#. TRANSLATORS: The type of update
+#: ../src/gpk-enum.c:1102
+msgid "Normal update"
+msgstr "Κανονική ενημέρωση"
+
+#. TRANSLATORS: The type of update
+#: ../src/gpk-enum.c:1106
+msgid "Important update"
+msgstr "Σημαντική ενημέρωση"
+
+#. TRANSLATORS: The type of update
+#: ../src/gpk-enum.c:1110
+msgid "Security update"
+msgstr "Ενημέρωση ασφαλείας"
+
+#. TRANSLATORS: The type of update
+#: ../src/gpk-enum.c:1114
+msgid "Bug fix update"
+msgstr "Ενημέρωση διόρθωσης σφαλμάτων"
+
+#. TRANSLATORS: The type of update
+#: ../src/gpk-enum.c:1118
+msgid "Enhancement update"
+msgstr "Ενημέρωση βελτίωσης"
+
+#. TRANSLATORS: The type of update
+#: ../src/gpk-enum.c:1122
+msgid "Blocked update"
+msgstr "Φραγμένη ενημέρωση"
+
+#. TRANSLATORS: The state of a package, i.e. not installed
+#: ../src/gpk-enum.c:1132
+msgid "Available"
+msgstr "Διαθέσιμο"
+
+#. TRANSLATORS: The action of the package, in present tense
+#. TRANSLATORS: This is the package name that is being downloaded
+#: ../src/gpk-enum.c:1150
+#: ../src/gpk-service-pack.c:148
+msgid "Downloading"
+msgstr "Λήψη..."
+
+#. TRANSLATORS: The action of the package, in present tense
+#: ../src/gpk-enum.c:1154
+msgid "Updating"
+msgstr "Ενημέρωση..."
+
+#. TRANSLATORS: The action of the package, in present tense
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1158
+#: ../src/gpk-enum.c:1278
+msgid "Installing"
+msgstr "Εγκατάσταση..."
+
+#. TRANSLATORS: The action of the package, in present tense
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1162
+#: ../src/gpk-enum.c:1274
+msgid "Removing"
+msgstr "Αφαίρεση..."
+
+#. TRANSLATORS: The action of the package, in present tense
+#: ../src/gpk-enum.c:1166
+msgid "Cleaning up"
+msgstr "Εκκαθάριση..."
+
+#. TRANSLATORS: The action of the package, in present tense
+#: ../src/gpk-enum.c:1170
+msgid "Obsoleting"
+msgstr "Σημείωση πεπαλαιωμένων..."
+
+#. TRANSLATORS: The action of the package, in present tense
+#: ../src/gpk-enum.c:1174
+#, fuzzy
+#| msgid "Installing"
+msgid "Reinstalling"
+msgstr "Εγκατάσταση..."
+
+#. TRANSLATORS: The action of the package, in past tense
+#: ../src/gpk-enum.c:1192
+msgid "Downloaded"
+msgstr "Ελήφθη"
+
+#. TRANSLATORS: The action of the package, in past tense
+#: ../src/gpk-enum.c:1196
+msgid "Updated"
+msgstr "Ενημερώθηκε"
+
+#. TRANSLATORS: The action of the package, in past tense
+#: ../src/gpk-enum.c:1204
+msgid "Removed"
+msgstr "Αφαιρέθηκε"
+
+#. TRANSLATORS: The action of the package, in past tense
+#: ../src/gpk-enum.c:1208
+msgid "Cleaned up"
+msgstr "Εκκαθαρίστηκε"
+
+#. TRANSLATORS: The action of the package, in past tense
+#: ../src/gpk-enum.c:1212
+msgid "Obsoleted"
+msgstr "Σημειώθηκε ως πεπαλαιωμένο"
+
+#. TRANSLATORS: The action of the package, in past tense
+#: ../src/gpk-enum.c:1216
+#, fuzzy
+#| msgid "Installed"
+msgid "Reinstalled"
+msgstr "Εγκατεστημένο"
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1234
+#: ../src/gpk-enum.c:1390
+msgid "Unknown role type"
+msgstr "Άγνωστος τύπος ρόλου"
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1238
+msgid "Getting dependencies"
+msgstr "Λήψη εξαρτήσεων..."
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1242
+msgid "Getting update detail"
+msgstr "Λήψη λεπτομερειών ενημέρωσης..."
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1246
+msgid "Getting details"
+msgstr "Λήψη λεπτομερειών..."
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1250
+msgid "Getting requires"
+msgstr "Λήψη απαιτούμενων..."
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1254
+msgid "Getting updates"
+msgstr "Λήψη ενημερώσεων..."
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1258
+msgid "Searching details"
+msgstr "Αναζήτηση λεπτομερειών..."
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1266
+msgid "Searching groups"
+msgstr "Αναζήτηση ομάδων..."
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1270
+msgid "Searching for package name"
+msgstr "Αναζήτηση για όνομα πακέτου..."
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1282
+msgid "Installing file"
+msgstr "Εγκατάσταση αρχείου..."
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1286
+msgid "Refreshing package cache"
+msgstr "Ανανέωση μνήμης πακέτων..."
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1290
+msgid "Updating packages"
+msgstr "Ενημέρωση πακέτων..."
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1294
+msgid "Updating system"
+msgstr "Ενημέρωση συστήματος..."
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1298
+msgid "Canceling"
+msgstr "Ακύρωση..."
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1306
+msgid "Getting list of repositories"
+msgstr "Λήψη της λίστας αποθετηρίων..."
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1310
+msgid "Enabling repository"
+msgstr "Ενεργοποίηση αποθετηρίου..."
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1314
+msgid "Setting repository data"
+msgstr "Ρύθμιση δεδομένων αποθετηρίων..."
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1318
+msgid "Resolving"
+msgstr "Καθορισμός..."
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1322
+msgid "Getting file list"
+msgstr "Λήψη της λίστας αρχείων..."
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1326
+msgid "Getting what provides"
+msgstr "Λήψη πακέτων που παρέχουν τα αρχεία..."
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1330
+msgid "Installing signature"
+msgstr "Εγκατάσταση υπογραφής..."
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1334
+msgid "Getting package lists"
+msgstr "Λήψη λιστών πακέτων..."
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1338
+msgid "Accepting EULA"
+msgstr "Αποδοχή της άδειας χρήσης (EULA)..."
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1346
+msgid "Getting distribution upgrade information"
+msgstr "Λήψη πληροφοριών για αναβαθμίσεις της διανομής..."
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1350
+msgid "Getting categories"
+msgstr "Λήψη κατηγοριών..."
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1354
+msgid "Getting old transactions"
+msgstr "Λήψη ιστορικού εργασιών..."
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1358
+#, fuzzy
+#| msgid "Failed to install file"
+#| msgid_plural "Failed to install files"
+msgid "Simulating the install of files"
+msgstr "Απέτυχε η εγκατάσταση του αρχείου"
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1362
+#| msgid "Mime type installer"
+msgid "Simulating the install"
+msgstr "Προσομοίωση της εγκατάστασης"
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1366
+msgid "Simulating the remove"
+msgstr ""
+
+#. TRANSLATORS: The role of the transaction, in present tense
+#: ../src/gpk-enum.c:1370
+#| msgid "Getting the list of updates"
+msgid "Simulating the update"
+msgstr "Προσομοίωση της ενημέρωσης"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1394
+msgid "Got dependencies"
+msgstr "Ελήφθησαν οι εξαρτήσεις"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1398
+msgid "Got update detail"
+msgstr "Ελήφθησαν οι λεπτομέρειες των ενημερώσεων"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1402
+msgid "Got details"
+msgstr "Ελήφθησαν οι λεπτομέρειες"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1406
+msgid "Got requires"
+msgstr "Ελήφθησαν τα απαιτούμενα"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1410
+msgid "Got updates"
+msgstr "Ελήφθησαν οι ενημερώσεις"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1414
+msgid "Searched for package details"
+msgstr "Αναζητήθηκαν λεπτομέρειες για το πακέτο"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1418
+msgid "Searched for file"
+msgstr "Αναζητήθηκε το αρχείο"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1422
+msgid "Searched groups"
+msgstr "Αναζητήθηκαν ομάδες"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1426
+msgid "Searched for package name"
+msgstr "Αναζητήθηκε το όνομα πακέτου"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1430
+msgid "Removed packages"
+msgstr "Αφαιρέθηκαν τα πακέτα"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1434
+msgid "Installed packages"
+msgstr "Εγκαταστάθηκαν τα πακέτα"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1438
+msgid "Installed local files"
+msgstr "Εγκαταστάθηκαν τα τοπικά αρχεία"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1442
+msgid "Refreshed package cache"
+msgstr "Ανανεώθηκε η μνήμη πακέτων"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1446
+msgid "Updated packages"
+msgstr "Ενημερώθηκαν τα πακέτα"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1450
+msgid "Updated system"
+msgstr "Ενημερώθηκε το σύστημα"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1454
+msgid "Canceled"
+msgstr "Ακυρώθηκε"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1458
+msgid "Rolled back"
+msgstr "Έγινε επαναφορά"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1462
+msgid "Got list of repositories"
+msgstr "Ελήφθη η λίστα των αποθετηρίων"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1466
+msgid "Enabled repository"
+msgstr "Ενεργοποιήθηκε το αποθετήριο"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1470
+msgid "Set repository data"
+msgstr "Ρυθμίστηκαν τα δεδομένα των αποθετηρίων"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1474
+msgid "Resolved"
+msgstr "Καθορίστηκαν"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1478
+msgid "Got file list"
+msgstr "Ελήφθη η λίστα αρχείων"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1482
+msgid "Got what provides"
+msgstr "Ελήφθησαν τα πακέτα που παρέχουν τα αρχεία..."
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1486
+msgid "Installed signature"
+msgstr "Εγκαταστάθηκε η υπογραφή"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1490
+msgid "Got package lists"
+msgstr "Ελήφθησαν οι λίστες πακέτων"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1494
+msgid "Accepted EULA"
+msgstr "Έγινε αποδεκτή η άδεια χρήσης (EULA)"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1498
+msgid "Downloaded packages"
+msgstr "Ελήφθησαν τα πακέτα"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1502
+msgid "Got distribution upgrades"
+msgstr "Ελήφθησαν οι αναβαθμίσεις της διανομής"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1506
+msgid "Got categories"
+msgstr "Ελήφθησαν οι κατηγορίες"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1510
+msgid "Got old transactions"
+msgstr "Ελήφθη το ιστορικό των εργασιών"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1514
+#, fuzzy
+#| msgid "Failed to install file"
+#| msgid_plural "Failed to install files"
+msgid "Simulated the install of files"
+msgstr "Απέτυχε η εγκατάσταση του αρχείου"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1518
+#, fuzzy
+#| msgid "Files to install"
+msgid "Simulated the install"
+msgstr "Αρχεία προς εγκατάσταση"
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1522
+msgid "Simulated the remove"
+msgstr ""
+
+#. TRANSLATORS: The role of the transaction, in past tense
+#: ../src/gpk-enum.c:1526
+#, fuzzy
+#| msgid "Failed to update"
+msgid "Simulated the update"
+msgstr "Η ενημέρωση απέτυχε"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1544
+msgid "Accessibility"
+msgstr "Προσιτότητα"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1548
+msgid "Accessories"
+msgstr "Βοηθήματα"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1552
+msgid "Education"
+msgstr "Εκπαίδευση"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1556
+msgid "Games"
+msgstr "Παιχνίδια"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1560
+msgid "Graphics"
+msgstr "Γραφικά"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1564
+msgid "Internet"
+msgstr "Διαδίκτυο"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1568
+msgid "Office"
+msgstr "Γραφείο"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1572
+msgid "Other"
+msgstr "Άλλα"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1576
+msgid "Programming"
+msgstr "Προγραμματισμός"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1580
+msgid "Multimedia"
+msgstr "Ήχος και βίντεο"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1588
+msgid "GNOME desktop"
+msgstr "GNOME"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1592
+msgid "KDE desktop"
+msgstr "KDE"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1596
+msgid "XFCE desktop"
+msgstr "XFCE"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1600
+msgid "Other desktops"
+msgstr "Άλλες επιφάνειες εργασίας"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1604
+msgid "Publishing"
+msgstr "Δημοσίευση"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1608
+msgid "Servers"
+msgstr "Εξυπηρετητές"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1612
+msgid "Fonts"
+msgstr "Γραμματοσειρές"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1616
+msgid "Admin tools"
+msgstr "Εργαλεία διαχειριστή"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1620
+msgid "Legacy"
+msgstr "Παλαιά"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1624
+msgid "Localization"
+msgstr "Τοπικοποίηση"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1628
+msgid "Virtualization"
+msgstr "Εικονικές μηχανές"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1632
+msgid "Security"
+msgstr "Ασφάλεια"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1636
+msgid "Power management"
+msgstr "Διαχείριση ενέργειας"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1640
+msgid "Communication"
+msgstr "Επικοινωνία"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1644
+msgid "Network"
+msgstr "Δίκτυο"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1648
+msgid "Maps"
+msgstr "Χάρτες"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1652
+msgid "Software sources"
+msgstr "Πηγές λογισμικού"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1656
+msgid "Science"
+msgstr "Επιστήμες"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1660
+msgid "Documentation"
+msgstr "Τεκμηρίωση"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1664
+msgid "Electronics"
+msgstr "Ηλεκτρονική"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1668
+msgid "Package collections"
+msgstr "Συλλογές πακέτων"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1672
+msgid "Vendor"
+msgstr "Κατασκευαστής"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1676
+msgid "Newest packages"
+msgstr "Νεότερα πακέτα"
+
+#. TRANSLATORS: The group type
+#: ../src/gpk-enum.c:1680
+msgid "Unknown group"
+msgstr "Άγνωστη ομάδα"
+
+#. TRANSLATORS: we need another package to keep udev quiet
+#: ../src/gpk-firmware.c:438
+msgid "Additional firmware is required to make hardware in this computer function correctly."
+msgstr "Απαιτείται επιπλέον υλικολογισμικό για την ορθή λειτουργία του υλικού του υπολογιστή."
+
+#. TRANSLATORS: title of libnotify bubble
+#: ../src/gpk-firmware.c:452
+msgid "Additional firmware required"
+msgstr "Απαιτείται επιπλέον υλικολογισμικό"
+
+#. TRANSLATORS: button label
+#: ../src/gpk-firmware.c:457
+msgid "Install firmware"
+msgstr "Εγκατάσταση υλικολογισμικού"
+
+#. TRANSLATORS: we should ignore this device and not ask anymore
+#: ../src/gpk-firmware.c:460
+msgid "Ignore devices"
+msgstr ""
+
+#. TRANSLATORS: we need to restart so the new hardware can re-request the firmware
+#: ../src/gpk-firmware.c:652
+msgid "You will need to restart this computer before the hardware will work correctly."
+msgstr ""
+
+#. TRANSLATORS: title of libnotify bubble
+#: ../src/gpk-firmware.c:655
+#: ../src/gpk-firmware.c:690
+#: ../src/gpk-firmware.c:717
+#, fuzzy
+#| msgid "Additional firmware required"
+msgid "Additional software was installed"
+msgstr "Απαιτείται επιπλέον υλικολογισμικό"
+
+#. TRANSLATORS: button label
+#: ../src/gpk-firmware.c:664
+#| msgid "Restart computer now"
+msgid "Restart now"
+msgstr "Επανεκκίνηση τώρα"
+
+#. TRANSLATORS: we need to remove an replug so the new hardware can re-request the firmware
+#: ../src/gpk-firmware.c:687
+#, fuzzy
+#| msgid ""
+#| "You will need to log out and back in after the update for the changes to "
+#| "take effect."
+msgid "You will need to remove and then reinsert the hardware before it will work correctly."
+msgstr "Θα χρειαστεί να αποσυνδεθείτε και να συνδεθείτε εκ νέου μετά την ενημέρωση, για να εφαρμοστούν οι αλλαγές."
+
+#. TRANSLATORS: we need to remove an replug so the new hardware can re-request the firmware
+#: ../src/gpk-firmware.c:714
+msgid "Your hardware has been set up and is now ready to use."
+msgstr ""
+
+#. TODO: tell the user what hardware, NOT JUST A UDI
+#. TRANSLATORS: we can install an extra package so this hardware works, e.g. firmware
+#: ../src/gpk-hardware.c:164
+msgid "Additional packages can be installed to support this hardware"
+msgstr "Για να υποστηρίζεται αυτό το υλικό μπορείτε να εγκαταστήσετε επιπλέον πακέτα"
+
+#. TRANSLATORS: a new bit of hardware has been plugged in
+#: ../src/gpk-hardware.c:166
+msgid "New hardware attached"
+msgstr "Συνδέθηκε νέο υλικό"
+
+#. TRANSLATORS: button text, install the packages needed for the hardware to work
+#. TRANSLATORS: button tooltip
+#: ../src/gpk-hardware.c:172
+#: ../src/gpk-helper-chooser.c:295
+msgid "Install package"
+msgstr "Εγκατάσταση πακέτου"
+
+#. TRANSLATORS: column for the application icon
+#: ../src/gpk-helper-chooser.c:142
+#: ../src/gpk-helper-run.c:184
+msgid "Icon"
+msgstr "Εικονίδιο"
+
+#: ../src/gpk-helper-chooser.c:279
+msgid "Applications that can open this type of file"
+msgstr "Εφαρμογές που μπορούν να ανοίξουν αυτόν τον τύπο αρχείου"
+
+#. TRANSLATORS: title: show the number of other packages we depend on
+#: ../src/gpk-helper-deps-remove.c:76
+#, c-format
+msgid "%i additional package also has to be removed"
+msgid_plural "%i additional packages also have to be removed"
+msgstr[0] "%i επιπλέον πακέτο πρέπει να αφαιρεθεί"
+msgstr[1] "%i επιπλέον πακέτα πρέπει να αφαιρεθούν"
+
+#. TRANSLATORS: message: describe in detail why it must happen
+#: ../src/gpk-helper-deps-remove.c:84
+#, c-format
+msgid "To remove %s other packages that depend on it must also be removed."
+msgid_plural "To remove %s other packages that depend on them must also be removed."
+msgstr[0] "Για να αφαιρεθεί το %s πρέπει να αφαιρεθούν και άλλα πακέτα που εξαρτώνται από αυτό."
+msgstr[1] "Για να αφαιρεθούν τα %s πρέπει να αφαιρεθούν και άλλα πακέτα που εξαρτώνται από αυτά."
+
+#. gtk_dialog_add_button (GTK_DIALOG (dialog), "help", GTK_RESPONSE_HELP);
+#. TRANSLATORS: this is button text
+#: ../src/gpk-helper-deps-remove.c:95
+msgid "Remove"
+msgstr "Αφαίρεση"
+
+#. TRANSLATORS: title: tell the user we have to install additional updates
+#: ../src/gpk-helper-deps-update.c:91
+#, c-format
+msgid "%i additional update also has to be installed"
+msgid_plural "%i additional update also have to be installed"
+msgstr[0] "%i επιπλέον ενημέρωση πρέπει να εγκατασταθεί"
+msgstr[1] "%i επιπλέον ενημερώσεις πρέπει να εγκατασταθούν"
+
+#. TRANSLATORS: message: describe in detail why it must happen
+#: ../src/gpk-helper-deps-update.c:96
+msgid "To perform this update, an additional package also has to be downloaded."
+msgid_plural "To perform this update, additional packages also have to be downloaded."
+msgstr[0] "Για να γίνει η ενημέρωση, απαιτείται η λήψη ενός επιπλέον πακέτου."
+msgstr[1] "Για να γίνει η ενημέρωση, απαιτείται η λήψη επιπλέον πακέτων."
+
+#. TRANSLATORS: dialog body, explains to the user that they need to insert a disk to continue. The first replacement is DVD, CD etc
+#: ../src/gpk-helper-media-change.c:69
+#, c-format
+msgid "Additional media is required. Please insert the %s labeled '%s' to continue."
+msgstr "Απαιτούνται επιπλέον μέσα. Παρακαλώ εισάγετε το %s με ετικέτα '%s' για να συνεχίσετε."
+
+#. TRANSLATORS: this is button text
+#: ../src/gpk-helper-media-change.c:77
+msgid "Continue"
+msgstr "Συνέχεια"
+
+#. TRANSLATORS: window title: do we want to execute a program we just installed?
+#: ../src/gpk-helper-run.c:484
+msgid "Run new application?"
+msgstr "Εκτέλεση της νέας εφαρμογής;"
+
+#. add run button
+#: ../src/gpk-helper-run.c:487
+msgid "_Run"
+msgstr "Εκ_τέλεση"
+
+#. TRANSLATORS: is not GPG signed
+#: ../src/gpk-helper-untrusted.c:100
+#: ../src/gpk-helper-untrusted.c:110
+msgid "The software is not signed by a trusted provider."
+msgstr "Το πακέτο δεν υπογράφεται από έμπιστο πάροχο."
+
+#. TRANSLATORS: user has to trust provider -- I know, this sucks
+#: ../src/gpk-helper-untrusted.c:102
+msgid "Do not update this package unless you are sure it is safe to do so."
+msgstr "Ενημερώστε αυτό το πακέτο μόνο αν είστε βέβαιοι ότι είναι ασφαλές."
+
+#. TRANSLATORS: warn the user that all bets are off
+#: ../src/gpk-helper-untrusted.c:104
+#: ../src/gpk-helper-untrusted.c:114
+msgid "Malicious software can damage your computer or cause other harm."
+msgstr "Η εγκατάσταση κακόβουλου λογισμικού μπορεί να προκαλέσει ζημιές στον υπολογιστή σας ή και αλλού."
+
+#. TRANSLATORS: ask if they are absolutely sure they want to do this
+#: ../src/gpk-helper-untrusted.c:106
+msgid "Are you <b>sure</b> you want to update this package?"
+msgstr "Είστε <b>βέβαιοι</b> ότι επιθυμείτε να ενημερώσετε αυτό το πακέτο;"
+
+#. TRANSLATORS: user has to trust provider -- I know, this sucks
+#: ../src/gpk-helper-untrusted.c:112
+msgid "Do not install this package unless you are sure it is safe to do so."
+msgstr "Εγκαταστήστε αυτό το πακέτο μόνο αν είστε βέβαιοι ότι είναι ασφαλές."
+
+#. TRANSLATORS: ask if they are absolutely sure they want to do this
+#: ../src/gpk-helper-untrusted.c:116
+msgid "Are you <b>sure</b> you want to install this package?"
+msgstr "Είστε <b>βέβαιοι</b> ότι επιθυμείτε να εγκαταστήσετε αυτό το πακέτο;"
+
+#. TRANSLATORS: button label, force the install, even though it's untrusted
+#: ../src/gpk-helper-untrusted.c:207
+msgid "_Force install"
+msgstr "Εγκατάσταση δ_ια της βίας"
+
+#. TRANSLATORS: button tooltip
+#: ../src/gpk-helper-untrusted.c:211
+msgid "Force installing package"
+msgstr "Εγκατάσταση πακέτου δια της βίας..."
+
+#. app-id
+#. xid
+#. TRANSLATORS: the reason why we've inhibited it
+#: ../src/gpk-inhibit.c:99
+msgid "A transaction that cannot be interrupted is running"
+msgstr "Εκτελείται μια εργασία που δεν μπορεί να διακοπεί"
+
+#. TRANSLATORS: command line option: a list of catalogs to install
+#: ../src/gpk-install-catalog.c:56
+msgid "Catalogs files to install"
+msgstr "Αρχεία καταλόγων προς εγκατάσταση"
+
+#. are we running privileged
+#: ../src/gpk-install-catalog.c:82
+msgid "Catalog installer"
+msgstr "Εγκατάσταση καταλόγων"
+
+#: ../src/gpk-install-catalog.c:87
+msgid "Failed to install catalog"
+msgstr "Απέτυχε η εγκατάσταση του καταλόγου"
+
+#. TRANSLATORS: no filename was supplied
+#: ../src/gpk-install-catalog.c:89
+msgid "You need to specify a file name to install"
+msgstr "Πρέπει να ορίσετε ένα όνομα αρχείου προς εγκατάσταση"
+
+#. TRANSLATORS: This is when the specified DBus method did not execute successfully
+#: ../src/gpk-install-catalog.c:122
+#: ../src/gpk-install-local-file.c:122
+#: ../src/gpk-install-mime-type.c:122
+#: ../src/gpk-install-package-name.c:121
+#: ../src/gpk-install-provide-file.c:122
+msgid "The action could not be completed"
+msgstr "Δεν ήταν δυνατή η ολοκλήρωση της ενέργειας"
+
+#. TRANSLATORS: we don't have anything more useful to translate. sorry.
+#: ../src/gpk-install-catalog.c:124
+#: ../src/gpk-install-local-file.c:124
+#: ../src/gpk-install-mime-type.c:124
+#: ../src/gpk-install-package-name.c:123
+#: ../src/gpk-install-provide-file.c:124
+msgid "The request failed. More details are available in the detailed report."
+msgstr "Απέτυχε το αίτημα. Για περισσότερες πληροφορίες, δείτε τη λεπτομερή αναφορά."
+
+#. TRANSLATORS: command line option: a list of files to install
+#: ../src/gpk-install-local-file.c:55
+msgid "Files to install"
+msgstr "Αρχεία προς εγκατάσταση"
+
+#. TRANSLATORS: program name: application to install a package to provide a file
+#: ../src/gpk-install-local-file.c:70
+#: ../src/gpk-install-local-file.c:72
+msgid "PackageKit File Installer"
+msgstr "Εγκατάσταση αρχείων PackageKit"
+
+#. TRANSLATORS: title to pass to to the user if there are not enough privs
+#: ../src/gpk-install-local-file.c:81
+msgid "Local file installer"
+msgstr "Εγκατάσταση τοπικών αρχείων"
+
+#. TRANSLATORS: could not install a package that contained the file we wanted
+#. TRANSLATORS: nothing done
+#: ../src/gpk-install-local-file.c:87
+#: ../src/gpk-install-provide-file.c:87
+msgid "Failed to install a package to provide a file"
+msgstr "Απέτυχε η εγκατάσταση του πακέτου που παρέχει το αρχείο"
+
+#. TRANSLATORS: nothing selected
+#: ../src/gpk-install-local-file.c:89
+msgid "You need to specify a file to install"
+msgstr "Πρέπει να οριστεί αρχείο προς εγκατάσταση"
+
+#. TRANSLATORS: command line option: a list of catalogs to install
+#: ../src/gpk-install-mime-type.c:55
+msgid "Mime types to install"
+msgstr "Τύποι mime προς εγκατάσταση"
+
+#. TRANSLATORS: program name: application to install a package to provide a mime type
+#: ../src/gpk-install-mime-type.c:70
+#: ../src/gpk-install-mime-type.c:72
+msgid "Mime Type Installer"
+msgstr "Εγκατάσταση τύπων mime"
+
+#. TRANSLATORS: title to pass to to the user if there are not enough privs
+#: ../src/gpk-install-mime-type.c:81
+msgid "Mime type installer"
+msgstr "Εγκατάσταση τύπων mime"
+
+#. TRANSLATORS: could not install program supporting this type
+#: ../src/gpk-install-mime-type.c:87
+msgid "Failed to install a program to handle this file type"
+msgstr "Απέτυχε η εγκατάσταση προγράμματος που να υποστηρίζει αυτόν τον τύπο αρχείου"
+
+#. TRANSLATORS: no type given
+#: ../src/gpk-install-mime-type.c:89
+msgid "You need to specify a mime-type to install"
+msgstr "Πρέπει να οριστεί τύπος mime προς εγκατάσταση"
+
+#: ../src/gpk-install-package-name.c:54
+msgid "Packages to install"
+msgstr "Πακέτα προς εγκατάσταση"
+
+#. TRANSLATORS: program name: installs a package (or packages) by name
+#. TRANSLATORS: application name to pass to to the user if there are not enough privs
+#: ../src/gpk-install-package-name.c:69
+#: ../src/gpk-install-package-name.c:71
+#: ../src/gpk-install-package-name.c:80
+msgid "Package Name Installer"
+msgstr "Εγκατάσταση πακέτων κατ' όνομα"
+
+#. TRANSLATORS: failed
+#: ../src/gpk-install-package-name.c:86
+msgid "Failed to install package from name"
+msgstr "Απέτυχε η εγκατάσταση πακέτου με βάση το όνομα"
+
+#. TRANSLATORS: nothing was specified
+#: ../src/gpk-install-package-name.c:88
+msgid "You need to specify a package to install"
+msgstr "Πρέπει να οριστεί πακέτο προς εγκατάσταση"
+
+#. TRANSLATORS: command line option: a list of files to install
+#: ../src/gpk-install-provide-file.c:55
+msgid "Local files to install"
+msgstr "Τοπικά αρχεία προς εγκατάσταση"
+
+#. TRANSLATORS: program name, an application to install a file that is needed by an application and is provided by packages
+#. TRANSLATORS: application name to pass to to the user if there are not enough privs
+#: ../src/gpk-install-provide-file.c:70
+#: ../src/gpk-install-provide-file.c:72
+#: ../src/gpk-install-provide-file.c:81
+msgid "Single File Installer"
+msgstr "Εγκατάσταση μεμονωμένων αρχείων"
+
+#. TRANSLATORS: nothig was specified
+#: ../src/gpk-install-provide-file.c:89
+msgid "You need to specify a filename to install"
+msgstr "Πρέπει να οριστεί όνομα αρχείου προς εγκατάσταση"
+
+#. TRANSLATORS: strftime formatted please
+#: ../src/gpk-log.c:177
+msgid "%A, %d %B %Y"
+msgstr "%A, %d %B %Y"
+
+#. TRANSLATORS: column for the date
+#: ../src/gpk-log.c:294
+msgid "Date"
+msgstr "Ημερομηνία"
+
+#. TRANSLATORS: column for the username, e.g. Richard Hughes
+#: ../src/gpk-log.c:336
+msgid "Username"
+msgstr "Όνομα χρήστη"
+
+#. TRANSLATORS: column for the application used for the install, e.g. Add/Remove Programs
+#: ../src/gpk-log.c:343
+msgid "Application"
+msgstr "Εφαρμογή"
+
+#. TRANSLATORS: short name for pkcon
+#: ../src/gpk-log.c:483
+msgid "Command line client"
+msgstr "Πελάτης γραμμής εντολών"
+
+#. TRANSLATORS: short name for gpk-update-viewer
+#: ../src/gpk-log.c:489
+msgid "Update System"
+msgstr "Ενημέρωση συστήματος"
+
+#. TRANSLATORS: short name for gpk-update-icon
+#: ../src/gpk-log.c:492
+msgid "Update Icon"
+msgstr "Εικονίδιο ενημερώσεων"
+
+#. TRANSLATORS: preset the GtktextBox with this filter text
+#: ../src/gpk-log.c:649
+msgid "Set the filter to this value"
+msgstr "Να οριστεί αυτή η τιμή για το φίλτρο"
+
+#. TRANSLATORS: we can make this modal (stay on top of) another window
+#: ../src/gpk-log.c:652
+#: ../src/gpk-prefs.c:405
+#: ../src/gpk-repo.c:523
+msgid "Set the parent window to make this modal"
+msgstr "Να οριστεί το γονικό του παράθυρο για να παραμένει πάντα στο προσκήνιο"
+
+#. are we running privileged
+#: ../src/gpk-log.c:677
+msgid "Log viewer"
+msgstr "Προβολή καταγραφών"
+
+#: ../src/gpk-modal-dialog.c:438
+#, c-format
+msgid "Remaining time : %s"
+msgstr "Χρόνος που απομένει : %s"
+
+#. TRANSLATORS: check once an hour
+#: ../src/gpk-prefs.c:44
+msgid "Hourly"
+msgstr "Ωριαία"
+
+#. TRANSLATORS: check once a day
+#: ../src/gpk-prefs.c:46
+msgid "Daily"
+msgstr "Καθημερινά"
+
+#. TRANSLATORS: check once a week
+#: ../src/gpk-prefs.c:48
+msgid "Weekly"
+msgstr "Εβδομαδιαία"
+
+#. TRANSLATORS: never check for updates/upgrades
+#: ../src/gpk-prefs.c:50
+msgid "Never"
+msgstr "Ποτέ"
+
+#. TRANSLATORS: update everything
+#: ../src/gpk-prefs.c:53
+msgid "All updates"
+msgstr "Όλες οι ενημερώσεις"
+
+#. TRANSLATORS: update just security updates
+#: ../src/gpk-prefs.c:55
+msgid "Only security updates"
+msgstr "Μόνο ενημερώσεις ασφαλείας"
+
+#. TRANSLATORS: don't update anything
+#: ../src/gpk-prefs.c:57
+msgid "Nothing"
+msgstr "Ποτέ"
+
+#. TRANSLATORS: column if the source is enabled
+#: ../src/gpk-repo.c:261
+msgid "Enabled"
+msgstr "Ενεργή"
+
+#. TRANSLATORS: column for the source description
+#: ../src/gpk-repo.c:270
+msgid "Software Source"
+msgstr "Πηγή λογισμικού"
+
+#. TRANSLATORS: for one reason or another, we could not enable or disable a software source
+#: ../src/gpk-repo.c:388
+msgid "Failed to change status"
+msgstr "Απέτυχε η αλλαγή της κατάστασης"
+
+#: ../src/gpk-repo.c:539
+msgid "Software Source Viewer"
+msgstr "Προβολή πηγών λογισμικού"
+
+#. TRANSLATORS: title to pass to to the user if there are not enough privs
+#: ../src/gpk-repo.c:548
+msgid "Software source viewer"
+msgstr "Προβολή πηγών λογισμικού"
+
+#: ../src/gpk-repo.c:665
+msgid "Getting software source list not supported by backend"
+msgstr "Η λήψη της λίστας πηγών λογισμικού δεν υποστηρίζεται από το σύστημα υποστήριξης"
+
+#. TRANSLATORS: cannot resolve name to package name
+#: ../src/gpk-service-pack.c:290
+#, c-format
+msgid "Could not find any packages named '%s'"
+msgstr "Δε βρέθηκαν πακέτα με όνομα '%s'"
+
+#. TRANSLATORS: cannot find any valid package names
+#: ../src/gpk-service-pack.c:302
+#, c-format
+msgid "Could not find any valid package names"
+msgstr "Δε βρέθηκαν έγκυρα ονόματα πακέτων"
+
+#. TRANSLATORS: internal error
+#: ../src/gpk-service-pack.c:331
+#, c-format
+msgid "Could not reset client: %s"
+msgstr "Απέτυχε η επαναφορά του πελάτη: %s"
+
+#. TRANSLATORS: cannot get package list
+#: ../src/gpk-service-pack.c:340
+#, c-format
+msgid "Could not get list of installed packages: %s"
+msgstr "Δεν ήταν δυνατή η λήψη της λίστας των εγκατεστημένων πακέτων: %s"
+
+#. TRANSLATORS: we could not write to the destination directory for some reason
+#: ../src/gpk-service-pack.c:352
+#, c-format
+msgid "Could not write package list"
+msgstr "Απέτυχε η εγγραφή της λίστας πακέτων"
+
+#. TRANSLATORS: Could not create package list
+#. TRANSLATORS: we could not read the file list for the destination computer
+#. TRANSLATORS: we could not create the pack file, generic error
+#: ../src/gpk-service-pack.c:398
+#: ../src/gpk-service-pack.c:419
+#: ../src/gpk-service-pack.c:428
+#: ../src/gpk-service-pack.c:468
+#: ../src/gpk-service-pack.c:487
+msgid "Create error"
+msgstr "Σφάλμα κατά τη δημιουργία"
+
+#: ../src/gpk-service-pack.c:398
+msgid "Cannot copy system package list"
+msgstr "Δεν είναι δυνατή η αντιγραφή της λίστας πακέτων του συστήματος"
+
+#: ../src/gpk-service-pack.c:419
+msgid "No package name selected"
+msgstr "Δεν έχουν επιλεγεί ονόματα πακέτων"
+
+#. TRANSLATORS: we could not reset internal state
+#: ../src/gpk-service-pack.c:441
+#: ../src/gpk-service-pack.c:456
+msgid "Refresh error"
+msgstr "Σφάλμα ανανέωσης"
+
+#: ../src/gpk-service-pack.c:441
+msgid "Could not reset client"
+msgstr "Απέτυχε η επαναφορά του πελάτη"
+
+#. TRANSLATORS: progressbar text
+#: ../src/gpk-service-pack.c:449
+msgid "Refreshing system package list"
+msgstr "Ανανέωση λίστας πακέτων συστήματος..."
+
+#: ../src/gpk-service-pack.c:456
+msgid "Could not refresh package list"
+msgstr "Απέτυχε η ανανέωση της λίστας πακέτων"
+
+#: ../src/gpk-service-pack.c:468
+msgid "Cannot read destination package list"
+msgstr "Δεν είναι δυνατή η ανάγνωση της λίστας πακέτων προορισμού"
+
+#: ../src/gpk-service-pack.c:487
+msgid "Cannot create service pack"
+msgstr "Δεν είναι δυνατή η δημιουργία του πακέτου ενημερώσεων"
+
+#. TRANSLATORS: the constants should not be translated
+#: ../src/gpk-service-pack.c:598
+msgid "Set the option, allowable values are 'list', 'updates' and 'package'"
+msgstr "Να οριστεί. Οι επιτρεπόμενες τιμές είναι 'list', 'updates' και 'package'"
+
+#. TRANSLATORS: this refers to the GtkTextEntry in gpk-service-pack
+#: ../src/gpk-service-pack.c:601
+msgid "Add the package name to the text entry box"
+msgstr "Προσθήκη του ονόματος του πακέτου στο πεδίο εισαγωγής κειμένου"
+
+#. TRANSLATORS: this is the destination computer package list
+#: ../src/gpk-service-pack.c:604
+msgid "Set the remote package list filename"
+msgstr "Ορισμός του ονόματος αρχείου της λίστας απομακρυσμένων πακέτων"
+
+#. TRANSLATORS: this is the file output directory
+#: ../src/gpk-service-pack.c:607
+msgid "Set the default output directory"
+msgstr "Ορισμός του προεπιλεγμένου καταλόγου εξόδου"
+
+#. TRANSLATORS: file search type, lists of packages
+#: ../src/gpk-service-pack.c:672
+msgid "Package list files"
+msgstr "Αρχεία λίστας πακέτων"
+
+#. TRANSLATORS: file search type, service pack destination file type
+#: ../src/gpk-service-pack.c:679
+msgid "Service pack files"
+msgstr "Αρχεία πακέτου ενημερώσεων"
+
+#: ../src/gpk-update-icon.c:130
+msgid "Exit after a small delay"
+msgstr "Έξοδος μετά από μικρή καθυστέρηση"
+
+#. TRANSLATORS: program name, a session wide daemon to watch for updates and changing system state
+#: ../src/gpk-update-icon.c:149
+#: ../src/gpk-update-icon.c:151
+msgid "Update Applet"
+msgstr "Μικροεφαρμογή ενημερώσεων"
+
+#. TRANSLATORS: title to pass to to the user if there are not enough privs
+#: ../src/gpk-update-icon.c:165
+msgid "Update applet"
+msgstr "Μικροεφαρμογή ενημερώσεων"
+
+#: ../src/gpk-update-viewer.c:222
+msgid "Cannot cancel running task"
+msgstr "Δεν είναι δυνατή η ακύρωση της εκτελούμενης εργασίας"
+
+#: ../src/gpk-update-viewer.c:229
+msgid "There are tasks that cannot be cancelled."
+msgstr "Υπάρχουν εργασίες που δεν μπορούν να ακυρωθούν."
+
+#: ../src/gpk-update-viewer.c:316
+msgid "Detected wireless broadband connection"
+msgstr "Εντοπίστηκε ασύρματη ευρυζωνική σύνδεση"
+
+#. TRANSLATORS: this is the button text when we check if it's okay to download
+#: ../src/gpk-update-viewer.c:319
+msgid "Update anyway"
+msgstr "Ενημέρωση ούτως ή άλλως"
+
+#. TRANSLATORS, the %s is a size, e.g. 13.3Mb
+#: ../src/gpk-update-viewer.c:323
+#, c-format
+msgid "Connectivity is being provided by wireless broadband, and it may be expensive to download %s."
+msgstr "Η σύνδεσή σας είναι ασύρματη ευρυζωνική, και ίσως δεν σας συμφέρει οικονομικά να λάβετε το %s."
+
+#. TRANSLATORS: we clicked apply, but had no packages selected
+#: ../src/gpk-update-viewer.c:408
+msgid "No updates selected"
+msgstr "Δεν επελέγησαν ενημερώσεις"
+
+#: ../src/gpk-update-viewer.c:409
+msgid "No updates are selected"
+msgstr "Δεν έχουν επιλεγεί ενημερώσεις"
+
+#. TRANSLATORS: this is the button text when we have updates
+#: ../src/gpk-update-viewer.c:774
+msgid "_Install Update"
+msgid_plural "_Install Updates"
+msgstr[0] "Ε_γκατάσταση ενημέρωσης"
+msgstr[1] "Ε_γκατάσταση ενημερώσεων"
+
+#. TRANSLATORS: there are no updates
+#: ../src/gpk-update-viewer.c:787
+msgid "There are no updates available"
+msgstr "Δεν υπάρχουν διαθέσιμες ενημερώσεις"
+
+#. TRANSLATORS: title: warn the user they are quitting with unapplied changes
+#: ../src/gpk-update-viewer.c:796
+msgid "All software is up to date"
+msgstr "Όλο το λογισμικό σας είναι ενημερωμένο"
+
+#. TRANSLATORS: tell the user the problem
+#: ../src/gpk-update-viewer.c:800
+msgid "There are no software updates available for your computer at this time."
+msgstr "Δεν υπάρχουν διαθέσιμες ενημερώσεις για τον υπολογιστή σας αυτή την στιγμή."
+
+#: ../src/gpk-update-viewer.c:836
+#, c-format
+msgid "There is %i update available"
+msgid_plural "There are %i updates available"
+msgstr[0] "Υπάρχει %i διαθέσιμη ενημέρωση"
+msgstr[1] "Υπάρχουν %i διαθέσιμες ενημερώσεις"
+
+#. TRANSLATORS: how many updates are selected in the UI
+#: ../src/gpk-update-viewer.c:852
+#, c-format
+msgid "%i update selected"
+msgid_plural "%i updates selected"
+msgstr[0] "%i επιλεγμένη ενημέρωση"
+msgstr[1] "%i επιλεγμένες ενημερώσεις"
+
+#. TRANSLATORS: how many updates are selected in the UI, and the size of packages to download
+#: ../src/gpk-update-viewer.c:860
+#, c-format
+msgid "%i update selected (%s)"
+msgid_plural "%i updates selected (%s)"
+msgstr[0] "%i επελεγμένη ενημέρωση (%s)"
+msgstr[1] "%i επελεγμένες ενημερώσεις (%s)"
+
+#. TRANSLATORS: querying update list
+#: ../src/gpk-update-viewer.c:922
+msgid "Getting the list of updates"
+msgstr "Λήψη της λίστας ενημερώσεων..."
+
+#. TRANSLATORS: a column that has name of the package that will be updated
+#: ../src/gpk-update-viewer.c:1112
+msgid "Software"
+msgstr "Λογισμικό"
+
+#. TRANSLATORS: a column that has state of each package
+#: ../src/gpk-update-viewer.c:1122
+msgid "Status"
+msgstr "Κατάσταση"
+
+#. TRANSLATORS: this is the update type, e.g. security
+#: ../src/gpk-update-viewer.c:1266
+msgid "This update will fix bugs and other non-critical problems."
+msgstr "Αυτή η ενημέρωση διορθώνει σφάλματα και άλλα μη κρίσιμα προβλήματα."
+
+#. TRANSLATORS: this is the update type, e.g. security
+#: ../src/gpk-update-viewer.c:1270
+msgid "This update is important as it may solve critical problems."
+msgstr "Αυτή η ενημέρωση είναι σημαντική, καθώς μπορεί να επιλύσει κρίσιμα προβλήματα."
+
+#. TRANSLATORS: this is the update type, e.g. security
+#: ../src/gpk-update-viewer.c:1274
+msgid "This update is needed to fix a security vulnerability with this package."
+msgstr "Αυτή η ενημέρωση απαιτείται για την εξάλειψη ενός κενού ασφαλείας του πακέτου."
+
+#. TRANSLATORS: this is the update type, e.g. security
+#: ../src/gpk-update-viewer.c:1278
+msgid "This update is blocked."
+msgstr "Αυτή η ενημέρωση έχει φραγεί."
+
+#. TRANSLATORS: this is when the notification was issued and then updated
+#: ../src/gpk-update-viewer.c:1287
+#, c-format
+msgid "This notification was issued on %s and last updated on %s."
+msgstr "Αυτή η ειδοποίηση δημοσιεύτηκε στις %s και ενημερώθηκε για τελευταία φορά στις %s."
+
+#. TRANSLATORS: this is when the update was issued
+#: ../src/gpk-update-viewer.c:1296
+#, c-format
+msgid "This notification was issued on %s."
+msgstr "Αυτή η ειδοποίηση δημοσιεύτηκε στις %s."
+
+#. TRANSLATORS: this is a list of vendor URLs
+#: ../src/gpk-update-viewer.c:1319
+msgid "For more information about this update please visit this website:"
+msgid_plural "For more information about this update please visit these websites:"
+msgstr[0] "Για περισσότερες πληροφορίες σχετικά με αυτή την ενημέρωση, επισκεφθείτε την παρακάτω ιστοσελίδα:"
+msgstr[1] "Για περισσότερες πληροφορίες σχετικά με αυτή την ενημέρωση, επισκεφθείτε τις παρακάτω ιστοσελίδες:"
+
+#. TRANSLATORS: this is a list of bugzilla URLs
+#: ../src/gpk-update-viewer.c:1328
+msgid "For more information about bugs fixed by this update please visit this website:"
+msgid_plural "For more information about bugs fixed by this update please visit these websites:"
+msgstr[0] "Για περισσότερες πληροφορίες σχετικά με τα σφάλματα που διορθώνει αυτή η ενημέρωση, επισκεφθείτε την παρακάτω ιστοσελίδα:"
+msgstr[1] "Για περισσότερες πληροφορίες σχετικά με τα σφάλματα που διορθώνει αυτή η ενημέρωση, επισκεφθείτε τις παρακάτω ιστοσελίδες:"
+
+#. TRANSLATORS: this is a list of CVE (security) URLs
+#: ../src/gpk-update-viewer.c:1337
+msgid "For more information about this security update please visit this website:"
+msgid_plural "For more information about this security update please visit these websites:"
+msgstr[0] "Για περισσότερες πληροφορίες σχετικά με αυτή την ενημέρωση ασφαλείας, επισκεφθείτε την παρακάτω ιστοσελίδα:"
+msgstr[1] "Για περισσότερες πληροφορίες σχετικά με αυτή την ενημέρωση ασφαλείας, επισκεφθείτε τις παρακάτω ιστοσελίδες:"
+
+#. TRANSLATORS: reboot required
+#: ../src/gpk-update-viewer.c:1347
+msgid "The computer will have to be restarted after the update for the changes to take effect."
+msgstr "Θα χρειαστεί επανεκκίνηση του υπολογιστή μετά την ενημέρωση, για να εφαρμοστούν οι αλλαγές."
+
+#. TRANSLATORS: log out required
+#: ../src/gpk-update-viewer.c:1351
+msgid "You will need to log out and back in after the update for the changes to take effect."
+msgstr "Θα χρειαστεί να αποσυνδεθείτε και να συνδεθείτε εκ νέου μετά την ενημέρωση, για να εφαρμοστούν οι αλλαγές."
+
+#. TRANSLATORS: this is the stability status of the update
+#: ../src/gpk-update-viewer.c:1358
+msgid "The classifaction of this update is unstable which means it is not designed for production use."
+msgstr "Αυτή η ενημέρωση είναι ταξινομημένη ως ασταθής. Επομένως, δεν έχει σχεδιαστεί για χρήση σε συστήματα παραγωγής."
+
+#. TRANSLATORS: this is the stability status of the update
+#: ../src/gpk-update-viewer.c:1362
+msgid "This is a test update, and is not designed for normal use. Please report any problems or regressions you encounter."
+msgstr "Αυτή η ενημέρωση είναι δοκιμαστική και δεν έχει σχεδιαστεί για κανονική χρήση. Παρακαλώ, αναφέρετε τυχόν προβλήματα ή οπισθοδρομήσεις."
+
+#. TRANSLATORS: this is a ChangeLog
+#: ../src/gpk-update-viewer.c:1371
+msgid "The developer logs will be shown as no description is available for this update:"
+msgstr "Αυτή η ενημέρωση δεν διαθέτει περιγραφή, επομένως εμφανίζονται οι καταγραφές του δημιουργού:"
+
+#. set loading text
+#: ../src/gpk-update-viewer.c:1394
+msgid "Loading..."
+msgstr "Φόρτωση..."
+
+#. TRANSLATORS: we failed to install all the updates we requested
+#: ../src/gpk-update-viewer.c:1450
+msgid "Some updates were not installed"
+msgstr "Δεν εγκαταστάθηκαν ορισμένες ενημερώσεις"
+
+#. TRANSLATORS: the message text for the restart
+#: ../src/gpk-update-viewer.c:1578
+msgid "Some of the updates that were installed require the computer to be restarted before the changes will be applied."
+msgstr "Ορισμένες από τις ενημερώσεις που εγκαταστάθηκαν απαιτούν επανεκκίνηση του υπολογιστή για την εφαρμογή των αλλαγών."
+
+#. TRANSLATORS: the button text for the restart
+#: ../src/gpk-update-viewer.c:1580
+#: ../src/gpk-update-viewer.c:1586
+msgid "Restart Computer"
+msgstr "Επανεκκίνηση υπολογιστή"
+
+#. TRANSLATORS: the message text for the restart
+#: ../src/gpk-update-viewer.c:1584
+msgid "Some of the updates that were installed require the computer to be restarted to remain secure."
+msgstr "Ορισμένες από τις ενημερώσεις που εγκαταστάθηκαν απαιτούν επανεκκίνηση του υπολογιστή για να παραμείνετε ασφαλείς."
+
+#. TRANSLATORS: the message text for the logout
+#: ../src/gpk-update-viewer.c:1590
+msgid "Some of the updates that were installed require you to log out and back in before the changes will be applied."
+msgstr "Ορισμένες από τις ενημερώσεις που εγκαταστάθηκαν απαιτούν να αποσυνδεθείτε και να συνδεθείτε εκ νέου, για να εφαρμοστούν οι αλλαγές."
+
+#. TRANSLATORS: the button text for the logout
+#: ../src/gpk-update-viewer.c:1592
+#: ../src/gpk-update-viewer.c:1598
+msgid "Log Out"
+msgstr "Αποσύνδεση"
+
+#. TRANSLATORS: the message text for the logout
+#: ../src/gpk-update-viewer.c:1596
+msgid "Some of the updates that were installed require you to log out and back in to remain secure."
+msgstr "Ορισμένες από τις ενημερώσεις που εγκαταστάθηκαν απαιτούν να αποσυνδεθείτε και να συνδεθείτε εκ νέου, για να παραμείνετε ασφαλείς."
+
+#. TRANSLATORS: this is the application name for libcanberra
+#: ../src/gpk-update-viewer.c:1898
+#: ../src/gpk-update-viewer.c:1963
+msgid "GNOME PackageKit Update Viewer"
+msgstr "Προβολή ενημερώσεων GNOME PackageKit"
+
+#. TRANSLATORS: completed all updates
+#: ../src/gpk-update-viewer.c:1928
+msgid "All selected updates installed..."
+msgstr "Εγκαταστάθηκαν όλες οι επιλεγμένες ενημερώσεις..."
+
+#. TRANSLATORS: title: all updates installed okay
+#: ../src/gpk-update-viewer.c:1937
+msgid "All selected updates installed"
+msgstr "Εγκαταστάθηκαν όλες οι επιλεγμένες ενημερώσεις"
+
+#. TRANSLATORS: software updates installed okay
+#: ../src/gpk-update-viewer.c:1941
+msgid "All selected updates were successfully installed."
+msgstr "Εγκαταστάθηκαν με επιτυχία όλες οι επιλεγμένες ενημερώσεις."
+
+#. TRANSLATORS: this is the sound description
+#: ../src/gpk-update-viewer.c:1965
+msgid "Failed to update"
+msgstr "Η ενημέρωση απέτυχε"
+
+#. TRANSLATORS: right click menu, select all the updates
+#: ../src/gpk-update-viewer.c:2311
+msgid "Select all"
+msgstr "Επιλογή όλων"
+
+#. TRANSLATORS: right click menu, unselect all the updates
+#: ../src/gpk-update-viewer.c:2319
+msgid "Unselect all"
+msgstr "Αποεπιλογή όλων"
+
+#. TRANSLATORS: right click menu, select only security updates
+#: ../src/gpk-update-viewer.c:2326
+msgid "Select security updates"
+msgstr "Επιλογή ενημερώσεων ασφαλείας"
+
+#. TRANSLATORS: right click option, ignore this update name, not currently used
+#: ../src/gpk-update-viewer.c:2332
+msgid "Ignore this update"
+msgstr "Αγνόηση αυτής της ενημέρωσης"
+
+#. TRANSLATORS: this is the header
+#: ../src/gpk-update-viewer.c:2420
+msgid "Checking for updates..."
+msgstr "Έλεγχος για ενημερώσεις..."
+
+#. TRANSLATORS: new distro available, e.g. F9 to F10
+#: ../src/gpk-update-viewer.c:2583
+#, c-format
+msgid "New distribution upgrade release '%s' is available"
+msgstr "Υπάρχει νέα διαθέσιμη αναβάθμιση διανομής '%s'"
+
+#. TRANSLATORS: a list of packages is shown that need to restarted
+#: ../src/gpk-watch.c:156
+#, fuzzy, c-format
+#| msgid "This is due to the %s package being updated."
+#| msgid_plural "This is due to the following packages being updated: %s"
+msgid "This is due to the %s package being updated."
+msgid_plural "This is due to the following packages being updated: %s."
+msgstr[0] "Η αιτία είναι η ενημέρωση του πακέτου %s."
+msgstr[1] "Η αιτία είναι η ενημέρωση των παρακάτω πακέτων: %s."
+
+#. TRANSLATORS: over 5 packages require the system to be restarted, don't list them all here
+#: ../src/gpk-watch.c:160
+#, c-format
+msgid "This is because %i package has been updated."
+msgid_plural "This is because %i packages have been updated."
+msgstr[0] "Η αιτία είναι η ενημέρωση %i πακέτου."
+msgstr[1] "Η αιτία είναι η ενημέρωση %i πακέτων."
+
+#: ../src/gpk-watch.c:212
+#, c-format
+msgid "%i message from the package manager"
+msgid_plural "%i messages from the package manager"
+msgstr[0] "%i μήνυμα της εφαρμογής διαχείρισης πακέτων"
+msgstr[1] "%i μηνύματα της εφαρμογής διαχείρισης πακέτων"
+
+#. TRANSLATORS: if the menu won't fit, inform the user there are a few more things waiting
+#: ../src/gpk-watch.c:239
+#, c-format
+msgid "(%i more task)"
+msgid_plural "(%i more tasks)"
+msgstr[0] "(%i εργασία ακόμη)"
+msgstr[1] "(%i εργασίες ακόμη)"
+
+#: ../src/gpk-watch.c:418
+msgid "Package manager error details"
+msgstr "Λεπτομέρειες σφάλματος της εφαρμογής διαχείρισης πακέτων"
+
+#. TRANSLATORS: This is the message in the libnotify body
+#: ../src/gpk-watch.c:544
+#, c-format
+msgid "Package '%s' has been removed"
+msgstr "Αφαιρέθηκε το πακέτο '%s'"
+
+#. TRANSLATORS: This is the message in the libnotify body
+#: ../src/gpk-watch.c:547
+#, c-format
+msgid "Package '%s' has been installed"
+msgstr "Εγκαταστάθηκε το πακέτο '%s'"
+
+#. TRANSLATORS: This is the message in the libnotify body
+#: ../src/gpk-watch.c:550
+msgid "System has been updated"
+msgstr "Ενημερώθηκε το σύστημα"
+
+#. TRANSLATORS: title: an action has finished, and we are showing the libnotify bubble
+#: ../src/gpk-watch.c:557
+msgid "Task completed"
+msgstr "Ολοκληρώθηκε η εργασία"
+
+#. TRANSLATORS: Prefix to the title shown in the libnotify popup
+#: ../src/gpk-watch.c:625
+msgid "Package Manager"
+msgstr "Εφαρμογή διαχείρισης πακέτων"
+
+#. do the bubble
+#: ../src/gpk-watch.c:732
+msgid "New package manager message"
+msgstr "Νέο μήνυμα της εφαρμογής διαχείρισης πακέτων"
+
+#. TRANSLATORS: We couldn't launch the tool, normally a packaging problem
+#: ../src/gpk-watch.c:766
+msgid "Internal error"
+msgstr "Εσωτερικό σφάλμα"
+
+#: ../src/gpk-watch.c:893
+msgid "Package Manager Messages"
+msgstr "Μηνύματα εφαρμογής διαχείρισης πακέτων"
+
+#. TRANSLATORS: column for the message type
+#: ../src/gpk-watch.c:923
+msgid "Message"
+msgstr "Μήνυμα"
+
+#. TRANSLATORS: messages from the transaction
+#: ../src/gpk-watch.c:1337
+msgid "_Show messages"
+msgstr "_Εμφάνιση μηνυμάτων"
+
+#. TRANSLATORS: log out of the session
+#: ../src/gpk-watch.c:1350
+msgid "_Log out"
+msgstr "Απο_σύνδεση"
+
+#. TRANSLATORS: this menu item restarts the computer after an update
+#: ../src/gpk-watch.c:1365
+msgid "_Restart computer"
+msgstr "_Επανεκκίνηση υπολογιστή"
+
+#. TRANSLATORS: This hides the 'restart required' icon
+#: ../src/gpk-watch.c:1377
+msgid "_Hide this icon"
+msgstr "Α_πόκρυψη αυτού του εικονιδίου"
+
+#~ msgid "<b>More details</b>"
+#~ msgstr "<b>Περισσότερες λεπτομέρειες</b>"
+#~ msgid "<b>Action</b>"
+#~ msgstr "<b>Ενέργεια</b>"
+#~ msgid "<b>Details</b>"
+#~ msgstr "<b>Λεπτομέρειες</b>"
+#~ msgid "_Show Updates"
+#~ msgstr "Ε_μφάνιση ενημερώσεων"
+#~ msgid "The file was not installed"
+#~ msgid_plural "The files were not installed"
+#~ msgstr[0] "Δεν εγκαταστάθηκε το αρχείο"
+#~ msgstr[1] "Δεν εγκαταστάθηκαν τα αρχεία"
+#~ msgid ""
+#~ "You need to log out and log back in to remain secure, as important "
+#~ "security updates have recently been installed"
+#~ msgstr ""
+#~ "Πρέπει να αποσυνδεθείτε και να συνδεθείτε εκ νέου για να παραμείνετε "
+#~ "ασφαλείς, επειδή εγκαταστάθηκαν σημαντικές ενημερώσεις ασφαλείας."
+#~ msgid ""
+#~ "A restart is required to remain secure, as important security updates "
+#~ "have recently been installed"
+#~ msgstr ""
+#~ "Απαιτείται επανεκκίνηση για να παραμείνετε ασφαλείς, επειδή "
+#~ "εγκαταστάθηκαν σημαντικές ενημερώσεις ασφαλείας."
+

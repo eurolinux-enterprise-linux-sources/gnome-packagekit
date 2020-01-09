@@ -13,7 +13,7 @@
 Summary:   Session applications to manage packages
 Name:      gnome-packagekit
 Version:   2.28.3
-Release:   9%{?dist}
+Release:   10%{?dist}
 License:   GPLv2+
 Group:     Applications/System
 URL:       http://www.packagekit.org
@@ -35,6 +35,7 @@ Patch4:    0002-Try-harder-to-find-the-correct-update-item-in-the-up.patch
 Patch5:    0003-Do-not-attempt-to-refresh-the-updates-list-when-a-tr.patch
 Patch6:    0001-Disable-search-field-until-UI-is-fully-loaded.patch
 Patch7:    0001-Keep-the-Install-Updates-button-disabled-when-update.patch
+Patch8:    0001-Do-not-use-a-recursive-mainloop-when-showing-error-d.patch
 
 Requires:  glib2 >= %{glib2_version}
 Requires:  gtk2 >= %{gtk2_version}
@@ -108,6 +109,7 @@ Extra GNOME applications for using PackageKit that are not normally needed.
 %patch5 -p1 -b .no-refresh-updates-list-for-trans
 %patch6 -p1 -b .disable-search-field
 %patch7 -p1 -b .install-button-disabled-when-installing
+%patch8 -p1 -b .no-recursive-mainloop-on-error
 
 %build
 %configure --disable-scrollkeeper --disable-schemas-install
@@ -241,6 +243,10 @@ update-mime-database %{_datadir}/mime &> /dev/null || :
 %{_datadir}/applications/gpk-log.desktop
 
 %changelog
+* Mon Oct 31 2016 Richard Hughes <rhughes@redhat.com> - 2.28.3-10
+- Do not use a recursive mainloop when showing error dialogs.
+- Resolves: #1120909
+
 * Tue May 20 2014 Richard Hughes <rhughes@redhat.com> - 2.28.3-9
 - Disable the 'Install Updates' button until updating is complete.
 - Resolves: #732796

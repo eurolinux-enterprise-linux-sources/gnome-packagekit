@@ -1,0 +1,56 @@
+From 8d2d86fd65103dbe12550548b36814195ae8399b Mon Sep 17 00:00:00 2001
+From: Olivier Fourdan <ofourdan@redhat.com>
+Date: Tue, 20 May 2014 10:51:32 +0100
+Subject: [PATCH] Disable search field until UI is fully loaded
+
+Signed-off-by: Richard Hughes <richard@hughsie.com>
+---
+ src/gpk-application.c | 18 ++++++++++++------
+ 1 file changed, 12 insertions(+), 6 deletions(-)
+
+diff --git a/src/gpk-application.c b/src/gpk-application.c
+index f293d00..187a188 100644
+--- a/src/gpk-application.c
++++ b/src/gpk-application.c
+@@ -4059,6 +4059,7 @@ gpk_application_init (GpkApplication *application)
+ 	widget = GTK_WIDGET (gtk_builder_get_object (application->priv->builder, "button_find"));
+ 	g_signal_connect (widget, "clicked",
+ 			  G_CALLBACK (gpk_application_find_cb), application);
++	gtk_widget_set_sensitive (widget, FALSE);
+ 	/* TRANSLATORS: tooltip on the find button */
+ 	gtk_widget_set_tooltip_text (widget, _("Find packages"));
+ 
+@@ -4158,12 +4159,6 @@ gpk_application_init (GpkApplication *application)
+ 		gtk_widget_hide (widget);
+ 	}
+ 
+-	widget = GTK_WIDGET (gtk_builder_get_object (application->priv->builder, "entry_text"));
+-	g_signal_connect (widget, "key-press-event",
+-			  G_CALLBACK (gpk_application_text_changed_cb), application);
+-	g_signal_connect (widget, "key-release-event",
+-			  G_CALLBACK (gpk_application_text_changed_cb), application);
+-
+ 	widget = GTK_WIDGET (gtk_builder_get_object (application->priv->builder, "button_find"));
+ 	gtk_widget_set_sensitive (widget, FALSE);
+ 
+@@ -4293,6 +4288,17 @@ gpk_application_init (GpkApplication *application)
+ 	}
+ 	g_free (mode);
+ 
++	/* Enable search only when ready */
++	widget = GTK_WIDGET (gtk_builder_get_object (application->priv->builder, "button_find"));
++	gtk_widget_set_sensitive (widget, TRUE);
++
++	widget = GTK_WIDGET (gtk_builder_get_object (application->priv->builder, "entry_text"));
++	g_signal_connect (widget, "key-press-event",
++			  G_CALLBACK (gpk_application_text_changed_cb), application);
++	g_signal_connect (widget, "key-release-event",
++			  G_CALLBACK (gpk_application_text_changed_cb), application);
++
++
+ out_build:
+ 	/* welcome */
+ 	gpk_application_add_welcome (application);
+-- 
+1.9.0
+

@@ -13,7 +13,7 @@
 Summary:   Session applications to manage packages
 Name:      gnome-packagekit
 Version:   2.28.3
-Release:   7%{?dist}
+Release:   9%{?dist}
 License:   GPLv2+
 Group:     Applications/System
 URL:       http://www.packagekit.org
@@ -33,6 +33,8 @@ Patch2:    gnome-packagekit-2.28.3-dont-allow-shutdown-when-active.patch
 Patch3:    0001-Do-not-crash-when-we-click-on-the-run-dialog-entry.patch
 Patch4:    0002-Try-harder-to-find-the-correct-update-item-in-the-up.patch
 Patch5:    0003-Do-not-attempt-to-refresh-the-updates-list-when-a-tr.patch
+Patch6:    0001-Disable-search-field-until-UI-is-fully-loaded.patch
+Patch7:    0001-Keep-the-Install-Updates-button-disabled-when-update.patch
 
 Requires:  glib2 >= %{glib2_version}
 Requires:  gtk2 >= %{gtk2_version}
@@ -104,6 +106,8 @@ Extra GNOME applications for using PackageKit that are not normally needed.
 %patch3 -p1 -b .no-crash-when-installed-run-app
 %patch4 -p1 -b .update-viewer-multiarch-try-harder
 %patch5 -p1 -b .no-refresh-updates-list-for-trans
+%patch6 -p1 -b .disable-search-field
+%patch7 -p1 -b .install-button-disabled-when-installing
 
 %build
 %configure --disable-scrollkeeper --disable-schemas-install
@@ -237,6 +241,14 @@ update-mime-database %{_datadir}/mime &> /dev/null || :
 %{_datadir}/applications/gpk-log.desktop
 
 %changelog
+* Tue May 20 2014 Richard Hughes <rhughes@redhat.com> - 2.28.3-9
+- Disable the 'Install Updates' button until updating is complete.
+- Resolves: #732796
+
+* Tue May 20 2014 Richard Hughes <rhughes@redhat.com> - 2.28.3-8
+- Disable search field until UI is fully loaded
+- Resolves: #720922
+
 * Thu Aug 02 2012 Richard Hughes <rhughes@redhat.com> - 2.28.3-7
 - Do not attempt to refresh the updates list when a transaction is in
   progress. This prevents the update UI from going blank.

@@ -1,0 +1,30 @@
+From 66abadf17460797e4f65edc5cb2a34bd0bbe6766 Mon Sep 17 00:00:00 2001
+From: Olivier Fourdan <ofourdan@redhat.com>
+Date: Tue, 20 May 2014 11:24:39 +0100
+Subject: [PATCH] Keep the 'Install Updates' button disabled when updates are
+ being installed
+
+Signed-off-by: Richard Hughes <richard@hughsie.com>
+---
+ src/gpk-update-viewer.c | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/src/gpk-update-viewer.c b/src/gpk-update-viewer.c
+index ba0afef..767820d 100644
+--- a/src/gpk-update-viewer.c
++++ b/src/gpk-update-viewer.c
+@@ -938,6 +938,11 @@ gpk_update_viewer_status_changed_cb (PkClient *client, PkStatusEnum status, gpoi
+ 	/* set icon */
+ 	gtk_image_set_from_icon_name (GTK_IMAGE (widget), gpk_status_enum_to_icon_name (status), GTK_ICON_SIZE_BUTTON);
+ 	gtk_widget_show (widget);
++
++	/* disable button */
++	widget = GTK_WIDGET (gtk_builder_get_object (builder, "button_install"));
++	gtk_widget_set_sensitive (widget, FALSE);
++
+ out:
+ 	return;
+ }
+-- 
+1.9.0
+

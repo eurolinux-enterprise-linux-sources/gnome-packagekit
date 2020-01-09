@@ -13,7 +13,7 @@
 Summary:   Session applications to manage packages
 Name:      gnome-packagekit
 Version:   2.28.3
-Release:   4%{?dist}
+Release:   7%{?dist}
 License:   GPLv2+
 Group:     Applications/System
 URL:       http://www.packagekit.org
@@ -28,6 +28,11 @@ Patch1:    gnome-packagekit-2.28.3-rhlinguas.patch
 
 # RHEL specific
 Patch2:    gnome-packagekit-2.28.3-dont-allow-shutdown-when-active.patch
+
+# Already upstream in gnome-2-28 branch
+Patch3:    0001-Do-not-crash-when-we-click-on-the-run-dialog-entry.patch
+Patch4:    0002-Try-harder-to-find-the-correct-update-item-in-the-up.patch
+Patch5:    0003-Do-not-attempt-to-refresh-the-updates-list-when-a-tr.patch
 
 Requires:  glib2 >= %{glib2_version}
 Requires:  gtk2 >= %{gtk2_version}
@@ -96,6 +101,9 @@ Extra GNOME applications for using PackageKit that are not normally needed.
 %patch0 -p1 -b .change-default-to-category-groups
 %patch1 -p2 -b .rhlinguas
 %patch2 -p1 -b .dont-allow-shutdown-when-active
+%patch3 -p1 -b .no-crash-when-installed-run-app
+%patch4 -p1 -b .update-viewer-multiarch-try-harder
+%patch5 -p1 -b .no-refresh-updates-list-for-trans
 
 %build
 %configure --disable-scrollkeeper --disable-schemas-install
@@ -229,6 +237,20 @@ update-mime-database %{_datadir}/mime &> /dev/null || :
 %{_datadir}/applications/gpk-log.desktop
 
 %changelog
+* Thu Aug 02 2012 Richard Hughes <rhughes@redhat.com> - 2.28.3-7
+- Do not attempt to refresh the updates list when a transaction is in
+  progress. This prevents the update UI from going blank.
+- Resolves: #744980
+
+* Thu Aug 02 2012 Richard Hughes <rhughes@redhat.com> - 2.28.3-6
+- Fix the progress update of the update viewer when multiarch packages
+  are installed.
+- Resolves: #744906
+
+* Thu Aug 02 2012 Richard Hughes <rhughes@redhat.com> - 2.28.3-5
+- Do not crash when running newly installed applications.
+- Resolves: #694793
+
 * Fri May 18 2012 Richard Hughes <rhughes@redhat.com> - 2.28.3-4
 - Don't allow shutting down when a transaction is active and cannot
   be cancelled.

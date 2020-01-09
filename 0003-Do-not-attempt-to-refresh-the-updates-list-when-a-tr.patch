@@ -1,0 +1,47 @@
+From 19250eff692a8c94db5c83319e77b88bf70d9b7d Mon Sep 17 00:00:00 2001
+From: Richard Hughes <richard@hughsie.com>
+Date: Mon, 20 Feb 2012 17:57:15 +0000
+Subject: [PATCH 3/3] Do not attempt to refresh the updates list when a
+ transaction is running
+
+If a package adds or removes a .repo file during a transaction, the
+::RepoListChanged() signal gets sent from PackageKit. If a tranaction is already
+running, then just ignore the signal and continue the transaction like normal.
+
+Resolves: https://bugzilla.redhat.com/show_bug.cgi?id=744980
+---
+ src/gpk-update-viewer.c | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+
+diff --git a/src/gpk-update-viewer.c b/src/gpk-update-viewer.c
+index 7ee488c..ba0afef 100644
+--- a/src/gpk-update-viewer.c
++++ b/src/gpk-update-viewer.c
+@@ -2206,7 +2206,24 @@ gpk_update_viewer_error_code_cb (PkClient *client, PkErrorCodeEnum code, const g
+ static void
+ gpk_update_viewer_repo_list_changed_cb (PkClient *client, gpointer data)
+ {
++	gboolean ret;
++	GError *error = NULL;
++	PkRoleEnum role = PK_ROLE_ENUM_UNKNOWN;
++
++	/* are we in a transaction */
++	ret = pk_client_get_role (client_primary, &role, NULL, &error);
++	if (!ret) {
++		egg_warning ("failed to get role: %s", error->message);
++		g_error_free (error);
++		goto out;
++	}
++	if (role != PK_ROLE_ENUM_UNKNOWN) {
++		egg_debug ("already in a transaction, so ignoring");
++		goto out;
++	}
+ 	gpk_update_viewer_get_new_update_list ();
++out:
++	return;
+ }
+ 
+ /**
+-- 
+1.7.11.2
+

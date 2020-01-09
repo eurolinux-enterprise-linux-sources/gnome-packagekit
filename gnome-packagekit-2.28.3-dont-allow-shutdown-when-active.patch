@@ -1,0 +1,28 @@
+--- a/src/gpk-inhibit.c	
++++ a/src/gpk-inhibit.c	
+@@ -69,6 +69,13 @@ gpk_inhibit_class_init (GpkInhibitClass *klass)
+ 	g_type_class_add_private (klass, sizeof (GpkInhibitPrivate));
+ }
+ 
++typedef enum {
++	GSM_INHIBITOR_FLAG_LOGOUT      = 1 << 0,
++	GSM_INHIBITOR_FLAG_SWITCH_USER = 1 << 1,
++	GSM_INHIBITOR_FLAG_SUSPEND     = 1 << 2,
++	GSM_INHIBITOR_FLAG_IDLE        = 1 << 3
++} GsmInhibitorFlag;
++
+ /**
+  * gpk_inhibit_create:
+  **/
+@@ -97,7 +104,10 @@ gpk_inhibit_create (GpkInhibit *inhibit)
+ 				 G_TYPE_UINT, 0, /* xid */
+ 				/* TRANSLATORS: the reason why we've inhibited it */
+ 				 G_TYPE_STRING, _("A transaction that cannot be interrupted is running"), /* reason */
+-				 G_TYPE_UINT, 4, /* flags */
++				 G_TYPE_UINT, GSM_INHIBITOR_FLAG_LOGOUT |
++					      GSM_INHIBITOR_FLAG_SWITCH_USER |
++					      GSM_INHIBITOR_FLAG_SUSPEND |
++					      GSM_INHIBITOR_FLAG_IDLE,
+ 				 G_TYPE_INVALID,
+ 				 G_TYPE_UINT, &inhibit->priv->cookie,
+ 				 G_TYPE_INVALID);

@@ -13,7 +13,7 @@
 Summary:   Session applications to manage packages
 Name:      gnome-packagekit
 Version:   2.28.3
-Release:   3%{?dist}
+Release:   4%{?dist}
 License:   GPLv2+
 Group:     Applications/System
 URL:       http://www.packagekit.org
@@ -25,6 +25,9 @@ Patch0:    gnome-packagekit-2.28.3-change-default-to-category-groups.patch
 
 # Update to Red Hat Supported Languages
 Patch1:    gnome-packagekit-2.28.3-rhlinguas.patch
+
+# RHEL specific
+Patch2:    gnome-packagekit-2.28.3-dont-allow-shutdown-when-active.patch
 
 Requires:  glib2 >= %{glib2_version}
 Requires:  gtk2 >= %{gtk2_version}
@@ -92,6 +95,7 @@ Extra GNOME applications for using PackageKit that are not normally needed.
 %setup -q
 %patch0 -p1 -b .change-default-to-category-groups
 %patch1 -p2 -b .rhlinguas
+%patch2 -p1 -b .dont-allow-shutdown-when-active
 
 %build
 %configure --disable-scrollkeeper --disable-schemas-install
@@ -225,6 +229,11 @@ update-mime-database %{_datadir}/mime &> /dev/null || :
 %{_datadir}/applications/gpk-log.desktop
 
 %changelog
+* Fri May 18 2012 Richard Hughes <rhughes@redhat.com> - 2.28.3-4
+- Don't allow shutting down when a transaction is active and cannot
+  be cancelled.
+- Resolves: #669798
+
 * Tue Aug 10 2010 Richard Hughes <rhughes@redhat.com> - 2.28.3-3
 - Translation patch for Red Hat supported languages.
 - Resolves: #574661

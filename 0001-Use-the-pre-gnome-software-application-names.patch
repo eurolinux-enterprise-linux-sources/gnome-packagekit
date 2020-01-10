@@ -21,46 +21,46 @@ index 4c15e65..9719ef5 100644
 +++ b/data/gpk-log.desktop.in
 @@ -1,5 +1,5 @@
  [Desktop Entry]
--_Name=Package Log
-+_Name=Software Log Viewer
- _Comment=View past package management tasks
+-Name=Package Log
++Name=Software Log Viewer
+ Comment=View past package management tasks
+ # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
  Icon=gpk-log
- Exec=gpk-log
 diff --git a/data/gpk-prefs.desktop.in b/data/gpk-prefs.desktop.in
 index 50b71d8..93bbe71 100644
 --- a/data/gpk-prefs.desktop.in
 +++ b/data/gpk-prefs.desktop.in
 @@ -1,6 +1,6 @@
  [Desktop Entry]
--_Name=Package Sources
--_Comment=Enable or disable package repositories
-+_Name=Software Settings
-+_Comment=Change software update preferences and enable or disable software sources
+-Name=Package Sources
+-Comment=Enable or disable package repositories
++Name=Software Settings
++Comment=Change software update preferences and enable or disable software sources
+ # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
  Icon=gpk-prefs
  Exec=gpk-prefs
- Terminal=false
 diff --git a/data/org.gnome.PackageUpdater.desktop.in b/data/org.gnome.PackageUpdater.desktop.in
 index 44e5d27..5c6ea5d 100644
 --- a/data/org.gnome.PackageUpdater.desktop.in
 +++ b/data/org.gnome.PackageUpdater.desktop.in
 @@ -1,5 +1,5 @@
  [Desktop Entry]
--_Name=Package Updater
-+_Name=Software Update
- _Comment=Update software installed on the system
+-Name=Package Updater
++Name=Software Update
+ Comment=Update software installed on the system
+ # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
  Icon=system-software-update
- Exec=gpk-update-viewer
 diff --git a/data/org.gnome.Packages.desktop.in b/data/org.gnome.Packages.desktop.in
 index d7c4b70..589cf78 100644
 --- a/data/org.gnome.Packages.desktop.in
 +++ b/data/org.gnome.Packages.desktop.in
 @@ -1,5 +1,5 @@
  [Desktop Entry]
--_Name=Packages
-+_Name=Software
- _Comment=Add or remove software installed on the system
+-Name=Packages
++Name=Software
+ Comment=Add or remove software installed on the system
+ # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
  Icon=system-software-install
- Exec=gpk-application
 diff --git a/src/gpk-application.c b/src/gpk-application.c
 index 96ec326..03ab714 100644
 --- a/src/gpk-application.c

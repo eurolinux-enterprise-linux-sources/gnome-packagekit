@@ -2678,7 +2678,7 @@ gpk_update_viewer_get_distro_upgrades_cb (PkClient *client, GAsyncResult *res, g
 	/* only display last (newest) distro */
 	widget = GTK_WIDGET(gtk_builder_get_object (builder, "label_upgrade"));
 	/* TRANSLATORS: new distro available, e.g. F9 to F10 */
-	text = g_strdup_printf (_("New distribution upgrade release '%s' is available"), summary);
+	text = g_strdup_printf (_("New distribution upgrade release “%s” is available"), summary);
 	text_format = g_strdup_printf ("<b>%s</b>", text);
 	gtk_label_set_label (GTK_LABEL(widget), text_format);
 
@@ -2943,7 +2943,7 @@ main (int argc, char *argv[])
 
 	/* add application specific icons to search path */
 	gtk_icon_theme_append_search_path (gtk_icon_theme_get_default (),
-					   GPK_DATA G_DIR_SEPARATOR_S "icons");
+					   PKGDATADIR G_DIR_SEPARATOR_S "icons");
 
 	/* TRANSLATORS: title to pass to the user if there are not enough privs */
 	ret = gpk_check_privileged_user (_("Package Updater"), TRUE);
@@ -2951,7 +2951,7 @@ main (int argc, char *argv[])
 		return 1;
 
 	/* are we already activated? */
-	application = gtk_application_new ("org.freedesktop.PackageKit.UpdateViewer", 0);
+	application = gtk_application_new ("org.gnome.PackageUpdater", 0);
 	g_signal_connect (application, "startup",
 			  G_CALLBACK (gpk_update_viewer_application_startup_cb), NULL);
 	g_signal_connect (application, "activate",

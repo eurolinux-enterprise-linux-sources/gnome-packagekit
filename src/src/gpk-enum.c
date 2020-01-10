@@ -40,6 +40,9 @@ static const PkEnumMatch enum_info_icon_name[] = {
 	{PK_INFO_ENUM_BUGFIX,			"pk-update-bugfix"},
 	{PK_INFO_ENUM_ENHANCEMENT,		"pk-update-enhancement"},
 	{PK_INFO_ENUM_BLOCKED,			"pk-package-blocked"},
+#if PK_CHECK_VERSION(1,0,4)
+	{PK_INFO_ENUM_UNAVAILABLE,		"pk-package-blocked"},
+#endif
 	{PK_INFO_ENUM_DOWNLOADING,		"pk-package-download"},
 	{PK_INFO_ENUM_UPDATING,			"pk-package-update"},
 	{PK_INFO_ENUM_INSTALLING,		"pk-package-add"},
@@ -95,6 +98,9 @@ static const PkEnumMatch enum_status_icon_name[] = {
 	{PK_STATUS_ENUM_CHECK_EXECUTABLE_FILES,	"pk-package-info"},
 	{PK_STATUS_ENUM_CHECK_LIBRARIES,	"pk-package-info"},
 	{PK_STATUS_ENUM_COPY_FILES,		"pk-package-info"},
+#if PK_CHECK_VERSION(1,1,6)
+	{PK_STATUS_ENUM_RUN_HOOK,		"pk-setup"},
+#endif
 	{0, NULL}
 };
 
@@ -132,6 +138,9 @@ static const PkEnumMatch enum_role_icon_name[] = {
 	{PK_ROLE_ENUM_UPDATE_PACKAGES,		"pk-package-update"},
 	{PK_ROLE_ENUM_WHAT_PROVIDES,		"pk-package-search"},
 	{PK_ROLE_ENUM_REPAIR_SYSTEM,		"system-software-update"},
+#if PK_CHECK_VERSION(1,0,10)
+	{PK_ROLE_ENUM_UPGRADE_SYSTEM,		"system-software-update"},
+#endif
 	{0, NULL}
 };
 
@@ -421,8 +430,13 @@ gpk_error_enum_to_localised_text (PkErrorEnum code)
 	case PK_ERROR_ENUM_LOCK_REQUIRED:
 		text = _("Lock required");
 		break;
+#if PK_CHECK_VERSION(1,1,4)
+	case PK_ERROR_ENUM_REPO_ALREADY_SET:
+		text = _("Source already set");
+		break;
+#endif
 	default:
-		g_warning ("Unknown error");
+		g_warning ("Unknown error %i", code);
 	}
 	return text;
 }
@@ -577,7 +591,7 @@ gpk_error_enum_to_localised_message (PkErrorEnum code)
 			 "The package file could be corrupt, or not a proper package.");
 		break;
 	case PK_ERROR_ENUM_PACKAGE_INSTALL_BLOCKED:
-		text = _("Installation of this package prevented by your packaging system's configuration.");
+		text = _("Installation of this package prevented by your packaging system’s configuration.");
 		break;
 	case PK_ERROR_ENUM_PACKAGE_CORRUPT:
 		text = _("The package that was downloaded is corrupt and needs to be downloaded again.");
@@ -675,6 +689,11 @@ gpk_error_enum_to_localised_message (PkErrorEnum code)
 	case PK_ERROR_ENUM_LOCK_REQUIRED:
 		text = _("A package manager lock is required.");
 		break;
+#if PK_CHECK_VERSION(1,1,4)
+	case PK_ERROR_ENUM_REPO_ALREADY_SET:
+		text = _("The software source is already in this state.");
+		break;
+#endif
 	default:
 		break;
 	}
@@ -888,6 +907,12 @@ gpk_status_enum_to_localised_text (PkStatusEnum status)
 		/* TRANSLATORS: we are copying package files to prepare to install */
 		text = _("Copying files");
 		break;
+#if PK_CHECK_VERSION(1,1,6)
+	case PK_STATUS_ENUM_RUN_HOOK:
+		/* TRANSLATORS: we are running hooks pre or post transaction */
+		text = _("Running hooks");
+		break;
+#endif
 	default:
 		g_warning ("status unrecognized: %s", pk_status_enum_to_string (status));
 	}
@@ -945,6 +970,12 @@ gpk_info_enum_to_localised_text (PkInfoEnum info)
 		/* TRANSLATORS: The type of package */
 		text = _("Untrusted");
 		break;
+#if PK_CHECK_VERSION(1,0,4)
+	case PK_INFO_ENUM_UNAVAILABLE:
+		/* TRANSLATORS: The state of a package */
+		text = _("Unavailable");
+		break;
+#endif
 	default:
 		g_warning ("info unrecognized: %s", pk_info_enum_to_string (info));
 	}
@@ -1176,6 +1207,12 @@ gpk_role_enum_to_localised_past (PkRoleEnum role)
 		/* TRANSLATORS: The role of the transaction, in past tense */
 		text = _("Repaired the system");
 		break;
+#if PK_CHECK_VERSION(1,0,10)
+	case PK_ROLE_ENUM_UPGRADE_SYSTEM:
+		/* TRANSLATORS: The role of the transaction, in past tense */
+		text = _("Upgrading the system");
+		break;
+#endif
 	default:
 		g_warning ("role unrecognized: %s", pk_role_enum_to_string (role));
 	}

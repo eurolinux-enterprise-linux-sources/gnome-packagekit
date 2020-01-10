@@ -2737,7 +2737,7 @@ gpk_application_startup_cb (GtkApplication *application, GpkApplicationPrivate *
 
 	/* add application specific icons to search path */
 	gtk_icon_theme_append_search_path (gtk_icon_theme_get_default (),
-					   GPK_DATA G_DIR_SEPARATOR_S "icons");
+					   PKGDATADIR G_DIR_SEPARATOR_S "icons");
 	gtk_icon_theme_append_search_path (gtk_icon_theme_get_default (),
 					   "/usr/share/PackageKit/icons");
 
@@ -2989,7 +2989,7 @@ main (int argc, char *argv[])
 	priv = g_new0 (GpkApplicationPrivate, 1);
 
 	/* are we already activated? */
-	priv->application = gtk_application_new ("org.freedesktop.PackageKit.Application", 0);
+	priv->application = gtk_application_new ("org.gnome.Packages", 0);
 	g_signal_connect (priv->application, "startup",
 			  G_CALLBACK (gpk_application_startup_cb), priv);
 	g_signal_connect (priv->application, "activate",

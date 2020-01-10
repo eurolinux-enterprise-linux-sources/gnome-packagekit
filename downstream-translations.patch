@@ -1,84 +1,43 @@
-diff -urNp gnome-packagekit-3.22.1.old/po/de.po gnome-packagekit-3.22.1/po/de.po
---- gnome-packagekit-3.22.1.old/po/de.po	2017-03-01 14:41:11.409454027 +0000
-+++ gnome-packagekit-3.22.1/po/de.po	2017-03-01 16:11:59.750706604 +0000
-@@ -3162,8 +3162,8 @@ msgstr "Pakete aktualisieren"
- #~ msgid "Repairing the system"
- #~ msgstr "Das System wird repariert"
- 
--#~ msgid "Software Install"
--#~ msgstr "Software-Installation"
+diff -urNp gnome-packagekit-3.28.0.old/po/de.po gnome-packagekit-3.28.0/po/de.po
+--- gnome-packagekit-3.28.0.old/po/de.po	2018-06-07 15:03:43.830256390 +0100
++++ gnome-packagekit-3.28.0/po/de.po	2018-06-07 15:08:13.097398706 +0100
+@@ -3064,3 +3064,32 @@ msgstr ""
+ #: src/gpk-update-viewer.c:2932
+ msgid "Update Packages"
+ msgstr "Pakete aktualisieren"
++
 +msgid "Software Install"
 +msgstr "Software-Installation"
- 
- #~ msgid "Install selected software on the system"
- #~ msgstr "Ausgewählte Software auf dem System installieren"
-@@ -3565,8 +3565,8 @@ msgstr "Pakete aktualisieren"
- #~ msgid "Remaining time: %s"
- #~ msgstr "Verbleibende Zeit: %s"
- 
--#~ msgid "Software Log"
--#~ msgstr "Softwareprotokoll"
++
 +msgid "Software Log"
 +msgstr "Softwareprotokoll"
- 
- #~ msgid "Help"
- #~ msgstr "Hilfe"
-@@ -3574,11 +3574,11 @@ msgstr "Pakete aktualisieren"
- #~ msgid "Update System"
- #~ msgstr "System aktualisieren"
- 
--#~ msgid "Software Sources"
--#~ msgstr "Softwarequellen"
++
 +msgid "Software Sources"
 +msgstr "Softwarequellen"
- 
--#~ msgid "Software Settings"
--#~ msgstr "Software-Einstellungen"
++
 +msgid "Software Settings"
 +msgstr "Software-Einstellungen"
- 
- #~ msgid ""
- #~ "Change software update preferences and enable or disable software sources"
-@@ -3586,11 +3586,11 @@ msgstr "Pakete aktualisieren"
- #~ "Einstellungen zur Softwareaktualisierung bearbeiten und Softwarequellen "
- #~ "aktivieren oder deaktivieren"
- 
--#~ msgid "Software Update Preferences"
--#~ msgstr "Softwareaktualisierungs-Einstellungen"
++
 +msgid "Software Update Preferences"
 +msgstr "Softwareaktualisierungs-Einstellungen"
- 
--#~ msgid "Software Update"
--#~ msgstr "Software-Aktualisierungen"
++
 +msgid "Software Update"
 +msgstr "Software-Aktualisierungen"
- 
- #~ msgid "No software"
- #~ msgstr "Keine Software gefunden"
-@@ -3683,3 +3683,8 @@ msgstr "Pakete aktualisieren"
- 
- #~ msgid "About Software Install"
- #~ msgstr "Info zu Software-Installation"
++
++msgid "Software sources"
++msgstr "Software-Quellen"
++
++msgid "About Software Install"
++msgstr "Info zu Software-Installation"
 +
 +#: ../data/gpk-application.desktop.in.h:1 ../data/gpk-application.ui.h:1
 +#: ../src/gpk-application.c:2567
 +msgid "Software"
 +msgstr "Software"
-diff -urNp gnome-packagekit-3.22.1.old/po/es.po gnome-packagekit-3.22.1/po/es.po
---- gnome-packagekit-3.22.1.old/po/es.po	2017-03-01 14:41:11.409454027 +0000
-+++ gnome-packagekit-3.22.1/po/es.po	2017-03-01 16:11:59.734706724 +0000
-@@ -3097,8 +3097,8 @@ msgstr "Actualizar paquetes"
- #~ msgid "Repairing the system"
- #~ msgstr "Reparando el sistema"
- 
--#~ msgid "Software Install"
--#~ msgstr "Instalador de software"
-+msgid "Software Install"
-+msgstr "Instalador de software"
- 
- #~ msgid "Install selected software on the system"
- #~ msgstr "Instalar el software seleccionado en el sistema"
-@@ -3506,17 +3506,17 @@ msgstr "Actualizar paquetes"
+diff -urNp gnome-packagekit-3.28.0.old/po/es.po gnome-packagekit-3.28.0/po/es.po
+--- gnome-packagekit-3.28.0.old/po/es.po	2018-06-07 15:03:43.835256375 +0100
++++ gnome-packagekit-3.28.0/po/es.po	2018-06-07 15:08:13.094398715 +0100
+@@ -3549,17 +3549,17 @@ msgstr "Actualizar paquetes"
  #~ msgid "Update System"
  #~ msgstr "Actualizar el sistema"
  
@@ -102,7 +61,7 @@ diff -urNp gnome-packagekit-3.22.1.old/po/es.po gnome-packagekit-3.22.1/po/es.po
  
  #~ msgid ""
  #~ "Change software update preferences and enable or disable software sources"
-@@ -3524,11 +3524,11 @@ msgstr "Actualizar paquetes"
+@@ -3567,11 +3567,11 @@ msgstr "Actualizar paquetes"
  #~ "Cambiar las preferencias de actualizaciones de software y activar o "
  #~ "desactivar los repositorios de software"
  
@@ -111,25 +70,42 @@ diff -urNp gnome-packagekit-3.22.1.old/po/es.po gnome-packagekit-3.22.1/po/es.po
 +msgid "Software Update Preferences"
 +msgstr "Preferencias de actualización de software"
  
--#~ msgid "Software Update"
--#~ msgstr "Actualización de software"
-+msgid "Software Update"
-+msgstr "Actualización de software"
+-#~ msgid "Software sources"
+-#~ msgstr "Repositorios de software"
++msgid "Software sources"
++msgstr "Repositorios de software"
  
- #~ msgid "Software sources"
+ #~ msgid "Software Source"
  #~ msgstr "Repositorios de software"
-@@ -5289,3 +5289,8 @@ msgstr "Actualizar paquetes"
+@@ -3676,8 +3676,8 @@ msgstr "Actualizar paquetes"
+ #~ "Notificar al usuario antes de una hacer actualización larga con una "
+ #~ "conexión de banda ancha móvil."
+ 
+-#~ msgid "About Software Install"
+-#~ msgstr "Acerca del instalador de software"
++msgid "About Software Install"
++msgstr "Acerca del instalador de software"
+ 
+ #~ msgid "Catalog Installer"
+ #~ msgstr "Instalador de catálogos"
+@@ -5323,3 +5323,14 @@ msgstr "Actualizar paquetes"
  
  #~ msgid "A program %s"
  #~ msgstr "Un programa %s"
++
++msgid "Software Install"
++msgstr "Instalador de software"
++
++msgid "Software Update"
++msgstr "Actualización de software"
 +
 +#: ../data/gpk-application.desktop.in.h:1 ../data/gpk-application.ui.h:1
 +#: ../src/gpk-application.c:2567
 +msgid "Software"
 +msgstr "Software"
-diff -urNp gnome-packagekit-3.22.1.old/po/fr.po gnome-packagekit-3.22.1/po/fr.po
---- gnome-packagekit-3.22.1.old/po/fr.po	2017-03-01 14:41:11.411454011 +0000
-+++ gnome-packagekit-3.22.1/po/fr.po	2017-03-01 16:11:59.739706687 +0000
+diff -urNp gnome-packagekit-3.28.0.old/po/fr.po gnome-packagekit-3.28.0/po/fr.po
+--- gnome-packagekit-3.28.0.old/po/fr.po	2018-06-07 15:03:43.836256371 +0100
++++ gnome-packagekit-3.28.0/po/fr.po	2018-06-07 15:08:13.096398709 +0100
 @@ -3223,8 +3223,8 @@ msgstr ""
  msgid "Update Packages"
  msgstr "Mise à jour de paquets"
@@ -152,7 +128,7 @@ diff -urNp gnome-packagekit-3.22.1.old/po/fr.po gnome-packagekit-3.22.1/po/fr.po
  
  #~ msgid "Help"
  #~ msgstr "Aide"
-@@ -3666,8 +3666,8 @@ msgstr "Mise à jour de paquets"
+@@ -3666,11 +3666,11 @@ msgstr "Mise à jour de paquets"
  #~ "Informer l'utilisateur avant qu'une grosse mise à jour soit réalisée avec "
  #~ "une connexion mobile haut-débit."
  
@@ -161,8 +137,13 @@ diff -urNp gnome-packagekit-3.22.1.old/po/fr.po gnome-packagekit-3.22.1/po/fr.po
 +msgid "Software Sources"
 +msgstr "Sources des logiciels"
  
- #~ msgid "About Software Install"
- #~ msgstr "À propos de l'installation de logiciels"
+-#~ msgid "About Software Install"
+-#~ msgstr "À propos de l'installation de logiciels"
++msgid "About Software Install"
++msgstr "À propos de l'installation de logiciels"
+ 
+ #~ msgid "Catalog Installer"
+ #~ msgstr "Programme d'installation de catalogues"
 @@ -3678,8 +3678,8 @@ msgstr "Mise à jour de paquets"
  #~ msgid "Install a catalog of software on the system"
  #~ msgstr "Installer un catalogue de logiciels sur le système"
@@ -196,6 +177,17 @@ diff -urNp gnome-packagekit-3.22.1.old/po/fr.po gnome-packagekit-3.22.1/po/fr.po
  
  #~ msgid "Operating System Upgrade"
  #~ msgstr "Mise à jour de la distribution"
+@@ -4052,8 +4052,8 @@ msgstr "Mise à jour de paquets"
+ #~ msgid "Upgraded system"
+ #~ msgstr "Mise à jour du système effectuée"
+ 
+-#~ msgid "Software sources"
+-#~ msgstr "Sources de logiciels"
++msgid "Software sources"
++msgstr "Sources de logiciels"
+ 
+ #~ msgid "Catalogs files to install"
+ #~ msgstr "Fichiers catalogues à installer"
 @@ -4186,3 +4186,8 @@ msgstr "Mise à jour de paquets"
  
  #~ msgid "Software Update Viewer"
@@ -205,11 +197,11 @@ diff -urNp gnome-packagekit-3.22.1.old/po/fr.po gnome-packagekit-3.22.1/po/fr.po
 +#: ../src/gpk-application.c:2567
 +msgid "Software"
 +msgstr "Logiciel"
-diff -urNp gnome-packagekit-3.22.1.old/po/it.po gnome-packagekit-3.22.1/po/it.po
---- gnome-packagekit-3.22.1.old/po/it.po	2017-03-01 14:41:11.410454019 +0000
-+++ gnome-packagekit-3.22.1/po/it.po	2017-03-01 16:11:59.737706702 +0000
-@@ -3037,3 +3037,36 @@ msgstr ""
- #: ../src/gpk-update-viewer.c:2932
+diff -urNp gnome-packagekit-3.28.0.old/po/it.po gnome-packagekit-3.28.0/po/it.po
+--- gnome-packagekit-3.28.0.old/po/it.po	2018-06-07 15:03:43.836256371 +0100
++++ gnome-packagekit-3.28.0/po/it.po	2018-06-07 15:08:13.092398722 +0100
+@@ -3065,3 +3065,36 @@ msgstr ""
+ #: src/gpk-update-viewer.c:2932
  msgid "Update Packages"
  msgstr "Aggiornamento pacchetti"
 +
@@ -245,10 +237,10 @@ diff -urNp gnome-packagekit-3.22.1.old/po/it.po gnome-packagekit-3.22.1/po/it.po
 +#: ../data/gpk-update-viewer.desktop.in.h:1 ../data/gpk-update-viewer.ui.h:1
 +msgid "Software Update"
 +msgstr "Aggiornamento software"
-diff -urNp gnome-packagekit-3.22.1.old/po/ja.po gnome-packagekit-3.22.1/po/ja.po
---- gnome-packagekit-3.22.1.old/po/ja.po	2017-03-01 14:41:11.409454027 +0000
-+++ gnome-packagekit-3.22.1/po/ja.po	2017-03-01 16:11:59.747706627 +0000
-@@ -3485,11 +3485,11 @@ msgstr "デバッグオプションを�
+diff -urNp gnome-packagekit-3.28.0.old/po/ja.po gnome-packagekit-3.28.0/po/ja.po
+--- gnome-packagekit-3.28.0.old/po/ja.po	2018-06-07 15:03:43.840256358 +0100
++++ gnome-packagekit-3.28.0/po/ja.po	2018-06-07 15:08:13.101398693 +0100
+@@ -3485,14 +3485,14 @@ msgstr "デバッグオプションを�
  #~ msgid "Notify the user before a large update is done on a mobile broadband connection."
  #~ msgstr "モバイルブロードバンド接続で大規模な更新を行う場合、 その前にユーザーに通知します。"
  
@@ -262,8 +254,13 @@ diff -urNp gnome-packagekit-3.22.1.old/po/ja.po gnome-packagekit-3.22.1/po/ja.po
 +msgid "Software Sources"
 +msgstr "ソフトウェアの提供元"
  
- #~ msgid "About Software Install"
- #~ msgstr "このアプリケーションについて"
+-#~ msgid "About Software Install"
+-#~ msgstr "このアプリケーションについて"
++msgid "About Software Install"
++msgstr "このアプリケーションについて"
+ 
+ #~ msgid "Catalog Installer"
+ #~ msgstr "カタログインストーラー"
 @@ -3500,14 +3500,14 @@ msgstr "デバッグオプションを�
  #~ msgid "Install a catalog of software on the system"
  #~ msgstr "ソフトウェアカタログをシステムにインストール"
@@ -273,8 +270,10 @@ diff -urNp gnome-packagekit-3.22.1.old/po/ja.po gnome-packagekit-3.22.1/po/ja.po
 +msgid "Software Settings"
 +msgstr "ソフトウェアの設定"
  
- #~ msgid "Change software update preferences and enable or disable software sources"
- #~ msgstr "ソフトウェア更新の設定の変更とソフトウェアの提供元情報を有効／無効にする"
+-#~ msgid "Change software update preferences and enable or disable software sources"
+-#~ msgstr "ソフトウェア更新の設定の変更とソフトウェアの提供元情報を有効／無効にする"
++msgid "Change software update preferences and enable or disable software sources"
++msgstr "ソフトウェア更新の設定の変更とソフトウェアの提供元情報を有効／無効にする"
  
 -#~ msgid "Software Update Preferences"
 -#~ msgstr "ソフトウェア更新の設定"
@@ -294,9 +293,20 @@ diff -urNp gnome-packagekit-3.22.1.old/po/ja.po gnome-packagekit-3.22.1/po/ja.po
  
  #~ msgid "Operating System Upgrade"
  #~ msgstr "OS のアップグレード"
-diff -urNp gnome-packagekit-3.22.1.old/po/ko.po gnome-packagekit-3.22.1/po/ko.po
---- gnome-packagekit-3.22.1.old/po/ko.po	2017-03-01 14:41:11.405454059 +0000
-+++ gnome-packagekit-3.22.1/po/ko.po	2017-03-01 16:11:59.730706754 +0000
+@@ -3823,8 +3823,8 @@ msgstr "デバッグオプションを�
+ #~ msgid "Upgraded system"
+ #~ msgstr "システムのアップグレード"
+ 
+-#~ msgid "Software sources"
+-#~ msgstr "ソフトウェアのリポジトリ"
++msgid "Software sources"
++msgstr "ソフトウェアのリポジトリ"
+ 
+ #~ msgid "Catalogs files to install"
+ #~ msgstr "カタログファイルのインストール"
+diff -urNp gnome-packagekit-3.28.0.old/po/ko.po gnome-packagekit-3.28.0/po/ko.po
+--- gnome-packagekit-3.28.0.old/po/ko.po	2018-06-07 15:03:43.835256375 +0100
++++ gnome-packagekit-3.28.0/po/ko.po	2018-06-07 15:08:13.103398686 +0100
 @@ -3061,8 +3061,8 @@ msgstr "중요 시스템 패키지를 �
  msgid "Update Packages"
  msgstr "패키지 업데이트"
@@ -337,21 +347,10 @@ diff -urNp gnome-packagekit-3.22.1.old/po/ko.po gnome-packagekit-3.22.1/po/ko.po
 +#: ../data/gpk-update-viewer.desktop.in.h:1 ../data/gpk-update-viewer.ui.h:1
 +msgid "Software Update"
 +msgstr "소프트웨어 업데이트"
-diff -urNp gnome-packagekit-3.22.1.old/po/pt_BR.po gnome-packagekit-3.22.1/po/pt_BR.po
---- gnome-packagekit-3.22.1.old/po/pt_BR.po	2017-03-01 14:41:11.407454043 +0000
-+++ gnome-packagekit-3.22.1/po/pt_BR.po	2017-03-01 16:11:59.741706672 +0000
-@@ -3145,8 +3145,8 @@ msgstr "Atualizar pacotes"
- #~ msgid "Repairing the system"
- #~ msgstr "Reparando o sistema"
- 
--#~ msgid "Software Install"
--#~ msgstr "Instalação de programas"
-+msgid "Software Install"
-+msgstr "Instalação de programas"
- 
- #~ msgid "Install selected software on the system"
- #~ msgstr "Instale o programa selecionado no sistema"
-@@ -3544,8 +3544,8 @@ msgstr "Atualizar pacotes"
+diff -urNp gnome-packagekit-3.28.0.old/po/pt_BR.po gnome-packagekit-3.28.0/po/pt_BR.po
+--- gnome-packagekit-3.28.0.old/po/pt_BR.po	2018-06-07 15:03:43.835256375 +0100
++++ gnome-packagekit-3.28.0/po/pt_BR.po	2018-06-07 15:08:13.098398702 +0100
+@@ -3564,8 +3564,8 @@ msgstr "Atualizar pacotes"
  #~ msgid "Remaining time: %s"
  #~ msgstr "Tempo restante: %s"
  
@@ -362,7 +361,7 @@ diff -urNp gnome-packagekit-3.22.1.old/po/pt_BR.po gnome-packagekit-3.22.1/po/pt
  
  #~ msgid "Help"
  #~ msgstr "Ajuda"
-@@ -3553,11 +3553,11 @@ msgstr "Atualizar pacotes"
+@@ -3573,11 +3573,11 @@ msgstr "Atualizar pacotes"
  #~ msgid "Update System"
  #~ msgstr "Atualizar sistema"
  
@@ -378,7 +377,7 @@ diff -urNp gnome-packagekit-3.22.1.old/po/pt_BR.po gnome-packagekit-3.22.1/po/pt
  
  #~ msgid ""
  #~ "Change software update preferences and enable or disable software sources"
-@@ -3565,11 +3565,11 @@ msgstr "Atualizar pacotes"
+@@ -3585,8 +3585,8 @@ msgstr "Atualizar pacotes"
  #~ "Altere as preferências da atualização de programas e habilite ou "
  #~ "desabilite fontes de programas"
  
@@ -387,25 +386,48 @@ diff -urNp gnome-packagekit-3.22.1.old/po/pt_BR.po gnome-packagekit-3.22.1/po/pt
 +msgid "Software Update Preferences"
 +msgstr "Preferências da atualização de programas"
  
--#~ msgid "Software Update"
--#~ msgstr "Atualizações de programas"
-+msgid "Software Update"
-+msgstr "Atualizações de programas"
- 
  #~ msgid "No software"
  #~ msgstr "Nenhum programa"
-@@ -4130,3 +4130,8 @@ msgstr "Atualizar pacotes"
+@@ -3649,8 +3649,8 @@ msgstr "Atualizar pacotes"
+ #~ msgid "The file could not be found in any available software"
+ #~ msgstr "Não foi possível localizar o arquivo em nenhum programa disponível"
+ 
+-#~ msgid "Software sources"
+-#~ msgstr "Fontes de programas"
++msgid "Software sources"
++msgstr "Fontes de programas"
+ 
+ #~ msgid "Software Source"
+ #~ msgstr "Fonte de programas"
+@@ -3661,8 +3661,8 @@ msgstr "Atualizar pacotes"
+ #~ msgid "Software Update Viewer"
+ #~ msgstr "Visualizador de atualizações de programas"
+ 
+-#~ msgid "About Software Install"
+-#~ msgstr "Sobre a instalação de programas"
++msgid "About Software Install"
++msgstr "Sobre a instalação de programas"
+ 
+ #~ msgid "Could not process catalog"
+ #~ msgstr "Não foi possível processar o catálogo"
+@@ -4141,3 +4141,14 @@ msgstr "Atualizar pacotes"
  
  #~ msgid "You need to specify a package to install"
  #~ msgstr "Você precisa especificar um pacote a ser instalado"
++
++msgid "Software Install"
++msgstr "Instalação de programas"
++
++msgid "Software Update"
++msgstr "Atualizações de programas"
 +
 +#: ../data/gpk-application.desktop.in.h:1 ../data/gpk-application.ui.h:1
 +#: ../src/gpk-application.c:2567
 +msgid "Software"
 +msgstr "Software"
-diff -urNp gnome-packagekit-3.22.1.old/po/ru.po gnome-packagekit-3.22.1/po/ru.po
---- gnome-packagekit-3.22.1.old/po/ru.po	2017-03-01 14:41:11.406454051 +0000
-+++ gnome-packagekit-3.22.1/po/ru.po	2017-03-01 16:11:59.732706740 +0000
+diff -urNp gnome-packagekit-3.28.0.old/po/ru.po gnome-packagekit-3.28.0/po/ru.po
+--- gnome-packagekit-3.28.0.old/po/ru.po	2018-06-07 15:03:43.836256371 +0100
++++ gnome-packagekit-3.28.0/po/ru.po	2018-06-07 15:08:13.095398712 +0100
 @@ -3199,3 +3199,37 @@ msgstr ""
  #: ../src/gpk-update-viewer.c:3401
  msgid "Update Packages"
@@ -444,9 +466,9 @@ diff -urNp gnome-packagekit-3.22.1.old/po/ru.po gnome-packagekit-3.22.1/po/ru.po
 +#: ../data/gpk-update-viewer.desktop.in.h:1 ../data/gpk-update-viewer.ui.h:1
 +msgid "Software Update"
 +msgstr "Обновление программ"
-diff -urNp gnome-packagekit-3.22.1.old/po/zh_CN.po gnome-packagekit-3.22.1/po/zh_CN.po
---- gnome-packagekit-3.22.1.old/po/zh_CN.po	2017-03-01 14:41:11.411454011 +0000
-+++ gnome-packagekit-3.22.1/po/zh_CN.po	2017-03-01 16:11:59.748706619 +0000
+diff -urNp gnome-packagekit-3.28.0.old/po/zh_CN.po gnome-packagekit-3.28.0/po/zh_CN.po
+--- gnome-packagekit-3.28.0.old/po/zh_CN.po	2018-06-07 15:03:43.841256355 +0100
++++ gnome-packagekit-3.28.0/po/zh_CN.po	2018-06-07 15:08:13.102398690 +0100
 @@ -3009,8 +3009,8 @@ msgstr "被保持而未进行的其他�
  msgid "Update Packages"
  msgstr "更新软件包"
@@ -469,7 +491,7 @@ diff -urNp gnome-packagekit-3.22.1.old/po/zh_CN.po gnome-packagekit-3.22.1/po/zh
  
  #~ msgid "Help"
  #~ msgstr "帮助"
-@@ -3360,21 +3360,21 @@ msgstr "更新软件包"
+@@ -3360,24 +3360,24 @@ msgstr "更新软件包"
  #~ msgid "Update System"
  #~ msgstr "更新系统"
  
@@ -497,7 +519,12 @@ diff -urNp gnome-packagekit-3.22.1.old/po/zh_CN.po gnome-packagekit-3.22.1/po/zh
 +msgid "Software Update"
 +msgstr "软件更新"
  
- #~ msgid "Software sources"
+-#~ msgid "Software sources"
+-#~ msgstr "软件源"
++msgid "Software sources"
++msgstr "软件源"
+ 
+ #~ msgid "Software Source"
  #~ msgstr "软件源"
 @@ -3452,3 +3452,8 @@ msgstr "更新软件包"
  
@@ -508,21 +535,10 @@ diff -urNp gnome-packagekit-3.22.1.old/po/zh_CN.po gnome-packagekit-3.22.1/po/zh
 +#: ../src/gpk-application.c:2567
 +msgid "Software"
 +msgstr "软件"
-diff -urNp gnome-packagekit-3.22.1.old/po/zh_TW.po gnome-packagekit-3.22.1/po/zh_TW.po
---- gnome-packagekit-3.22.1.old/po/zh_TW.po	2017-03-01 14:41:11.408454036 +0000
-+++ gnome-packagekit-3.22.1/po/zh_TW.po	2017-03-01 16:11:59.744706649 +0000
-@@ -3047,8 +3047,8 @@ msgstr "由於某些重要系統軟體�
- msgid "Update Packages"
- msgstr "更新軟體包"
- 
--#~ msgid "Software Install"
--#~ msgstr "軟體安裝"
-+msgid "Software Install"
-+msgstr "軟體安裝"
- 
- #~ msgid "Install selected software on the system"
- #~ msgstr "安裝選取的軟體到系統中"
-@@ -3433,8 +3433,8 @@ msgstr "更新軟體包"
+diff -urNp gnome-packagekit-3.28.0.old/po/zh_TW.po gnome-packagekit-3.28.0/po/zh_TW.po
+--- gnome-packagekit-3.28.0.old/po/zh_TW.po	2018-06-07 15:03:43.831256387 +0100
++++ gnome-packagekit-3.28.0/po/zh_TW.po	2018-06-07 15:08:13.100398696 +0100
+@@ -3383,8 +3383,8 @@ msgstr "更新軟體包"
  #~ msgid "Session D-Bus service for PackageKit"
  #~ msgstr "PackageKit 的作業階段 D-Bus 服務"
  
@@ -533,7 +549,7 @@ diff -urNp gnome-packagekit-3.22.1.old/po/zh_TW.po gnome-packagekit-3.22.1/po/zh
  
  #~ msgid "Help"
  #~ msgstr "求助"
-@@ -3442,21 +3442,21 @@ msgstr "更新軟體包"
+@@ -3392,21 +3392,21 @@ msgstr "更新軟體包"
  #~ msgid "Update System"
  #~ msgstr "更新系統"
  
@@ -556,17 +572,34 @@ diff -urNp gnome-packagekit-3.22.1.old/po/zh_TW.po gnome-packagekit-3.22.1/po/zh
 +msgid "Software Update Preferences"
 +msgstr "軟體更新偏好設定"
  
--#~ msgid "Software Update"
--#~ msgstr "軟體更新"
-+msgid "Software Update"
-+msgstr "軟體更新"
+-#~ msgid "Software sources"
+-#~ msgstr "軟體源碼"
++msgid "Software sources"
++msgstr "軟體源碼"
  
- #~ msgid "Software sources"
- #~ msgstr "軟體源碼"
-@@ -4613,3 +4613,8 @@ msgstr "更新軟體包"
+ #~ msgid "Software Source"
+ #~ msgstr "軟體來源"
+@@ -3435,8 +3435,8 @@ msgstr "更新軟體包"
+ #~ "connection."
+ #~ msgstr "當使用行動寬頻連線時，進行某個大型更新前通知先使用者。"
+ 
+-#~ msgid "About Software Install"
+-#~ msgstr "關於軟體安裝"
++msgid "About Software Install"
++msgstr "關於軟體安裝"
+ 
+ #~ msgid "Catalog Installer"
+ #~ msgstr "型錄安裝程式"
+@@ -4545,3 +4545,14 @@ msgstr "更新軟體包"
  
  #~ msgid "Show all software updates"
  #~ msgstr "顯示所有的軟體更新"
++
++msgid "Software Install"
++msgstr "軟體安裝"
++
++msgid "Software Update"
++msgstr "軟體更新"
 +
 +#: ../data/gpk-application.desktop.in.h:1 ../data/gpk-application.ui.h:1
 +#: ../src/gpk-application.c:2567

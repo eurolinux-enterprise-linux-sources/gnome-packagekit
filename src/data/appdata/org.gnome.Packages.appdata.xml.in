@@ -4,20 +4,20 @@
   <id>org.gnome.Packages.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0+</project_license>
-  <_name>GNOME Packages</_name>
-  <_summary>Add or remove software installed on the system</_summary>
+  <name>GNOME Packages</name>
+  <summary>Add or remove software installed on the system</summary>
   <description>
-    <_p>
+    <p>
       Packages allows you to install and remove packages on your system.
       You can view and search packages by name, details or even file name
       and also see dependencies of one package on other packages.
       Searching by groups is possible and is an easy way to find software in
       your favorite desktop environment.
-    </_p>
-    <_p>
+    </p>
+    <p>
       Packages uses PackageKit and can work on any distribution using
       the native package management framework.
-    </_p>
+    </p>
   </description>
   <screenshots>
     <screenshot type="default">https://git.gnome.org/browse/gnome-packagekit/plain/data/appdata/ss-application.png</screenshot>
@@ -27,6 +27,45 @@
    Validate with `appstream-util validate *.appdata.xml`
   -->
   <releases>
+    <release date="2018-03-12" version="3.28.0">
+      <description>
+        <p>
+          This is the first stable release for GNOME 3.28 and updates several
+          translations.
+        </p>
+      </description>
+    </release>
+    <release date="2017-09-11" version="3.26.0">
+      <description>
+        <p>
+          This is the first stable release for GNOME 3.26 and updates several
+          translations.
+        </p>
+      </description>
+    </release>
+    <release date="2017-08-07" version="3.25.90">
+      <description>
+        <p>
+          This unstable release switches to the meson build-system and updates
+          several translations.
+        </p>
+      </description>
+    </release>
+    <release date="2017-03-20" version="3.24.0">
+      <description>
+        <p>This is the first stable release for GNOME 3.24.</p>
+      </description>
+    </release>
+    <release date="2017-03-11" version="3.23.92">
+      <description>
+        <p>This unstable release updates several translations.</p>
+      </description>
+    </release>
+    <release date="2017-02-13" version="3.23.90">
+      <description>
+        <p>This unstable release ports away from intltool and updates translations.</p>
+      </description>
+    </release>
     <release date="2016-10-12" version="3.22.1">
       <description>
         <p>This release modernizes metainfo files and updates translations.</p>
@@ -111,6 +150,9 @@
       </description>
     </release>
   </releases>
+  <provides>
+    <id>gpk-application.desktop</id>
+  </provides>
   <kudos>
     <kudo>AppMenu</kudo>
     <kudo>HiDpiIcon</kudo>

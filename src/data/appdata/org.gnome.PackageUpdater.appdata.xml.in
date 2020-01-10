@@ -4,18 +4,18 @@
   <id>org.gnome.PackageUpdater.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0+</project_license>
-  <_name>GNOME Package Updater</_name>
-  <_summary>Update software installed on the system</_summary>
+  <name>GNOME Package Updater</name>
+  <summary>Update software installed on the system</summary>
   <description>
-    <_p>
+    <p>
       Package Updater allows you to update packages on your system without
       rebooting.
       You can view details about each update and choose which updates to apply.
-    </_p>
-    <_p>
+    </p>
+    <p>
       Package Updater uses PackageKit and can work on any distribution using
       the native package management framework.
-    </_p>
+    </p>
   </description>
   <screenshots>
     <screenshot type="default">https://git.gnome.org/browse/gnome-packagekit/plain/data/appdata/ss-updater.png</screenshot>
@@ -24,6 +24,45 @@
    Validate with `appstream-util validate *.appdata.xml`
   -->
   <releases>
+    <release date="2018-03-12" version="3.28.0">
+      <description>
+        <p>
+          This is the first stable release for GNOME 3.28 and updates several
+          translations.
+        </p>
+      </description>
+    </release>
+    <release date="2017-09-11" version="3.26.0">
+      <description>
+        <p>
+          This is the first stable release for GNOME 3.26 and updates several
+          translations.
+        </p>
+      </description>
+    </release>
+    <release date="2017-08-07" version="3.25.90">
+      <description>
+        <p>
+          This unstable release switches to the meson build-system and updates
+          several translations.
+        </p>
+      </description>
+    </release>
+    <release date="2017-03-20" version="3.24.0">
+      <description>
+        <p>This is the first stable release for GNOME 3.24.</p>
+      </description>
+    </release>
+    <release date="2017-03-11" version="3.23.92">
+      <description>
+        <p>This unstable release updates several translations.</p>
+      </description>
+    </release>
+    <release date="2017-02-13" version="3.23.90">
+      <description>
+        <p>This unstable release ports away from intltool and updates translations.</p>
+      </description>
+    </release>
     <release date="2016-09-19" version="3.22.0">
       <description>
         <p>This is the first stable release for GNOME 3.22</p>
@@ -118,6 +157,9 @@
       </description>
     </release>
   </releases>
+  <provides>
+    <id>gpk-update-viewer.desktop</id>
+  </provides>
   <kudos>
     <kudo>AppMenu</kudo>
     <kudo>HiDpiIcon</kudo>

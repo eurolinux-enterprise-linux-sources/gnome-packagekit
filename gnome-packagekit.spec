@@ -1,12 +1,11 @@
 Name:      gnome-packagekit
-Version:   3.22.1
-Release:   2%{?dist}
+Version:   3.28.0
+Release:   1%{?dist}
 Summary:   Session applications to manage packages
 
 License:   GPLv2+
-Group:     Applications/System
 URL:       http://www.packagekit.org
-Source0:   http://download.gnome.org/sources/gnome-packagekit/3.22/%{name}-%{version}.tar.xz
+Source0:   http://download.gnome.org/sources/gnome-packagekit/3.28/%{name}-%{version}.tar.xz
 
 # Upstream patch
 Patch5:    0001-Change-the-UI-policy-to-show-the-comps-tree.patch
@@ -21,9 +20,6 @@ Patch6:    0001-Use-the-pre-gnome-software-application-names.patch
 
 Patch7:    downstream-translations.patch
 
-# Already upstream
-Patch8:    0001-trivial-Fix-build-failure-when-dbus-glib-is-not-inst.patch
-
 BuildRequires: glib2-devel >= 2.25.8
 BuildRequires: gtk3-devel
 BuildRequires: libnotify-devel >= 0.7.0
@@ -32,9 +28,7 @@ BuildRequires: gettext
 BuildRequires: libtool
 BuildRequires: cairo-devel
 BuildRequires: startup-notification-devel
-BuildRequires: perl(XML::Parser)
 BuildRequires: PackageKit-devel >= 0.5.0
-BuildRequires: intltool
 BuildRequires: xorg-x11-proto-devel
 BuildRequires: fontconfig-devel
 BuildRequires: libcanberra-devel
@@ -42,6 +36,7 @@ BuildRequires: libgudev1-devel
 BuildRequires: libxslt
 BuildRequires: docbook-utils
 BuildRequires: systemd-devel
+BuildRequires: meson
 BuildRequires: polkit-devel
 BuildRequires: itstool
 BuildRequires: libappstream-glib
@@ -57,7 +52,6 @@ removing packages on your system.
 
 %package common
 Summary: Common files required for %{name}
-Requires:  %{name}%{?_isa} = %{version}-%{release}
 Requires:  adwaita-icon-theme
 Requires:  PackageKit%{?_isa} >= 0.5.0
 Requires:  PackageKit-libs >= 0.5.0
@@ -92,17 +86,13 @@ without rebooting.
 %patch5 -p1 -b .category-groups
 %patch6 -p1 -b .funky-name
 %patch7 -p1 -b .downstream-translations
-%patch8 -p1 -b .no-dbus-glib
 
 %build
-%configure --enable-systemd
-make %{?_smp_mflags}
+%meson
+%meson_build
 
 %install
-%make_install
-
-# nuke the ChangeLog file, it's huge
-rm -f $RPM_BUILD_ROOT%{_datadir}/doc/gnome-packagekit-*/ChangeLog
+%meson_install
 
 # use gnome-software for installing local files
 rm -f $RPM_BUILD_ROOT%{_datadir}/applications/gpk-install-local-file.desktop
@@ -130,7 +120,7 @@ glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
 
 %files common -f %{name}.lang
 %license COPYING
-%doc AUTHORS NEWS README
+%doc AUTHORS README
 %{_bindir}/gpk-log
 %{_bindir}/gpk-prefs
 %dir %{_datadir}/gnome-packagekit
@@ -140,28 +130,31 @@ glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
 %dir %{_datadir}/gnome-packagekit/icons/hicolor/*/*
 %{_datadir}/gnome-packagekit/icons/hicolor/*/*/*.png
 %{_datadir}/gnome-packagekit/icons/hicolor/scalable/*/*.svg*
-%{_datadir}/icons/hicolor/*/*/*.png
 %{_datadir}/icons/hicolor/scalable/*/*.svg*
-%{_datadir}/man/man1/gpk-log.1*
-%{_datadir}/man/man1/gpk-prefs.1*
 %{_datadir}/applications/gpk-log.desktop
 %{_datadir}/applications/gpk-prefs.desktop
 %{_datadir}/glib-2.0/schemas/org.gnome.packagekit.gschema.xml
 %{_datadir}/GConf/gsettings/org.gnome.packagekit.gschema.migrate
+%{_mandir}/man1/gpk-log.1*
+%{_mandir}/man1/gpk-prefs.1*
 
 %files installer
 %{_bindir}/gpk-application
 %{_datadir}/applications/org.gnome.Packages.desktop
 %{_datadir}/metainfo/org.gnome.Packages.appdata.xml
-%{_datadir}/man/man1/gpk-application.1*
+%{_mandir}/man1/gpk-application.1*
 
 %files updater
 %{_bindir}/gpk-update-viewer
 %{_datadir}/applications/org.gnome.PackageUpdater.desktop
 %{_datadir}/metainfo/org.gnome.PackageUpdater.appdata.xml
-%{_datadir}/man/man1/gpk-update-viewer.1*
+%{_mandir}/man1/gpk-update-viewer.1*
 
 %changelog
+* Wed Jun 06 2018 Richard Hughes <rhughes@redhat.com> - 3.28.0-1
+- Update to 3.28.0
+- Resolves: #1568232
+
 * Fri Mar 10 2017 Kalev Lember <klember@redhat.com> - 3.22.1-2
 - Fix gnome-packagekit-install dependencies
 - Resolves: #1386955

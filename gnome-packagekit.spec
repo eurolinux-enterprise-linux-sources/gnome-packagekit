@@ -1,7 +1,7 @@
 Summary:   Session applications to manage packages
 Name:      gnome-packagekit
 Version:   3.14.3
-Release:   5%{?dist}
+Release:   7%{?dist}
 License:   GPLv2+
 Group:     Applications/System
 URL:       http://www.packagekit.org
@@ -12,18 +12,7 @@ Patch0:    0001-Avoid-registering-two-main-desktop-file-categories.patch
 
 Patch5:    0001-Change-the-UI-policy-to-show-the-comps-tree.patch
 Patch6:    0001-Use-the-pre-gnome-software-application-names.patch
-
-Requires:  adwaita-icon-theme
-Requires:  dbus-x11%{?_isa} >= 1.1.2
-Requires:  PackageKit%{?_isa} >= 0.5.0
-Requires:  PackageKit-libs >= 0.5.0
-Requires:  shared-mime-info
-Requires:  iso-codes
-# at 0.10 since 2008 (Fedora 10)
-Requires:  libcanberra%{?_isa} >= 0.10
-
-# required because KPackageKit provides exactly the same interface
-Provides: PackageKit-session-service
+Patch7:    gnome-packagekit-3.14.3-EL7.3_translations.patch
 
 BuildRequires: glib2-devel >= 2.25.8
 BuildRequires: gtk3-devel
@@ -48,14 +37,35 @@ BuildRequires: systemd-devel
 BuildRequires: polkit-devel
 BuildRequires: itstool
 
+# the top level package depends on all the apps to make upgrades work
+Requires: %{name}-installer
+Requires: %{name}-updater
+
 %description
 gnome-packagekit provides session applications for the PackageKit API.
 There are several utilities designed for installing, updating and
 removing packages on your system.
 
+%package common
+Summary: Common files required for %{name}
+Requires:  %{name}%{?_isa} = %{version}-%{release}
+Requires:  adwaita-icon-theme
+Requires:  dbus-x11%{?_isa} >= 1.1.2
+Requires:  PackageKit%{?_isa} >= 0.5.0
+Requires:  PackageKit-libs >= 0.5.0
+Requires:  shared-mime-info
+Requires:  iso-codes
+Requires:  libcanberra%{?_isa} >= 0.10
+
+# required because KPackageKit provides exactly the same interface
+Provides: PackageKit-session-service
+
+%description common
+Files shared by all subpackages of %{name}
+
 %package installer
 Summary: PackageKit package installer
-Requires: %{name}%{?_isa} = %{version}-%{release}
+Requires: %{name}-common%{?_isa} = %{version}-%{release}
 
 %description installer
 A graphical package installer for PackageKit which is used to manage software
@@ -63,7 +73,7 @@ not shown in GNOME Software.
 
 %package updater
 Summary: PackageKit package updater
-Requires: %{name}%{?_isa} = %{version}-%{release}
+Requires: %{name}-common%{?_isa} = %{version}-%{release}
 
 %description updater
 A graphical package updater for PackageKit which is used to update packages
@@ -74,6 +84,7 @@ without rebooting.
 %patch0 -p1 -b .desktop-file-category
 %patch5 -p1 -b .category-groups
 %patch6 -p1 -b .funky-name
+%patch7 -p1 -b .funky-name-translations
 
 %build
 %configure --enable-systemd
@@ -106,7 +117,10 @@ update-desktop-database %{_datadir}/applications &> /dev/null || :
 gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
 glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
 
-%files -f %{name}.lang
+%files
+# nada
+
+%files common -f %{name}.lang
 %doc AUTHORS COPYING NEWS README
 %{_bindir}/gpk-dbus-service
 %{_bindir}/gpk-install-local-file
@@ -155,6 +169,15 @@ glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
 %{_datadir}/man/man1/gpk-update-viewer.1.gz
 
 %changelog
+* Wed Jun 29 2016 Richard Hughes <rhughes@redhat.com> - 3.14.3-7
+- Update translations.
+- Resolves: #1304279
+
+* Wed May 18 2016 Richard Hughes <rhughes@redhat.com> - 3.14.3-6
+- Create a -common subpackage and make the "parent" package depend on all
+  the split out applications. This fixes upgrades from old versions.
+- Resolves: #1290868
+
 * Fri Jul 17 2015 Kalev Lember <klember@redhat.com> - 3.14.3-5
 - Avoid registering two main desktop file categories
 - Resolves: #1226036

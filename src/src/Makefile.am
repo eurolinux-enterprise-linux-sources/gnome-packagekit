@@ -1,13 +1,10 @@
 ## We require new-style dependency handling.
 AUTOMAKE_OPTIONS = 1.7
 
-NULL =
-
 AM_CPPFLAGS =						\
 	$(GLIB_CFLAGS)					\
 	$(GIO_CFLAGS)					\
 	$(GTK_CFLAGS)					\
-	$(DBUS_CFLAGS)					\
 	$(NOTIFY_CFLAGS)				\
 	$(PACKAGEKIT_CFLAGS)				\
 	$(GUDEV_CFLAGS)					\
@@ -25,57 +22,28 @@ AM_CPPFLAGS =						\
 	-DLOCALEDIR=\""$(localedir)"\"			\
 	-DVERSION="\"$(VERSION)\"" 			\
 	-DGPK_DATA=\"$(pkgdatadir)\"			\
-	-DG_LOG_DOMAIN=\"GnomePackageKit\"		\
-	$(NULL)
+	-DG_LOG_DOMAIN=\"GnomePackageKit\"
 
 bin_PROGRAMS =						\
 	gpk-application					\
 	gpk-prefs					\
-	gpk-install-local-file				\
 	gpk-update-viewer				\
-	gpk-log						\
-	gpk-dbus-service				\
-	$(NULL)
+	gpk-log
 
 noinst_LIBRARIES = libgpkshared.a
 libgpkshared_a_SOURCES =				\
-	egg-string.c					\
-	egg-string.h					\
-	egg-markdown.c					\
-	egg-markdown.h					\
 	gpk-debug.c					\
 	gpk-debug.h					\
 	gpk-enum.c					\
 	gpk-enum.h					\
-	gpk-x11.c					\
-	gpk-x11.h					\
-	gpk-marshal.c					\
-	gpk-marshal.h					\
-	gpk-session.c					\
-	gpk-session.h					\
-	gpk-animated-icon.c				\
-	gpk-animated-icon.h				\
 	gpk-dialog.c					\
 	gpk-dialog.h					\
-	gpk-vendor.c					\
-	gpk-vendor.h					\
-	gpk-language.c					\
-	gpk-language.h					\
-	gpk-modal-dialog.c				\
-	gpk-modal-dialog.h				\
-	gpk-helper-run.c				\
-	gpk-helper-run.h				\
-	gpk-helper-chooser.c				\
-	gpk-helper-chooser.h				\
-	gpk-gnome.c					\
-	gpk-gnome.h					\
 	gpk-common.c					\
 	gpk-common.h					\
 	gpk-task.c					\
 	gpk-task.h					\
 	gpk-error.c					\
-	gpk-error.h					\
-	$(NULL)
+	gpk-error.h
 
 if WITH_SYSTEMD
 libgpkshared_a_SOURCES +=				\
@@ -86,53 +54,29 @@ endif
 shared_LIBS =						\
 	$(GLIB_LIBS)					\
 	$(GIO_LIBS)					\
-	$(DBUS_LIBS)					\
 	$(GTK_LIBS)					\
 	$(GUDEV_LIBS)					\
 	$(NOTIFY_LIBS)					\
 	$(SYSTEMD_LIBS)					\
 	$(PACKAGEKIT_LIBS)				\
 	$(GNOME_MENUS_LIBS)				\
-	$(CANBERRA_LIBS)				\
-	$(X11_LIBS)					\
-	$(NULL)
-
-gpk_install_local_file_SOURCES =			\
-	gpk-install-local-file.c			\
-	$(NULL)
-
-gpk_install_local_file_LDADD =				\
-	libgpkshared.a					\
-	$(shared_LIBS)					\
-	$(NULL)
-
-gpk_dbus_service_SOURCES =				\
-	gpk-dbus-service.c				\
-	gpk-dbus.c					\
-	gpk-dbus.h					\
-	gpk-dbus-task.c					\
-	gpk-dbus-task.h					\
-	$(NULL)
-
-gpk_dbus_service_LDADD =				\
-	libgpkshared.a					\
-	$(shared_LIBS)					\
-	$(NULL)
+	$(CANBERRA_LIBS)
 
 gpk_application_SOURCES =				\
 	gpk-application.c				\
-	$(NULL)
+	gpk-application-resources.c			\
+	gpk-application-resources.h
 
 gpk_application_LDADD =					\
 	libgpkshared.a					\
-	$(shared_LIBS)					\
-	$(NULL)
+	$(shared_LIBS)
+
+gpk_application_CFLAGS =				\
+	$(WARN_CFLAGS)
 
 gpk_prefs_SOURCES =					\
 	gpk-debug.h					\
 	gpk-debug.c					\
-	gpk-animated-icon.c				\
-	gpk-animated-icon.h				\
 	gpk-enum.c					\
 	gpk-enum.h					\
 	gpk-common.c					\
@@ -140,56 +84,46 @@ gpk_prefs_SOURCES =					\
 	gpk-error.c					\
 	gpk-error.h					\
 	gpk-prefs.c					\
-	$(NULL)
+	gpk-prefs-resources.c				\
+	gpk-prefs-resources.h
 
 gpk_prefs_LDADD =					\
 	libgpkshared.a					\
 	$(shared_LIBS)					\
 	-lm
 
+gpk_prefs_CFLAGS =					\
+	$(WARN_CFLAGS)
+
 gpk_update_viewer_SOURCES =				\
 	gpk-update-viewer.c				\
+	gpk-update-viewer-resources.c			\
+	gpk-update-viewer-resources.h			\
 	gpk-cell-renderer-size.c			\
 	gpk-cell-renderer-size.h			\
 	gpk-cell-renderer-info.c			\
 	gpk-cell-renderer-info.h			\
 	gpk-cell-renderer-restart.c			\
-	gpk-cell-renderer-restart.h			\
-	$(NULL)
+	gpk-cell-renderer-restart.h
 
 gpk_update_viewer_LDADD =				\
 	libgpkshared.a					\
-	$(shared_LIBS)					\
-	$(NULL)
+	$(shared_LIBS)
+
+gpk_update_viewer_CFLAGS =				\
+	$(WARN_CFLAGS)
 
 gpk_log_SOURCES =					\
 	gpk-log.c					\
-	$(NULL)
+	gpk-log-resources.c				\
+	gpk-log-resources.h
 
 gpk_log_LDADD =						\
 	libgpkshared.a					\
-	$(shared_LIBS)					\
-	$(NULL)
+	$(shared_LIBS)
 
-BUILT_SOURCES = 					\
-	gpk-marshal.c					\
-	gpk-marshal.h					\
-	org.freedesktop.PackageKit.h			\
-	$(NULL)
-
-gpk-marshal.c: gpk-marshal.list
-	echo "#include \"gpk-marshal.h\"" > $@ && \
-	glib-genmarshal $< --prefix=gpk_marshal --body >> $@
-
-gpk-marshal.h: gpk-marshal.list
-	glib-genmarshal $< --prefix=gpk_marshal --header > $@
-
-org.freedesktop.PackageKit.h: org.freedesktop.PackageKit.xml
-	$(LIBTOOL) --mode=execute dbus-binding-tool	\
-		--prefix=gpk_dbus			\
-		--mode=glib-server			\
-		--output=org.freedesktop.PackageKit.h	\
-		$(srcdir)/org.freedesktop.PackageKit.xml
+gpk_log_CFLAGS =					\
+	$(WARN_CFLAGS)
 
 if EGG_BUILD_TESTS
 
@@ -201,10 +135,6 @@ noinst_PROGRAMS =					\
 
 gpk_self_test_SOURCES =					\
 	gpk-self-test.c					\
-	egg-string.c					\
-	egg-string.h					\
-	egg-markdown.c					\
-	egg-markdown.h					\
 	gpk-debug.c					\
 	gpk-debug.h					\
 	gpk-enum.c					\
@@ -213,62 +143,77 @@ gpk_self_test_SOURCES =					\
 	gpk-common.h					\
 	gpk-error.c					\
 	gpk-error.h					\
-	gpk-language.c					\
-	gpk-language.h					\
-	gpk-modal-dialog.c				\
-	gpk-modal-dialog.h				\
-	gpk-dbus.c					\
-	gpk-dbus.h					\
-	gpk-dbus-task.c					\
-	gpk-dbus-task.h					\
-	gpk-animated-icon.c				\
-	gpk-animated-icon.h				\
-	gpk-gnome.c					\
-	gpk-gnome.h					\
-	gpk-x11.c					\
-	gpk-x11.h					\
-	gpk-vendor.c					\
-	gpk-vendor.h					\
 	gpk-task.c					\
 	gpk-task.h					\
-	gpk-helper-run.c				\
-	gpk-helper-run.h				\
-	gpk-helper-chooser.c				\
-	gpk-helper-chooser.h				\
-	gpk-marshal.c					\
-	gpk-marshal.h					\
 	gpk-dialog.c					\
-	gpk-dialog.h					\
-	$(NULL)
+	gpk-dialog.h
 
 gpk_self_test_LDADD =					\
 	$(shared_LIBS)					\
-	$(SELFTEST_LIBS)				\
-	$(NULL)
+	$(SELFTEST_LIBS)
 
-gpk_self_test_CFLAGS = $(AM_CFLAGS)
+gpk_self_test_CFLAGS =					\
+	$(WARN_CFLAGS)
 
 TESTS = gpk-self-test
 endif
 
+gpk-application-resources.c: gpk-application.gresource.xml gpk-application.ui
+	$(AM_V_GEN) glib-compile-resources --target=$@ --generate-source --c-name gpk --sourcedir=$(srcdir) $(srcdir)/gpk-application.gresource.xml
+gpk-application-resources.h: gpk-application.gresource.xml
+	$(AM_V_GEN) glib-compile-resources --target=$@ --generate-header --c-name gpk --sourcedir=$(srcdir) $(srcdir)/gpk-application.gresource.xml
+
+gpk-log-resources.c: gpk-log.gresource.xml gpk-log.ui
+	$(AM_V_GEN) glib-compile-resources --target=$@ --generate-source --c-name gpk --sourcedir=$(srcdir) $(srcdir)/gpk-log.gresource.xml
+gpk-log-resources.h: gpk-log.gresource.xml
+	$(AM_V_GEN) glib-compile-resources --target=$@ --generate-header --c-name gpk --sourcedir=$(srcdir) $(srcdir)/gpk-log.gresource.xml
+
+gpk-prefs-resources.c: gpk-prefs.gresource.xml gpk-prefs.ui
+	$(AM_V_GEN) glib-compile-resources --target=$@ --generate-source --c-name gpk --sourcedir=$(srcdir) $(srcdir)/gpk-prefs.gresource.xml
+gpk-prefs-resources.h: gpk-prefs.gresource.xml
+	$(AM_V_GEN) glib-compile-resources --target=$@ --generate-header --c-name gpk --sourcedir=$(srcdir) $(srcdir)/gpk-prefs.gresource.xml
+
+gpk-update-viewer-resources.c: gpk-update-viewer.gresource.xml gpk-update-viewer.ui
+	$(AM_V_GEN) glib-compile-resources --target=$@ --generate-source --c-name gpk --sourcedir=$(srcdir) $(srcdir)/gpk-update-viewer.gresource.xml
+gpk-update-viewer-resources.h: gpk-update-viewer.gresource.xml
+	$(AM_V_GEN) glib-compile-resources --target=$@ --generate-header --c-name gpk --sourcedir=$(srcdir) $(srcdir)/gpk-update-viewer.gresource.xml
+
+BUILT_SOURCES =						\
+	gpk-application-resources.c			\
+	gpk-application-resources.h			\
+	gpk-log-resources.c				\
+	gpk-log-resources.h				\
+	gpk-prefs-resources.c				\
+	gpk-prefs-resources.h				\
+	gpk-update-viewer-resources.c			\
+	gpk-update-viewer-resources.h
+
 EXTRA_DIST =						\
-	gpk-marshal.list				\
-	org.freedesktop.PackageKit.xml			\
-	$(NULL)
+	gpk-application.gresource.xml			\
+	gpk-application.ui				\
+	gpk-client.ui					\
+	gpk-error.ui					\
+	gpk-eula.ui					\
+	gpk-log.gresource.xml				\
+	gpk-log.ui					\
+	gpk-prefs.gresource.xml				\
+	gpk-prefs.ui					\
+	gpk-signature.ui				\
+	gpk-update-viewer.gresource.xml			\
+	gpk-update-viewer.ui
 
 clean-local:
 	rm -f *~
-	rm -f gpk-marshal.c gpk-marshal.h
 	rm -f *.out
 	rm -f *.gcda
 	rm -f *.gcno
 	rm -f gcov.txt
 	rm -f gprof.txt
 
-CLEANFILES = *~ $(BUILT_SOURCES)
+CLEANFILES = *~ $(BUILT_SOURCES) $(noinst_LIBRARIES)
 
 MAINTAINERCLEANFILES =					\
 	*~			      			\
-	Makefile.in					\
-	$(NULL)
+	Makefile.in
 
+-include $(top_srcdir)/git.mk

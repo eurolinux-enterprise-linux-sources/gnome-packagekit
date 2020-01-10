@@ -29,6 +29,13 @@
 #include "gpk-enum.h"
 #include "gpk-cell-renderer-restart.h"
 
+struct _GpkCellRendererRestart
+{
+	GtkCellRendererPixbuf	 parent_instance;
+	PkRestartEnum		 value;
+	const gchar		*icon_name;
+};
+
 enum {
 	PROP_0,
 	PROP_VALUE
@@ -72,10 +79,6 @@ gpk_cell_renderer_restart_set_property (GObject *object, guint param_id,
 	}
 }
 
-/**
- * gpk_cell_renderer_finalize:
- * @object: The object to finalize
- **/
 static void
 gpk_cell_renderer_finalize (GObject *object)
 {
@@ -98,19 +101,12 @@ gpk_cell_renderer_restart_class_init (GpkCellRendererRestartClass *class)
 					 "VALUE", 0, G_MAXUINT, PK_RESTART_ENUM_NONE, G_PARAM_READWRITE));
 }
 
-/**
- * gpk_cell_renderer_restart_init:
- **/
 static void
 gpk_cell_renderer_restart_init (GpkCellRendererRestart *cru)
 {
 	cru->value = PK_RESTART_ENUM_NONE;
-	cru->icon_name = NULL;
 }
 
-/**
- * gpk_cell_renderer_restart_new:
- **/
 GtkCellRenderer *
 gpk_cell_renderer_restart_new (void)
 {

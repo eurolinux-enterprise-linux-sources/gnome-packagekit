@@ -11,8 +11,7 @@ EXTRA_DIST =						\
 	MAINTAINERS					\
 	intltool-extract.in				\
 	intltool-merge.in				\
-	intltool-update.in				\
-	omf.make
+	intltool-update.in
 
 clean-local :
 	rm -f *~
@@ -28,9 +27,32 @@ DISTCLEANFILES =					\
 
 DISTCHECK_CONFIGURE_FLAGS = --disable-scrollkeeper
 
+MAINTAINERCLEANFILES =					\
+	*~						\
+	aclocal.m4					\
+	compile						\
+	config.guess					\
+	config.h.*					\
+	config.sub					\
+	configure					\
+	depcomp						\
+	gtk-doc.make					\
+	INSTALL						\
+	install-sh					\
+	ltmain.sh					\
+	Makefile.in					\
+	missing						\
+	mkinstalldirs					\
+	NEWS						\
+	test-driver
+
+CLEANFILES =						\
+	ChangeLog
+
 distclean-local:
 	if test $(srdcir) = .; then :; else \
 		rm -f ChangeLog; \
+		rm -f NEWS; \
 	fi
 
 ChangeLog:
@@ -47,4 +69,14 @@ ChangeLog:
 	  echo A git checkout and git-log is required to generate this file >> $@); \
 	fi
 
-.PHONY: ChangeLog
+NEWS: data/appdata/*.appdata.xml
+	$(AM_V_GEN) \
+	if test -e $(APPSTREAM_UTIL); then \
+		$(APPSTREAM_UTIL) appdata-to-news $^ > $@; \
+	else \
+		touch $@; \
+	fi
+
+.PHONY: ChangeLog NEWS
+
+-include $(top_srcdir)/git.mk

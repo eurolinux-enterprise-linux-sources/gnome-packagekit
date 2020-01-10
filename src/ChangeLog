@@ -1,29 +1,2007 @@
-commit 3fa06405071025a6a800f9ebf72d1bc5fe8d0599
+commit c346a39396d8b5bf091720766d9441351db3bec5
+Author: Kalev Lember <klember@redhat.com>
+Date:   2016-10-12
+
+    Release version 3.22.1
+
+M	data/appdata/org.gnome.Packages.appdata.xml.in
+
+commit 7e35effd2a2a8da63aacd4679481b9db0c6bf202
+Author: Matthias Klumpp <matthias@tenstral.net>
+Date:	2016-10-03
+
+    Modernize metainfo files
+
+M	data/appdata/Makefile.am
+M	data/appdata/org.gnome.PackageUpdater.appdata.xml.in
+M	data/appdata/org.gnome.Packages.appdata.xml.in
+
+commit 86e468abcd0b51c91b45cce73d023dec87755eef
+Author: Gianvito Cavasoli <gianvito@gmx.it>
+Date:	2016-09-26
+
+    Updated Italian translation
+
+M	po/it.po
+
+commit 028528a18a591c25fcb05517fcfde08ffb19a9ff
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-09-19
+
+    trivial: Post release version bump
+
+M	RELEASE
+M	configure.ac
+
+commit b3e373ddd518413b6f71414bdb7c000727fd7ef6
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-09-19
+
+    Release version 3.22.0
+
+M	data/appdata/org.gnome.PackageUpdater.appdata.xml.in
+M	data/appdata/org.gnome.Packages.appdata.xml.in
+
+commit d885acb618f59091d310907b0e027f96289e34ed
+Author: Aurimas Černius <aurisc4@gmail.com>
+Date:	2016-09-17
+
+    Updated Lithuanian translation
+
+M	po/lt.po
+
+commit f2d5d0db75672691807ce44b929865361a66aa33
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-09-13
+
+    trivial: Post release version bump
+
+M	RELEASE
+M	configure.ac
+
+commit 03fe1bba0b5425b6db54992dadef42880100cbc3
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-09-13
+
+    Release version 3.21.92
+
+M	data/appdata/org.gnome.PackageUpdater.appdata.xml.in
+M	data/appdata/org.gnome.Packages.appdata.xml.in
+
+commit 83b6dc5206c4b685e238e0c78586ad485d6e29b0
+Author: Dušan Kazik <prescott66@gmail.com>
+Date:	2016-09-10
+
+    Updated Slovak translation
+
+M	po/sk.po
+
+commit 1f292e505e24541a0965ae9d2582d3bd4940a807
+Author: Mario Blättermann <mario.blaettermann@gmail.com>
+Date:	2016-09-09
+
+    Updated German translation
+
+M	po/de.po
+
+commit afafb4f0ad13e33c47383a9d5dcd8a29756cd2dc
+Author: Piotr Drąg <piotrdrag@gmail.com>
+Date:	2016-09-09
+
+    Updated Polish translation
+
+M	po/pl.po
+
+commit d93489447bcf074f4ce41920d9299b3146be923e
+Author: Rafael Fontenelle <rafaelff@gnome.org>
+Date:	2016-09-06
+
+    Updated Brazilian Portuguese translation
+
+M	po/pt_BR.po
+
+commit 1f5fbcd29b0736ad5dec80ec5374065c39bd8f50
+Author: Marek Černocký <marek@manet.cz>
+Date:	2016-09-04
+
+    Updated Czech translation
+
+M	po/cs.po
+
+commit bbbf8518defb878da0fbc9542abe930f8a440d48
+Author: Fabio Tomat <f.t.public@gmail.com>
+Date:	2016-09-03
+
+    Updated Friulian translation
+
+M	po/fur.po
+
+commit 6de0156dc613f1526ac54eb5db87e7d26409a7b3
+Author: Jiri Grönroos <jiri.gronroos@iki.fi>
+Date:	2016-09-03
+
+    Updated Finnish translation
+
+M	po/fi.po
+
+commit 8ca8148b7f126ef936856b49036870387325bbc2
+Author: Мирослав Николић <miroslavnikolic@rocketmail.com>
+Date:	2016-09-01
+
+    Updated Serbian translation
+
+M	po/sr.po
+M	po/sr@latin.po
+
+commit 0ecb9e665a6babb8e354dc762085334525f48bf3
+Author: Мирослав Николић <miroslavnikolic@rocketmail.com>
+Date:	2016-09-01
+
+    Updated Serbian translation
+
+M	po/sr.po
+M	po/sr@latin.po
+
+commit ff3398e2844ad2372a192226438e0f4da84720fc
+Author: Мирослав Николић <miroslavnikolic@rocketmail.com>
+Date:	2016-09-01
+
+    Updated Serbian translation
+
+M	po/sr.po
+M	po/sr@latin.po
+
+commit d175bd1f4c6b400f5db3040fbd8f35b3f2ca8d93
+Author: Piotr Drąg <piotrdrag@gmail.com>
+Date:	2016-08-30
+
+    Updated Polish translation
+
+M	po/pl.po
+
+commit b74f4fa77de17f219a693a4407551fea0334955a
+Author: Balázs Úr <urbalazs@gmail.com>
+Date:	2016-08-29
+
+    Updated Hungarian translation
+
+M	po/hu.po
+
+commit 0d4977130b6541e8b00ec28562344beed113120d
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-08-29
+
+    trivial: Post release version bump
+
+M	RELEASE
+M	configure.ac
+
+commit 9929a09c2184c53ae12997edd881f009b759ae76
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-08-29
+
+    Release version 3.21.91
+
+M	data/appdata/org.gnome.PackageUpdater.appdata.xml.in
+M	data/appdata/org.gnome.Packages.appdata.xml.in
+
+commit a84ff7c801efd6e438adbccb80c6d5bbe835e73a
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-08-29
+
+    Re-instate the gpk-application app-menu
+
+    Fixes https://bugzilla.gnome.org/show_bug.cgi?id=769931
+
+M	src/gpk-application.ui
+
+commit a29422f344ee765f11386890a083e2196a8c4065
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-08-27
+
+    trivial: Actually apply the warning flags
+
+M	configure.ac
+
+commit 44fe3f53ae49f9c1e18da274f4226cc8573eb9d6
+Author: Piotr Drąg <piotrdrag@gmail.com>
+Date:	2016-08-26
+
+    Updated Polish translation
+
+M	po/pl.po
+
+commit a6e7d0615f47705474cd66764b0e2b694abdd09b
+Author: Balázs Úr <urbalazs@gmail.com>
+Date:	2016-08-25
+
+    Updated Hungarian translation
+
+M	po/hu.po
+
+commit 2c26e17b68316f58c33a9a909c82b0b1188e7504
+Author: Anders Jonsson <anders.jonsson@norsjovallen.se>
+Date:	2016-08-25
+
+    Updated Swedish translation
+
+M	po/sv.po
+
+commit 2d8a56df774a8bbcd507581249cc274fc6453b70
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-08-25
+
+    trivial: Use AX_APPEND_COMPILE_FLAGS directly
+
+    This gives us more control over what warnings get enabled.
+
+M	configure.ac
+M	src/gpk-enum.c
+M	src/gpk-update-viewer.c
+
+commit 81bafd92b0ecf8e21091698f97d43ac1d895a6fc
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-08-25
+
+    Don't use the deprecated GNOME_COMPILE_WARNINGS
+
+    Resolves: https://bugzilla.gnome.org/show_bug.cgi?id=769929
+
+M	configure.ac
+M	src/gpk-enum.c
+M	src/gpk-update-viewer.c
+
+commit 2ebc27d6b8b90558eb7d424a10ea0dd4615ddb26
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-08-25
+
+    trivial: Remove duplicate prototypes for _get_type()
+
+M	src/gpk-cell-renderer-info.h
+M	src/gpk-cell-renderer-restart.h
+M	src/gpk-cell-renderer-size.h
+M	src/gpk-task.h
+
+commit 3b9421d2f913113708d1bb3f05d1e4e5ce8085e0
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-08-25
+
+    trivial: Ensure gpk-application gets the warning flags set
+
+    Also fix up any new compiler warnings.
+
+M	src/Makefile.am
+M	src/gpk-application.c
+
+commit e6032cf1aab0b49d58091aa50936f0181a0662c4
+Author: Мирослав Николић <miroslavnikolic@rocketmail.com>
+Date:	2016-08-24
+
+    Updated Serbian translation
+
+M	po/sr.po
+M	po/sr@latin.po
+
+commit 7aa014368767ff30b64852a9dd3b8d5d99759809
+Author: Мирослав Николић <miroslavnikolic@rocketmail.com>
+Date:	2016-08-24
+
+    Updated Serbian translation
+
+M	po/sr.po
+M	po/sr@latin.po
+
+commit 1bc9bd522e5fc2ce0fc523c9fcfb92767dc19627
+Author: Мирослав Николић <miroslavnikolic@rocketmail.com>
+Date:	2016-08-24
+
+    Updated Serbian translation
+
+M	po/sr.po
+M	po/sr@latin.po
+
+commit 7124f27a21d9a3567e9538766dd9912a006759e9
+Author: Marek Černocký <marek@manet.cz>
+Date:	2016-08-21
+
+    Updated Czech translation
+
+M	po/cs.po
+
+commit 3929fd3c858daefcabad354943982d13192b7f7d
+Author: Aurimas Černius <aurisc4@gmail.com>
+Date:	2016-08-21
+
+    Updated Lithuanian translation
+
+M	po/lt.po
+
+commit 526cd19e23e62868ec0db69a2ca7a7d36a6f00dc
+Author: Jiri Grönroos <jiri.gronroos@iki.fi>
+Date:	2016-08-21
+
+    Updated Finnish translation
+
+M	po/fi.po
+
+commit affdcaf3a10e04513ec8c2376631350a0c0d3c42
+Author: Anders Jonsson <anders.jonsson@norsjovallen.se>
+Date:	2016-08-20
+
+    Updated Swedish translation
+
+M	po/sv.po
+
+commit 11ad8e8dad724724b3d12afda1d9884c2b638612
+Author: Balázs Úr <urbalazs@gmail.com>
+Date:	2016-08-19
+
+    Updated Hungarian translation
+
+M	po/hu.po
+
+commit 26dcd105dcec1db68f2814e3c9102d7c8478237f
+Author: Dušan Kazik <prescott66@gmail.com>
+Date:	2016-08-15
+
+    Updated Slovak translation
+
+M	po/sk.po
+
+commit 73bd7d77fedd3a8c5143d02f8eecd5e667f82fc2
+Author: Piotr Drąg <piotrdrag@gmail.com>
+Date:	2016-08-15
+
+    Updated Polish translation
+
+M	po/pl.po
+
+commit cff72dba02f782a573e81bb70e56aa241736491f
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-08-15
+
+    trivial: Post release version bump
+
+M	RELEASE
+M	configure.ac
+
+commit a3da710a7b493c519dc9641f730985a1da772d96
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-08-15
+
+    Release version 3.21.90
+
+M	RELEASE
+M	configure.ac
+M	data/appdata/org.gnome.PackageUpdater.appdata.xml.in
+
+commit 37d00efd7d271d645f27deb0524fda986bcf6c5b
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-08-15
+
+    Use more GNOME_COMPILE_WARNINGS
+
+M	configure.ac
+M	src/Makefile.am
+M	src/gpk-common.c
+M	src/gpk-enum.c
+M	src/gpk-log.c
+M	src/gpk-prefs.c
+M	src/gpk-update-viewer.c
+
+commit 3c66a64142159cadf703665ffdbf5e3838fdfb3d
+Author: Jeremy Bicha <jbicha@ubuntu.com>
+Date:	2016-08-14
+
+    Remove deprecated gnome-common macros and variables
+
+    https://bugzilla.gnome.org/show_bug.cgi?id=769893
+
+    https://wiki.gnome.org/Projects/GnomeCommon/Migration
+
+M	autogen.sh
+M	configure.ac
+
+commit e374d298dfb0c9822e2c393728b8461ceaa3d516
+Author: Aurimas Černius <aurisc4@gmail.com>
+Date:	2016-08-14
+
+    Updated Lithuanian translation
+
+M	po/lt.po
+
+commit 2fe2e88136ea150318405970306f10a46bb4668a
+Author: Anders Jonsson <anders.jonsson@norsjovallen.se>
+Date:	2016-08-09
+
+    Updated Swedish translation
+
+M	po/sv.po
+
+commit 03ee82f38d51d738fdd13402d2515508e9fba1c4
+Author: Mario Blättermann <mario.blaettermann@gmail.com>
+Date:	2016-08-04
+
+    Updated German translation
+
+M	po/de.po
+
+commit e5d46dd1338efc2351e6df2679d652467763815e
+Author: Balázs Meskó <meskobalazs@gmail.com>
+Date:	2016-07-31
+
+    Updated Hungarian translation
+
+M	po/hu.po
+
+commit bec4d5eb40bd0644ce91c8036ec99e770c83f8cf
+Author: Dušan Kazik <prescott66@gmail.com>
+Date:	2016-07-28
+
+    Updated Slovak translation
+
+M	po/sk.po
+
+commit a119d1a59e2f2022a2b082886e74b3d1f04c0392
+Author: Piotr Drąg <piotrdrag@gmail.com>
+Date:	2016-07-22
+
+    Updated Polish translation
+
+M	po/pl.po
+
+commit fcb37e571c0d925fec5dac1a114fc10c488b645a
+Author: Piotr Drąg <piotrdrag@gmail.com>
+Date:	2016-07-21
+
+    Add Language headers to po files
+
+    Future versions of gettext will fail if this header is missing.
+
+M	po/as.po
+M	po/bn.po
+M	po/bn_IN.po
+M	po/ca@valencia.po
+M	po/cy.po
+M	po/en@shaw.po
+M	po/es.po
+M	po/gu.po
+M	po/ko.po
+M	po/mk.po
+M	po/nb.po
+M	po/ne.po
+M	po/oc.po
+M	po/sr@latin.po
+M	po/tr.po
+M	po/ug.po
+M	po/zh_HK.po
+
+commit dd940e0d188633db7f865ba658803c8f80acd981
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-07-20
+
+    trivial: Prettyify the build output
+
+M	man/Makefile.am
+M	src/Makefile.am
+
+commit 2f59728e37785b2986cd61a958f806bfea7d6571
+Author: Ting-Wei Lan <lantw@src.gnome.org>
+Date:	2016-07-20
+
+    trivial: Fix srcdir != builddir build
+
+    https://bugzilla.gnome.org/show_bug.cgi?id=768997
+
+M	src/Makefile.am
+
+commit 4583c7319df9a4812eb1e81a2777252d7efafc98
+Author: Daniel Mustieles <daniel.mustieles@gmail.com>
+Date:	2016-07-20
+
+    Updated Spanish translation
+
+M	po/es.po
+
+commit e163413461d8d83545af79964bd1074eedc79175
+Author: Jean-François Fortin Tam <nekohayo@gmail.com>
+Date:	2016-07-19
+
+    trivial: Right-align "label_source_title" to match
+
+M	src/gpk-application.ui
+
+commit 7655929f97ce4d078556562503b78ca4d28dde7e
+Author: Jean-François Fortin Tam <nekohayo@gmail.com>
+Date:	2016-07-19
+
+    trivial: Tweak the spacing of UI components
+
+    Spacing between components are increment of 3px but typically 6 or 12.
+    18px is rather for huge separations between different groups.
+    Also add a bit of uniform spacing within textviews for legibility.
+
+    These changes make the UI more balanced and space-efficient.
+
+M	src/gpk-application.ui
+M	src/gpk-error.ui
+M	src/gpk-eula.ui
+M	src/gpk-log.ui
+M	src/gpk-signature.ui
+M	src/gpk-update-viewer.ui
+
+commit a778a48953ab157dcd3ac596df353a8033d09ace
+Author: Piotr Drąg <piotrdrag@gmail.com>
+Date:	2016-07-19
+
+    Mark forgotten strings as translatable
+
+M	src/gpk-application.ui
+M	src/gpk-eula.ui
+M	src/gpk-log.ui
+M	src/gpk-prefs.ui
+M	src/gpk-update-viewer.ui
+
+commit e478895b231db401657e45216ece8104bf7c9dd2
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-07-19
+
+    trivial: Don't use depricated GTK properties
+
+M	src/gpk-application.ui
+
+commit 10e536e45cb13f3d8c2f25edc0e5fe5e3cbe5a75
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-07-19
+
+    Always show the correct data for the source label
+
+    Fixes: https://bugzilla.gnome.org/show_bug.cgi?id=768945
+
+M	src/gpk-application.c
+
+commit 258c94066c2722317c33ea29876f3cd5125999b5
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-07-19
+
+    Update the UI files to GTK 3.18 and adhere to the GNOME 3 UI
+    guidelines
+
+M	src/gpk-application.c
+M	src/gpk-application.ui
+M	src/gpk-client.ui
+M	src/gpk-error.ui
+M	src/gpk-eula.ui
+M	src/gpk-log.c
+M	src/gpk-log.ui
+M	src/gpk-prefs.c
+M	src/gpk-prefs.ui
+M	src/gpk-signature.ui
+M	src/gpk-task.c
+M	src/gpk-update-viewer.c
+M	src/gpk-update-viewer.ui
+
+commit bcbb8abfe6696d5e06495a417c2fe4d41b7c77f8
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-07-19
+
+    Use git.mk
+
+D	.gitignore
+M	Makefile.am
+M	configure.ac
+D	data/.gitignore
+M	data/Makefile.am
+D	data/appdata/.gitignore
+M	data/appdata/Makefile.am
+M	data/icons/16x16/Makefile.am
+M	data/icons/16x16/categories/Makefile.am
+M	data/icons/16x16/status/Makefile.am
+M	data/icons/22x22/Makefile.am
+M	data/icons/22x22/categories/Makefile.am
+M	data/icons/22x22/status/Makefile.am
+M	data/icons/24x24/Makefile.am
+M	data/icons/24x24/categories/Makefile.am
+M	data/icons/24x24/status/Makefile.am
+M	data/icons/48x48/Makefile.am
+M	data/icons/48x48/categories/Makefile.am
+M	data/icons/48x48/status/Makefile.am
+M	data/icons/Makefile.am
+M	data/icons/scalable/Makefile.am
+M	data/icons/scalable/categories/Makefile.am
+M	data/icons/scalable/status/Makefile.am
+A	git.mk
+M	m4/.gitignore
+D	man/.gitignore
+M	man/Makefile.am
+D	src/.gitignore
+M	src/Makefile.am
+
+commit f8f43265508221cab03732973cf306ec38adc31e
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-07-19
+
+    Ship the .ui files as GResources
+
+M	contrib/gnome-packagekit.spec.in
+M	data/Makefile.am
+M	po/POTFILES.in
+M	src/Makefile.am
+M	src/gpk-application.c
+A	src/gpk-application.gresource.xml
+R100	data/gpk-application.ui src/gpk-application.ui
+R100	data/gpk-client.ui	src/gpk-client.ui
+M	src/gpk-error.c
+R100	data/gpk-error.ui	src/gpk-error.ui
+R100	data/gpk-eula.ui	src/gpk-eula.ui
+M	src/gpk-log.c
+A	src/gpk-log.gresource.xml
+R100	data/gpk-log.ui src/gpk-log.ui
+M	src/gpk-prefs.c
+A	src/gpk-prefs.gresource.xml
+R100	data/gpk-prefs.ui	src/gpk-prefs.ui
+R100	data/gpk-signature.ui	src/gpk-signature.ui
+M	src/gpk-task.c
+M	src/gpk-update-viewer.c
+A	src/gpk-update-viewer.gresource.xml
+R100	data/gpk-update-viewer.ui	src/gpk-update-viewer.ui
+
+commit 3cb32d094419a49cb34168944e2d5a251c4e2ceb
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-07-19
+
+    Use G_DECLARE_FINAL_TYPE
+
+M	src/gpk-cell-renderer-info.c
+M	src/gpk-cell-renderer-info.h
+M	src/gpk-cell-renderer-restart.c
+M	src/gpk-cell-renderer-restart.h
+M	src/gpk-cell-renderer-size.c
+M	src/gpk-cell-renderer-size.h
+
+commit c63a0c6ac10cc53f28a1c2a2adbd9887773254e0
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-07-18
+
+    trivial: Don't use the legacy name for the systemd library
+
+M	configure.ac
+
+commit 1469a070022ef92a24f2870301ddcc5619d2febf
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-07-18
+
+    trivial: Fix rpmbuild warning
+
+M	src/gpk-update-viewer.c
+
+commit 1766dbbc801281a410a7faae50f6a7614e48f0d6
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-07-18
+
+    trivial: Post release version bump
+
+M	RELEASE
+M	configure.ac
+
+commit 7815078e512af88f6f892c988a78a1caf9dafe7f
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-07-18
+
+    Release version 3.21.4
+
+D	README.commits
+M	RELEASE
+M	configure.ac
+M	data/appdata/org.gnome.PackageUpdater.appdata.xml.in
+M	data/appdata/org.gnome.Packages.appdata.xml.in
+
+commit 987572a59d20cdb84f2c1dd4585dce8f55e7f17e
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-07-18
+
+    trivial: Fix make dist
+
+M	Makefile.am
+
+commit b679a86ff26cdc98dbd7cd4b27076f64eea430bf
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-07-18
+
+    trivial: Use g_autofree and g_autoptr in more places
+
+M	src/gpk-application.c
+M	src/gpk-cell-renderer-info.c
+M	src/gpk-common.c
+M	src/gpk-dialog.c
+M	src/gpk-error.c
+M	src/gpk-log.c
+M	src/gpk-prefs.c
+M	src/gpk-self-test.c
+M	src/gpk-task.c
+M	src/gpk-update-viewer.c
+M	src/systemd-proxy.c
+
+commit e1038d2be387ff79b8e2d89e578b63ad3eb2954f
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-07-18
+
+    Depend on a non-obsolete PackageKit version
+
+M	configure.ac
+M	src/gpk-application.c
+M	src/gpk-enum.h
+M	src/gpk-update-viewer.c
+
+commit 0477a3fcb1e0f35202d45f3c8bace0489de570c2
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-07-18
+
+    trivial: Remove some unused API
+
+M	src/gpk-common.c
+M	src/gpk-common.h
+M	src/gpk-enum.c
+M	src/gpk-enum.h
+M	src/gpk-error.c
+M	src/gpk-error.h
+M	src/gpk-self-test.c
+
+commit b6fbca94f2c575d80b2d9806dd97078e1a39408a
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-07-18
+
+    trivial: Delete unused animations
+
+M	data/icons/16x16/Makefile.am
+D	data/icons/16x16/animations/Makefile.am
+D	data/icons/16x16/animations/pk-action-cleanup.png
+D	data/icons/16x16/animations/pk-action-download.png
+D	data/icons/16x16/animations/pk-action-installing.png
+D	data/icons/16x16/animations/pk-action-refresh-cache.png
+D	data/icons/16x16/animations/pk-action-removing.png
+D	data/icons/16x16/animations/pk-action-searching.png
+D	data/icons/16x16/animations/pk-action-testing.png
+D	data/icons/16x16/animations/pk-action-waiting.png
+M	data/icons/22x22/Makefile.am
+D	data/icons/22x22/animations/Makefile.am
+D	data/icons/22x22/animations/pk-action-cleanup.png
+D	data/icons/22x22/animations/pk-action-download.png
+D	data/icons/22x22/animations/pk-action-installing.png
+D	data/icons/22x22/animations/pk-action-refresh-cache.png
+D	data/icons/22x22/animations/pk-action-removing.png
+D	data/icons/22x22/animations/pk-action-searching.png
+D	data/icons/22x22/animations/pk-action-testing.png
+D	data/icons/22x22/animations/pk-action-waiting.png
+M	data/icons/24x24/Makefile.am
+D	data/icons/24x24/animations/Makefile.am
+D	data/icons/24x24/animations/pk-action-cleanup.png
+D	data/icons/24x24/animations/pk-action-download.png
+D	data/icons/24x24/animations/pk-action-installing.png
+D	data/icons/24x24/animations/pk-action-refresh-cache.png
+D	data/icons/24x24/animations/pk-action-removing.png
+D	data/icons/24x24/animations/pk-action-searching.png
+D	data/icons/24x24/animations/pk-action-testing.png
+D	data/icons/24x24/animations/pk-action-waiting.png
+M	data/icons/48x48/Makefile.am
+D	data/icons/48x48/animations/Makefile.am
+D	data/icons/48x48/animations/pk-action-cleanup.png
+D	data/icons/48x48/animations/pk-action-download.png
+D	data/icons/48x48/animations/pk-action-installing.png
+D	data/icons/48x48/animations/pk-action-refresh-cache.png
+D	data/icons/48x48/animations/pk-action-removing.png
+D	data/icons/48x48/animations/pk-action-searching.png
+D	data/icons/48x48/animations/pk-action-testing.png
+D	data/icons/48x48/animations/pk-action-waiting.png
+
+commit 78fcecf7f128cd27c9c6fae6ffc25e9df661b306
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-07-18
+
+    trivial: Remove some unused functionality
+
+M	data/org.gnome.packagekit.gschema.migrate
+M	data/org.gnome.packagekit.gschema.xml
+M	src/gpk-application.c
+M	src/gpk-common.c
+M	src/gpk-common.h
+M	src/gpk-log.c
+
+commit 7ff1f3b82f2600c21aea41e549444675ad5ee412
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-07-18
+
+    trivial: Remove useless gtk-doc static comments
+
+M	src/gpk-application.c
+M	src/gpk-cell-renderer-info.c
+M	src/gpk-cell-renderer-restart.c
+M	src/gpk-cell-renderer-size.c
+M	src/gpk-common.c
+M	src/gpk-debug.c
+M	src/gpk-dialog.c
+M	src/gpk-enum.c
+M	src/gpk-error.c
+M	src/gpk-log.c
+M	src/gpk-prefs.c
+M	src/gpk-self-test.c
+M	src/gpk-task.c
+M	src/gpk-update-viewer.c
+
+commit 2d9ab587b599d88edd4a2bfa601611042b708746
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-07-18
+
+    trivial: Inline a simple string test
+
+M	src/Makefile.am
+D	src/egg-string.c
+D	src/egg-string.h
+M	src/gpk-application.c
+M	src/gpk-common.c
+M	src/gpk-dialog.c
+M	src/gpk-enum.c
+M	src/gpk-update-viewer.c
+
+commit 45af54373e6ff633bbb6d770876f2578091af329
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-07-18
+
+    trivial: Remove unused function
+
+M	src/egg-string.c
+M	src/egg-string.h
+
+commit 5f9ee1a1a3052c2f10d7b38cc96cf8c4978799f9
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-07-18
+
+    Use new-style application IDs for flatpak
+
+M	contrib/gnome-packagekit.spec.in
+M	data/Makefile.am
+M	data/appdata/Makefile.am
+R098	data/appdata/gpk-update-viewer.appdata.xml.in
+data/appdata/org.gnome.PackageUpdater.appdata.xml.in
+R098	data/appdata/gpk-application.appdata.xml.in
+data/appdata/org.gnome.Packages.appdata.xml.in
+R100	data/gpk-update-viewer.desktop.in
+data/org.gnome.PackageUpdater.desktop.in
+R100	data/gpk-application.desktop.in data/org.gnome.Packages.desktop.in
+M	po/POTFILES.in
+
+commit 01b3a09a6ac1ba69e11e007dd818539f8c142e0a
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-07-18
+
+    Remove the markdown parsing module
+
+    Fedora update descriptions cannot be trusted to be in a specific
+    format.
+
+M	src/Makefile.am
+D	src/egg-markdown.c
+D	src/egg-markdown.h
+M	src/gpk-application.c
+M	src/gpk-self-test.c
+M	src/gpk-update-viewer.c
+
+commit 87cdff0b1b8350032781b2870933e6b9199f57c3
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-07-18
+
+    trivial: Don't use deprecated GTK API
+
+M	src/gpk-task.c
+
+commit 49f8cb85eafa99e12ac7cbfb12e63a869e9812cf
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-07-18
+
+    trivial: Sync spec file with downstream
+
+M	contrib/gnome-packagekit.spec.in
+
+commit d9f247ef481b5e0681def16a505d9f401caee873
+Author: Piotr Drąg <piotrdrag@gmail.com>
+Date:	2016-07-04
+
+    Updated Polish translation
+
+M	po/pl.po
+
+commit 9625d4eb6e30b4ef18effa98dc9b810c7a658580
+Author: Fabio Tomat <f.t.public@gmail.com>
+Date:	2016-06-26
+
+    Updated Friulian translation
+    (cherry picked from commit b98734525859a98378196f44a96e89716645a402)
+
+M	po/fur.po
+
+commit f9f5588b1a1df259ca9353e3041f57355aa64d7f
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-03-21
+
+    trivial: Post branch version bump
+
+M	RELEASE
+M	configure.ac
+
+commit d83a7455d2bb9c69f15d457238ce191a78755b4c
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-03-21
+
+    trivial: Post release version bump
+
+M	RELEASE
+M	configure.ac
+
+commit e381e2a2e04b7cd81739c4a120adf5f6e1b3da6a
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-03-21
+
+    Release version 3.20.0
+
+M	RELEASE
+M	configure.ac
+M	data/appdata/gpk-application.appdata.xml.in
+M	data/appdata/gpk-update-viewer.appdata.xml.in
+
+commit a8a156243eb7f637eb4648b87f1f298df5ddf166
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-01-25
+
+    Add a missing tag to the AppData file
+
+M	data/appdata/gpk-application.appdata.xml.in
+
+commit 9874947047067e99411b169c65cfeeda8a865cff
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-01-25
+
+    Add a missing tag to the AppData file
+
+M	data/appdata/gpk-application.appdata.xml.in
+
+commit aa1a3ef689cb3e415b327b729323037a6112f8ec
+Author: Aurimas Černius <aurisc4@gmail.com>
+Date:	2016-01-23
+
+    Updated Lithuanian translation
+
+M	po/lt.po
+
+commit 1a5336075e5ee19a3a5e777a760aa1b81b964456
+Author: Daniel Mustieles <daniel.mustieles@gmail.com>
+Date:	2015-12-13
+
+    Updated Spanish translation
+
+M	po/es.po
+
+commit f07f90e6075718b285aa504f54fbe3a348907089
+Author: Pedro Albuquerque <palbuquerque73@gmail.com>
+Date:	2015-11-30
+
+    Updated Portuguese translation
+
+M	po/pt.po
+
+commit 72ed18344dbb1f59fded65aaa3ddc8939ab15648
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2015-11-27
+
+    trivial: Manually add kudos to the AppData file
+
+M	data/appdata/gpk-application.appdata.xml.in
+M	data/appdata/gpk-update-viewer.appdata.xml.in
+
+commit 1f651a9f87e52cd877dd39b1cbc0226109978569
+Author: Aurimas Černius <aurisc4@gmail.com>
+Date:	2015-11-03
+
+    Fixed error in Lithuanian translation
+
+M	po/lt.po
+
+commit 799ef017a9eab09ae701360a6e4e58d2f58cbc87
+Author: Ignazio Sgalmuzzo <ignaker@gmail.com>
+Date:	2015-10-17
+
+    Added resizing to "Dependent Packages" and "Required Packages" windows
+
+    https://bugzilla.gnome.org/show_bug.cgi?id=741727
+
+M	src/gpk-application.c
+
+commit 221bb8ee128cf531adbaeabbcd31f733feb994c2
+Author: Ignazio Sgalmuzzo <ignaker@gmail.com>
+Date:	2015-10-17
+
+    Fixed resizing of "Files" window
+
+    https://bugzilla.gnome.org/show_bug.cgi?id=741727
+
+M	src/gpk-dialog.c
+
+commit 185e85ba779f48fa1d01183dc1a3f8891f20b605
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2015-09-21
+
+    trivial: Post branch version bump
+
+M	RELEASE
+M	configure.ac
+
+commit bb4b355cd048f7af04904daa744d5fd8abeef8e1
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2015-09-21
+
+    trivial: Post release version bump
+
+M	RELEASE
+M	configure.ac
+
+commit 24b8e7dea9fa1ea7dd3e29669919f13035d912c0
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2015-09-21
+
+    Release version 3.18.0
+
+M	RELEASE
+M	configure.ac
+M	data/appdata/gpk-application.appdata.xml.in
+M	data/appdata/gpk-update-viewer.appdata.xml.in
+
+commit f7bc75bc5c9923717c42efae4ac4d79244bd55c4
+Author: Arash Mousavi <mousavi.arash@gmail.com>
+Date:	2015-09-13
+
+    Update Persian translations
+
+M	po/fa.po
+
+commit 6d3eee4d6c04992eaffff4efc74502870a2c5c2b
+Author: Arash Mousavi <mousavi.arash@gmail.com>
+Date:	2015-09-13
+
+    Update Persian translations
+
+M	po/fa.po
+
+commit d90e8597181e0a610a8f2f62016708644ecaca73
+Author: Piotr Drąg <piotrdrag@gmail.com>
+Date:	2015-09-10
+
+    Fix FSF address in Polish translation
+
+M	po/pl.po
+
+commit a56a10d4393f7b3133866b7fadaad06e5ec8760c
+Author: Sveinn í Felli <sv1@fellsnet.is>
+Date:	2015-09-07
+
+    Added Icelandic translation
+
+M	po/LINGUAS
+A	po/is.po
+
+commit 8c1ccde05690fe1f8181bc4720cdaee766e63a3c
+Author: Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>
+Date:	2015-08-26
+
+    Updated Chinese (Taiwan) translation
+
+M	po/zh_TW.po
+
+commit 7353cb7df337f8e94f1aa477fc8379700cf2baba
+Author: Piotr Drąg <piotrdrag@gmail.com>
+Date:	2015-08-24
+
+    Updated Polish translation
+
+M	po/pl.po
+
+commit e9a789f0418e50d9a2b697679451ba8ebe7f482b
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2015-08-19
+
+    trivial: Post release version bump
+
+M	RELEASE
+M	configure.ac
+
+commit 774090ea21cda18ee9a4eeb26d1cb417529b7aef
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2015-08-19
+
+    Release version 3.17.90
+
+M	RELEASE
+M	configure.ac
+M	data/appdata/gpk-application.appdata.xml.in
+M	data/appdata/gpk-update-viewer.appdata.xml.in
+
+commit 3e21a356f5d28fbecdf4e40c4f1336329a46a04c
+Author: Fabio Tomat <f.t.public@gmail.com>
+Date:	2015-08-16
+
+    Updated Friulian translation
+
+M	po/fur.po
+
+commit 84809ccd5d8ffae03b56da586726206be38fec8b
+Author: Fabio Tomat <f.t.public@gmail.com>
+Date:	2015-08-03
+
+    Updated Friulian translation
+
+M	po/fur.po
+
+commit d25454d33dcf59e5029b9a0c7b5dbf39f6dcf760
+Author: Fabio Tomat <f.t.public@gmail.com>
+Date:	2015-08-03
+
+    Updated Friulian translation
+
+M	po/fur.po
+
+commit fd41cb5e16da397f87b56451674dc2c7f8f7f458
+Author: Anders Jonsson <anders.jonsson@norsjovallen.se>
+Date:	2015-08-01
+
+    Updated Swedish translation
+
+M	po/sv.po
+
+commit 4d15560afe558a9db2e1c4861ea99fc6ef04fed8
+Author: Anders Jonsson <anders.jonsson@norsjovallen.se>
+Date:	2015-07-31
+
+    Updated Swedish translation
+
+M	po/sv.po
+
+commit 5948b97e751d5f970cdcb81ba4f16b886accc7d3
+Author: Kalev Lember <klember@redhat.com>
+Date:	2015-07-17
+
+    Avoid registering two main desktop file categories
+
+    gnome-shell classic mode puts apps that are registered with more than
+    one main category under Other. To fix this so that we properly end up
+    under System, this commit removes Settings category from the desktop
+    file.
+
+M	data/gpk-application.desktop.in
+
+commit 0275f826b083df79f3cf94c018c24c24977e7251
+Author: Hannie Dumoleyn <hannie@ubuntu-nl.org>
+Date:	2015-07-14
+
+    Update Dutch translation 3.18 Master
+
+M	po/nl.po
+
+commit 50f8bc43dd4f035570bcdfa27bd3399169e74b00
+Author: Pedro Albuquerque <palbuquerque73@gmail.com>
+Date:	2015-06-29
+
+    Updated Portuguese translation
+
+M	po/pt.po
+
+commit 880ee9f090d3adfcb3c84b1f10d5edfa888b0fa3
+Author: Kalev Lember <kalevlember@gmail.com>
+Date:	2015-05-28
+
+    Set minimum content height for scrolledwindows
+
+    Previously, gtk+ would set a minimum height to display scroll
+    bars. With
+    the overlay scrollbars in 3.16, gtk+ no longer does that and scrolled
+    windows end up with a minimum size of 1px by default.
+
+    The minimum size of 1px led the package details view to shrink to
+    just a
+    single dotted line, with no way to resize it to make it readable; for
+    others such as the package view, they showed up in a right size,
+    but it
+    was possible to resize the window and reduce them to just a dotted
+    line.
+
+    Request a minimum content height of 100 pixels for all scrolledwindows
+    to work this around.
+
+M	data/gpk-application.ui
+
+commit cb4aaeb4610196947e61cf7692d4cb2508d9a47a
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:	2015-05-28
+
+    Consider available packages as updatable
+
+    Some PackageKit backends return 'available' as the info enum when
+    update
+    information is not available. Allow them to be updated in
+    gpk-update-viewer.
+
+    Signed-off-by: Richard Hughes <richard@hughsie.com>
+
+M	src/gpk-update-viewer.c
+
+commit 00806a776aa7464d0522fb14f2e33832a3253e3c
 Author: Cédric Valmary <cvalmary@yahoo.fr>
-Date:   2015-05-25
+Date:	2015-05-25
 
     Updated Occitan translation
 
 M	po/oc.po
 
-commit 65ee859e8540664caed0e632dd603be7e332102b
+commit a03171185cfbb46b55aaa194b64aab94464c258d
+Author: Cédric Valmary <cvalmary@yahoo.fr>
+Date:	2015-05-25
+
+    Updated Occitan translation
+
+M	po/oc.po
+
+commit c6d0508e99aa775e10528fe586219e7ad6c9d406
+Author: Cédric Valmary <cvalmary@yahoo.fr>
+Date:	2015-05-24
+
+    Updated Occitan translation
+
+M	po/oc.po
+
+commit 17301e4f29ae10a143e40aedd0c0eb8a7fa3b4fc
+Author: Cédric Valmary <cvalmary@yahoo.fr>
+Date:	2015-05-24
+
+    Updated Occitan translation
+
+M	po/oc.po
+
+commit bbf23795c2282b8c8ff5d10ff12d8b853262948e
+Author: Jordi Mas <jmas@softcatala.org>
+Date:	2015-05-24
+
+    Update Catalan translation
+
+M	po/ca.po
+
+commit 653f39b2105a9a6e0219993b75b17453a62cd80a
+Author: António Lima <amrlima@gmail.com>
+Date:	2015-05-17
+
+    Updated Portuguese translation
+
+M	po/pt.po
+
+commit 364246b5e22c90bcdaca627251d423f6837a2262
+Author: Daniel Martinez <dmartinez@src.gnome.org>
+Date:	2015-05-05
+
+    Updated Aragonese translation
+
+M	po/an.po
+
+commit a0e1378f83675195d0cc5d6313dd20184bfe0ec3
+Author: YunQiang Su <yqsu@src.gnome.org>
+Date:	2015-05-03
+
+    update zh_CN translation
+
+M	po/zh_CN.po
+
+commit dad5025a3888f4589b2ea9312a3d765f5ffea87d
+Author: Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>
+Date:	2015-04-23
+
+    Updated Esperanto translation
+
+M	po/eo.po
+
+commit 92d1f39ef5343b5e378390c3f9b12f0113f1bfe2
+Author: Frederic Crozat <fcrozat@suse.com>
+Date:	2015-04-15
+
+    Ensure to escape package and vendor name.
+
+    They might contain XML-style markup.
+
+M	src/gpk-task.c
+
+commit ad81f46a8d7ba59af5b205e83516cbcec4c2adfd
+Author: Marek Černocký <marek@manet.cz>
+Date:	2015-04-03
+
+    Udated Czech translation
+
+M	po/cs.po
+
+commit 308843c97ecacf2dc37ebabc3d10fc75c965737b
+Author: Fabio Tomat <f.t.public@gmail.com>
+Date:	2015-03-26
+
+    Updated Friulian translation
+
+M	po/fur.po
+
+commit e2f3180949ae48149150599d1bbaa159b344f753
+Author: Fabio Tomat <f.t.public@gmail.com>
+Date:	2015-03-25
+
+    Updated Friulian translation
+
+M	po/fur.po
+
+commit f70341756167a395320290b50227a4d97f4a6d86
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2015-03-24
+
+    trivial: Post branch version bump
+
+M	RELEASE
+
+commit a23db0f7e02680a988e355dd13bd7b2dfdc85fe0
+Author: Jordi Mas <jmas@softcatala.org>
+Date:	2015-03-23
+
+    Update Catalan translation
+
+M	po/ca.po
+
+commit 5267970489155f26130b959ebd10ae4147a5a126
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2015-03-23
+
+    Release version 3.16.0
+
+M	data/appdata/gpk-application.appdata.xml.in
+M	data/appdata/gpk-update-viewer.appdata.xml.in
+
+commit 76bec19319f5054534c0e2242b992a1076c5a404
+Author: Gianvito Cavasoli <gianvito@gmx.it>
+Date:	2015-03-22
+
+    Updated Italian translation
+
+M	po/it.po
+
+commit 4d2d8686d162c5a5ad2a4bbd2b6944c8f9bf87cc
+Author: Inaki Larranaga Murgoitio <dooteo@zundan.com>
+Date:	2015-03-21
+
+    Updated Basque language
+
+M	po/eu.po
+
+commit fd20d3f37de83bc7e3903f7a32b9ca1ba279e170
+Author: Andika Triwidada <andika@gmail.com>
+Date:	2015-03-20
+
+    Updated Indonesian translation
+
+M	po/id.po
+
+commit b52cc1301fa03d9939be4bf70dbd621cd190c10d
+Author: Akom Chotiphantawanon <knight2000@gmail.com>
+Date:	2015-03-20
+
+    Updated Thai translation
+
+M	po/th.po
+
+commit e524caf8d59b8bef562ca1ebbce12b686f241ca3
+Author: Victor Ibragimov <victor.ibragimov@gmail.com>
+Date:	2015-03-17
+
+    Updated Tajik translation
+
+M	po/tg.po
+
+commit bb74950f55a43c160038f4bfa53d935da22b2069
+Author: Baurzhan Muftakhidinov <baurthefirst@gmail.com>
+Date:	2015-03-16
+
+    Updated Kazakh translation
+
+M	po/kk.po
+
+commit 7fe895d0145030745315fc05e57e35d8775e8105
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2015-03-16
+
+    trivial: Post release version bump
+
+M	RELEASE
+M	configure.ac
+
+commit 79fc7369a596b764946ed59176f90379e70cbaf3
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2015-03-16
+
+    Release version 3.15.92
+
+M	data/appdata/gpk-application.appdata.xml.in
+M	data/appdata/gpk-update-viewer.appdata.xml.in
+
+commit d65fa8f7952cef0a1302991523fb8660460cd267
+Author: Josef Andersson <josef.andersson@gmail.com>
+Date:	2015-03-15
+
+    Updated Swedish translation
+
+M	po/sv.po
+
+commit 8a816db578e78c2a5dd0cdcbb1ce24f3270d5002
+Author: Ask Hjorth Larsen <asklarsen@gmail.com>
+Date:	2015-03-15
+
+    Updated Danish translation
+
+M	po/da.po
+
+commit ff51e34f19e6572c60c3c0cbcc55da61ab15d9e3
 Author: Samir Ribic <samir.ribic@etf.unsa.ba>
-Date:	2015-03-14
+Date:	2015-03-13
 
     Added Bosnian translation
 
 M	po/LINGUAS
 A	po/bs.po
 
-commit 6712470342cbc8bda9994271d502d7c9158e7920
+commit e0879445e19d422a6a4260fb58fa08c055b17026
+Author: Rūdolfs Mazurs <rudolfsm@src.gnome.org>
+Date:	2015-03-12
+
+    Updated Latvian translation
+
+M	po/lv.po
+
+commit 7b3c653e47668ae52f3ce5f2f5aef14594e450fc
+Author: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>
+Date:	2015-03-11
+
+    Finnish translation update
+
+M	po/fi.po
+
+commit 87342a03643b9b660961dbb8af7d396458a82445
+Author: Baurzhan Muftakhidinov <baurthefirst@gmail.com>
+Date:	2015-03-08
+
+    Updated Kazakh translation
+
+M	po/kk.po
+
+commit 0897a921c3df988928f4b33cd20c0a36bd962034
+Author: Baurzhan Muftakhidinov <baurthefirst@gmail.com>
+Date:	2015-03-07
+
+    Updated Kazakh translation
+
+M	po/kk.po
+
+commit 75c57c7f9d20697885e93b31d2aeb4788a2aedab
+Author: Мирослав Николић <miroslavnikolic@rocketmail.com>
+Date:	2015-03-05
+
+    Updated Serbian translation
+
+M	po/sr.po
+M	po/sr@latin.po
+
+commit d295b5f277d4053eb60274c8f6ed2657a114a37c
+Author: Changwoo Ryu <cwryu@debian.org>
+Date:	2015-03-05
+
+    Updated Korean translation
+
+M	po/ko.po
+
+commit 22389e26cefe49a9407ef3597424ff69d5b16f5c
+Author: Fran Dieguez <fran.dieguez@mabishu.com>
+Date:	2015-03-03
+
+    Updated Galician translations
+
+M	po/gl.po
+
+commit 2e8ec6071aa7d682dbb1b3fff5f5995267516587
+Author: Marek Černocký <marek@manet.cz>
+Date:	2015-03-02
+
+    Updated Czech translation
+
+M	po/cs.po
+
+commit 380382d51991502bab783c9c0197687022aa9950
+Author: Piotr Drąg <piotrdrag@gmail.com>
+Date:	2015-03-02
+
+    Updated Polish translation
+
+M	po/pl.po
+
+commit 252d1b416f5d81b5c44769d65e9cda228e39f563
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2015-03-02
+
+    trivial: Post release version bump
+
+M	RELEASE
+M	configure.ac
+
+commit 5c8de719900cb38fb12effe0ae2e4d80da97203f
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2015-03-02
+
+    Release version 3.15.91
+
+M	data/appdata/gpk-application.appdata.xml.in
+M	data/appdata/gpk-update-viewer.appdata.xml.in
+
+commit 80aec99afbcfbd75f3544e2b3ac5fdb8e1859fb5
+Author: Wolfgang Stöggl <c72578@yahoo.de>
+Date:	2015-03-02
+
+    Updated German translation
+
+M	po/de.po
+
+commit 88d18938e62f401a89a3ddedf3f59dc72fcf66cc
+Author: Matej Urbančič <mateju@svn.gnome.org>
+Date:	2015-02-28
+
+    Updated Slovenian translation
+
+M	po/sl.po
+
+commit cb5881be34b3b7cc3d1ab3ec5edd9a4923156b6f
+Author: Aurimas Černius <aurisc4@gmail.com>
+Date:	2015-02-28
+
+    Updated Lithuanian translation
+
+M	po/lt.po
+
+commit 14ac4bb31a577ea6f3e7580e8841ef153c38f2cb
+Author: Tom Tryfonidis <tomtryf@gmail.com>
+Date:	2015-02-26
+
+    Updated Greek translation
+
+M	po/el.po
+
+commit c2ce77b2cb5d9bd1ab17c62f31842ee4b1b12a7a
+Author: Daniel Korostil <ted.korostiled@gmail.com>
+Date:	2015-02-26
+
+    Updated Ukrainian translation
+
+M	po/uk.po
+
+commit 27c7ceb0bef3dece149ba4c8fad7c9102aad1aea
+Author: Kjartan Maraas <kmaraas@gnome.org>
+Date:	2015-02-25
+
+    Updated Norwegian bokmål translation.
+
+M	po/nb.po
+
+commit ca45670bbca62ba125dfa49f53299c8d7ff00c7a
+Author: Rafael Ferreira <rafael.f.f1@gmail.com>
+Date:	2015-02-25
+
+    Updated Brazilian Portuguese translation
+
+M	po/pt_BR.po
+
+commit 2262426d5b82191757f15b5fe059d0e088e03899
+Author: Alexandre Franke <alexandre.franke@gmail.com>
+Date:	2015-02-23
+
+    Updated French translation
+
+M	po/fr.po
+
+commit aed2390ef12263c4cd048760aa0b44650c64e630
+Author: Sebastian Rasmussen <sebras@gmail.com>
+Date:	2015-02-22
+
+    Updated Swedish translation
+
+M	po/sv.po
+
+commit b338f473901853bdea374828edf1cfdceeb397cc
+Author: Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>
+Date:	2015-02-21
+
+    Updated Chinese (Taiwan) translation
+
+M	po/zh_TW.po
+
+commit 02f4b4ba1534982fbe22d8dc98ead22734fa5be7
+Author: Muhammet Kara <muhammetk@gmail.com>
+Date:	2015-02-20
+
+    Updated Turkish translation
+
+M	po/tr.po
+
+commit e42dc73653139dc9e99fb0a5922333c97320a21a
+Author: Yuri Myasoedov <ymyasoedov@yandex.ru>
+Date:	2015-02-19
+
+    Updated Russian translation
+
+M	po/ru.po
+
+commit 15b8ce6711c9077258c887a5e9a6bd88276f9583
+Author: Balázs Úr <urbalazs@gmail.com>
+Date:	2015-02-18
+
+    Updated Hungarian translation
+
+M	po/hu.po
+
+commit 69a975be6605e97cdd9c915008ce3304f96ff5e5
+Author: Dušan Kazik <prescott66@gmail.com>
+Date:	2015-02-18
+
+    Updated Slovak translation
+
+M	po/sk.po
+
+commit d3f4bc6a0d40f9eb5ed1eae5d5e8ce60fa85f3a7
+Author: Daniel Mustieles <daniel.mustieles@gmail.com>
+Date:	2015-02-17
+
+    Updated Spanish translation
+
+M	po/es.po
+
+commit e0e71d38da7e28488f60ad916c78450800463b7d
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2015-02-16
+
+    trivial: Post release version bump
+
+M	RELEASE
+M	configure.ac
+M	po/POTFILES.in
+
+commit 6c782aa9cee2db3b8996d576e88537446af82602
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2015-02-16
+
+    Release version 3.15.90
+
+M	RELEASE
+M	data/appdata/gpk-application.appdata.xml.in
+M	data/appdata/gpk-update-viewer.appdata.xml.in
+
+commit 190606bbc467bdff9d1b4dfa626e405bc57bf8dd
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2015-02-16
+
+    Do not offer to run newly installed software
+
+M	src/Makefile.am
+M	src/gpk-application.c
+D	src/gpk-helper-run.c
+D	src/gpk-helper-run.h
+
+commit 52b1ece4d58f407436bd74aceeca9da607c701eb
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2015-02-16
+
+    Remove unused functionality
+
+M	po/POTFILES.in
+M	src/Makefile.am
+D	src/gpk-animated-icon.c
+D	src/gpk-animated-icon.h
+M	src/gpk-application.c
+M	src/gpk-common.c
+M	src/gpk-common.h
+M	src/gpk-enum.c
+M	src/gpk-enum.h
+M	src/gpk-error.c
+M	src/gpk-error.h
+D	src/gpk-gnome.c
+D	src/gpk-gnome.h
+D	src/gpk-helper-chooser.c
+D	src/gpk-helper-chooser.h
+M	src/gpk-helper-run.c
+D	src/gpk-language.c
+D	src/gpk-language.h
+M	src/gpk-log.c
+D	src/gpk-marshal.list
+D	src/gpk-modal-dialog.c
+D	src/gpk-modal-dialog.h
+M	src/gpk-prefs.c
+M	src/gpk-self-test.c
+M	src/gpk-task.c
+M	src/gpk-update-viewer.c
+D	src/gpk-vendor.c
+D	src/gpk-vendor.h
+
+commit 83c6f8590a80333ccda56d727adb2bb13598b748
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2015-02-16
+
+    Move the D-Bus interface to gnome-software
+
+M	configure.ac
+M	contrib/gnome-packagekit.spec.in
+M	data/Makefile.am
+D	data/gpk-dbus-service.desktop.in
+D	data/org.freedesktop.PackageKit.service.in
+M	docs/Makefile.am
+D	docs/dbus/.gitignore
+D	docs/dbus/Makefile.am
+D	docs/dbus/dbus-introspect-docs.dtd
+D	docs/dbus/spec-to-docbook.xsl
+M	man/Makefile.am
+D	man/gpk-dbus-service.sgml
+D	man/gpk-install-local-file.sgml
+M	src/Makefile.am
+M	src/gpk-application.c
+D	src/gpk-dbus-service.c
+D	src/gpk-dbus-task.c
+D	src/gpk-dbus-task.h
+D	src/gpk-dbus.c
+D	src/gpk-dbus.h
+D	src/gpk-install-local-file.c
+M	src/gpk-self-test.c
+D	src/gpk-session.c
+D	src/gpk-session.h
+M	src/gpk-update-viewer.c
+D	src/gpk-x11.c
+D	src/gpk-x11.h
+D	src/org.freedesktop.PackageKit.xml
+
+commit d6fc386e28f3339fbef60bd49f62fbfb4ad57710
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2015-02-13
+
+    Generate the NEWS file automatically
+
+M	Makefile.am
+D	NEWS
+M	configure.ac
+M	contrib/gnome-packagekit.spec.in
+M	data/appdata/gpk-application.appdata.xml.in
+M	data/appdata/gpk-update-viewer.appdata.xml.in
+
+commit 36bdbbcccff190f4e9fae73c1cda3e269f1a7446
+Author: Matej Urbančič <mateju@svn.gnome.org>
+Date:	2015-02-15
+
+    Updated Slovenian translation
+
+M	po/sl.po
+
+commit 7094e87bff403b5572b4b3e9602cb64a74c31f24
+Author: Muhammet Kara <muhammetk@gmail.com>
+Date:	2015-02-14
+
+    Updated Turkish translation
+
+M	po/tr.po
+
+commit 7de415a3f23d2c39242c4ed402d799eef8d5eb2c
+Author: Kjartan Maraas <kmaraas@gnome.org>
+Date:	2015-02-08
+
+    Updated Norwegian bokmål translation.
+
+M	po/nb.po
+
+commit 75af4ea4c1b6542b118f2b90b5491e427ec6274c
+Author: Akom Chotiphantawanon <knight2000@gmail.com>
+Date:	2015-02-02
+
+    Updated Thai translation
+
+M	po/th.po
+
+commit bcc49338bfa5f38e00d7cb5348a491f2a80bb8ea
+Author: Dušan Kazik <prescott66@gmail.com>
+Date:	2015-01-31
+
+    Updated Slovak translation
+
+M	po/sk.po
+
+commit 01ce8d4f05653e8173ebd82e17ae01cb5558f223
+Author: Fabio Tomat <f.t.public@gmail.com>
+Date:	2015-01-20
+
+    Updated Friulian translation
+
+M	po/fur.po
+
+commit 2441a2d1c8022d228670baa7102b6c9b77e3d81f
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2015-01-19
+
+    trivial: Post release version bump
+
+M	RELEASE
+M	configure.ac
+
+commit d8c28df0233b527754afaf258b7033dcb509764a
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2015-01-19
+
+    Release version 3.15.4
+
+M	NEWS
+M	RELEASE
+
+commit f949e067e68ed9fcec76b3e9d62f3f7f7ef01809
+Author: Fabio Tomat <f.t.public@gmail.com>
+Date:	2015-01-18
+
+    Updated Friulian translation
+
+M	po/fur.po
+
+commit f1db3cda7c6b06e1c1f27572a918be3c96939aa4
+Author: Fabio Tomat <f.t.public@gmail.com>
+Date:	2015-01-18
+
+    Updated Friulian translation
+
+M	po/fur.po
+
+commit 835c6160199032b53756aad3ea2eaa8a86349d19
+Author: Fabio Tomat <f.t.public@gmail.com>
+Date:	2015-01-15
+
+    Updated Friulian translation
+
+M	po/fur.po
+
+commit 157a8e6c79f6ac5590991bc3e9a948ec5a411616
+Author: Fabio Tomat <f.t.public@gmail.com>
+Date:	2015-01-15
+
+    Updated Friulian translation
+
+M	po/fur.po
+
+commit cea20fe669f93b7b31b31ac67c9db5dad57c9a99
+Author: Debarshi Ray <debarshir@gnome.org>
+Date:	2015-01-13
+
+    Update executable blacklist for gnome-terminal
+
+    https://bugzilla.gnome.org/show_bug.cgi?id=742873
+
+M	data/org.gnome.packagekit.gschema.xml
+
+commit 0f369eb7c9f6ecda62ac67431da71af2e283449e
+Author: Stas Solovey <whats_up@tut.by>
+Date:	2015-01-12
+
+    Updated Russian translation
+
+M	po/ru.po
+
+commit 7fb227dd0ab445e311b1272fcded9abaad1c4e97
+Author: Daniel Mustieles <daniel.mustieles@gmail.com>
+Date:	2015-01-12
+
+    Updated Spanish translation
+
+M	po/es.po
+
+commit 9eb1a3c6f3781e219c38825b1c5bd423232aa5da
+Author: Fabio Tomat <f.t.public@gmail.com>
+Date:	2015-01-11
+
+    Updated Friulian translation
+
+M	po/fur.po
+
+commit 5ebf571bb47d84bad2c8ef5232b44770abff9e03
+Author: Rafael Ferreira <rafael.f.f1@gmail.com>
+Date:	2015-01-08
+
+    Updated Brazilian Portuguese translation
+
+M	po/pt_BR.po
+
+commit ca563b8f64e7eaf67f167f68cb5b23ae613f9d96
+Author: Marek Černocký <marek@manet.cz>
+Date:	2015-01-06
+
+    Updated Czech translation
+
+M	po/cs.po
+
+commit 766a8c37daa2f3c211bda867059b130055d47f7b
+Author: Inaki Larranaga Murgoitio <dooteo@zundan.com>
+Date:	2014-12-30
+
+    Updated Basque language
+
+M	po/eu.po
+
+commit a778cf9845e65f15addf50d3c304064a5a779418
+Author: Andika Triwidada <andika@gmail.com>
+Date:	2014-12-29
+
+    Updated Indonesian translation
+
+M	po/id.po
+
+commit 0b31c6e22b831dd345f8a64abeef5a7c1bd49f5f
+Author: Daniel Mustieles <daniel.mustieles@gmail.com>
+Date:	2014-12-22
+
+    Updated Spanish translation
+
+M	po/es.po
+
+commit 6c25b39442faa1aa3ddd3002ffadd4ba6fc41c2e
+Author: Balázs Úr <urbalazs@gmail.com>
+Date:	2014-12-20
+
+    Updated Hungarian translation
+
+M	po/hu.po
+
+commit 1609d8538b4803db110c276cfc8dfe030f6b272d
 Author: Richard Hughes <richard@hughsie.com>
 Date:	2014-12-18
 
-    Don't use the gtk namespace for local functions
+    trivial: Post release version bump
 
-    In my defence, I gave up a long time ago that this would be added
-    to GTK+...
+M	RELEASE
+M	configure.ac
 
+commit 5548fd524c191a807fd708345e7913c511b62da6
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2014-12-18
+
+    Add suitable Keywords to the package updater desktop file
+
+M	data/gpk-application.desktop.in
+M	data/gpk-update-viewer.desktop.in
+
+commit 8df85d82756d44a22547874edd5382ac65c44c67
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:	2014-12-17
+
+    3.15.3
+
+M	NEWS
+M	configure.ac
+
+commit 410194e95a1ca5b04f45448254c4c92e87539e2e
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:	2014-12-17
+
+    Bump GTK+ dep to a new-enough version
+
+    gtk_text_buffer_insert_markup appeared in 3.15.3
+
+M	configure.ac
+
+commit 00469050f6cbc90d67569d5902b8ccbb73dd594a
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2014-12-04
+
+    Use gtk_text_buffer_insert_markup() from GTK+
+
+M	configure.ac
 M	src/gpk-common.c
 M	src/gpk-common.h
 M	src/gpk-update-viewer.c

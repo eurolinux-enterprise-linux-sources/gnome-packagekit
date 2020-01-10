@@ -89,11 +89,16 @@ build_triplet = @build@
 host_triplet = @host@
 subdir = man
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-am__aclocal_m4_deps = $(top_srcdir)/m4/gtk-doc.m4 \
-	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/libtool.m4 \
-	$(top_srcdir)/m4/ltoptions.m4 $(top_srcdir)/m4/ltsugar.m4 \
-	$(top_srcdir)/m4/ltversion.m4 $(top_srcdir)/m4/lt~obsolete.m4 \
-	$(top_srcdir)/configure.ac
+am__aclocal_m4_deps = $(top_srcdir)/m4/ax_append_compile_flags.m4 \
+	$(top_srcdir)/m4/ax_append_flag.m4 \
+	$(top_srcdir)/m4/ax_check_compile_flag.m4 \
+	$(top_srcdir)/m4/ax_require_defined.m4 \
+	$(top_srcdir)/m4/glib-gettext.m4 $(top_srcdir)/m4/gsettings.m4 \
+	$(top_srcdir)/m4/gtk-doc.m4 $(top_srcdir)/m4/intltool.m4 \
+	$(top_srcdir)/m4/libtool.m4 $(top_srcdir)/m4/ltoptions.m4 \
+	$(top_srcdir)/m4/ltsugar.m4 $(top_srcdir)/m4/ltversion.m4 \
+	$(top_srcdir)/m4/lt~obsolete.m4 $(top_srcdir)/m4/nls.m4 \
+	$(top_srcdir)/m4/pkg.m4 $(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 DIST_COMMON = $(srcdir)/Makefile.am $(am__DIST_COMMON)
@@ -158,6 +163,7 @@ ACLOCAL = @ACLOCAL@
 ALL_LINGUAS = @ALL_LINGUAS@
 AMTAR = @AMTAR@
 AM_DEFAULT_VERBOSITY = @AM_DEFAULT_VERBOSITY@
+APPSTREAM_UTIL = @APPSTREAM_UTIL@
 AR = @AR@
 AUTOCONF = @AUTOCONF@
 AUTOHEADER = @AUTOHEADER@
@@ -176,8 +182,6 @@ CPPFLAGS = @CPPFLAGS@
 CYGPATH_W = @CYGPATH_W@
 DATADIR = @DATADIR@
 DATADIRNAME = @DATADIRNAME@
-DBUS_CFLAGS = @DBUS_CFLAGS@
-DBUS_LIBS = @DBUS_LIBS@
 DEFS = @DEFS@
 DEPDIR = @DEPDIR@
 DLLTOOL = @DLLTOOL@
@@ -233,6 +237,7 @@ LIBTOOL = @LIBTOOL@
 LIPO = @LIPO@
 LN_S = @LN_S@
 LTLIBOBJS = @LTLIBOBJS@
+LT_SYS_LIBRARY_PATH = @LT_SYS_LIBRARY_PATH@
 MAKEINFO = @MAKEINFO@
 MANIFEST_TOOL = @MANIFEST_TOOL@
 MKDIR_P = @MKDIR_P@
@@ -338,20 +343,17 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 EXTRA_DIST = \
 	gpk-application.sgml				\
-	gpk-dbus-service.sgml				\
-	gpk-install-local-file.sgml			\
 	gpk-log.sgml					\
 	gpk-prefs.sgml					\
 	gpk-update-viewer.sgml
 
 @HAVE_DOCBOOK2MAN_TRUE@man_MANS = \
 @HAVE_DOCBOOK2MAN_TRUE@	gpk-application.1				\
-@HAVE_DOCBOOK2MAN_TRUE@	gpk-dbus-service.1				\
-@HAVE_DOCBOOK2MAN_TRUE@	gpk-install-local-file.1			\
 @HAVE_DOCBOOK2MAN_TRUE@	gpk-log.1					\
 @HAVE_DOCBOOK2MAN_TRUE@	gpk-prefs.1					\
 @HAVE_DOCBOOK2MAN_TRUE@	gpk-update-viewer.1
 
+CLEANFILES = $(man_MANS) *.links *.log *.refs
 all: all-am
 
 .SUFFIXES:
@@ -499,6 +501,7 @@ install-strip:
 mostlyclean-generic:
 
 clean-generic:
+	-test -z "$(CLEANFILES)" || rm -f $(CLEANFILES)
 
 distclean-generic:
 	-test -z "$(CONFIG_CLEAN_FILES)" || rm -f $(CONFIG_CLEAN_FILES)
@@ -594,22 +597,24 @@ uninstall-man: uninstall-man1
 
 
 @HAVE_DOCBOOK2MAN_TRUE@gpk-application.1: gpk-application.sgml
-@HAVE_DOCBOOK2MAN_TRUE@	docbook2man $? > /dev/null
+@HAVE_DOCBOOK2MAN_TRUE@	$(AM_V_GEN) docbook2man $? > /dev/null
 @HAVE_DOCBOOK2MAN_TRUE@gpk-install-local-file.1: gpk-install-local-file.sgml
-@HAVE_DOCBOOK2MAN_TRUE@	docbook2man $? > /dev/null
+@HAVE_DOCBOOK2MAN_TRUE@	$(AM_V_GEN) docbook2man $? > /dev/null
 @HAVE_DOCBOOK2MAN_TRUE@gpk-prefs.1: gpk-prefs.sgml
-@HAVE_DOCBOOK2MAN_TRUE@	docbook2man $? > /dev/null
+@HAVE_DOCBOOK2MAN_TRUE@	$(AM_V_GEN) docbook2man $? > /dev/null
 @HAVE_DOCBOOK2MAN_TRUE@gpk-dbus-service.1: gpk-dbus-service.sgml
-@HAVE_DOCBOOK2MAN_TRUE@	docbook2man $? > /dev/null
+@HAVE_DOCBOOK2MAN_TRUE@	$(AM_V_GEN) docbook2man $? > /dev/null
 @HAVE_DOCBOOK2MAN_TRUE@gpk-update-viewer.1: gpk-update-viewer.sgml
-@HAVE_DOCBOOK2MAN_TRUE@	docbook2man $? > /dev/null
+@HAVE_DOCBOOK2MAN_TRUE@	$(AM_V_GEN) docbook2man $? > /dev/null
 @HAVE_DOCBOOK2MAN_TRUE@gpk-log.1: gpk-log.sgml
-@HAVE_DOCBOOK2MAN_TRUE@	docbook2man $? > /dev/null
+@HAVE_DOCBOOK2MAN_TRUE@	$(AM_V_GEN) docbook2man $? > /dev/null
 
 clean-local :
 	rm -f *~
 	rm -f *.1
 	rm -f manpage.*
+
+-include $(top_srcdir)/git.mk
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

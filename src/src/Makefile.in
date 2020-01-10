@@ -90,8 +90,7 @@ POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
 bin_PROGRAMS = gpk-application$(EXEEXT) gpk-prefs$(EXEEXT) \
-	gpk-install-local-file$(EXEEXT) gpk-update-viewer$(EXEEXT) \
-	gpk-log$(EXEEXT) gpk-dbus-service$(EXEEXT) $(am__EXEEXT_1)
+	gpk-update-viewer$(EXEEXT) gpk-log$(EXEEXT)
 @WITH_SYSTEMD_TRUE@am__append_1 = \
 @WITH_SYSTEMD_TRUE@	systemd-proxy.c					\
 @WITH_SYSTEMD_TRUE@	systemd-proxy.h
@@ -101,11 +100,16 @@ bin_PROGRAMS = gpk-application$(EXEEXT) gpk-prefs$(EXEEXT) \
 @EGG_BUILD_TESTS_TRUE@TESTS = gpk-self-test$(EXEEXT)
 subdir = src
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-am__aclocal_m4_deps = $(top_srcdir)/m4/gtk-doc.m4 \
-	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/libtool.m4 \
-	$(top_srcdir)/m4/ltoptions.m4 $(top_srcdir)/m4/ltsugar.m4 \
-	$(top_srcdir)/m4/ltversion.m4 $(top_srcdir)/m4/lt~obsolete.m4 \
-	$(top_srcdir)/configure.ac
+am__aclocal_m4_deps = $(top_srcdir)/m4/ax_append_compile_flags.m4 \
+	$(top_srcdir)/m4/ax_append_flag.m4 \
+	$(top_srcdir)/m4/ax_check_compile_flag.m4 \
+	$(top_srcdir)/m4/ax_require_defined.m4 \
+	$(top_srcdir)/m4/glib-gettext.m4 $(top_srcdir)/m4/gsettings.m4 \
+	$(top_srcdir)/m4/gtk-doc.m4 $(top_srcdir)/m4/intltool.m4 \
+	$(top_srcdir)/m4/libtool.m4 $(top_srcdir)/m4/ltoptions.m4 \
+	$(top_srcdir)/m4/ltsugar.m4 $(top_srcdir)/m4/ltversion.m4 \
+	$(top_srcdir)/m4/lt~obsolete.m4 $(top_srcdir)/m4/nls.m4 \
+	$(top_srcdir)/m4/pkg.m4 $(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 DIST_COMMON = $(srcdir)/Makefile.am $(am__DIST_COMMON)
@@ -121,112 +125,81 @@ am__v_AR_0 = @echo "  AR      " $@;
 am__v_AR_1 = 
 libgpkshared_a_AR = $(AR) $(ARFLAGS)
 libgpkshared_a_LIBADD =
-am__libgpkshared_a_SOURCES_DIST = egg-string.c egg-string.h \
-	egg-markdown.c egg-markdown.h gpk-debug.c gpk-debug.h \
-	gpk-enum.c gpk-enum.h gpk-x11.c gpk-x11.h gpk-marshal.c \
-	gpk-marshal.h gpk-session.c gpk-session.h gpk-animated-icon.c \
-	gpk-animated-icon.h gpk-dialog.c gpk-dialog.h gpk-vendor.c \
-	gpk-vendor.h gpk-language.c gpk-language.h gpk-modal-dialog.c \
-	gpk-modal-dialog.h gpk-helper-run.c gpk-helper-run.h \
-	gpk-helper-chooser.c gpk-helper-chooser.h gpk-gnome.c \
-	gpk-gnome.h gpk-common.c gpk-common.h gpk-task.c gpk-task.h \
-	gpk-error.c gpk-error.h systemd-proxy.c systemd-proxy.h
-am__objects_1 =
-@WITH_SYSTEMD_TRUE@am__objects_2 = systemd-proxy.$(OBJEXT)
-am_libgpkshared_a_OBJECTS = egg-string.$(OBJEXT) \
-	egg-markdown.$(OBJEXT) gpk-debug.$(OBJEXT) gpk-enum.$(OBJEXT) \
-	gpk-x11.$(OBJEXT) gpk-marshal.$(OBJEXT) gpk-session.$(OBJEXT) \
-	gpk-animated-icon.$(OBJEXT) gpk-dialog.$(OBJEXT) \
-	gpk-vendor.$(OBJEXT) gpk-language.$(OBJEXT) \
-	gpk-modal-dialog.$(OBJEXT) gpk-helper-run.$(OBJEXT) \
-	gpk-helper-chooser.$(OBJEXT) gpk-gnome.$(OBJEXT) \
-	gpk-common.$(OBJEXT) gpk-task.$(OBJEXT) gpk-error.$(OBJEXT) \
-	$(am__objects_1) $(am__objects_2)
+am__libgpkshared_a_SOURCES_DIST = gpk-debug.c gpk-debug.h gpk-enum.c \
+	gpk-enum.h gpk-dialog.c gpk-dialog.h gpk-common.c gpk-common.h \
+	gpk-task.c gpk-task.h gpk-error.c gpk-error.h systemd-proxy.c \
+	systemd-proxy.h
+@WITH_SYSTEMD_TRUE@am__objects_1 = systemd-proxy.$(OBJEXT)
+am_libgpkshared_a_OBJECTS = gpk-debug.$(OBJEXT) gpk-enum.$(OBJEXT) \
+	gpk-dialog.$(OBJEXT) gpk-common.$(OBJEXT) gpk-task.$(OBJEXT) \
+	gpk-error.$(OBJEXT) $(am__objects_1)
 libgpkshared_a_OBJECTS = $(am_libgpkshared_a_OBJECTS)
-am__EXEEXT_1 =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS) $(noinst_PROGRAMS)
-am_gpk_application_OBJECTS = gpk-application.$(OBJEXT) \
-	$(am__objects_1)
+am_gpk_application_OBJECTS =  \
+	gpk_application-gpk-application.$(OBJEXT) \
+	gpk_application-gpk-application-resources.$(OBJEXT)
 gpk_application_OBJECTS = $(am_gpk_application_OBJECTS)
 am__DEPENDENCIES_1 =
 am__DEPENDENCIES_2 = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
-	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
-	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
-gpk_application_DEPENDENCIES = libgpkshared.a $(am__DEPENDENCIES_2) \
 	$(am__DEPENDENCIES_1)
+gpk_application_DEPENDENCIES = libgpkshared.a $(am__DEPENDENCIES_2)
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
 am__v_lt_0 = --silent
 am__v_lt_1 = 
-am_gpk_dbus_service_OBJECTS = gpk-dbus-service.$(OBJEXT) \
-	gpk-dbus.$(OBJEXT) gpk-dbus-task.$(OBJEXT) $(am__objects_1)
-gpk_dbus_service_OBJECTS = $(am_gpk_dbus_service_OBJECTS)
-gpk_dbus_service_DEPENDENCIES = libgpkshared.a $(am__DEPENDENCIES_2) \
-	$(am__DEPENDENCIES_1)
-am_gpk_install_local_file_OBJECTS = gpk-install-local-file.$(OBJEXT) \
-	$(am__objects_1)
-gpk_install_local_file_OBJECTS = $(am_gpk_install_local_file_OBJECTS)
-gpk_install_local_file_DEPENDENCIES = libgpkshared.a \
-	$(am__DEPENDENCIES_2) $(am__DEPENDENCIES_1)
-am_gpk_log_OBJECTS = gpk-log.$(OBJEXT) $(am__objects_1)
+gpk_application_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+	$(gpk_application_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) \
+	-o $@
+am_gpk_log_OBJECTS = gpk_log-gpk-log.$(OBJEXT) \
+	gpk_log-gpk-log-resources.$(OBJEXT)
 gpk_log_OBJECTS = $(am_gpk_log_OBJECTS)
-gpk_log_DEPENDENCIES = libgpkshared.a $(am__DEPENDENCIES_2) \
-	$(am__DEPENDENCIES_1)
-am_gpk_prefs_OBJECTS = gpk-debug.$(OBJEXT) gpk-animated-icon.$(OBJEXT) \
-	gpk-enum.$(OBJEXT) gpk-common.$(OBJEXT) gpk-error.$(OBJEXT) \
-	gpk-prefs.$(OBJEXT) $(am__objects_1)
+gpk_log_DEPENDENCIES = libgpkshared.a $(am__DEPENDENCIES_2)
+gpk_log_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(gpk_log_CFLAGS) \
+	$(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
+am_gpk_prefs_OBJECTS = gpk_prefs-gpk-debug.$(OBJEXT) \
+	gpk_prefs-gpk-enum.$(OBJEXT) gpk_prefs-gpk-common.$(OBJEXT) \
+	gpk_prefs-gpk-error.$(OBJEXT) gpk_prefs-gpk-prefs.$(OBJEXT) \
+	gpk_prefs-gpk-prefs-resources.$(OBJEXT)
 gpk_prefs_OBJECTS = $(am_gpk_prefs_OBJECTS)
 gpk_prefs_DEPENDENCIES = libgpkshared.a $(am__DEPENDENCIES_2)
-am__gpk_self_test_SOURCES_DIST = gpk-self-test.c egg-string.c \
-	egg-string.h egg-markdown.c egg-markdown.h gpk-debug.c \
+gpk_prefs_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(gpk_prefs_CFLAGS) \
+	$(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
+am__gpk_self_test_SOURCES_DIST = gpk-self-test.c gpk-debug.c \
 	gpk-debug.h gpk-enum.c gpk-enum.h gpk-common.c gpk-common.h \
-	gpk-error.c gpk-error.h gpk-language.c gpk-language.h \
-	gpk-modal-dialog.c gpk-modal-dialog.h gpk-dbus.c gpk-dbus.h \
-	gpk-dbus-task.c gpk-dbus-task.h gpk-animated-icon.c \
-	gpk-animated-icon.h gpk-gnome.c gpk-gnome.h gpk-x11.c \
-	gpk-x11.h gpk-vendor.c gpk-vendor.h gpk-task.c gpk-task.h \
-	gpk-helper-run.c gpk-helper-run.h gpk-helper-chooser.c \
-	gpk-helper-chooser.h gpk-marshal.c gpk-marshal.h gpk-dialog.c \
+	gpk-error.c gpk-error.h gpk-task.c gpk-task.h gpk-dialog.c \
 	gpk-dialog.h
 @EGG_BUILD_TESTS_TRUE@am_gpk_self_test_OBJECTS =  \
 @EGG_BUILD_TESTS_TRUE@	gpk_self_test-gpk-self-test.$(OBJEXT) \
-@EGG_BUILD_TESTS_TRUE@	gpk_self_test-egg-string.$(OBJEXT) \
-@EGG_BUILD_TESTS_TRUE@	gpk_self_test-egg-markdown.$(OBJEXT) \
 @EGG_BUILD_TESTS_TRUE@	gpk_self_test-gpk-debug.$(OBJEXT) \
 @EGG_BUILD_TESTS_TRUE@	gpk_self_test-gpk-enum.$(OBJEXT) \
 @EGG_BUILD_TESTS_TRUE@	gpk_self_test-gpk-common.$(OBJEXT) \
 @EGG_BUILD_TESTS_TRUE@	gpk_self_test-gpk-error.$(OBJEXT) \
-@EGG_BUILD_TESTS_TRUE@	gpk_self_test-gpk-language.$(OBJEXT) \
-@EGG_BUILD_TESTS_TRUE@	gpk_self_test-gpk-modal-dialog.$(OBJEXT) \
-@EGG_BUILD_TESTS_TRUE@	gpk_self_test-gpk-dbus.$(OBJEXT) \
-@EGG_BUILD_TESTS_TRUE@	gpk_self_test-gpk-dbus-task.$(OBJEXT) \
-@EGG_BUILD_TESTS_TRUE@	gpk_self_test-gpk-animated-icon.$(OBJEXT) \
-@EGG_BUILD_TESTS_TRUE@	gpk_self_test-gpk-gnome.$(OBJEXT) \
-@EGG_BUILD_TESTS_TRUE@	gpk_self_test-gpk-x11.$(OBJEXT) \
-@EGG_BUILD_TESTS_TRUE@	gpk_self_test-gpk-vendor.$(OBJEXT) \
 @EGG_BUILD_TESTS_TRUE@	gpk_self_test-gpk-task.$(OBJEXT) \
-@EGG_BUILD_TESTS_TRUE@	gpk_self_test-gpk-helper-run.$(OBJEXT) \
-@EGG_BUILD_TESTS_TRUE@	gpk_self_test-gpk-helper-chooser.$(OBJEXT) \
-@EGG_BUILD_TESTS_TRUE@	gpk_self_test-gpk-marshal.$(OBJEXT) \
-@EGG_BUILD_TESTS_TRUE@	gpk_self_test-gpk-dialog.$(OBJEXT) \
-@EGG_BUILD_TESTS_TRUE@	$(am__objects_1)
+@EGG_BUILD_TESTS_TRUE@	gpk_self_test-gpk-dialog.$(OBJEXT)
 gpk_self_test_OBJECTS = $(am_gpk_self_test_OBJECTS)
 @EGG_BUILD_TESTS_TRUE@gpk_self_test_DEPENDENCIES =  \
-@EGG_BUILD_TESTS_TRUE@	$(am__DEPENDENCIES_2) \
-@EGG_BUILD_TESTS_TRUE@	$(am__DEPENDENCIES_1)
+@EGG_BUILD_TESTS_TRUE@	$(am__DEPENDENCIES_2)
 gpk_self_test_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(gpk_self_test_CFLAGS) \
 	$(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
-am_gpk_update_viewer_OBJECTS = gpk-update-viewer.$(OBJEXT) \
-	gpk-cell-renderer-size.$(OBJEXT) \
-	gpk-cell-renderer-info.$(OBJEXT) \
-	gpk-cell-renderer-restart.$(OBJEXT) $(am__objects_1)
+am_gpk_update_viewer_OBJECTS =  \
+	gpk_update_viewer-gpk-update-viewer.$(OBJEXT) \
+	gpk_update_viewer-gpk-update-viewer-resources.$(OBJEXT) \
+	gpk_update_viewer-gpk-cell-renderer-size.$(OBJEXT) \
+	gpk_update_viewer-gpk-cell-renderer-info.$(OBJEXT) \
+	gpk_update_viewer-gpk-cell-renderer-restart.$(OBJEXT)
 gpk_update_viewer_OBJECTS = $(am_gpk_update_viewer_OBJECTS)
-gpk_update_viewer_DEPENDENCIES = libgpkshared.a $(am__DEPENDENCIES_2) \
-	$(am__DEPENDENCIES_1)
+gpk_update_viewer_DEPENDENCIES = libgpkshared.a $(am__DEPENDENCIES_2)
+gpk_update_viewer_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+	$(gpk_update_viewer_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) \
+	-o $@
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
 am__v_P_0 = false
@@ -262,12 +235,10 @@ am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
 SOURCES = $(libgpkshared_a_SOURCES) $(gpk_application_SOURCES) \
-	$(gpk_dbus_service_SOURCES) $(gpk_install_local_file_SOURCES) \
 	$(gpk_log_SOURCES) $(gpk_prefs_SOURCES) \
 	$(gpk_self_test_SOURCES) $(gpk_update_viewer_SOURCES)
 DIST_SOURCES = $(am__libgpkshared_a_SOURCES_DIST) \
-	$(gpk_application_SOURCES) $(gpk_dbus_service_SOURCES) \
-	$(gpk_install_local_file_SOURCES) $(gpk_log_SOURCES) \
+	$(gpk_application_SOURCES) $(gpk_log_SOURCES) \
 	$(gpk_prefs_SOURCES) $(am__gpk_self_test_SOURCES_DIST) \
 	$(gpk_update_viewer_SOURCES)
 am__can_run_installinfo = \
@@ -505,6 +476,7 @@ ACLOCAL = @ACLOCAL@
 ALL_LINGUAS = @ALL_LINGUAS@
 AMTAR = @AMTAR@
 AM_DEFAULT_VERBOSITY = @AM_DEFAULT_VERBOSITY@
+APPSTREAM_UTIL = @APPSTREAM_UTIL@
 AR = @AR@
 AUTOCONF = @AUTOCONF@
 AUTOHEADER = @AUTOHEADER@
@@ -523,8 +495,6 @@ CPPFLAGS = @CPPFLAGS@
 CYGPATH_W = @CYGPATH_W@
 DATADIR = @DATADIR@
 DATADIRNAME = @DATADIRNAME@
-DBUS_CFLAGS = @DBUS_CFLAGS@
-DBUS_LIBS = @DBUS_LIBS@
 DEFS = @DEFS@
 DEPDIR = @DEPDIR@
 DLLTOOL = @DLLTOOL@
@@ -580,6 +550,7 @@ LIBTOOL = @LIBTOOL@
 LIPO = @LIPO@
 LN_S = @LN_S@
 LTLIBOBJS = @LTLIBOBJS@
+LT_SYS_LIBRARY_PATH = @LT_SYS_LIBRARY_PATH@
 MAKEINFO = @MAKEINFO@
 MANIFEST_TOOL = @MANIFEST_TOOL@
 MKDIR_P = @MKDIR_P@
@@ -684,12 +655,10 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 AUTOMAKE_OPTIONS = 1.7
-NULL = 
 AM_CPPFLAGS = \
 	$(GLIB_CFLAGS)					\
 	$(GIO_CFLAGS)					\
 	$(GTK_CFLAGS)					\
-	$(DBUS_CFLAGS)					\
 	$(NOTIFY_CFLAGS)				\
 	$(PACKAGEKIT_CFLAGS)				\
 	$(GUDEV_CFLAGS)					\
@@ -707,70 +676,38 @@ AM_CPPFLAGS = \
 	-DLOCALEDIR=\""$(localedir)"\"			\
 	-DVERSION="\"$(VERSION)\"" 			\
 	-DGPK_DATA=\"$(pkgdatadir)\"			\
-	-DG_LOG_DOMAIN=\"GnomePackageKit\"		\
-	$(NULL)
+	-DG_LOG_DOMAIN=\"GnomePackageKit\"
 
 noinst_LIBRARIES = libgpkshared.a
-libgpkshared_a_SOURCES = egg-string.c egg-string.h egg-markdown.c \
-	egg-markdown.h gpk-debug.c gpk-debug.h gpk-enum.c gpk-enum.h \
-	gpk-x11.c gpk-x11.h gpk-marshal.c gpk-marshal.h gpk-session.c \
-	gpk-session.h gpk-animated-icon.c gpk-animated-icon.h \
-	gpk-dialog.c gpk-dialog.h gpk-vendor.c gpk-vendor.h \
-	gpk-language.c gpk-language.h gpk-modal-dialog.c \
-	gpk-modal-dialog.h gpk-helper-run.c gpk-helper-run.h \
-	gpk-helper-chooser.c gpk-helper-chooser.h gpk-gnome.c \
-	gpk-gnome.h gpk-common.c gpk-common.h gpk-task.c gpk-task.h \
-	gpk-error.c gpk-error.h $(NULL) $(am__append_1)
+libgpkshared_a_SOURCES = gpk-debug.c gpk-debug.h gpk-enum.c gpk-enum.h \
+	gpk-dialog.c gpk-dialog.h gpk-common.c gpk-common.h gpk-task.c \
+	gpk-task.h gpk-error.c gpk-error.h $(am__append_1)
 shared_LIBS = \
 	$(GLIB_LIBS)					\
 	$(GIO_LIBS)					\
-	$(DBUS_LIBS)					\
 	$(GTK_LIBS)					\
 	$(GUDEV_LIBS)					\
 	$(NOTIFY_LIBS)					\
 	$(SYSTEMD_LIBS)					\
 	$(PACKAGEKIT_LIBS)				\
 	$(GNOME_MENUS_LIBS)				\
-	$(CANBERRA_LIBS)				\
-	$(X11_LIBS)					\
-	$(NULL)
-
-gpk_install_local_file_SOURCES = \
-	gpk-install-local-file.c			\
-	$(NULL)
-
-gpk_install_local_file_LDADD = \
-	libgpkshared.a					\
-	$(shared_LIBS)					\
-	$(NULL)
-
-gpk_dbus_service_SOURCES = \
-	gpk-dbus-service.c				\
-	gpk-dbus.c					\
-	gpk-dbus.h					\
-	gpk-dbus-task.c					\
-	gpk-dbus-task.h					\
-	$(NULL)
-
-gpk_dbus_service_LDADD = \
-	libgpkshared.a					\
-	$(shared_LIBS)					\
-	$(NULL)
+	$(CANBERRA_LIBS)
 
 gpk_application_SOURCES = \
 	gpk-application.c				\
-	$(NULL)
+	gpk-application-resources.c			\
+	gpk-application-resources.h
 
 gpk_application_LDADD = \
 	libgpkshared.a					\
-	$(shared_LIBS)					\
-	$(NULL)
+	$(shared_LIBS)
+
+gpk_application_CFLAGS = \
+	$(WARN_CFLAGS)
 
 gpk_prefs_SOURCES = \
 	gpk-debug.h					\
 	gpk-debug.c					\
-	gpk-animated-icon.c				\
-	gpk-animated-icon.h				\
 	gpk-enum.c					\
 	gpk-enum.h					\
 	gpk-common.c					\
@@ -778,49 +715,49 @@ gpk_prefs_SOURCES = \
 	gpk-error.c					\
 	gpk-error.h					\
 	gpk-prefs.c					\
-	$(NULL)
+	gpk-prefs-resources.c				\
+	gpk-prefs-resources.h
 
 gpk_prefs_LDADD = \
 	libgpkshared.a					\
 	$(shared_LIBS)					\
 	-lm
 
+gpk_prefs_CFLAGS = \
+	$(WARN_CFLAGS)
+
 gpk_update_viewer_SOURCES = \
 	gpk-update-viewer.c				\
+	gpk-update-viewer-resources.c			\
+	gpk-update-viewer-resources.h			\
 	gpk-cell-renderer-size.c			\
 	gpk-cell-renderer-size.h			\
 	gpk-cell-renderer-info.c			\
 	gpk-cell-renderer-info.h			\
 	gpk-cell-renderer-restart.c			\
-	gpk-cell-renderer-restart.h			\
-	$(NULL)
+	gpk-cell-renderer-restart.h
 
 gpk_update_viewer_LDADD = \
 	libgpkshared.a					\
-	$(shared_LIBS)					\
-	$(NULL)
+	$(shared_LIBS)
+
+gpk_update_viewer_CFLAGS = \
+	$(WARN_CFLAGS)
 
 gpk_log_SOURCES = \
 	gpk-log.c					\
-	$(NULL)
+	gpk-log-resources.c				\
+	gpk-log-resources.h
 
 gpk_log_LDADD = \
 	libgpkshared.a					\
-	$(shared_LIBS)					\
-	$(NULL)
+	$(shared_LIBS)
 
-BUILT_SOURCES = \
-	gpk-marshal.c					\
-	gpk-marshal.h					\
-	org.freedesktop.PackageKit.h			\
-	$(NULL)
+gpk_log_CFLAGS = \
+	$(WARN_CFLAGS)
 
 @EGG_BUILD_TESTS_TRUE@gpk_self_test_SOURCES = \
 @EGG_BUILD_TESTS_TRUE@	gpk-self-test.c					\
-@EGG_BUILD_TESTS_TRUE@	egg-string.c					\
-@EGG_BUILD_TESTS_TRUE@	egg-string.h					\
-@EGG_BUILD_TESTS_TRUE@	egg-markdown.c					\
-@EGG_BUILD_TESTS_TRUE@	egg-markdown.h					\
 @EGG_BUILD_TESTS_TRUE@	gpk-debug.c					\
 @EGG_BUILD_TESTS_TRUE@	gpk-debug.h					\
 @EGG_BUILD_TESTS_TRUE@	gpk-enum.c					\
@@ -829,50 +766,46 @@ BUILT_SOURCES = \
 @EGG_BUILD_TESTS_TRUE@	gpk-common.h					\
 @EGG_BUILD_TESTS_TRUE@	gpk-error.c					\
 @EGG_BUILD_TESTS_TRUE@	gpk-error.h					\
-@EGG_BUILD_TESTS_TRUE@	gpk-language.c					\
-@EGG_BUILD_TESTS_TRUE@	gpk-language.h					\
-@EGG_BUILD_TESTS_TRUE@	gpk-modal-dialog.c				\
-@EGG_BUILD_TESTS_TRUE@	gpk-modal-dialog.h				\
-@EGG_BUILD_TESTS_TRUE@	gpk-dbus.c					\
-@EGG_BUILD_TESTS_TRUE@	gpk-dbus.h					\
-@EGG_BUILD_TESTS_TRUE@	gpk-dbus-task.c					\
-@EGG_BUILD_TESTS_TRUE@	gpk-dbus-task.h					\
-@EGG_BUILD_TESTS_TRUE@	gpk-animated-icon.c				\
-@EGG_BUILD_TESTS_TRUE@	gpk-animated-icon.h				\
-@EGG_BUILD_TESTS_TRUE@	gpk-gnome.c					\
-@EGG_BUILD_TESTS_TRUE@	gpk-gnome.h					\
-@EGG_BUILD_TESTS_TRUE@	gpk-x11.c					\
-@EGG_BUILD_TESTS_TRUE@	gpk-x11.h					\
-@EGG_BUILD_TESTS_TRUE@	gpk-vendor.c					\
-@EGG_BUILD_TESTS_TRUE@	gpk-vendor.h					\
 @EGG_BUILD_TESTS_TRUE@	gpk-task.c					\
 @EGG_BUILD_TESTS_TRUE@	gpk-task.h					\
-@EGG_BUILD_TESTS_TRUE@	gpk-helper-run.c				\
-@EGG_BUILD_TESTS_TRUE@	gpk-helper-run.h				\
-@EGG_BUILD_TESTS_TRUE@	gpk-helper-chooser.c				\
-@EGG_BUILD_TESTS_TRUE@	gpk-helper-chooser.h				\
-@EGG_BUILD_TESTS_TRUE@	gpk-marshal.c					\
-@EGG_BUILD_TESTS_TRUE@	gpk-marshal.h					\
 @EGG_BUILD_TESTS_TRUE@	gpk-dialog.c					\
-@EGG_BUILD_TESTS_TRUE@	gpk-dialog.h					\
-@EGG_BUILD_TESTS_TRUE@	$(NULL)
+@EGG_BUILD_TESTS_TRUE@	gpk-dialog.h
 
 @EGG_BUILD_TESTS_TRUE@gpk_self_test_LDADD = \
 @EGG_BUILD_TESTS_TRUE@	$(shared_LIBS)					\
-@EGG_BUILD_TESTS_TRUE@	$(SELFTEST_LIBS)				\
-@EGG_BUILD_TESTS_TRUE@	$(NULL)
+@EGG_BUILD_TESTS_TRUE@	$(SELFTEST_LIBS)
 
-@EGG_BUILD_TESTS_TRUE@gpk_self_test_CFLAGS = $(AM_CFLAGS)
+@EGG_BUILD_TESTS_TRUE@gpk_self_test_CFLAGS = \
+@EGG_BUILD_TESTS_TRUE@	$(WARN_CFLAGS)
+
+BUILT_SOURCES = \
+	gpk-application-resources.c			\
+	gpk-application-resources.h			\
+	gpk-log-resources.c				\
+	gpk-log-resources.h				\
+	gpk-prefs-resources.c				\
+	gpk-prefs-resources.h				\
+	gpk-update-viewer-resources.c			\
+	gpk-update-viewer-resources.h
+
 EXTRA_DIST = \
-	gpk-marshal.list				\
-	org.freedesktop.PackageKit.xml			\
-	$(NULL)
+	gpk-application.gresource.xml			\
+	gpk-application.ui				\
+	gpk-client.ui					\
+	gpk-error.ui					\
+	gpk-eula.ui					\
+	gpk-log.gresource.xml				\
+	gpk-log.ui					\
+	gpk-prefs.gresource.xml				\
+	gpk-prefs.ui					\
+	gpk-signature.ui				\
+	gpk-update-viewer.gresource.xml			\
+	gpk-update-viewer.ui
 
-CLEANFILES = *~ $(BUILT_SOURCES)
+CLEANFILES = *~ $(BUILT_SOURCES) $(noinst_LIBRARIES)
 MAINTAINERCLEANFILES = \
 	*~			      			\
-	Makefile.in					\
-	$(NULL)
+	Makefile.in
 
 all: $(BUILT_SOURCES)
 	$(MAKE) $(AM_MAKEFLAGS) all-am
@@ -986,23 +919,15 @@ clean-noinstPROGRAMS:
 
 gpk-application$(EXEEXT): $(gpk_application_OBJECTS) $(gpk_application_DEPENDENCIES) $(EXTRA_gpk_application_DEPENDENCIES) 
 	@rm -f gpk-application$(EXEEXT)
-	$(AM_V_CCLD)$(LINK) $(gpk_application_OBJECTS) $(gpk_application_LDADD) $(LIBS)
-
-gpk-dbus-service$(EXEEXT): $(gpk_dbus_service_OBJECTS) $(gpk_dbus_service_DEPENDENCIES) $(EXTRA_gpk_dbus_service_DEPENDENCIES) 
-	@rm -f gpk-dbus-service$(EXEEXT)
-	$(AM_V_CCLD)$(LINK) $(gpk_dbus_service_OBJECTS) $(gpk_dbus_service_LDADD) $(LIBS)
-
-gpk-install-local-file$(EXEEXT): $(gpk_install_local_file_OBJECTS) $(gpk_install_local_file_DEPENDENCIES) $(EXTRA_gpk_install_local_file_DEPENDENCIES) 
-	@rm -f gpk-install-local-file$(EXEEXT)
-	$(AM_V_CCLD)$(LINK) $(gpk_install_local_file_OBJECTS) $(gpk_install_local_file_LDADD) $(LIBS)
+	$(AM_V_CCLD)$(gpk_application_LINK) $(gpk_application_OBJECTS) $(gpk_application_LDADD) $(LIBS)
 
 gpk-log$(EXEEXT): $(gpk_log_OBJECTS) $(gpk_log_DEPENDENCIES) $(EXTRA_gpk_log_DEPENDENCIES) 
 	@rm -f gpk-log$(EXEEXT)
-	$(AM_V_CCLD)$(LINK) $(gpk_log_OBJECTS) $(gpk_log_LDADD) $(LIBS)
+	$(AM_V_CCLD)$(gpk_log_LINK) $(gpk_log_OBJECTS) $(gpk_log_LDADD) $(LIBS)
 
 gpk-prefs$(EXEEXT): $(gpk_prefs_OBJECTS) $(gpk_prefs_DEPENDENCIES) $(EXTRA_gpk_prefs_DEPENDENCIES) 
 	@rm -f gpk-prefs$(EXEEXT)
-	$(AM_V_CCLD)$(LINK) $(gpk_prefs_OBJECTS) $(gpk_prefs_LDADD) $(LIBS)
+	$(AM_V_CCLD)$(gpk_prefs_LINK) $(gpk_prefs_OBJECTS) $(gpk_prefs_LDADD) $(LIBS)
 
 gpk-self-test$(EXEEXT): $(gpk_self_test_OBJECTS) $(gpk_self_test_DEPENDENCIES) $(EXTRA_gpk_self_test_DEPENDENCIES) 
 	@rm -f gpk-self-test$(EXEEXT)
@@ -1010,7 +935,7 @@ gpk-self-test$(EXEEXT): $(gpk_self_test_OBJECTS) $(gpk_self_test_DEPENDENCIES) $
 
 gpk-update-viewer$(EXEEXT): $(gpk_update_viewer_OBJECTS) $(gpk_update_viewer_DEPENDENCIES) $(EXTRA_gpk_update_viewer_DEPENDENCIES) 
 	@rm -f gpk-update-viewer$(EXEEXT)
-	$(AM_V_CCLD)$(LINK) $(gpk_update_viewer_OBJECTS) $(gpk_update_viewer_LDADD) $(LIBS)
+	$(AM_V_CCLD)$(gpk_update_viewer_LINK) $(gpk_update_viewer_OBJECTS) $(gpk_update_viewer_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -1018,55 +943,34 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/egg-markdown.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/egg-string.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk-animated-icon.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk-application.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk-cell-renderer-info.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk-cell-renderer-restart.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk-cell-renderer-size.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk-common.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk-dbus-service.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk-dbus-task.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk-dbus.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk-debug.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk-dialog.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk-enum.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk-error.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk-gnome.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk-helper-chooser.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk-helper-run.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk-install-local-file.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk-language.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk-log.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk-marshal.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk-modal-dialog.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk-prefs.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk-session.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk-task.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk-update-viewer.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk-vendor.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk-x11.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk_self_test-egg-markdown.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk_self_test-egg-string.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk_self_test-gpk-animated-icon.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk_application-gpk-application-resources.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk_application-gpk-application.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk_log-gpk-log-resources.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk_log-gpk-log.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk_prefs-gpk-common.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk_prefs-gpk-debug.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk_prefs-gpk-enum.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk_prefs-gpk-error.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk_prefs-gpk-prefs-resources.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk_prefs-gpk-prefs.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk_self_test-gpk-common.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk_self_test-gpk-dbus-task.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk_self_test-gpk-dbus.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk_self_test-gpk-debug.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk_self_test-gpk-dialog.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk_self_test-gpk-enum.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk_self_test-gpk-error.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk_self_test-gpk-gnome.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk_self_test-gpk-helper-chooser.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk_self_test-gpk-helper-run.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk_self_test-gpk-language.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk_self_test-gpk-marshal.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk_self_test-gpk-modal-dialog.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk_self_test-gpk-self-test.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk_self_test-gpk-task.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk_self_test-gpk-vendor.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk_self_test-gpk-x11.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk_update_viewer-gpk-cell-renderer-info.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk_update_viewer-gpk-cell-renderer-restart.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk_update_viewer-gpk-cell-renderer-size.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk_update_viewer-gpk-update-viewer-resources.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gpk_update_viewer-gpk-update-viewer.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/systemd-proxy.Po@am__quote@
 
 .c.o:
@@ -1090,6 +994,146 @@ distclean-compile:
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LTCOMPILE) -c -o $@ $<
 
+gpk_application-gpk-application.o: gpk-application.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_application_CFLAGS) $(CFLAGS) -MT gpk_application-gpk-application.o -MD -MP -MF $(DEPDIR)/gpk_application-gpk-application.Tpo -c -o gpk_application-gpk-application.o `test -f 'gpk-application.c' || echo '$(srcdir)/'`gpk-application.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_application-gpk-application.Tpo $(DEPDIR)/gpk_application-gpk-application.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-application.c' object='gpk_application-gpk-application.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_application_CFLAGS) $(CFLAGS) -c -o gpk_application-gpk-application.o `test -f 'gpk-application.c' || echo '$(srcdir)/'`gpk-application.c
+
+gpk_application-gpk-application.obj: gpk-application.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_application_CFLAGS) $(CFLAGS) -MT gpk_application-gpk-application.obj -MD -MP -MF $(DEPDIR)/gpk_application-gpk-application.Tpo -c -o gpk_application-gpk-application.obj `if test -f 'gpk-application.c'; then $(CYGPATH_W) 'gpk-application.c'; else $(CYGPATH_W) '$(srcdir)/gpk-application.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_application-gpk-application.Tpo $(DEPDIR)/gpk_application-gpk-application.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-application.c' object='gpk_application-gpk-application.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_application_CFLAGS) $(CFLAGS) -c -o gpk_application-gpk-application.obj `if test -f 'gpk-application.c'; then $(CYGPATH_W) 'gpk-application.c'; else $(CYGPATH_W) '$(srcdir)/gpk-application.c'; fi`
+
+gpk_application-gpk-application-resources.o: gpk-application-resources.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_application_CFLAGS) $(CFLAGS) -MT gpk_application-gpk-application-resources.o -MD -MP -MF $(DEPDIR)/gpk_application-gpk-application-resources.Tpo -c -o gpk_application-gpk-application-resources.o `test -f 'gpk-application-resources.c' || echo '$(srcdir)/'`gpk-application-resources.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_application-gpk-application-resources.Tpo $(DEPDIR)/gpk_application-gpk-application-resources.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-application-resources.c' object='gpk_application-gpk-application-resources.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_application_CFLAGS) $(CFLAGS) -c -o gpk_application-gpk-application-resources.o `test -f 'gpk-application-resources.c' || echo '$(srcdir)/'`gpk-application-resources.c
+
+gpk_application-gpk-application-resources.obj: gpk-application-resources.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_application_CFLAGS) $(CFLAGS) -MT gpk_application-gpk-application-resources.obj -MD -MP -MF $(DEPDIR)/gpk_application-gpk-application-resources.Tpo -c -o gpk_application-gpk-application-resources.obj `if test -f 'gpk-application-resources.c'; then $(CYGPATH_W) 'gpk-application-resources.c'; else $(CYGPATH_W) '$(srcdir)/gpk-application-resources.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_application-gpk-application-resources.Tpo $(DEPDIR)/gpk_application-gpk-application-resources.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-application-resources.c' object='gpk_application-gpk-application-resources.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_application_CFLAGS) $(CFLAGS) -c -o gpk_application-gpk-application-resources.obj `if test -f 'gpk-application-resources.c'; then $(CYGPATH_W) 'gpk-application-resources.c'; else $(CYGPATH_W) '$(srcdir)/gpk-application-resources.c'; fi`
+
+gpk_log-gpk-log.o: gpk-log.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_log_CFLAGS) $(CFLAGS) -MT gpk_log-gpk-log.o -MD -MP -MF $(DEPDIR)/gpk_log-gpk-log.Tpo -c -o gpk_log-gpk-log.o `test -f 'gpk-log.c' || echo '$(srcdir)/'`gpk-log.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_log-gpk-log.Tpo $(DEPDIR)/gpk_log-gpk-log.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-log.c' object='gpk_log-gpk-log.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_log_CFLAGS) $(CFLAGS) -c -o gpk_log-gpk-log.o `test -f 'gpk-log.c' || echo '$(srcdir)/'`gpk-log.c
+
+gpk_log-gpk-log.obj: gpk-log.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_log_CFLAGS) $(CFLAGS) -MT gpk_log-gpk-log.obj -MD -MP -MF $(DEPDIR)/gpk_log-gpk-log.Tpo -c -o gpk_log-gpk-log.obj `if test -f 'gpk-log.c'; then $(CYGPATH_W) 'gpk-log.c'; else $(CYGPATH_W) '$(srcdir)/gpk-log.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_log-gpk-log.Tpo $(DEPDIR)/gpk_log-gpk-log.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-log.c' object='gpk_log-gpk-log.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_log_CFLAGS) $(CFLAGS) -c -o gpk_log-gpk-log.obj `if test -f 'gpk-log.c'; then $(CYGPATH_W) 'gpk-log.c'; else $(CYGPATH_W) '$(srcdir)/gpk-log.c'; fi`
+
+gpk_log-gpk-log-resources.o: gpk-log-resources.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_log_CFLAGS) $(CFLAGS) -MT gpk_log-gpk-log-resources.o -MD -MP -MF $(DEPDIR)/gpk_log-gpk-log-resources.Tpo -c -o gpk_log-gpk-log-resources.o `test -f 'gpk-log-resources.c' || echo '$(srcdir)/'`gpk-log-resources.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_log-gpk-log-resources.Tpo $(DEPDIR)/gpk_log-gpk-log-resources.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-log-resources.c' object='gpk_log-gpk-log-resources.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_log_CFLAGS) $(CFLAGS) -c -o gpk_log-gpk-log-resources.o `test -f 'gpk-log-resources.c' || echo '$(srcdir)/'`gpk-log-resources.c
+
+gpk_log-gpk-log-resources.obj: gpk-log-resources.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_log_CFLAGS) $(CFLAGS) -MT gpk_log-gpk-log-resources.obj -MD -MP -MF $(DEPDIR)/gpk_log-gpk-log-resources.Tpo -c -o gpk_log-gpk-log-resources.obj `if test -f 'gpk-log-resources.c'; then $(CYGPATH_W) 'gpk-log-resources.c'; else $(CYGPATH_W) '$(srcdir)/gpk-log-resources.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_log-gpk-log-resources.Tpo $(DEPDIR)/gpk_log-gpk-log-resources.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-log-resources.c' object='gpk_log-gpk-log-resources.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_log_CFLAGS) $(CFLAGS) -c -o gpk_log-gpk-log-resources.obj `if test -f 'gpk-log-resources.c'; then $(CYGPATH_W) 'gpk-log-resources.c'; else $(CYGPATH_W) '$(srcdir)/gpk-log-resources.c'; fi`
+
+gpk_prefs-gpk-debug.o: gpk-debug.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_prefs_CFLAGS) $(CFLAGS) -MT gpk_prefs-gpk-debug.o -MD -MP -MF $(DEPDIR)/gpk_prefs-gpk-debug.Tpo -c -o gpk_prefs-gpk-debug.o `test -f 'gpk-debug.c' || echo '$(srcdir)/'`gpk-debug.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_prefs-gpk-debug.Tpo $(DEPDIR)/gpk_prefs-gpk-debug.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-debug.c' object='gpk_prefs-gpk-debug.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_prefs_CFLAGS) $(CFLAGS) -c -o gpk_prefs-gpk-debug.o `test -f 'gpk-debug.c' || echo '$(srcdir)/'`gpk-debug.c
+
+gpk_prefs-gpk-debug.obj: gpk-debug.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_prefs_CFLAGS) $(CFLAGS) -MT gpk_prefs-gpk-debug.obj -MD -MP -MF $(DEPDIR)/gpk_prefs-gpk-debug.Tpo -c -o gpk_prefs-gpk-debug.obj `if test -f 'gpk-debug.c'; then $(CYGPATH_W) 'gpk-debug.c'; else $(CYGPATH_W) '$(srcdir)/gpk-debug.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_prefs-gpk-debug.Tpo $(DEPDIR)/gpk_prefs-gpk-debug.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-debug.c' object='gpk_prefs-gpk-debug.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_prefs_CFLAGS) $(CFLAGS) -c -o gpk_prefs-gpk-debug.obj `if test -f 'gpk-debug.c'; then $(CYGPATH_W) 'gpk-debug.c'; else $(CYGPATH_W) '$(srcdir)/gpk-debug.c'; fi`
+
+gpk_prefs-gpk-enum.o: gpk-enum.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_prefs_CFLAGS) $(CFLAGS) -MT gpk_prefs-gpk-enum.o -MD -MP -MF $(DEPDIR)/gpk_prefs-gpk-enum.Tpo -c -o gpk_prefs-gpk-enum.o `test -f 'gpk-enum.c' || echo '$(srcdir)/'`gpk-enum.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_prefs-gpk-enum.Tpo $(DEPDIR)/gpk_prefs-gpk-enum.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-enum.c' object='gpk_prefs-gpk-enum.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_prefs_CFLAGS) $(CFLAGS) -c -o gpk_prefs-gpk-enum.o `test -f 'gpk-enum.c' || echo '$(srcdir)/'`gpk-enum.c
+
+gpk_prefs-gpk-enum.obj: gpk-enum.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_prefs_CFLAGS) $(CFLAGS) -MT gpk_prefs-gpk-enum.obj -MD -MP -MF $(DEPDIR)/gpk_prefs-gpk-enum.Tpo -c -o gpk_prefs-gpk-enum.obj `if test -f 'gpk-enum.c'; then $(CYGPATH_W) 'gpk-enum.c'; else $(CYGPATH_W) '$(srcdir)/gpk-enum.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_prefs-gpk-enum.Tpo $(DEPDIR)/gpk_prefs-gpk-enum.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-enum.c' object='gpk_prefs-gpk-enum.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_prefs_CFLAGS) $(CFLAGS) -c -o gpk_prefs-gpk-enum.obj `if test -f 'gpk-enum.c'; then $(CYGPATH_W) 'gpk-enum.c'; else $(CYGPATH_W) '$(srcdir)/gpk-enum.c'; fi`
+
+gpk_prefs-gpk-common.o: gpk-common.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_prefs_CFLAGS) $(CFLAGS) -MT gpk_prefs-gpk-common.o -MD -MP -MF $(DEPDIR)/gpk_prefs-gpk-common.Tpo -c -o gpk_prefs-gpk-common.o `test -f 'gpk-common.c' || echo '$(srcdir)/'`gpk-common.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_prefs-gpk-common.Tpo $(DEPDIR)/gpk_prefs-gpk-common.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-common.c' object='gpk_prefs-gpk-common.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_prefs_CFLAGS) $(CFLAGS) -c -o gpk_prefs-gpk-common.o `test -f 'gpk-common.c' || echo '$(srcdir)/'`gpk-common.c
+
+gpk_prefs-gpk-common.obj: gpk-common.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_prefs_CFLAGS) $(CFLAGS) -MT gpk_prefs-gpk-common.obj -MD -MP -MF $(DEPDIR)/gpk_prefs-gpk-common.Tpo -c -o gpk_prefs-gpk-common.obj `if test -f 'gpk-common.c'; then $(CYGPATH_W) 'gpk-common.c'; else $(CYGPATH_W) '$(srcdir)/gpk-common.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_prefs-gpk-common.Tpo $(DEPDIR)/gpk_prefs-gpk-common.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-common.c' object='gpk_prefs-gpk-common.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_prefs_CFLAGS) $(CFLAGS) -c -o gpk_prefs-gpk-common.obj `if test -f 'gpk-common.c'; then $(CYGPATH_W) 'gpk-common.c'; else $(CYGPATH_W) '$(srcdir)/gpk-common.c'; fi`
+
+gpk_prefs-gpk-error.o: gpk-error.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_prefs_CFLAGS) $(CFLAGS) -MT gpk_prefs-gpk-error.o -MD -MP -MF $(DEPDIR)/gpk_prefs-gpk-error.Tpo -c -o gpk_prefs-gpk-error.o `test -f 'gpk-error.c' || echo '$(srcdir)/'`gpk-error.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_prefs-gpk-error.Tpo $(DEPDIR)/gpk_prefs-gpk-error.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-error.c' object='gpk_prefs-gpk-error.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_prefs_CFLAGS) $(CFLAGS) -c -o gpk_prefs-gpk-error.o `test -f 'gpk-error.c' || echo '$(srcdir)/'`gpk-error.c
+
+gpk_prefs-gpk-error.obj: gpk-error.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_prefs_CFLAGS) $(CFLAGS) -MT gpk_prefs-gpk-error.obj -MD -MP -MF $(DEPDIR)/gpk_prefs-gpk-error.Tpo -c -o gpk_prefs-gpk-error.obj `if test -f 'gpk-error.c'; then $(CYGPATH_W) 'gpk-error.c'; else $(CYGPATH_W) '$(srcdir)/gpk-error.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_prefs-gpk-error.Tpo $(DEPDIR)/gpk_prefs-gpk-error.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-error.c' object='gpk_prefs-gpk-error.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_prefs_CFLAGS) $(CFLAGS) -c -o gpk_prefs-gpk-error.obj `if test -f 'gpk-error.c'; then $(CYGPATH_W) 'gpk-error.c'; else $(CYGPATH_W) '$(srcdir)/gpk-error.c'; fi`
+
+gpk_prefs-gpk-prefs.o: gpk-prefs.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_prefs_CFLAGS) $(CFLAGS) -MT gpk_prefs-gpk-prefs.o -MD -MP -MF $(DEPDIR)/gpk_prefs-gpk-prefs.Tpo -c -o gpk_prefs-gpk-prefs.o `test -f 'gpk-prefs.c' || echo '$(srcdir)/'`gpk-prefs.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_prefs-gpk-prefs.Tpo $(DEPDIR)/gpk_prefs-gpk-prefs.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-prefs.c' object='gpk_prefs-gpk-prefs.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_prefs_CFLAGS) $(CFLAGS) -c -o gpk_prefs-gpk-prefs.o `test -f 'gpk-prefs.c' || echo '$(srcdir)/'`gpk-prefs.c
+
+gpk_prefs-gpk-prefs.obj: gpk-prefs.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_prefs_CFLAGS) $(CFLAGS) -MT gpk_prefs-gpk-prefs.obj -MD -MP -MF $(DEPDIR)/gpk_prefs-gpk-prefs.Tpo -c -o gpk_prefs-gpk-prefs.obj `if test -f 'gpk-prefs.c'; then $(CYGPATH_W) 'gpk-prefs.c'; else $(CYGPATH_W) '$(srcdir)/gpk-prefs.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_prefs-gpk-prefs.Tpo $(DEPDIR)/gpk_prefs-gpk-prefs.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-prefs.c' object='gpk_prefs-gpk-prefs.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_prefs_CFLAGS) $(CFLAGS) -c -o gpk_prefs-gpk-prefs.obj `if test -f 'gpk-prefs.c'; then $(CYGPATH_W) 'gpk-prefs.c'; else $(CYGPATH_W) '$(srcdir)/gpk-prefs.c'; fi`
+
+gpk_prefs-gpk-prefs-resources.o: gpk-prefs-resources.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_prefs_CFLAGS) $(CFLAGS) -MT gpk_prefs-gpk-prefs-resources.o -MD -MP -MF $(DEPDIR)/gpk_prefs-gpk-prefs-resources.Tpo -c -o gpk_prefs-gpk-prefs-resources.o `test -f 'gpk-prefs-resources.c' || echo '$(srcdir)/'`gpk-prefs-resources.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_prefs-gpk-prefs-resources.Tpo $(DEPDIR)/gpk_prefs-gpk-prefs-resources.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-prefs-resources.c' object='gpk_prefs-gpk-prefs-resources.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_prefs_CFLAGS) $(CFLAGS) -c -o gpk_prefs-gpk-prefs-resources.o `test -f 'gpk-prefs-resources.c' || echo '$(srcdir)/'`gpk-prefs-resources.c
+
+gpk_prefs-gpk-prefs-resources.obj: gpk-prefs-resources.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_prefs_CFLAGS) $(CFLAGS) -MT gpk_prefs-gpk-prefs-resources.obj -MD -MP -MF $(DEPDIR)/gpk_prefs-gpk-prefs-resources.Tpo -c -o gpk_prefs-gpk-prefs-resources.obj `if test -f 'gpk-prefs-resources.c'; then $(CYGPATH_W) 'gpk-prefs-resources.c'; else $(CYGPATH_W) '$(srcdir)/gpk-prefs-resources.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_prefs-gpk-prefs-resources.Tpo $(DEPDIR)/gpk_prefs-gpk-prefs-resources.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-prefs-resources.c' object='gpk_prefs-gpk-prefs-resources.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_prefs_CFLAGS) $(CFLAGS) -c -o gpk_prefs-gpk-prefs-resources.obj `if test -f 'gpk-prefs-resources.c'; then $(CYGPATH_W) 'gpk-prefs-resources.c'; else $(CYGPATH_W) '$(srcdir)/gpk-prefs-resources.c'; fi`
+
 gpk_self_test-gpk-self-test.o: gpk-self-test.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -MT gpk_self_test-gpk-self-test.o -MD -MP -MF $(DEPDIR)/gpk_self_test-gpk-self-test.Tpo -c -o gpk_self_test-gpk-self-test.o `test -f 'gpk-self-test.c' || echo '$(srcdir)/'`gpk-self-test.c
 @am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_self_test-gpk-self-test.Tpo $(DEPDIR)/gpk_self_test-gpk-self-test.Po
@@ -1103,34 +1147,6 @@ gpk_self_test-gpk-self-test.obj: gpk-self-test.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-self-test.c' object='gpk_self_test-gpk-self-test.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -c -o gpk_self_test-gpk-self-test.obj `if test -f 'gpk-self-test.c'; then $(CYGPATH_W) 'gpk-self-test.c'; else $(CYGPATH_W) '$(srcdir)/gpk-self-test.c'; fi`
-
-gpk_self_test-egg-string.o: egg-string.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -MT gpk_self_test-egg-string.o -MD -MP -MF $(DEPDIR)/gpk_self_test-egg-string.Tpo -c -o gpk_self_test-egg-string.o `test -f 'egg-string.c' || echo '$(srcdir)/'`egg-string.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_self_test-egg-string.Tpo $(DEPDIR)/gpk_self_test-egg-string.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='egg-string.c' object='gpk_self_test-egg-string.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -c -o gpk_self_test-egg-string.o `test -f 'egg-string.c' || echo '$(srcdir)/'`egg-string.c
-
-gpk_self_test-egg-string.obj: egg-string.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -MT gpk_self_test-egg-string.obj -MD -MP -MF $(DEPDIR)/gpk_self_test-egg-string.Tpo -c -o gpk_self_test-egg-string.obj `if test -f 'egg-string.c'; then $(CYGPATH_W) 'egg-string.c'; else $(CYGPATH_W) '$(srcdir)/egg-string.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_self_test-egg-string.Tpo $(DEPDIR)/gpk_self_test-egg-string.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='egg-string.c' object='gpk_self_test-egg-string.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -c -o gpk_self_test-egg-string.obj `if test -f 'egg-string.c'; then $(CYGPATH_W) 'egg-string.c'; else $(CYGPATH_W) '$(srcdir)/egg-string.c'; fi`
-
-gpk_self_test-egg-markdown.o: egg-markdown.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -MT gpk_self_test-egg-markdown.o -MD -MP -MF $(DEPDIR)/gpk_self_test-egg-markdown.Tpo -c -o gpk_self_test-egg-markdown.o `test -f 'egg-markdown.c' || echo '$(srcdir)/'`egg-markdown.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_self_test-egg-markdown.Tpo $(DEPDIR)/gpk_self_test-egg-markdown.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='egg-markdown.c' object='gpk_self_test-egg-markdown.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -c -o gpk_self_test-egg-markdown.o `test -f 'egg-markdown.c' || echo '$(srcdir)/'`egg-markdown.c
-
-gpk_self_test-egg-markdown.obj: egg-markdown.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -MT gpk_self_test-egg-markdown.obj -MD -MP -MF $(DEPDIR)/gpk_self_test-egg-markdown.Tpo -c -o gpk_self_test-egg-markdown.obj `if test -f 'egg-markdown.c'; then $(CYGPATH_W) 'egg-markdown.c'; else $(CYGPATH_W) '$(srcdir)/egg-markdown.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_self_test-egg-markdown.Tpo $(DEPDIR)/gpk_self_test-egg-markdown.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='egg-markdown.c' object='gpk_self_test-egg-markdown.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -c -o gpk_self_test-egg-markdown.obj `if test -f 'egg-markdown.c'; then $(CYGPATH_W) 'egg-markdown.c'; else $(CYGPATH_W) '$(srcdir)/egg-markdown.c'; fi`
 
 gpk_self_test-gpk-debug.o: gpk-debug.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -MT gpk_self_test-gpk-debug.o -MD -MP -MF $(DEPDIR)/gpk_self_test-gpk-debug.Tpo -c -o gpk_self_test-gpk-debug.o `test -f 'gpk-debug.c' || echo '$(srcdir)/'`gpk-debug.c
@@ -1188,118 +1204,6 @@ gpk_self_test-gpk-error.obj: gpk-error.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -c -o gpk_self_test-gpk-error.obj `if test -f 'gpk-error.c'; then $(CYGPATH_W) 'gpk-error.c'; else $(CYGPATH_W) '$(srcdir)/gpk-error.c'; fi`
 
-gpk_self_test-gpk-language.o: gpk-language.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -MT gpk_self_test-gpk-language.o -MD -MP -MF $(DEPDIR)/gpk_self_test-gpk-language.Tpo -c -o gpk_self_test-gpk-language.o `test -f 'gpk-language.c' || echo '$(srcdir)/'`gpk-language.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_self_test-gpk-language.Tpo $(DEPDIR)/gpk_self_test-gpk-language.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-language.c' object='gpk_self_test-gpk-language.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -c -o gpk_self_test-gpk-language.o `test -f 'gpk-language.c' || echo '$(srcdir)/'`gpk-language.c
-
-gpk_self_test-gpk-language.obj: gpk-language.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -MT gpk_self_test-gpk-language.obj -MD -MP -MF $(DEPDIR)/gpk_self_test-gpk-language.Tpo -c -o gpk_self_test-gpk-language.obj `if test -f 'gpk-language.c'; then $(CYGPATH_W) 'gpk-language.c'; else $(CYGPATH_W) '$(srcdir)/gpk-language.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_self_test-gpk-language.Tpo $(DEPDIR)/gpk_self_test-gpk-language.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-language.c' object='gpk_self_test-gpk-language.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -c -o gpk_self_test-gpk-language.obj `if test -f 'gpk-language.c'; then $(CYGPATH_W) 'gpk-language.c'; else $(CYGPATH_W) '$(srcdir)/gpk-language.c'; fi`
-
-gpk_self_test-gpk-modal-dialog.o: gpk-modal-dialog.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -MT gpk_self_test-gpk-modal-dialog.o -MD -MP -MF $(DEPDIR)/gpk_self_test-gpk-modal-dialog.Tpo -c -o gpk_self_test-gpk-modal-dialog.o `test -f 'gpk-modal-dialog.c' || echo '$(srcdir)/'`gpk-modal-dialog.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_self_test-gpk-modal-dialog.Tpo $(DEPDIR)/gpk_self_test-gpk-modal-dialog.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-modal-dialog.c' object='gpk_self_test-gpk-modal-dialog.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -c -o gpk_self_test-gpk-modal-dialog.o `test -f 'gpk-modal-dialog.c' || echo '$(srcdir)/'`gpk-modal-dialog.c
-
-gpk_self_test-gpk-modal-dialog.obj: gpk-modal-dialog.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -MT gpk_self_test-gpk-modal-dialog.obj -MD -MP -MF $(DEPDIR)/gpk_self_test-gpk-modal-dialog.Tpo -c -o gpk_self_test-gpk-modal-dialog.obj `if test -f 'gpk-modal-dialog.c'; then $(CYGPATH_W) 'gpk-modal-dialog.c'; else $(CYGPATH_W) '$(srcdir)/gpk-modal-dialog.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_self_test-gpk-modal-dialog.Tpo $(DEPDIR)/gpk_self_test-gpk-modal-dialog.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-modal-dialog.c' object='gpk_self_test-gpk-modal-dialog.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -c -o gpk_self_test-gpk-modal-dialog.obj `if test -f 'gpk-modal-dialog.c'; then $(CYGPATH_W) 'gpk-modal-dialog.c'; else $(CYGPATH_W) '$(srcdir)/gpk-modal-dialog.c'; fi`
-
-gpk_self_test-gpk-dbus.o: gpk-dbus.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -MT gpk_self_test-gpk-dbus.o -MD -MP -MF $(DEPDIR)/gpk_self_test-gpk-dbus.Tpo -c -o gpk_self_test-gpk-dbus.o `test -f 'gpk-dbus.c' || echo '$(srcdir)/'`gpk-dbus.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_self_test-gpk-dbus.Tpo $(DEPDIR)/gpk_self_test-gpk-dbus.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-dbus.c' object='gpk_self_test-gpk-dbus.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -c -o gpk_self_test-gpk-dbus.o `test -f 'gpk-dbus.c' || echo '$(srcdir)/'`gpk-dbus.c
-
-gpk_self_test-gpk-dbus.obj: gpk-dbus.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -MT gpk_self_test-gpk-dbus.obj -MD -MP -MF $(DEPDIR)/gpk_self_test-gpk-dbus.Tpo -c -o gpk_self_test-gpk-dbus.obj `if test -f 'gpk-dbus.c'; then $(CYGPATH_W) 'gpk-dbus.c'; else $(CYGPATH_W) '$(srcdir)/gpk-dbus.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_self_test-gpk-dbus.Tpo $(DEPDIR)/gpk_self_test-gpk-dbus.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-dbus.c' object='gpk_self_test-gpk-dbus.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -c -o gpk_self_test-gpk-dbus.obj `if test -f 'gpk-dbus.c'; then $(CYGPATH_W) 'gpk-dbus.c'; else $(CYGPATH_W) '$(srcdir)/gpk-dbus.c'; fi`
-
-gpk_self_test-gpk-dbus-task.o: gpk-dbus-task.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -MT gpk_self_test-gpk-dbus-task.o -MD -MP -MF $(DEPDIR)/gpk_self_test-gpk-dbus-task.Tpo -c -o gpk_self_test-gpk-dbus-task.o `test -f 'gpk-dbus-task.c' || echo '$(srcdir)/'`gpk-dbus-task.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_self_test-gpk-dbus-task.Tpo $(DEPDIR)/gpk_self_test-gpk-dbus-task.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-dbus-task.c' object='gpk_self_test-gpk-dbus-task.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -c -o gpk_self_test-gpk-dbus-task.o `test -f 'gpk-dbus-task.c' || echo '$(srcdir)/'`gpk-dbus-task.c
-
-gpk_self_test-gpk-dbus-task.obj: gpk-dbus-task.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -MT gpk_self_test-gpk-dbus-task.obj -MD -MP -MF $(DEPDIR)/gpk_self_test-gpk-dbus-task.Tpo -c -o gpk_self_test-gpk-dbus-task.obj `if test -f 'gpk-dbus-task.c'; then $(CYGPATH_W) 'gpk-dbus-task.c'; else $(CYGPATH_W) '$(srcdir)/gpk-dbus-task.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_self_test-gpk-dbus-task.Tpo $(DEPDIR)/gpk_self_test-gpk-dbus-task.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-dbus-task.c' object='gpk_self_test-gpk-dbus-task.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -c -o gpk_self_test-gpk-dbus-task.obj `if test -f 'gpk-dbus-task.c'; then $(CYGPATH_W) 'gpk-dbus-task.c'; else $(CYGPATH_W) '$(srcdir)/gpk-dbus-task.c'; fi`
-
-gpk_self_test-gpk-animated-icon.o: gpk-animated-icon.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -MT gpk_self_test-gpk-animated-icon.o -MD -MP -MF $(DEPDIR)/gpk_self_test-gpk-animated-icon.Tpo -c -o gpk_self_test-gpk-animated-icon.o `test -f 'gpk-animated-icon.c' || echo '$(srcdir)/'`gpk-animated-icon.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_self_test-gpk-animated-icon.Tpo $(DEPDIR)/gpk_self_test-gpk-animated-icon.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-animated-icon.c' object='gpk_self_test-gpk-animated-icon.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -c -o gpk_self_test-gpk-animated-icon.o `test -f 'gpk-animated-icon.c' || echo '$(srcdir)/'`gpk-animated-icon.c
-
-gpk_self_test-gpk-animated-icon.obj: gpk-animated-icon.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -MT gpk_self_test-gpk-animated-icon.obj -MD -MP -MF $(DEPDIR)/gpk_self_test-gpk-animated-icon.Tpo -c -o gpk_self_test-gpk-animated-icon.obj `if test -f 'gpk-animated-icon.c'; then $(CYGPATH_W) 'gpk-animated-icon.c'; else $(CYGPATH_W) '$(srcdir)/gpk-animated-icon.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_self_test-gpk-animated-icon.Tpo $(DEPDIR)/gpk_self_test-gpk-animated-icon.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-animated-icon.c' object='gpk_self_test-gpk-animated-icon.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -c -o gpk_self_test-gpk-animated-icon.obj `if test -f 'gpk-animated-icon.c'; then $(CYGPATH_W) 'gpk-animated-icon.c'; else $(CYGPATH_W) '$(srcdir)/gpk-animated-icon.c'; fi`
-
-gpk_self_test-gpk-gnome.o: gpk-gnome.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -MT gpk_self_test-gpk-gnome.o -MD -MP -MF $(DEPDIR)/gpk_self_test-gpk-gnome.Tpo -c -o gpk_self_test-gpk-gnome.o `test -f 'gpk-gnome.c' || echo '$(srcdir)/'`gpk-gnome.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_self_test-gpk-gnome.Tpo $(DEPDIR)/gpk_self_test-gpk-gnome.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-gnome.c' object='gpk_self_test-gpk-gnome.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -c -o gpk_self_test-gpk-gnome.o `test -f 'gpk-gnome.c' || echo '$(srcdir)/'`gpk-gnome.c
-
-gpk_self_test-gpk-gnome.obj: gpk-gnome.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -MT gpk_self_test-gpk-gnome.obj -MD -MP -MF $(DEPDIR)/gpk_self_test-gpk-gnome.Tpo -c -o gpk_self_test-gpk-gnome.obj `if test -f 'gpk-gnome.c'; then $(CYGPATH_W) 'gpk-gnome.c'; else $(CYGPATH_W) '$(srcdir)/gpk-gnome.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_self_test-gpk-gnome.Tpo $(DEPDIR)/gpk_self_test-gpk-gnome.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-gnome.c' object='gpk_self_test-gpk-gnome.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -c -o gpk_self_test-gpk-gnome.obj `if test -f 'gpk-gnome.c'; then $(CYGPATH_W) 'gpk-gnome.c'; else $(CYGPATH_W) '$(srcdir)/gpk-gnome.c'; fi`
-
-gpk_self_test-gpk-x11.o: gpk-x11.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -MT gpk_self_test-gpk-x11.o -MD -MP -MF $(DEPDIR)/gpk_self_test-gpk-x11.Tpo -c -o gpk_self_test-gpk-x11.o `test -f 'gpk-x11.c' || echo '$(srcdir)/'`gpk-x11.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_self_test-gpk-x11.Tpo $(DEPDIR)/gpk_self_test-gpk-x11.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-x11.c' object='gpk_self_test-gpk-x11.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -c -o gpk_self_test-gpk-x11.o `test -f 'gpk-x11.c' || echo '$(srcdir)/'`gpk-x11.c
-
-gpk_self_test-gpk-x11.obj: gpk-x11.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -MT gpk_self_test-gpk-x11.obj -MD -MP -MF $(DEPDIR)/gpk_self_test-gpk-x11.Tpo -c -o gpk_self_test-gpk-x11.obj `if test -f 'gpk-x11.c'; then $(CYGPATH_W) 'gpk-x11.c'; else $(CYGPATH_W) '$(srcdir)/gpk-x11.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_self_test-gpk-x11.Tpo $(DEPDIR)/gpk_self_test-gpk-x11.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-x11.c' object='gpk_self_test-gpk-x11.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -c -o gpk_self_test-gpk-x11.obj `if test -f 'gpk-x11.c'; then $(CYGPATH_W) 'gpk-x11.c'; else $(CYGPATH_W) '$(srcdir)/gpk-x11.c'; fi`
-
-gpk_self_test-gpk-vendor.o: gpk-vendor.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -MT gpk_self_test-gpk-vendor.o -MD -MP -MF $(DEPDIR)/gpk_self_test-gpk-vendor.Tpo -c -o gpk_self_test-gpk-vendor.o `test -f 'gpk-vendor.c' || echo '$(srcdir)/'`gpk-vendor.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_self_test-gpk-vendor.Tpo $(DEPDIR)/gpk_self_test-gpk-vendor.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-vendor.c' object='gpk_self_test-gpk-vendor.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -c -o gpk_self_test-gpk-vendor.o `test -f 'gpk-vendor.c' || echo '$(srcdir)/'`gpk-vendor.c
-
-gpk_self_test-gpk-vendor.obj: gpk-vendor.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -MT gpk_self_test-gpk-vendor.obj -MD -MP -MF $(DEPDIR)/gpk_self_test-gpk-vendor.Tpo -c -o gpk_self_test-gpk-vendor.obj `if test -f 'gpk-vendor.c'; then $(CYGPATH_W) 'gpk-vendor.c'; else $(CYGPATH_W) '$(srcdir)/gpk-vendor.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_self_test-gpk-vendor.Tpo $(DEPDIR)/gpk_self_test-gpk-vendor.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-vendor.c' object='gpk_self_test-gpk-vendor.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -c -o gpk_self_test-gpk-vendor.obj `if test -f 'gpk-vendor.c'; then $(CYGPATH_W) 'gpk-vendor.c'; else $(CYGPATH_W) '$(srcdir)/gpk-vendor.c'; fi`
-
 gpk_self_test-gpk-task.o: gpk-task.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -MT gpk_self_test-gpk-task.o -MD -MP -MF $(DEPDIR)/gpk_self_test-gpk-task.Tpo -c -o gpk_self_test-gpk-task.o `test -f 'gpk-task.c' || echo '$(srcdir)/'`gpk-task.c
 @am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_self_test-gpk-task.Tpo $(DEPDIR)/gpk_self_test-gpk-task.Po
@@ -1314,48 +1218,6 @@ gpk_self_test-gpk-task.obj: gpk-task.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -c -o gpk_self_test-gpk-task.obj `if test -f 'gpk-task.c'; then $(CYGPATH_W) 'gpk-task.c'; else $(CYGPATH_W) '$(srcdir)/gpk-task.c'; fi`
 
-gpk_self_test-gpk-helper-run.o: gpk-helper-run.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -MT gpk_self_test-gpk-helper-run.o -MD -MP -MF $(DEPDIR)/gpk_self_test-gpk-helper-run.Tpo -c -o gpk_self_test-gpk-helper-run.o `test -f 'gpk-helper-run.c' || echo '$(srcdir)/'`gpk-helper-run.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_self_test-gpk-helper-run.Tpo $(DEPDIR)/gpk_self_test-gpk-helper-run.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-helper-run.c' object='gpk_self_test-gpk-helper-run.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -c -o gpk_self_test-gpk-helper-run.o `test -f 'gpk-helper-run.c' || echo '$(srcdir)/'`gpk-helper-run.c
-
-gpk_self_test-gpk-helper-run.obj: gpk-helper-run.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -MT gpk_self_test-gpk-helper-run.obj -MD -MP -MF $(DEPDIR)/gpk_self_test-gpk-helper-run.Tpo -c -o gpk_self_test-gpk-helper-run.obj `if test -f 'gpk-helper-run.c'; then $(CYGPATH_W) 'gpk-helper-run.c'; else $(CYGPATH_W) '$(srcdir)/gpk-helper-run.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_self_test-gpk-helper-run.Tpo $(DEPDIR)/gpk_self_test-gpk-helper-run.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-helper-run.c' object='gpk_self_test-gpk-helper-run.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -c -o gpk_self_test-gpk-helper-run.obj `if test -f 'gpk-helper-run.c'; then $(CYGPATH_W) 'gpk-helper-run.c'; else $(CYGPATH_W) '$(srcdir)/gpk-helper-run.c'; fi`
-
-gpk_self_test-gpk-helper-chooser.o: gpk-helper-chooser.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -MT gpk_self_test-gpk-helper-chooser.o -MD -MP -MF $(DEPDIR)/gpk_self_test-gpk-helper-chooser.Tpo -c -o gpk_self_test-gpk-helper-chooser.o `test -f 'gpk-helper-chooser.c' || echo '$(srcdir)/'`gpk-helper-chooser.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_self_test-gpk-helper-chooser.Tpo $(DEPDIR)/gpk_self_test-gpk-helper-chooser.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-helper-chooser.c' object='gpk_self_test-gpk-helper-chooser.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -c -o gpk_self_test-gpk-helper-chooser.o `test -f 'gpk-helper-chooser.c' || echo '$(srcdir)/'`gpk-helper-chooser.c
-
-gpk_self_test-gpk-helper-chooser.obj: gpk-helper-chooser.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -MT gpk_self_test-gpk-helper-chooser.obj -MD -MP -MF $(DEPDIR)/gpk_self_test-gpk-helper-chooser.Tpo -c -o gpk_self_test-gpk-helper-chooser.obj `if test -f 'gpk-helper-chooser.c'; then $(CYGPATH_W) 'gpk-helper-chooser.c'; else $(CYGPATH_W) '$(srcdir)/gpk-helper-chooser.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_self_test-gpk-helper-chooser.Tpo $(DEPDIR)/gpk_self_test-gpk-helper-chooser.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-helper-chooser.c' object='gpk_self_test-gpk-helper-chooser.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -c -o gpk_self_test-gpk-helper-chooser.obj `if test -f 'gpk-helper-chooser.c'; then $(CYGPATH_W) 'gpk-helper-chooser.c'; else $(CYGPATH_W) '$(srcdir)/gpk-helper-chooser.c'; fi`
-
-gpk_self_test-gpk-marshal.o: gpk-marshal.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -MT gpk_self_test-gpk-marshal.o -MD -MP -MF $(DEPDIR)/gpk_self_test-gpk-marshal.Tpo -c -o gpk_self_test-gpk-marshal.o `test -f 'gpk-marshal.c' || echo '$(srcdir)/'`gpk-marshal.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_self_test-gpk-marshal.Tpo $(DEPDIR)/gpk_self_test-gpk-marshal.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-marshal.c' object='gpk_self_test-gpk-marshal.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -c -o gpk_self_test-gpk-marshal.o `test -f 'gpk-marshal.c' || echo '$(srcdir)/'`gpk-marshal.c
-
-gpk_self_test-gpk-marshal.obj: gpk-marshal.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -MT gpk_self_test-gpk-marshal.obj -MD -MP -MF $(DEPDIR)/gpk_self_test-gpk-marshal.Tpo -c -o gpk_self_test-gpk-marshal.obj `if test -f 'gpk-marshal.c'; then $(CYGPATH_W) 'gpk-marshal.c'; else $(CYGPATH_W) '$(srcdir)/gpk-marshal.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_self_test-gpk-marshal.Tpo $(DEPDIR)/gpk_self_test-gpk-marshal.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-marshal.c' object='gpk_self_test-gpk-marshal.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -c -o gpk_self_test-gpk-marshal.obj `if test -f 'gpk-marshal.c'; then $(CYGPATH_W) 'gpk-marshal.c'; else $(CYGPATH_W) '$(srcdir)/gpk-marshal.c'; fi`
-
 gpk_self_test-gpk-dialog.o: gpk-dialog.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -MT gpk_self_test-gpk-dialog.o -MD -MP -MF $(DEPDIR)/gpk_self_test-gpk-dialog.Tpo -c -o gpk_self_test-gpk-dialog.o `test -f 'gpk-dialog.c' || echo '$(srcdir)/'`gpk-dialog.c
 @am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_self_test-gpk-dialog.Tpo $(DEPDIR)/gpk_self_test-gpk-dialog.Po
@@ -1369,6 +1231,76 @@ gpk_self_test-gpk-dialog.obj: gpk-dialog.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-dialog.c' object='gpk_self_test-gpk-dialog.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_self_test_CFLAGS) $(CFLAGS) -c -o gpk_self_test-gpk-dialog.obj `if test -f 'gpk-dialog.c'; then $(CYGPATH_W) 'gpk-dialog.c'; else $(CYGPATH_W) '$(srcdir)/gpk-dialog.c'; fi`
+
+gpk_update_viewer-gpk-update-viewer.o: gpk-update-viewer.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_update_viewer_CFLAGS) $(CFLAGS) -MT gpk_update_viewer-gpk-update-viewer.o -MD -MP -MF $(DEPDIR)/gpk_update_viewer-gpk-update-viewer.Tpo -c -o gpk_update_viewer-gpk-update-viewer.o `test -f 'gpk-update-viewer.c' || echo '$(srcdir)/'`gpk-update-viewer.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_update_viewer-gpk-update-viewer.Tpo $(DEPDIR)/gpk_update_viewer-gpk-update-viewer.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-update-viewer.c' object='gpk_update_viewer-gpk-update-viewer.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_update_viewer_CFLAGS) $(CFLAGS) -c -o gpk_update_viewer-gpk-update-viewer.o `test -f 'gpk-update-viewer.c' || echo '$(srcdir)/'`gpk-update-viewer.c
+
+gpk_update_viewer-gpk-update-viewer.obj: gpk-update-viewer.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_update_viewer_CFLAGS) $(CFLAGS) -MT gpk_update_viewer-gpk-update-viewer.obj -MD -MP -MF $(DEPDIR)/gpk_update_viewer-gpk-update-viewer.Tpo -c -o gpk_update_viewer-gpk-update-viewer.obj `if test -f 'gpk-update-viewer.c'; then $(CYGPATH_W) 'gpk-update-viewer.c'; else $(CYGPATH_W) '$(srcdir)/gpk-update-viewer.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_update_viewer-gpk-update-viewer.Tpo $(DEPDIR)/gpk_update_viewer-gpk-update-viewer.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-update-viewer.c' object='gpk_update_viewer-gpk-update-viewer.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_update_viewer_CFLAGS) $(CFLAGS) -c -o gpk_update_viewer-gpk-update-viewer.obj `if test -f 'gpk-update-viewer.c'; then $(CYGPATH_W) 'gpk-update-viewer.c'; else $(CYGPATH_W) '$(srcdir)/gpk-update-viewer.c'; fi`
+
+gpk_update_viewer-gpk-update-viewer-resources.o: gpk-update-viewer-resources.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_update_viewer_CFLAGS) $(CFLAGS) -MT gpk_update_viewer-gpk-update-viewer-resources.o -MD -MP -MF $(DEPDIR)/gpk_update_viewer-gpk-update-viewer-resources.Tpo -c -o gpk_update_viewer-gpk-update-viewer-resources.o `test -f 'gpk-update-viewer-resources.c' || echo '$(srcdir)/'`gpk-update-viewer-resources.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_update_viewer-gpk-update-viewer-resources.Tpo $(DEPDIR)/gpk_update_viewer-gpk-update-viewer-resources.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-update-viewer-resources.c' object='gpk_update_viewer-gpk-update-viewer-resources.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_update_viewer_CFLAGS) $(CFLAGS) -c -o gpk_update_viewer-gpk-update-viewer-resources.o `test -f 'gpk-update-viewer-resources.c' || echo '$(srcdir)/'`gpk-update-viewer-resources.c
+
+gpk_update_viewer-gpk-update-viewer-resources.obj: gpk-update-viewer-resources.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_update_viewer_CFLAGS) $(CFLAGS) -MT gpk_update_viewer-gpk-update-viewer-resources.obj -MD -MP -MF $(DEPDIR)/gpk_update_viewer-gpk-update-viewer-resources.Tpo -c -o gpk_update_viewer-gpk-update-viewer-resources.obj `if test -f 'gpk-update-viewer-resources.c'; then $(CYGPATH_W) 'gpk-update-viewer-resources.c'; else $(CYGPATH_W) '$(srcdir)/gpk-update-viewer-resources.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_update_viewer-gpk-update-viewer-resources.Tpo $(DEPDIR)/gpk_update_viewer-gpk-update-viewer-resources.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-update-viewer-resources.c' object='gpk_update_viewer-gpk-update-viewer-resources.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_update_viewer_CFLAGS) $(CFLAGS) -c -o gpk_update_viewer-gpk-update-viewer-resources.obj `if test -f 'gpk-update-viewer-resources.c'; then $(CYGPATH_W) 'gpk-update-viewer-resources.c'; else $(CYGPATH_W) '$(srcdir)/gpk-update-viewer-resources.c'; fi`
+
+gpk_update_viewer-gpk-cell-renderer-size.o: gpk-cell-renderer-size.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_update_viewer_CFLAGS) $(CFLAGS) -MT gpk_update_viewer-gpk-cell-renderer-size.o -MD -MP -MF $(DEPDIR)/gpk_update_viewer-gpk-cell-renderer-size.Tpo -c -o gpk_update_viewer-gpk-cell-renderer-size.o `test -f 'gpk-cell-renderer-size.c' || echo '$(srcdir)/'`gpk-cell-renderer-size.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_update_viewer-gpk-cell-renderer-size.Tpo $(DEPDIR)/gpk_update_viewer-gpk-cell-renderer-size.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-cell-renderer-size.c' object='gpk_update_viewer-gpk-cell-renderer-size.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_update_viewer_CFLAGS) $(CFLAGS) -c -o gpk_update_viewer-gpk-cell-renderer-size.o `test -f 'gpk-cell-renderer-size.c' || echo '$(srcdir)/'`gpk-cell-renderer-size.c
+
+gpk_update_viewer-gpk-cell-renderer-size.obj: gpk-cell-renderer-size.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_update_viewer_CFLAGS) $(CFLAGS) -MT gpk_update_viewer-gpk-cell-renderer-size.obj -MD -MP -MF $(DEPDIR)/gpk_update_viewer-gpk-cell-renderer-size.Tpo -c -o gpk_update_viewer-gpk-cell-renderer-size.obj `if test -f 'gpk-cell-renderer-size.c'; then $(CYGPATH_W) 'gpk-cell-renderer-size.c'; else $(CYGPATH_W) '$(srcdir)/gpk-cell-renderer-size.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_update_viewer-gpk-cell-renderer-size.Tpo $(DEPDIR)/gpk_update_viewer-gpk-cell-renderer-size.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-cell-renderer-size.c' object='gpk_update_viewer-gpk-cell-renderer-size.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_update_viewer_CFLAGS) $(CFLAGS) -c -o gpk_update_viewer-gpk-cell-renderer-size.obj `if test -f 'gpk-cell-renderer-size.c'; then $(CYGPATH_W) 'gpk-cell-renderer-size.c'; else $(CYGPATH_W) '$(srcdir)/gpk-cell-renderer-size.c'; fi`
+
+gpk_update_viewer-gpk-cell-renderer-info.o: gpk-cell-renderer-info.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_update_viewer_CFLAGS) $(CFLAGS) -MT gpk_update_viewer-gpk-cell-renderer-info.o -MD -MP -MF $(DEPDIR)/gpk_update_viewer-gpk-cell-renderer-info.Tpo -c -o gpk_update_viewer-gpk-cell-renderer-info.o `test -f 'gpk-cell-renderer-info.c' || echo '$(srcdir)/'`gpk-cell-renderer-info.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_update_viewer-gpk-cell-renderer-info.Tpo $(DEPDIR)/gpk_update_viewer-gpk-cell-renderer-info.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-cell-renderer-info.c' object='gpk_update_viewer-gpk-cell-renderer-info.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_update_viewer_CFLAGS) $(CFLAGS) -c -o gpk_update_viewer-gpk-cell-renderer-info.o `test -f 'gpk-cell-renderer-info.c' || echo '$(srcdir)/'`gpk-cell-renderer-info.c
+
+gpk_update_viewer-gpk-cell-renderer-info.obj: gpk-cell-renderer-info.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_update_viewer_CFLAGS) $(CFLAGS) -MT gpk_update_viewer-gpk-cell-renderer-info.obj -MD -MP -MF $(DEPDIR)/gpk_update_viewer-gpk-cell-renderer-info.Tpo -c -o gpk_update_viewer-gpk-cell-renderer-info.obj `if test -f 'gpk-cell-renderer-info.c'; then $(CYGPATH_W) 'gpk-cell-renderer-info.c'; else $(CYGPATH_W) '$(srcdir)/gpk-cell-renderer-info.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_update_viewer-gpk-cell-renderer-info.Tpo $(DEPDIR)/gpk_update_viewer-gpk-cell-renderer-info.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-cell-renderer-info.c' object='gpk_update_viewer-gpk-cell-renderer-info.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_update_viewer_CFLAGS) $(CFLAGS) -c -o gpk_update_viewer-gpk-cell-renderer-info.obj `if test -f 'gpk-cell-renderer-info.c'; then $(CYGPATH_W) 'gpk-cell-renderer-info.c'; else $(CYGPATH_W) '$(srcdir)/gpk-cell-renderer-info.c'; fi`
+
+gpk_update_viewer-gpk-cell-renderer-restart.o: gpk-cell-renderer-restart.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_update_viewer_CFLAGS) $(CFLAGS) -MT gpk_update_viewer-gpk-cell-renderer-restart.o -MD -MP -MF $(DEPDIR)/gpk_update_viewer-gpk-cell-renderer-restart.Tpo -c -o gpk_update_viewer-gpk-cell-renderer-restart.o `test -f 'gpk-cell-renderer-restart.c' || echo '$(srcdir)/'`gpk-cell-renderer-restart.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_update_viewer-gpk-cell-renderer-restart.Tpo $(DEPDIR)/gpk_update_viewer-gpk-cell-renderer-restart.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-cell-renderer-restart.c' object='gpk_update_viewer-gpk-cell-renderer-restart.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_update_viewer_CFLAGS) $(CFLAGS) -c -o gpk_update_viewer-gpk-cell-renderer-restart.o `test -f 'gpk-cell-renderer-restart.c' || echo '$(srcdir)/'`gpk-cell-renderer-restart.c
+
+gpk_update_viewer-gpk-cell-renderer-restart.obj: gpk-cell-renderer-restart.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_update_viewer_CFLAGS) $(CFLAGS) -MT gpk_update_viewer-gpk-cell-renderer-restart.obj -MD -MP -MF $(DEPDIR)/gpk_update_viewer-gpk-cell-renderer-restart.Tpo -c -o gpk_update_viewer-gpk-cell-renderer-restart.obj `if test -f 'gpk-cell-renderer-restart.c'; then $(CYGPATH_W) 'gpk-cell-renderer-restart.c'; else $(CYGPATH_W) '$(srcdir)/gpk-cell-renderer-restart.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gpk_update_viewer-gpk-cell-renderer-restart.Tpo $(DEPDIR)/gpk_update_viewer-gpk-cell-renderer-restart.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gpk-cell-renderer-restart.c' object='gpk_update_viewer-gpk-cell-renderer-restart.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gpk_update_viewer_CFLAGS) $(CFLAGS) -c -o gpk_update_viewer-gpk-cell-renderer-restart.obj `if test -f 'gpk-cell-renderer-restart.c'; then $(CYGPATH_W) 'gpk-cell-renderer-restart.c'; else $(CYGPATH_W) '$(srcdir)/gpk-cell-renderer-restart.c'; fi`
 
 mostlyclean-libtool:
 	-rm -f *.lo
@@ -1762,28 +1694,35 @@ uninstall-am: uninstall-binPROGRAMS
 .PRECIOUS: Makefile
 
 
-gpk-marshal.c: gpk-marshal.list
-	echo "#include \"gpk-marshal.h\"" > $@ && \
-	glib-genmarshal $< --prefix=gpk_marshal --body >> $@
+gpk-application-resources.c: gpk-application.gresource.xml gpk-application.ui
+	$(AM_V_GEN) glib-compile-resources --target=$@ --generate-source --c-name gpk --sourcedir=$(srcdir) $(srcdir)/gpk-application.gresource.xml
+gpk-application-resources.h: gpk-application.gresource.xml
+	$(AM_V_GEN) glib-compile-resources --target=$@ --generate-header --c-name gpk --sourcedir=$(srcdir) $(srcdir)/gpk-application.gresource.xml
 
-gpk-marshal.h: gpk-marshal.list
-	glib-genmarshal $< --prefix=gpk_marshal --header > $@
+gpk-log-resources.c: gpk-log.gresource.xml gpk-log.ui
+	$(AM_V_GEN) glib-compile-resources --target=$@ --generate-source --c-name gpk --sourcedir=$(srcdir) $(srcdir)/gpk-log.gresource.xml
+gpk-log-resources.h: gpk-log.gresource.xml
+	$(AM_V_GEN) glib-compile-resources --target=$@ --generate-header --c-name gpk --sourcedir=$(srcdir) $(srcdir)/gpk-log.gresource.xml
 
-org.freedesktop.PackageKit.h: org.freedesktop.PackageKit.xml
-	$(LIBTOOL) --mode=execute dbus-binding-tool	\
-		--prefix=gpk_dbus			\
-		--mode=glib-server			\
-		--output=org.freedesktop.PackageKit.h	\
-		$(srcdir)/org.freedesktop.PackageKit.xml
+gpk-prefs-resources.c: gpk-prefs.gresource.xml gpk-prefs.ui
+	$(AM_V_GEN) glib-compile-resources --target=$@ --generate-source --c-name gpk --sourcedir=$(srcdir) $(srcdir)/gpk-prefs.gresource.xml
+gpk-prefs-resources.h: gpk-prefs.gresource.xml
+	$(AM_V_GEN) glib-compile-resources --target=$@ --generate-header --c-name gpk --sourcedir=$(srcdir) $(srcdir)/gpk-prefs.gresource.xml
+
+gpk-update-viewer-resources.c: gpk-update-viewer.gresource.xml gpk-update-viewer.ui
+	$(AM_V_GEN) glib-compile-resources --target=$@ --generate-source --c-name gpk --sourcedir=$(srcdir) $(srcdir)/gpk-update-viewer.gresource.xml
+gpk-update-viewer-resources.h: gpk-update-viewer.gresource.xml
+	$(AM_V_GEN) glib-compile-resources --target=$@ --generate-header --c-name gpk --sourcedir=$(srcdir) $(srcdir)/gpk-update-viewer.gresource.xml
 
 clean-local:
 	rm -f *~
-	rm -f gpk-marshal.c gpk-marshal.h
 	rm -f *.out
 	rm -f *.gcda
 	rm -f *.gcno
 	rm -f gcov.txt
 	rm -f gprof.txt
+
+-include $(top_srcdir)/git.mk
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

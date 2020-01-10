@@ -26,13 +26,11 @@
 #include <gtk/gtk.h>
 #include <packagekit-glib2/packagekit.h>
 
-#include "gpk-animated-icon.h"
 #include "gpk-enum.h"
 
 G_BEGIN_DECLS
 
 #define GPK_SETTINGS_SCHEMA				"org.gnome.packagekit"
-#define GPK_SETTINGS_AUTOCOMPLETE			"autocomplete"
 #define GPK_SETTINGS_CATEGORY_GROUPS			"category-groups"
 #define GPK_SETTINGS_DBUS_DEFAULT_INTERACTION		"dbus-default-interaction"
 #define GPK_SETTINGS_DBUS_ENFORCED_INTERACTION		"dbus-enforced-interaction"
@@ -61,23 +59,14 @@ G_BEGIN_DECLS
 /* any status that is slower than this will not be shown in the UI */
 #define GPK_UI_STATUS_SHOW_DELAY		750 /* ms */
 
-void		 _gtk_text_buffer_insert_markup		(GtkTextBuffer	*buffer,
-							 GtkTextIter	*iter,
-							 const gchar	*markup);
 gchar		*gpk_package_id_format_twoline		(GtkStyleContext *style,
 							 const gchar 	*package_id,
 							 const gchar	*summary);
 gchar		*gpk_package_id_format_oneline		(const gchar 	*package_id,
 							 const gchar	*summary);
-gchar		*gpk_time_to_localised_string		(guint		 time_secs);
-gchar		*gpk_time_to_imprecise_string		(guint		 time_secs);
 gboolean	 gpk_check_privileged_user		(const gchar	*application_name,
 							 gboolean	 show_ui);
-gboolean	 gpk_set_animated_icon_from_status	(GpkAnimatedIcon *icon,
-							 PkStatusEnum	 status,
-							 GtkIconSize	 size);
 gchar		*gpk_strv_join_locale			(gchar		**array);
-GtkEntryCompletion *gpk_package_entry_completion_new	(void);
 gboolean	 gpk_window_set_size_request		(GtkWindow	*window,
 							 guint		 width,
 							 guint		 height);
@@ -85,7 +74,6 @@ gboolean	 gpk_window_set_parent_xid		(GtkWindow	*window,
 							 guint32	 xid);
 GPtrArray	*pk_strv_to_ptr_array			(gchar		**array)
 							 G_GNUC_WARN_UNUSED_RESULT;
-gchar		**pk_package_array_to_strv		(GPtrArray	*array);
 
 G_END_DECLS
 

@@ -26,31 +26,11 @@
 #include <gtk/gtk.h>
 #include <packagekit-glib2/packagekit.h>
 
-#define GPK_TYPE_CELL_RENDERER_RESTART			(gpk_cell_renderer_restart_get_type())
-#define GPK_CELL_RENDERER_RESTART(obj)			(G_TYPE_CHECK_INSTANCE_CAST((obj), GPK_TYPE_CELL_RENDERER_RESTART, GpkCellRendererRestart))
-#define GPK_CELL_RENDERER_RESTART_CLASS(cls)		(G_TYPE_CHECK_CLASS_CAST((cls), GPK_TYPE_CELL_RENDERER_RESTART, GpkCellRendererRestartClass))
-#define GPK_IS_CELL_RENDERER_RESTART(obj)		(G_TYPE_CHECK_INSTANCE_TYPE((obj), GPK_TYPE_CELL_RENDERER_RESTART))
-#define GPK_IS_CELL_RENDERER_RESTART_CLASS(cls)		(G_TYPE_CHECK_CLASS_TYPE((cls), GPK_TYPE_CELL_RENDERER_RESTART))
-#define GPK_CELL_RENDERER_RESTART_GET_CLASS(obj)	(G_TYPE_INSTANCE_GET_CLASS((obj), GPK_TYPE_CELL_RENDERER_RESTART, GpkCellRendererRestartClass))
-
 G_BEGIN_DECLS
 
-typedef struct _GpkCellRendererRestart		GpkCellRendererRestart;
-typedef struct _GpkCellRendererRestartClass	GpkCellRendererRestartClass;
+#define GPK_TYPE_CELL_RENDERER_RESTART (gpk_cell_renderer_restart_get_type())
+G_DECLARE_FINAL_TYPE (GpkCellRendererRestart, gpk_cell_renderer_restart, GPK, CELL_RENDERER_RESTART, GtkCellRendererPixbuf)
 
-struct _GpkCellRendererRestart
-{
-	GtkCellRendererPixbuf	 parent;
-	PkRestartEnum		 value;
-	const gchar		*icon_name;
-};
-
-struct _GpkCellRendererRestartClass
-{
-	GtkCellRendererPixbufClass parent_class;
-};
-
-GType		 gpk_cell_renderer_restart_get_type	(void);
 GtkCellRenderer	*gpk_cell_renderer_restart_new		(void);
 
 G_END_DECLS

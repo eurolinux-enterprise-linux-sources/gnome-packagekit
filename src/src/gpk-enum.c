@@ -25,8 +25,6 @@
 #include <glib/gi18n.h>
 #include <packagekit-glib2/packagekit.h>
 
-#include "egg-string.h"
-
 #include "gpk-enum.h"
 #include "gpk-common.h"
 
@@ -93,46 +91,6 @@ static const PkEnumMatch enum_status_icon_name[] = {
 	{PK_STATUS_ENUM_TEST_COMMIT,		"pk-package-info"}, /* TODO: need better icon */
 	{PK_STATUS_ENUM_UPDATE,			"pk-package-update"},
 	{PK_STATUS_ENUM_WAIT,			"pk-wait"},
-	{PK_STATUS_ENUM_SCAN_PROCESS_LIST,	"pk-package-info"},
-	{PK_STATUS_ENUM_CHECK_EXECUTABLE_FILES,	"pk-package-info"},
-	{PK_STATUS_ENUM_CHECK_LIBRARIES,	"pk-package-info"},
-	{PK_STATUS_ENUM_COPY_FILES,		"pk-package-info"},
-	{0, NULL}
-};
-
-static const PkEnumMatch enum_status_animation[] = {
-	{PK_STATUS_ENUM_UNKNOWN,		"help-browser"},
-	{PK_STATUS_ENUM_CANCEL,			"pk-action-cleanup"},
-	{PK_STATUS_ENUM_CLEANUP,		"pk-action-cleanup"},
-	{PK_STATUS_ENUM_COMMIT,			"pk-setup"},
-	{PK_STATUS_ENUM_DEP_RESOLVE,		"pk-action-testing"},
-	{PK_STATUS_ENUM_DOWNLOAD_CHANGELOG,	"pk-action-refresh-cache"},
-	{PK_STATUS_ENUM_DOWNLOAD_FILELIST,	"pk-action-refresh-cache"},
-	{PK_STATUS_ENUM_DOWNLOAD_GROUP,		"pk-action-refresh-cache"},
-	{PK_STATUS_ENUM_DOWNLOAD_PACKAGELIST,	"pk-action-refresh-cache"},
-	{PK_STATUS_ENUM_DOWNLOAD,		"pk-action-download"},
-	{PK_STATUS_ENUM_DOWNLOAD_REPOSITORY,	"pk-action-refresh-cache"},
-	{PK_STATUS_ENUM_DOWNLOAD_UPDATEINFO,	"pk-action-refresh-cache"},
-	{PK_STATUS_ENUM_FINISHED,		"pk-package-cleanup"},
-	{PK_STATUS_ENUM_GENERATE_PACKAGE_LIST,	"pk-action-searching"},
-	{PK_STATUS_ENUM_WAITING_FOR_LOCK,	"pk-action-waiting"},
-	{PK_STATUS_ENUM_WAITING_FOR_AUTH,	"pk-action-waiting"},
-	{PK_STATUS_ENUM_INFO,			"process-working"},
-	{PK_STATUS_ENUM_INSTALL,		"pk-action-installing"},
-	{PK_STATUS_ENUM_LOADING_CACHE,		"pk-action-refresh-cache"},
-	{PK_STATUS_ENUM_OBSOLETE,		"pk-package-cleanup"},
-	{PK_STATUS_ENUM_QUERY,			"pk-action-searching"},
-	{PK_STATUS_ENUM_REFRESH_CACHE,		"pk-action-refresh-cache"},
-	{PK_STATUS_ENUM_REMOVE,			"pk-action-removing"},
-	{PK_STATUS_ENUM_REPACKAGING,		"pk-package-info"},
-	{PK_STATUS_ENUM_REQUEST,		"process-working"},
-	{PK_STATUS_ENUM_RUNNING,		"pk-setup"},
-	{PK_STATUS_ENUM_SCAN_APPLICATIONS,	"pk-action-searching"},
-	{PK_STATUS_ENUM_SETUP,			"pk-package-info"},
-	{PK_STATUS_ENUM_SIG_CHECK,		"pk-package-info"},
-	{PK_STATUS_ENUM_TEST_COMMIT,		"pk-action-testing"},
-	{PK_STATUS_ENUM_UPDATE,			"pk-action-installing"},
-	{PK_STATUS_ENUM_WAIT,			"pk-action-waiting"},
 	{PK_STATUS_ENUM_SCAN_PROCESS_LIST,	"pk-package-info"},
 	{PK_STATUS_ENUM_CHECK_EXECUTABLE_FILES,	"pk-package-info"},
 	{PK_STATUS_ENUM_CHECK_LIBRARIES,	"pk-package-info"},
@@ -227,20 +185,6 @@ static const PkEnumMatch enum_restart_icon_name[] = {
 	{0, NULL}
 };
 
-static const PkEnumMatch enum_restart_dialog_icon_name[] = {
-	{PK_RESTART_ENUM_UNKNOWN,		"help-browser"},	/* fall though value */
-	{PK_RESTART_ENUM_NONE,			"dialog-information"},
-	{PK_RESTART_ENUM_SYSTEM,		"dialog-error"},
-	{PK_RESTART_ENUM_SESSION,		"dialog-warning"},
-	{PK_RESTART_ENUM_APPLICATION,		"dialog-warning"},
-	{PK_RESTART_ENUM_SECURITY_SYSTEM,	"dialog-error"},
-	{PK_RESTART_ENUM_SECURITY_SESSION,	"dialog-error"},
-	{0, NULL}
-};
-
-/**
- * gpk_media_type_enum_to_localised_text:
- **/
 const gchar *
 gpk_media_type_enum_to_localised_text (PkMediaTypeEnum type)
 {
@@ -268,9 +212,6 @@ gpk_media_type_enum_to_localised_text (PkMediaTypeEnum type)
 	return text;
 }
 
-/**
- * gpk_error_enum_to_localised_text:
- **/
 const gchar *
 gpk_error_enum_to_localised_text (PkErrorEnum code)
 {
@@ -486,9 +427,6 @@ gpk_error_enum_to_localised_text (PkErrorEnum code)
 	return text;
 }
 
-/**
- * gpk_error_enum_to_localised_message:
- **/
 const gchar *
 gpk_error_enum_to_localised_message (PkErrorEnum code)
 {
@@ -743,9 +681,6 @@ gpk_error_enum_to_localised_message (PkErrorEnum code)
 	return text;
 }
 
-/**
- * gpk_restart_enum_to_localised_text_future:
- **/
 const gchar *
 gpk_restart_enum_to_localised_text_future (PkRestartEnum restart)
 {
@@ -770,14 +705,11 @@ gpk_restart_enum_to_localised_text_future (PkRestartEnum restart)
 		text = _("A restart will be required due to a security update.");
 		break;
 	default:
-		g_warning ("restart unrecognized: %i", restart);
+		g_warning ("restart unrecognized: %u", restart);
 	}
 	return text;
 }
 
-/**
- * gpk_restart_enum_to_localised_text:
- **/
 const gchar *
 gpk_restart_enum_to_localised_text (PkRestartEnum restart)
 {
@@ -802,40 +734,11 @@ gpk_restart_enum_to_localised_text (PkRestartEnum restart)
 		text = _("A restart is required to remain secure.");
 		break;
 	default:
-		g_warning ("restart unrecognized: %i", restart);
+		g_warning ("restart unrecognized: %u", restart);
 	}
 	return text;
 }
 
-/**
- * gpk_update_state_enum_to_localised_text:
- **/
-const gchar *
-gpk_update_state_enum_to_localised_text (PkUpdateStateEnum state)
-{
-	const gchar *text = NULL;
-	switch (state) {
-	case PK_UPDATE_STATE_ENUM_STABLE:
-		/* TRANSLATORS: A distribution stability level */
-		text = _("Stable");
-		break;
-	case PK_UPDATE_STATE_ENUM_UNSTABLE:
-		/* TRANSLATORS: A distribution stability level */
-		text = _("Unstable");
-		break;
-	case PK_UPDATE_STATE_ENUM_TESTING:
-		/* TRANSLATORS: A distribution stability level */
-		text = _("Testing");
-		break;
-	default:
-		g_warning ("state unrecognized: %i", state);
-	}
-	return text;
-}
-
-/**
- * gpk_status_enum_to_localised_text:
- **/
 const gchar *
 gpk_status_enum_to_localised_text (PkStatusEnum status)
 {
@@ -991,51 +894,6 @@ gpk_status_enum_to_localised_text (PkStatusEnum status)
 	return text;
 }
 
-/**
- * gpk_update_enum_to_localised_text:
- **/
-gchar *
-gpk_update_enum_to_localised_text (PkInfoEnum info, guint number)
-{
-	gchar *text = NULL;
-	switch (info) {
-	case PK_INFO_ENUM_LOW:
-		/* TRANSLATORS: type of update */
-		text = g_strdup_printf (ngettext ("%i trivial update", "%i trivial updates", number), number);
-		break;
-	case PK_INFO_ENUM_NORMAL:
-		/* TRANSLATORS: type of update in the case that we don't have any data */
-		text = g_strdup_printf (ngettext ("%i update", "%i updates", number), number);
-		break;
-	case PK_INFO_ENUM_IMPORTANT:
-		/* TRANSLATORS: type of update */
-		text = g_strdup_printf (ngettext ("%i important update", "%i important updates", number), number);
-		break;
-	case PK_INFO_ENUM_SECURITY:
-		/* TRANSLATORS: type of update */
-		text = g_strdup_printf (ngettext ("%i security update", "%i security updates", number), number);
-		break;
-	case PK_INFO_ENUM_BUGFIX:
-		/* TRANSLATORS: type of update */
-		text = g_strdup_printf (ngettext ("%i bug fix update", "%i bug fix updates", number), number);
-		break;
-	case PK_INFO_ENUM_ENHANCEMENT:
-		/* TRANSLATORS: type of update */
-		text = g_strdup_printf (ngettext ("%i enhancement update", "%i enhancement updates", number), number);
-		break;
-	case PK_INFO_ENUM_BLOCKED:
-		/* TRANSLATORS: number of updates that cannot be installed due to deps */
-		text = g_strdup_printf (ngettext ("%i blocked update", "%i blocked updates", number), number);
-		break;
-	default:
-		g_warning ("update info unrecognized: %s", pk_info_enum_to_string (info));
-	}
-	return text;
-}
-
-/**
- * gpk_info_enum_to_localised_text:
- **/
 const gchar *
 gpk_info_enum_to_localised_text (PkInfoEnum info)
 {
@@ -1093,10 +951,7 @@ gpk_info_enum_to_localised_text (PkInfoEnum info)
 	return text;
 }
 
-/**
- * gpk_info_enum_to_localised_present:
- **/
-const gchar *
+static const gchar *
 gpk_info_enum_to_localised_present (PkInfoEnum info)
 {
 	const gchar *text = NULL;
@@ -1143,9 +998,6 @@ gpk_info_enum_to_localised_present (PkInfoEnum info)
 	return text;
 }
 
-/**
- * gpk_info_enum_to_localised_past:
- **/
 const gchar *
 gpk_info_enum_to_localised_past (PkInfoEnum info)
 {
@@ -1193,151 +1045,6 @@ gpk_info_enum_to_localised_past (PkInfoEnum info)
 	return text;
 }
 
-/**
- * gpk_role_enum_to_localised_present:
- **/
-const gchar *
-gpk_role_enum_to_localised_present (PkRoleEnum role)
-{
-	const gchar *text = NULL;
-	switch (role) {
-	case PK_ROLE_ENUM_UNKNOWN:
-		/* TRANSLATORS: The role of the transaction, in present tense */
-		text = _("Unknown role type");
-		break;
-	case PK_ROLE_ENUM_DEPENDS_ON:
-		/* TRANSLATORS: The role of the transaction, in present tense */
-		text = _("Getting dependencies");
-		break;
-	case PK_ROLE_ENUM_GET_UPDATE_DETAIL:
-		/* TRANSLATORS: The role of the transaction, in present tense */
-		text = _("Getting update detail");
-		break;
-	case PK_ROLE_ENUM_GET_DETAILS:
-	case PK_ROLE_ENUM_GET_DETAILS_LOCAL:
-		/* TRANSLATORS: The role of the transaction, in present tense */
-		text = _("Getting details");
-		break;
-	case PK_ROLE_ENUM_REQUIRED_BY:
-		/* TRANSLATORS: The role of the transaction, in present tense */
-		text = _("Getting requires");
-		break;
-	case PK_ROLE_ENUM_GET_UPDATES:
-		/* TRANSLATORS: The role of the transaction, in present tense */
-		text = _("Getting updates");
-		break;
-	case PK_ROLE_ENUM_SEARCH_DETAILS:
-		/* TRANSLATORS: The role of the transaction, in present tense */
-		text = _("Searching details");
-		break;
-	case PK_ROLE_ENUM_SEARCH_FILE:
-		/* TRANSLATORS: The role of the transaction, in present tense */
-		text = _("Searching for file");
-		break;
-	case PK_ROLE_ENUM_SEARCH_GROUP:
-		/* TRANSLATORS: The role of the transaction, in present tense */
-		text = _("Searching groups");
-		break;
-	case PK_ROLE_ENUM_SEARCH_NAME:
-		/* TRANSLATORS: The role of the transaction, in present tense */
-		text = _("Searching for package name");
-		break;
-	case PK_ROLE_ENUM_REMOVE_PACKAGES:
-		/* TRANSLATORS: The role of the transaction, in present tense */
-		text = _("Removing");
-		break;
-	case PK_ROLE_ENUM_INSTALL_PACKAGES:
-		/* TRANSLATORS: The role of the transaction, in present tense */
-		text = _("Installing");
-		break;
-	case PK_ROLE_ENUM_INSTALL_FILES:
-		/* TRANSLATORS: The role of the transaction, in present tense */
-		text = _("Installing file");
-		break;
-	case PK_ROLE_ENUM_REFRESH_CACHE:
-		/* TRANSLATORS: The role of the transaction, in present tense */
-		text = _("Refreshing package cache");
-		break;
-	case PK_ROLE_ENUM_UPDATE_PACKAGES:
-		/* TRANSLATORS: The role of the transaction, in present tense */
-		text = _("Updating packages");
-		break;
-	case PK_ROLE_ENUM_CANCEL:
-		/* TRANSLATORS: The role of the transaction, in present tense */
-		text = _("Canceling");
-		break;
-	case PK_ROLE_ENUM_GET_REPO_LIST:
-		/* TRANSLATORS: The role of the transaction, in present tense */
-		text = _("Getting list of repositories");
-		break;
-	case PK_ROLE_ENUM_REPO_ENABLE:
-		/* TRANSLATORS: The role of the transaction, in present tense */
-		text = _("Enabling repository");
-		break;
-	case PK_ROLE_ENUM_REPO_REMOVE:
-		/* TRANSLATORS: The role of the transaction, in present tense */
-		text = _("Removing repository");
-		break;
-	case PK_ROLE_ENUM_REPO_SET_DATA:
-		/* TRANSLATORS: The role of the transaction, in present tense */
-		text = _("Setting repository data");
-		break;
-	case PK_ROLE_ENUM_RESOLVE:
-		/* TRANSLATORS: The role of the transaction, in present tense */
-		text = _("Resolving");
-		break;
-	case PK_ROLE_ENUM_GET_FILES:
-	case PK_ROLE_ENUM_GET_FILES_LOCAL:
-		/* TRANSLATORS: The role of the transaction, in present tense */
-		text = _("Getting file list");
-		break;
-	case PK_ROLE_ENUM_WHAT_PROVIDES:
-		/* TRANSLATORS: The role of the transaction, in present tense */
-		text = _("Getting what provides");
-		break;
-	case PK_ROLE_ENUM_INSTALL_SIGNATURE:
-		/* TRANSLATORS: The role of the transaction, in present tense */
-		text = _("Installing signature");
-		break;
-	case PK_ROLE_ENUM_GET_PACKAGES:
-		/* TRANSLATORS: The role of the transaction, in present tense */
-		text = _("Getting package lists");
-		break;
-	case PK_ROLE_ENUM_ACCEPT_EULA:
-		/* TRANSLATORS: The role of the transaction, in present tense */
-		text = _("Accepting EULA");
-		break;
-	case PK_ROLE_ENUM_DOWNLOAD_PACKAGES:
-		/* TRANSLATORS: The role of the transaction, in present tense */
-		text = _("Downloading packages");
-		break;
-	case PK_ROLE_ENUM_GET_DISTRO_UPGRADES:
-		/* TRANSLATORS: The role of the transaction, in present tense */
-		text = _("Getting distribution upgrade information");
-		break;
-	case PK_ROLE_ENUM_GET_CATEGORIES:
-		/* TRANSLATORS: The role of the transaction, in present tense */
-		text = _("Getting categories");
-		break;
-	case PK_ROLE_ENUM_GET_OLD_TRANSACTIONS:
-		/* TRANSLATORS: The role of the transaction, in present tense */
-		text = _("Getting old transactions");
-		break;
-	case PK_ROLE_ENUM_REPAIR_SYSTEM:
-		/* TRANSLATORS: The role of the transaction, in present tense */
-		text = _("Repairing the system");
-		break;
-	default:
-		g_warning ("role unrecognized: %s", pk_role_enum_to_string (role));
-	}
-	return text;
-}
-
-/**
- * gpk_role_enum_to_localised_past:
- *
- * These are past tense versions of the action
- **/
 const gchar *
 gpk_role_enum_to_localised_past (PkRoleEnum role)
 {
@@ -1475,9 +1182,6 @@ gpk_role_enum_to_localised_past (PkRoleEnum role)
 	return text;
 }
 
-/**
- * gpk_group_enum_to_localised_text:
- **/
 const gchar *
 gpk_group_enum_to_localised_text (PkGroupEnum group)
 {
@@ -1624,59 +1328,35 @@ gpk_group_enum_to_localised_text (PkGroupEnum group)
 		text = _("Unknown group");
 		break;
 	default:
-		g_warning ("group unrecognized: %i", group);
+		g_warning ("group unrecognized: %u", group);
 	}
 	return text;
 }
 
-/**
- * gpk_info_enum_to_icon_name:
- **/
 const gchar *
 gpk_info_enum_to_icon_name (PkInfoEnum info)
 {
 	return pk_enum_find_string (enum_info_icon_name, info);
 }
 
-/**
- * gpk_status_enum_to_icon_name:
- **/
 const gchar *
 gpk_status_enum_to_icon_name (PkStatusEnum status)
 {
 	return pk_enum_find_string (enum_status_icon_name, status);
 }
 
-/**
- * gpk_status_enum_to_animation:
- **/
-const gchar *
-gpk_status_enum_to_animation (PkStatusEnum status)
-{
-	return pk_enum_find_string (enum_status_animation, status);
-}
-
-/**
- * gpk_role_enum_to_icon_name:
- **/
 const gchar *
 gpk_role_enum_to_icon_name (PkRoleEnum role)
 {
 	return pk_enum_find_string (enum_role_icon_name, role);
 }
 
-/**
- * gpk_group_enum_to_icon_name:
- **/
 const gchar *
 gpk_group_enum_to_icon_name (PkGroupEnum group)
 {
 	return pk_enum_find_string (enum_group_icon_name, group);
 }
 
-/**
- * gpk_restart_enum_to_icon_name:
- **/
 const gchar *
 gpk_restart_enum_to_icon_name (PkRestartEnum restart)
 {
@@ -1687,18 +1367,6 @@ gpk_restart_enum_to_icon_name (PkRestartEnum restart)
 	return tmp;
 }
 
-/**
- * gpk_restart_enum_to_dialog_icon_name:
- **/
-const gchar *
-gpk_restart_enum_to_dialog_icon_name (PkRestartEnum restart)
-{
-	return pk_enum_find_string (enum_restart_dialog_icon_name, restart);
-}
-
-/**
- * gpk_info_status_enum_to_string:
- **/
 const gchar *
 gpk_info_status_enum_to_string (GpkInfoStatusEnum info)
 {
@@ -1707,9 +1375,6 @@ gpk_info_status_enum_to_string (GpkInfoStatusEnum info)
 	return gpk_info_enum_to_localised_present (info);
 }
 
-/**
- * gpk_info_status_enum_to_icon_name:
- **/
 const gchar *
 gpk_info_status_enum_to_icon_name (GpkInfoStatusEnum info)
 {

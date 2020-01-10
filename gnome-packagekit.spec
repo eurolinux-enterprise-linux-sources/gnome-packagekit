@@ -1,23 +1,31 @@
-Summary:   Session applications to manage packages
 Name:      gnome-packagekit
-Version:   3.14.3
-Release:   7%{?dist}
+Version:   3.22.1
+Release:   2%{?dist}
+Summary:   Session applications to manage packages
+
 License:   GPLv2+
 Group:     Applications/System
 URL:       http://www.packagekit.org
-Source0:   http://download.gnome.org/sources/gnome-packagekit/3.14/%{name}-%{version}.tar.xz
+Source0:   http://download.gnome.org/sources/gnome-packagekit/3.22/%{name}-%{version}.tar.xz
 
 # Upstream patch
-Patch0:    0001-Avoid-registering-two-main-desktop-file-categories.patch
-
 Patch5:    0001-Change-the-UI-policy-to-show-the-comps-tree.patch
 Patch6:    0001-Use-the-pre-gnome-software-application-names.patch
-Patch7:    gnome-packagekit-3.14.3-EL7.3_translations.patch
+
+# this is required due to the Packages->Software rename
+#
+# to regnerate, do `rhpkg prep` in the old and new commits, then something like:
+# wiggle-translations.py gnome-packagekit-3.14.3/po/ gnome-packagekit-3.22.1/po
+# diff -urNp gnome-packagekit-3.22.1.old/ gnome-packagekit-3.22.1 >  \
+#   downstream-translations.patch 
+
+Patch7:    downstream-translations.patch
+
+# Already upstream
+Patch8:    0001-trivial-Fix-build-failure-when-dbus-glib-is-not-inst.patch
 
 BuildRequires: glib2-devel >= 2.25.8
 BuildRequires: gtk3-devel
-BuildRequires: dbus-devel
-BuildRequires: dbus-glib-devel
 BuildRequires: libnotify-devel >= 0.7.0
 BuildRequires: desktop-file-utils
 BuildRequires: gettext
@@ -36,6 +44,7 @@ BuildRequires: docbook-utils
 BuildRequires: systemd-devel
 BuildRequires: polkit-devel
 BuildRequires: itstool
+BuildRequires: libappstream-glib
 
 # the top level package depends on all the apps to make upgrades work
 Requires: %{name}-installer
@@ -50,7 +59,6 @@ removing packages on your system.
 Summary: Common files required for %{name}
 Requires:  %{name}%{?_isa} = %{version}-%{release}
 Requires:  adwaita-icon-theme
-Requires:  dbus-x11%{?_isa} >= 1.1.2
 Requires:  PackageKit%{?_isa} >= 0.5.0
 Requires:  PackageKit-libs >= 0.5.0
 Requires:  shared-mime-info
@@ -81,17 +89,17 @@ without rebooting.
 
 %prep
 %setup -q
-%patch0 -p1 -b .desktop-file-category
 %patch5 -p1 -b .category-groups
 %patch6 -p1 -b .funky-name
-%patch7 -p1 -b .funky-name-translations
+%patch7 -p1 -b .downstream-translations
+%patch8 -p1 -b .no-dbus-glib
 
 %build
 %configure --enable-systemd
 make %{?_smp_mflags}
 
 %install
-make install DESTDIR=$RPM_BUILD_ROOT
+%make_install
 
 # nuke the ChangeLog file, it's huge
 rm -f $RPM_BUILD_ROOT%{_datadir}/doc/gnome-packagekit-*/ChangeLog
@@ -121,18 +129,11 @@ glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
 # nada
 
 %files common -f %{name}.lang
-%doc AUTHORS COPYING NEWS README
-%{_bindir}/gpk-dbus-service
-%{_bindir}/gpk-install-local-file
+%license COPYING
+%doc AUTHORS NEWS README
 %{_bindir}/gpk-log
 %{_bindir}/gpk-prefs
 %dir %{_datadir}/gnome-packagekit
-%{_datadir}/gnome-packagekit/gpk-client.ui
-%{_datadir}/gnome-packagekit/gpk-error.ui
-%{_datadir}/gnome-packagekit/gpk-eula.ui
-%{_datadir}/gnome-packagekit/gpk-log.ui
-%{_datadir}/gnome-packagekit/gpk-prefs.ui
-%{_datadir}/gnome-packagekit/gpk-signature.ui
 %dir %{_datadir}/gnome-packagekit/icons
 %dir %{_datadir}/gnome-packagekit/icons/hicolor
 %dir %{_datadir}/gnome-packagekit/icons/hicolor/*
@@ -141,34 +142,34 @@ glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
 %{_datadir}/gnome-packagekit/icons/hicolor/scalable/*/*.svg*
 %{_datadir}/icons/hicolor/*/*/*.png
 %{_datadir}/icons/hicolor/scalable/*/*.svg*
-%{_datadir}/man/man1/gpk-dbus-service.1.gz
-%{_datadir}/man/man1/gpk-install-local-file.1.gz
-%{_datadir}/man/man1/gpk-log.1.gz
-%{_datadir}/man/man1/gpk-prefs.1.gz
-%{_datadir}/applications/gpk-dbus-service.desktop
+%{_datadir}/man/man1/gpk-log.1*
+%{_datadir}/man/man1/gpk-prefs.1*
 %{_datadir}/applications/gpk-log.desktop
 %{_datadir}/applications/gpk-prefs.desktop
-%{_datadir}/dbus-1/services/org.freedesktop.PackageKit.service
 %{_datadir}/glib-2.0/schemas/org.gnome.packagekit.gschema.xml
 %{_datadir}/GConf/gsettings/org.gnome.packagekit.gschema.migrate
 
 %files installer
-%defattr(-,root,root,-)
 %{_bindir}/gpk-application
-%{_datadir}/appdata/gpk-application.appdata.xml
-%{_datadir}/applications/gpk-application.desktop
-%{_datadir}/gnome-packagekit/gpk-application.ui
-%{_datadir}/man/man1/gpk-application.1.gz
+%{_datadir}/applications/org.gnome.Packages.desktop
+%{_datadir}/metainfo/org.gnome.Packages.appdata.xml
+%{_datadir}/man/man1/gpk-application.1*
 
 %files updater
-%defattr(-,root,root,-)
 %{_bindir}/gpk-update-viewer
-%{_datadir}/appdata/gpk-update-viewer.appdata.xml
-%{_datadir}/applications/gpk-update-viewer.desktop
-%{_datadir}/gnome-packagekit/gpk-update-viewer.ui
-%{_datadir}/man/man1/gpk-update-viewer.1.gz
+%{_datadir}/applications/org.gnome.PackageUpdater.desktop
+%{_datadir}/metainfo/org.gnome.PackageUpdater.appdata.xml
+%{_datadir}/man/man1/gpk-update-viewer.1*
 
 %changelog
+* Fri Mar 10 2017 Kalev Lember <klember@redhat.com> - 3.22.1-2
+- Fix gnome-packagekit-install dependencies
+- Resolves: #1386955
+
+* Tue Feb 28 2017 Richard Hughes <rhughes@redhat.com> - 3.22.1-1
+- Update to 3.22.1
+- Resolves: #1386955
+
 * Wed Jun 29 2016 Richard Hughes <rhughes@redhat.com> - 3.14.3-7
 - Update translations.
 - Resolves: #1304279

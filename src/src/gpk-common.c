@@ -33,8 +33,6 @@
 #include <packagekit-glib2/packagekit.h>
 #include <locale.h>
 
-#include "egg-string.h"
-
 #include "gpk-enum.h"
 #include "gpk-common.h"
 #include "gpk-error.h"
@@ -48,21 +46,6 @@
 
 /* static, so local to process */
 static gboolean small_form_factor_mode = FALSE;
-
-gchar **
-pk_package_array_to_strv (GPtrArray *array)
-{
-	PkPackage *item;
-	gchar **results;
-	guint i;
-
-	results = g_new0 (gchar *, array->len+1);
-	for (i=0; i<array->len; i++) {
-		item = g_ptr_array_index (array, i);
-		results[i] = g_strdup (pk_package_get_id (item));
-	}
-	return results;
-}
 
 /**
  * pk_strv_to_ptr_array:
@@ -84,137 +67,11 @@ pk_strv_to_ptr_array (gchar **array)
 
 	parray = g_ptr_array_new ();
 	length = g_strv_length (array);
-	for (i=0; i<length; i++)
+	for (i = 0; i < length; i++)
 		g_ptr_array_add (parray, g_strdup (array[i]));
 	return parray;
 }
 
-/**
- * _gtk_text_buffer_insert_markup:
- * @buffer: a #GtkTextBuffer
- * @markup: nul-terminated UTF-8 text with pango markup to insert
- **/
-void
-_gtk_text_buffer_insert_markup (GtkTextBuffer *buffer, GtkTextIter *iter, const gchar *markup)
-{
-	PangoAttrIterator *paiter;
-	PangoAttrList *attrlist;
-	GtkTextMark *mark;
-	GError *error = NULL;
-	gchar *text;
-
-	g_return_if_fail (GTK_IS_TEXT_BUFFER (buffer));
-	g_return_if_fail (markup != NULL);
-
-	if (*markup == '\000')
-		return;
-
-	/* invalid */
-	if (!pango_parse_markup (markup, -1, 0, &attrlist, &text, NULL, &error)) {
-		g_warning ("Invalid markup string: %s", error->message);
-		g_error_free (error);
-		return;
-	}
-
-	/* trivial, no markup */
-	if (attrlist == NULL) {
-		gtk_text_buffer_insert (buffer, iter, text, -1);
-		g_free (text);
-		return;
-	}
-
-	/* create mark with right gravity */
-	mark = gtk_text_buffer_create_mark (buffer, NULL, iter, FALSE);
-	paiter = pango_attr_list_get_iterator (attrlist);
-
-	do {
-		PangoAttribute *attr;
-		GtkTextTag *tag;
-		GtkTextTag *tag_para;
-		gint start, end;
-
-		pango_attr_iterator_range (paiter, &start, &end);
-
-		if (end == G_MAXINT)	/* last chunk */
-			end = start-1; /* resulting in -1 to be passed to _insert */
-
-		tag = gtk_text_tag_new (NULL);
-
-		if ( (attr = pango_attr_iterator_get (paiter, PANGO_ATTR_LANGUAGE)))
-			g_object_set (tag, "language", pango_language_to_string ( ( (PangoAttrLanguage*)attr)->value), NULL);
-
-		if ( (attr = pango_attr_iterator_get (paiter, PANGO_ATTR_FAMILY)))
-			g_object_set (tag, "family", ( (PangoAttrString*)attr)->value, NULL);
-
-		if ( (attr = pango_attr_iterator_get (paiter, PANGO_ATTR_STYLE)))
-			g_object_set (tag, "style", ( (PangoAttrInt*)attr)->value, NULL);
-
-		if ( (attr = pango_attr_iterator_get (paiter, PANGO_ATTR_WEIGHT)))
-			g_object_set (tag, "weight", ( (PangoAttrInt*)attr)->value, NULL);
-
-		if ( (attr = pango_attr_iterator_get (paiter, PANGO_ATTR_VARIANT)))
-			g_object_set (tag, "variant", ( (PangoAttrInt*)attr)->value, NULL);
-
-		if ( (attr = pango_attr_iterator_get (paiter, PANGO_ATTR_STRETCH)))
-			g_object_set (tag, "stretch", ( (PangoAttrInt*)attr)->value, NULL);
-
-		if ( (attr = pango_attr_iterator_get (paiter, PANGO_ATTR_SIZE)))
-			g_object_set (tag, "size", ( (PangoAttrInt*)attr)->value, NULL);
-
-		if ( (attr = pango_attr_iterator_get (paiter, PANGO_ATTR_FONT_DESC)))
-			g_object_set (tag, "font-desc", ( (PangoAttrFontDesc*)attr)->desc, NULL);
-
-		if ( (attr = pango_attr_iterator_get (paiter, PANGO_ATTR_FOREGROUND))) {
-			GdkColor col = { 0,
-					( (PangoAttrColor*)attr)->color.red,
-					( (PangoAttrColor*)attr)->color.green,
-					( (PangoAttrColor*)attr)->color.blue
-					};
-
-			g_object_set (tag, "foreground-gdk", &col, NULL);
-		}
-
-		if ( (attr = pango_attr_iterator_get (paiter, PANGO_ATTR_BACKGROUND))) {
-			GdkColor col = { 0,
-					( (PangoAttrColor*)attr)->color.red,
-					( (PangoAttrColor*)attr)->color.green,
-					( (PangoAttrColor*)attr)->color.blue
-					};
-
-			g_object_set (tag, "background-gdk", &col, NULL);
-		}
-
-		if ( (attr = pango_attr_iterator_get (paiter, PANGO_ATTR_UNDERLINE)))
-			g_object_set (tag, "underline", ( (PangoAttrInt*)attr)->value, NULL);
-
-		if ( (attr = pango_attr_iterator_get (paiter, PANGO_ATTR_STRIKETHROUGH)))
-			g_object_set (tag, "strikethrough", (gboolean) ( ( (PangoAttrInt*)attr)->value != 0), NULL);
-
-		if ( (attr = pango_attr_iterator_get (paiter, PANGO_ATTR_RISE)))
-			g_object_set (tag, "rise", ( (PangoAttrInt*)attr)->value, NULL);
-
-		if ( (attr = pango_attr_iterator_get (paiter, PANGO_ATTR_SCALE)))
-			g_object_set (tag, "scale", ( (PangoAttrFloat*)attr)->value, NULL);
-
-		gtk_text_tag_table_add (gtk_text_buffer_get_tag_table (buffer), tag);
-
-		tag_para = gtk_text_tag_table_lookup (gtk_text_buffer_get_tag_table (buffer), "para");
-		gtk_text_buffer_insert_with_tags (buffer, iter, text+start, end - start, tag, tag_para, NULL);
-
-		/* mark had right gravity, so it should be
-		 *	at the end of the inserted text now */
-		gtk_text_buffer_get_iter_at_mark (buffer, iter, mark);
-	} while (pango_attr_iterator_next (paiter));
-
-	gtk_text_buffer_delete_mark (buffer, mark);
-	pango_attr_iterator_destroy (paiter);
-	pango_attr_list_unref (attrlist);
-	g_free (text);
-}
-
-/**
- * gpk_window_set_size_request:
- **/
 gboolean
 gpk_window_set_size_request (GtkWindow *window, guint width, guint height)
 {
@@ -249,16 +106,13 @@ gpk_window_set_size_request (GtkWindow *window, guint width, guint height)
 		goto out;
 #endif
 	/* normal size laptop panel */
-	g_debug ("using native mode: %ix%i", width, height);
+	g_debug ("using native mode: %ux%u", width, height);
 	gtk_window_set_default_size (window, width, height);
 	small_form_factor_mode = FALSE;
 out:
 	return !small_form_factor_mode;
 }
 
-/**
- * gpk_window_set_parent_xid:
- **/
 gboolean
 gpk_window_set_parent_xid (GtkWindow *window, guint32 xid)
 {
@@ -278,9 +132,6 @@ gpk_window_set_parent_xid (GtkWindow *window, guint32 xid)
 	return TRUE;
 }
 
-/**
- * gpk_get_pretty_arch:
- **/
 static const gchar *
 gpk_get_pretty_arch (const gchar *arch)
 {
@@ -306,21 +157,15 @@ out:
 	return id;
 }
 
-/**
- * gpk_package_id_format_twoline:
- *
- * Return value: "<b>GTK Toolkit</b>\ngtk2-2.12.2 (i386)"
- **/
 gchar *
 gpk_package_id_format_twoline (GtkStyleContext *style,
 			       const gchar *package_id,
 			       const gchar *summary)
 {
-	gchar *summary_safe = NULL;
-	gchar *text = NULL;
+	g_autofree gchar *summary_safe = NULL;
 	GString *string;
-	gchar **split = NULL;
-	gchar *color;
+	g_auto(GStrv) split = NULL;
+	g_autofree gchar *color = NULL;
 	const gchar *arch;
 	GdkRGBA inactive;
 
@@ -343,7 +188,7 @@ gpk_package_id_format_twoline (GtkStyleContext *style,
 	split = pk_package_id_split (package_id);
 	if (split == NULL) {
 		g_warning ("could not parse %s", package_id);
-		goto out;
+		return NULL;
 	}
 
 	/* no summary */
@@ -354,8 +199,7 @@ gpk_package_id_format_twoline (GtkStyleContext *style,
 		arch = gpk_get_pretty_arch (split[PK_PACKAGE_ID_ARCH]);
 		if (arch != NULL)
 			g_string_append_printf (string, " (%s)", arch);
-		text = g_string_free (string, FALSE);
-		goto out;
+		return g_string_free (string, FALSE);
 	}
 
 	/* name and summary */
@@ -370,58 +214,39 @@ gpk_package_id_format_twoline (GtkStyleContext *style,
 	if (arch != NULL)
 		g_string_append_printf (string, " (%s)", arch);
 	g_string_append (string, "</span>");
-	text = g_string_free (string, FALSE);
-out:
-	g_free (summary_safe);
-	g_free (color);
-	g_strfreev (split);
-	return text;
+	return g_string_free (string, FALSE);
 }
 
-/**
- * gpk_package_id_format_oneline:
- *
- * Return value: "<b>GTK Toolkit</b> (gtk2)"
- **/
 gchar *
 gpk_package_id_format_oneline (const gchar *package_id, const gchar *summary)
 {
-	gchar *summary_safe;
-	gchar *text;
-	gchar **split;
+	g_autofree gchar *summary_safe = NULL;
+	g_auto(GStrv) split = NULL;
 
 	g_return_val_if_fail (package_id != NULL, NULL);
 
 	split = pk_package_id_split (package_id);
 	if (summary == NULL || summary[0] == '\0') {
 		/* just have name */
-		text = g_strdup (split[PK_PACKAGE_ID_NAME]);
-	} else {
-		summary_safe = g_markup_escape_text (summary, -1);
-		text = g_strdup_printf ("<b>%s</b> (%s)", summary_safe, split[PK_PACKAGE_ID_NAME]);
-		g_free (summary_safe);
+		return g_strdup (split[PK_PACKAGE_ID_NAME]);
 	}
-	g_strfreev (split);
-	return text;
+	summary_safe = g_markup_escape_text (summary, -1);
+	return g_strdup_printf ("<b>%s</b> (%s)", summary_safe, split[PK_PACKAGE_ID_NAME]);
 }
 
-/**
- * gpk_check_privileged_user
- **/
 gboolean
 gpk_check_privileged_user (const gchar *application_name, gboolean show_ui)
 {
 	guint uid;
-	gboolean ret = TRUE;
-	gchar *message = NULL;
-	gchar *title = NULL;
+	g_autofree gchar *message = NULL;
+	g_autofree gchar *title = NULL;
 	GtkResponseType result;
 	GtkWidget *dialog;
 
 	uid = getuid ();
 	if (uid == 0) {
 		if (!show_ui)
-			goto out;
+			return TRUE;
 		if (application_name == NULL)
 			/* TRANSLATORS: these tools cannot run as root (unknown name) */
 			title = g_strdup (_("This application is running as a privileged user"));
@@ -446,172 +271,11 @@ gpk_check_privileged_user (const gchar *application_name, gboolean show_ui)
 
 		/* user did not agree to run insecure */
 		if (result != GTK_RESPONSE_OK) {
-			ret = FALSE;
-			g_warning ("uid=%i so closing", uid);
-			goto out;
+			g_warning ("uid=%u so closing", uid);
+			return FALSE;
 		}
 	}
-out:
-	g_free (title);
-	g_free (message);
-	return ret;
-}
-
-/**
- * gpk_set_animated_icon_from_status:
- **/
-gboolean
-gpk_set_animated_icon_from_status (GpkAnimatedIcon *icon, PkStatusEnum status, GtkIconSize size)
-{
-	const gchar *name = NULL;
-	guint delay = 0;
-
-	/* see if there is an animation */
-	name = gpk_status_enum_to_animation (status);
-
-	/* get the timing */
-	if (g_str_has_prefix (name, "pk-action-"))
-		delay = 150;
-	else if (g_str_has_prefix (name, "process-working"))
-		delay = 50;
-
-	/* animate or set static */
-	if (delay != 0) {
-		gpk_animated_icon_set_frame_delay (icon, delay);
-		gpk_animated_icon_set_filename_tile (icon, size, name);
-	} else {
-		gpk_animated_icon_set_icon_name (icon, size, name);
-	}
-
-	/* stop spinning */
-	if (status == PK_STATUS_ENUM_FINISHED)
-		gpk_animated_icon_enable_animation (icon, FALSE);
 	return TRUE;
-}
-
-/**
- * gpk_time_to_imprecise_string:
- * @time_secs: The time value to convert in seconds
- *
- * Returns a localized timestring
- *
- * Return value: The time string, e.g. "2 hours"
- **/
-gchar *
-gpk_time_to_imprecise_string (guint time_secs)
-{
-	gchar* timestring = NULL;
-	guint hours;
-	guint minutes;
-	guint seconds;
-
-	/* is valid? */
-	if (time_secs == 0) {
-		/* TRANSLATORS: The actions has just literally happened */
-		timestring = g_strdup_printf (_("Now"));
-		goto out;
-	}
-
-	/* make local copy */
-	seconds = time_secs;
-
-	/* less than a minute */
-	if (seconds < 60) {
-		/* TRANSLATORS: time */
-		timestring = g_strdup_printf (ngettext ("%i second", "%i seconds", seconds), seconds);
-		goto out;
-	}
-
-	/* Add 0.5 to do rounding */
-	minutes = (guint) ((time_secs / 60.0 ) + 0.5);
-
-	/* less than an hour */
-	if (minutes < 60) {
-		/* TRANSLATORS: time */
-		timestring = g_strdup_printf (ngettext ("%i minute", "%i minutes", minutes), minutes);
-		goto out;
-	}
-
-	hours = minutes / 60;
-	/* TRANSLATORS: time */
-	timestring = g_strdup_printf (ngettext ("%i hour", "%i hours", hours), hours);
-out:
-	return timestring;
-}
-
-/**
- * gpk_time_to_localised_string:
- * @time_secs: The time value to convert in seconds
- *
- * Returns a localized timestring
- *
- * Return value: The time string, e.g. "2 hours 3 minutes"
- **/
-gchar *
-gpk_time_to_localised_string (guint time_secs)
-{
-	gchar* timestring = NULL;
-	guint hours;
-	guint minutes;
-	guint seconds;
-
-	/* is valid? */
-	if (time_secs == 0) {
-		/* TRANSLATORS: The actions has just literally happened */
-		timestring = g_strdup_printf (_("Now"));
-		goto out;
-	}
-
-	/* make local copy */
-	seconds = time_secs;
-
-	/* less than a minute */
-	if (seconds < 60) {
-		/* TRANSLATORS: time */
-		timestring = g_strdup_printf (ngettext ("%i second",
-							"%i seconds",
-							seconds), seconds);
-		goto out;
-	}
-
-	/* Add 0.5 to do rounding */
-	minutes = (guint) ((time_secs / 60.0 ) + 0.5);
-	seconds = seconds % 60;
-
-	/* less than an hour */
-	if (minutes < 60) {
-		if (seconds == 0) {
-			timestring = g_strdup_printf (ngettext ("%i minute",
-								"%i minutes",
-								minutes), minutes);
-		} else {
-			/* TRANSLATOR: "%i %s %i %s" are "%i minutes %i seconds"
-			 * Swap order with "%2$s %2$i %1$s %1$i if needed */
-			timestring = g_strdup_printf (_("%i %s %i %s"),
-					minutes, ngettext ("minute", "minutes", minutes),
-					seconds, ngettext ("second", "seconds", seconds));
-		}
-		goto out;
-	}
-
-	/* more than an hour */
-	hours = minutes / 60;
-	minutes = minutes % 60;
-	if (minutes == 0) {
-		/* TRANSLATORS: time */
-		timestring = g_strdup_printf (ngettext (
-				"%i hour",
-				"%i hours",
-				hours), hours);
-	} else {
-		/* TRANSLATOR: "%i %s %i %s" are "%i hours %i minutes"
-		 * Swap order with "%2$s %2$i %1$s %1$i if needed */
-		timestring = g_strdup_printf (_("%i %s %i %s"),
-				hours, ngettext ("hour", "hours", hours),
-				minutes, ngettext ("minute", "minutes", minutes));
-	}
-out:
-	return timestring;
 }
 
 /**
@@ -651,16 +315,5 @@ gpk_strv_join_locale (gchar **array)
 		return g_strdup_printf (_("%s, %s, %s, %s and %s"),
 					array[0], array[1], array[2],
 					array[3], array[4]);
-	return NULL;
-}
-
-/**
- * gpk_package_entry_completion_new:
- *
- * Creates a %GtkEntryCompletion containing completions from the system package list
- **/
-GtkEntryCompletion *
-gpk_package_entry_completion_new (void)
-{
 	return NULL;
 }

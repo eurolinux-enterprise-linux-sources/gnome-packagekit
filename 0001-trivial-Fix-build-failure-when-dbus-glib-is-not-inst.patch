@@ -1,0 +1,24 @@
+From b4748dcb2887ecb5d1d59c09ec1ab63fae8d94f2 Mon Sep 17 00:00:00 2001
+From: Richard Hughes <richard@hughsie.com>
+Date: Tue, 14 Feb 2017 10:32:23 +0000
+Subject: [PATCH] trivial: Fix build failure when dbus-glib is not installed
+
+---
+ src/gpk-common.c | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/src/gpk-common.c b/src/gpk-common.c
+index 893f81b..9ea02dc 100644
+--- a/src/gpk-common.c
++++ b/src/gpk-common.c
+@@ -29,7 +29,6 @@
+ #include <sys/types.h>
+ #include <gtk/gtk.h>
+ #include <gdk/gdkx.h>
+-#include <dbus/dbus-glib.h>
+ #include <packagekit-glib2/packagekit.h>
+ #include <locale.h>
+ 
+-- 
+2.9.3
+

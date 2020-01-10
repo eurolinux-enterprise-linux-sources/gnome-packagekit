@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2013 Richard Hughes <richard@hughsie.com> -->
+<component type="desktop">
+  <id>org.gnome.PackageUpdater.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0+</project_license>
+  <_name>GNOME Package Updater</_name>
+  <_summary>Update software installed on the system</_summary>
+  <description>
+    <_p>
+      Package Updater allows you to update packages on your system without
+      rebooting.
+      You can view details about each update and choose which updates to apply.
+    </_p>
+    <_p>
+      Package Updater uses PackageKit and can work on any distribution using
+      the native package management framework.
+    </_p>
+  </description>
+  <screenshots>
+    <screenshot type="default">https://git.gnome.org/browse/gnome-packagekit/plain/data/appdata/ss-updater.png</screenshot>
+  </screenshots>
+  <!--
+   Validate with `appstream-util validate *.appdata.xml`
+  -->
+  <releases>
+    <release date="2016-09-19" version="3.22.0">
+      <description>
+        <p>This is the first stable release for GNOME 3.22</p>
+      </description>
+    </release>
+    <release date="2016-09-13" version="3.21.92">
+      <description>
+        <p>This release only updates translations.</p>
+      </description>
+    </release>
+    <release date="2016-08-29" version="3.21.91">
+      <description>
+        <p>This release only updates translations.</p>
+      </description>
+    </release>
+    <release date="2016-08-15" version="3.21.90">
+      <description>
+        <p>This unstable release for GNOME 3.21 fixes the following bugs:</p>
+        <ul>
+          <li>Mark forgotten strings as translatable</li>
+          <li>Update the UI files to adhere to the GNOME 3 UI guidelines</li>
+        </ul>
+        <p>This release also updates translations.</p>
+      </description>
+    </release>
+    <release date="2016-07-18" version="3.21.4">
+      <description>
+        <p>This unstable release for GNOME 3.21 fixes the following bugs:</p>
+        <ul>
+          <li>Use new-style application IDs for flatpak</li>
+          <li>Remove the broken markdown parsing module</li>
+        </ul>
+        <p>This release also updates translations.</p>
+      </description>
+    </release>
+    <release date="2016-03-21" version="3.20.0">
+      <description>
+        <p>This release for GNOME 3.20 fixes the following bugs:</p>
+        <ul>
+          <li>Add a missing tag to the AppData file</li>
+        </ul>
+        <p>This release also updates translations.</p>
+      </description>
+    </release>
+    <release version="3.18.0" timestamp="1442827658">
+      <description>
+        <p>This is the first stable release for GNOME 3.18</p>
+      </description>
+    </release>
+    <release version="3.17.90" timestamp="1439989821">
+      <description>
+        <p>This release fixes the following bug:</p>
+        <ul>
+          <li>Consider available packages as updatable</li>
+        </ul>
+      </description>
+    </release>
+    <release version="3.16.0" timestamp="1427103917">
+      <description>
+        <p>This stable release marks the release of GNOME 3.16!</p>
+      </description>
+    </release>
+    <release version="3.15.92" timestamp="1426498834">
+      <description>
+        <p>This release only updates translations.</p>
+      </description>
+    </release>
+    <release version="3.15.91" timestamp="1425299116">
+      <description>
+        <p>This release only updates translations.</p>
+      </description>
+    </release>
+    <release version="3.15.90" timestamp="1424118207">
+      <description>
+        <p>This release moves the session D-Bus interface to GNOME Software.</p>
+      </description>
+    </release>
+    <release version="3.15.4" timestamp="1421625600">
+      <description>
+        <p>This release fixes the following bugs:</p>
+        <ul>
+          <li>Add suitable Keywords to the package updater desktop file</li>
+        </ul>
+      </description>
+    </release>
+    <release version="3.15.3" timestamp="1418774400">
+      <description>
+        <p>This release fixes the following bug:</p>
+        <ul>
+          <li>Avoid conflict with new GTK+ API</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+  <kudos>
+    <kudo>AppMenu</kudo>
+    <kudo>HiDpiIcon</kudo>
+    <kudo>ModernToolkit</kudo>
+  </kudos>
+  <url type="homepage">http://www.packagekit.org/</url>
+  <update_contact>richard_at_hughsie.com</update_contact>
+</component>

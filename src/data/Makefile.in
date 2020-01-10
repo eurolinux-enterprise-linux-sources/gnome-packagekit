@@ -90,11 +90,16 @@ build_triplet = @build@
 host_triplet = @host@
 subdir = data
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-am__aclocal_m4_deps = $(top_srcdir)/m4/gtk-doc.m4 \
-	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/libtool.m4 \
-	$(top_srcdir)/m4/ltoptions.m4 $(top_srcdir)/m4/ltsugar.m4 \
-	$(top_srcdir)/m4/ltversion.m4 $(top_srcdir)/m4/lt~obsolete.m4 \
-	$(top_srcdir)/configure.ac
+am__aclocal_m4_deps = $(top_srcdir)/m4/ax_append_compile_flags.m4 \
+	$(top_srcdir)/m4/ax_append_flag.m4 \
+	$(top_srcdir)/m4/ax_check_compile_flag.m4 \
+	$(top_srcdir)/m4/ax_require_defined.m4 \
+	$(top_srcdir)/m4/glib-gettext.m4 $(top_srcdir)/m4/gsettings.m4 \
+	$(top_srcdir)/m4/gtk-doc.m4 $(top_srcdir)/m4/intltool.m4 \
+	$(top_srcdir)/m4/libtool.m4 $(top_srcdir)/m4/ltoptions.m4 \
+	$(top_srcdir)/m4/ltsugar.m4 $(top_srcdir)/m4/ltversion.m4 \
+	$(top_srcdir)/m4/lt~obsolete.m4 $(top_srcdir)/m4/nls.m4 \
+	$(top_srcdir)/m4/pkg.m4 $(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 DIST_COMMON = $(srcdir)/Makefile.am $(dist_migration_DATA) \
@@ -158,10 +163,8 @@ am__uninstall_files_from_dir = { \
          $(am__cd) "$$dir" && rm -f $$files; }; \
   }
 am__installdirs = "$(DESTDIR)$(desktopdir)" \
-	"$(DESTDIR)$(migrationdir)" "$(DESTDIR)$(pkgdatadir)" \
-	"$(DESTDIR)$(servicedir)"
-DATA = $(desktop_DATA) $(dist_migration_DATA) $(pkgdata_DATA) \
-	$(service_DATA)
+	"$(DESTDIR)$(migrationdir)"
+DATA = $(desktop_DATA) $(dist_migration_DATA)
 RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\
   distclean-recursive maintainer-clean-recursive
 am__recursive_targets = \
@@ -221,6 +224,7 @@ ACLOCAL = @ACLOCAL@
 ALL_LINGUAS = @ALL_LINGUAS@
 AMTAR = @AMTAR@
 AM_DEFAULT_VERBOSITY = @AM_DEFAULT_VERBOSITY@
+APPSTREAM_UTIL = @APPSTREAM_UTIL@
 AR = @AR@
 AUTOCONF = @AUTOCONF@
 AUTOHEADER = @AUTOHEADER@
@@ -239,8 +243,6 @@ CPPFLAGS = @CPPFLAGS@
 CYGPATH_W = @CYGPATH_W@
 DATADIR = @DATADIR@
 DATADIRNAME = @DATADIRNAME@
-DBUS_CFLAGS = @DBUS_CFLAGS@
-DBUS_LIBS = @DBUS_LIBS@
 DEFS = @DEFS@
 DEPDIR = @DEPDIR@
 DLLTOOL = @DLLTOOL@
@@ -296,6 +298,7 @@ LIBTOOL = @LIBTOOL@
 LIPO = @LIPO@
 LN_S = @LN_S@
 LTLIBOBJS = @LTLIBOBJS@
+LT_SYS_LIBRARY_PATH = @LT_SYS_LIBRARY_PATH@
 MAKEINFO = @MAKEINFO@
 MANIFEST_TOOL = @MANIFEST_TOOL@
 MKDIR_P = @MKDIR_P@
@@ -406,45 +409,28 @@ dist_migration_DATA = org.gnome.packagekit.gschema.migrate
 desktopdir = $(datadir)/applications
 desktop_in_files = \
 	gpk-install-local-file.desktop.in		\
-	gpk-dbus-service.desktop.in			\
-	gpk-prefs.desktop.in				\
-	gpk-application.desktop.in			\
-	gpk-update-viewer.desktop.in			\
 	gpk-log.desktop.in				\
+	gpk-prefs.desktop.in				\
+	org.gnome.Packages.desktop.in			\
+	org.gnome.PackageUpdater.desktop.in		\
 	$(NULL)
 
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
-pkgdata_DATA = \
-	gpk-eula.ui					\
-	gpk-application.ui				\
-	gpk-update-viewer.ui				\
-	gpk-prefs.ui					\
-	gpk-signature.ui				\
-	gpk-error.ui					\
-	gpk-log.ui					\
-	gpk-client.ui					\
-	$(NULL)
-
-servicedir = $(datadir)/dbus-1/services
-service_in_files = org.freedesktop.PackageKit.service.in
-service_DATA = $(service_in_files:.service.in=.service)
 gsettings_SCHEMAS = org.gnome.packagekit.gschema.xml
 EXTRA_DIST = \
 	$(gsettings_SCHEMAS)				\
 	$(autostart_in_files)				\
 	$(desktop_in_files)				\
-	$(pkgdata_DATA)					\
 	$(service_in_files)				\
 	$(NULL)
 
 DISTCLEANFILES = \
-	gpk-prefs.desktop				\
-	gpk-update-viewer.desktop			\
 	gpk-install-local-file.desktop			\
-	gpk-dbus-service.desktop			\
 	gpk-log.desktop					\
-	gpk-application.desktop				\
+	gpk-prefs.desktop				\
 	org.freedesktop.PackageKit.service		\
+	org.gnome.Packages.desktop			\
+	org.gnome.PackageUpdater.desktop		\
 	$(NULL)
 
 all: all-recursive
@@ -527,48 +513,6 @@ uninstall-dist_migrationDATA:
 	@list='$(dist_migration_DATA)'; test -n "$(migrationdir)" || list=; \
 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
 	dir='$(DESTDIR)$(migrationdir)'; $(am__uninstall_files_from_dir)
-install-pkgdataDATA: $(pkgdata_DATA)
-	@$(NORMAL_INSTALL)
-	@list='$(pkgdata_DATA)'; test -n "$(pkgdatadir)" || list=; \
-	if test -n "$$list"; then \
-	  echo " $(MKDIR_P) '$(DESTDIR)$(pkgdatadir)'"; \
-	  $(MKDIR_P) "$(DESTDIR)$(pkgdatadir)" || exit 1; \
-	fi; \
-	for p in $$list; do \
-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
-	  echo "$$d$$p"; \
-	done | $(am__base_list) | \
-	while read files; do \
-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(pkgdatadir)'"; \
-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(pkgdatadir)" || exit $$?; \
-	done
-
-uninstall-pkgdataDATA:
-	@$(NORMAL_UNINSTALL)
-	@list='$(pkgdata_DATA)'; test -n "$(pkgdatadir)" || list=; \
-	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
-	dir='$(DESTDIR)$(pkgdatadir)'; $(am__uninstall_files_from_dir)
-install-serviceDATA: $(service_DATA)
-	@$(NORMAL_INSTALL)
-	@list='$(service_DATA)'; test -n "$(servicedir)" || list=; \
-	if test -n "$$list"; then \
-	  echo " $(MKDIR_P) '$(DESTDIR)$(servicedir)'"; \
-	  $(MKDIR_P) "$(DESTDIR)$(servicedir)" || exit 1; \
-	fi; \
-	for p in $$list; do \
-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
-	  echo "$$d$$p"; \
-	done | $(am__base_list) | \
-	while read files; do \
-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(servicedir)'"; \
-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(servicedir)" || exit $$?; \
-	done
-
-uninstall-serviceDATA:
-	@$(NORMAL_UNINSTALL)
-	@list='$(service_DATA)'; test -n "$(servicedir)" || list=; \
-	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
-	dir='$(DESTDIR)$(servicedir)'; $(am__uninstall_files_from_dir)
 
 # This directory's subdirectories are mostly independent; you can cd
 # into them and run 'make' without going through this Makefile.
@@ -729,7 +673,7 @@ check: check-recursive
 all-am: Makefile $(DATA)
 installdirs: installdirs-recursive
 installdirs-am:
-	for dir in "$(DESTDIR)$(desktopdir)" "$(DESTDIR)$(migrationdir)" "$(DESTDIR)$(pkgdatadir)" "$(DESTDIR)$(servicedir)"; do \
+	for dir in "$(DESTDIR)$(desktopdir)" "$(DESTDIR)$(migrationdir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
 install: install-recursive
@@ -783,8 +727,7 @@ info: info-recursive
 
 info-am:
 
-install-data-am: install-desktopDATA install-dist_migrationDATA \
-	install-pkgdataDATA install-serviceDATA
+install-data-am: install-desktopDATA install-dist_migrationDATA
 
 install-dvi: install-dvi-recursive
 
@@ -828,8 +771,7 @@ ps: ps-recursive
 
 ps-am:
 
-uninstall-am: uninstall-desktopDATA uninstall-dist_migrationDATA \
-	uninstall-pkgdataDATA uninstall-serviceDATA
+uninstall-am: uninstall-desktopDATA uninstall-dist_migrationDATA
 
 .MAKE: $(am__recursive_targets) install-am install-strip
 
@@ -841,14 +783,13 @@ uninstall-am: uninstall-desktopDATA uninstall-dist_migrationDATA \
 	install-data-am install-desktopDATA install-dist_migrationDATA \
 	install-dvi install-dvi-am install-exec install-exec-am \
 	install-html install-html-am install-info install-info-am \
-	install-man install-pdf install-pdf-am install-pkgdataDATA \
-	install-ps install-ps-am install-serviceDATA install-strip \
-	installcheck installcheck-am installdirs installdirs-am \
-	maintainer-clean maintainer-clean-generic mostlyclean \
-	mostlyclean-generic mostlyclean-libtool pdf pdf-am ps ps-am \
-	tags tags-am uninstall uninstall-am uninstall-desktopDATA \
-	uninstall-dist_migrationDATA uninstall-pkgdataDATA \
-	uninstall-serviceDATA
+	install-man install-pdf install-pdf-am install-ps \
+	install-ps-am install-strip installcheck installcheck-am \
+	installdirs installdirs-am maintainer-clean \
+	maintainer-clean-generic mostlyclean mostlyclean-generic \
+	mostlyclean-libtool pdf pdf-am ps ps-am tags tags-am uninstall \
+	uninstall-am uninstall-desktopDATA \
+	uninstall-dist_migrationDATA
 
 .PRECIOUS: Makefile
 
@@ -857,13 +798,12 @@ uninstall-am: uninstall-desktopDATA uninstall-dist_migrationDATA \
 
 @INTLTOOL_DESKTOP_RULE@
 
-$(service_DATA): $(service_in_files) Makefile
-	@sed -e "s|\@servicedir\@|$(bindir)|" $< > $@
-
 @GSETTINGS_RULES@
 
 clean-local :
 	rm -f *~
+
+-include $(top_srcdir)/git.mk
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

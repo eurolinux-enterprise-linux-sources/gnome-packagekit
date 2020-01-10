@@ -1,6 +1,6 @@
 AC_PREREQ(2.65)
 
-AC_INIT([gnome-packagekit],[3.14.3])
+AC_INIT([gnome-packagekit],[3.22.1])
 AC_CONFIG_SRCDIR(src)
 AM_INIT_AUTOMAKE([1.9 no-dist-gzip dist-xz tar-ustar])
 AC_CONFIG_HEADERS([config.h])
@@ -15,55 +15,57 @@ LT_INIT
 AM_PROG_CC_C_O
 IT_PROG_INTLTOOL([0.35.0])
 
-GNOME_COMPILE_WARNINGS
-
 # set up gtk-doc
 GTK_DOC_CHECK(1.9)
 
 AC_PATH_PROG(GLIB_GENMARSHAL, glib-genmarshal)
 
-dnl ---------------------------------------------------------------------------
-dnl - Use strict options (default enabled for devs, disabled in releases)
-dnl ---------------------------------------------------------------------------
-
-dnl if .git directory is present, considering we are working in the repository
-if test -d ".git"; then
-	default_strict=yes
-else
-	default_strict=no
-fi
-
-dnl ---------------------------------------------------------------------------
-dnl - Extra verbose warning switches
-dnl ---------------------------------------------------------------------------
-if test "$GCC" = "yes"; then
-	CPPFLAGS="$CPPFLAGS -Wall -Wreturn-type"
-#	CPPFLAGS="$CPPFLAGS -Wextra"
-	CPPFLAGS="$CPPFLAGS -Wdeclaration-after-statement"
-#	CPPFLAGS="$CPPFLAGS -Wmissing-declarations"
-	CPPFLAGS="$CPPFLAGS -Wno-uninitialized"
-#	CPPFLAGS="$CPPFLAGS -Wredundant-decls"
-	CPPFLAGS="$CPPFLAGS -Wshadow"
-	CPPFLAGS="$CPPFLAGS -Wpointer-arith"
-	CPPFLAGS="$CPPFLAGS -Wcast-align"
-	CPPFLAGS="$CPPFLAGS -Wwrite-strings"
-	CPPFLAGS="$CPPFLAGS -Winline"
-	CPPFLAGS="$CPPFLAGS -Wformat-nonliteral"
-	CPPFLAGS="$CPPFLAGS -Wformat-security"
-	CPPFLAGS="$CPPFLAGS -Wswitch-default"
-	CPPFLAGS="$CPPFLAGS -Winit-self"
-	CPPFLAGS="$CPPFLAGS -Wmissing-include-dirs"
-	CPPFLAGS="$CPPFLAGS -Wno-strict-aliasing"
-	CPPFLAGS="$CPPFLAGS -Wundef"
-	CPPFLAGS="$CPPFLAGS -Waggregate-return"
-	CPPFLAGS="$CPPFLAGS -Wmissing-format-attribute"
-fi
-
-dnl ---------------------------------------------------------------------------
-dnl - Debugging switches (uncomment this if you want to use gdb)
-dnl ---------------------------------------------------------------------------
-#CPPFLAGS="$CPPFLAGS -g"
-#CPPFLAGS="$CPPFLAGS -fexceptions"
+WARN_CFLAGS_EXTRA="
+	-Waggregate-return
+	-Warray-bounds
+	-Wcast-align
+	-Wclobbered
+	-Wdeclaration-after-statement
+	-Wempty-body
+	-Wextra
+	-Wformat=2
+	-Wformat-nonliteral
+	-Wformat-security
+	-Wformat-signedness
+	-Wignored-qualifiers
+	-Wimplicit-function-declaration
+	-Winit-self
+	-Winline
+	-Wmissing-declarations
+	-Wmissing-format-attribute
+	-Wmissing-include-dirs
+	-Wmissing-noreturn
+	-Wmissing-parameter-type
+	-Wmissing-prototypes
+	-Wnested-externs
+	-Wno-discarded-qualifiers
+	-Wno-missing-field-initializers
+	-Wno-strict-aliasing
+	-Wno-suggest-attribute=format
+	-Wno-unused-parameter
+	-Wold-style-definition
+	-Woverride-init
+	-Wpacked
+	-Wpointer-arith
+	-Wredundant-decls
+	-Wreturn-type
+	-Wshadow
+	-Wsign-compare
+	-Wstrict-aliasing
+	-Wstrict-prototypes
+	-Wswitch-default
+	-Wtype-limits
+	-Wundef
+	-Wuninitialized
+	-Wunused-but-set-variable
+	-Wwrite-strings"
+AX_APPEND_COMPILE_FLAGS([$WARN_CFLAGS_EXTRA], [WARN_CFLAGS])
+AC_SUBST(WARN_CFLAGS)
 
 dnl ---------------------------------------------------------------------------
 dnl - xsltproc
@@ -86,20 +88,17 @@ GLIB_GSETTINGS
 dnl ---------------------------------------------------------------------------
 dnl - Check library dependencies
 dnl ---------------------------------------------------------------------------
-PKG_CHECK_MODULES(PACKAGEKIT, packagekit-glib2 >= 0.7.0)
+PKG_CHECK_MODULES(PACKAGEKIT, packagekit-glib2 >= 0.9.1)
 PKG_CHECK_MODULES(GLIB, \
  glib-2.0 >= 2.32.0
  gobject-2.0
  gio-2.0 >= 2.25.9
  gio-unix-2.0)
-PKG_CHECK_MODULES(DBUS, \
- dbus-glib-1 >= 0.73 \
- dbus-1 >= 1.1.2 \
- gthread-2.0)
 PKG_CHECK_MODULES(GTK, \
- gtk+-3.0 >= 2.91.0 gdk-3.0 fontconfig)
+ gtk+-3.0 >= 3.15.3 gdk-3.0 fontconfig)
 PKG_CHECK_MODULES(CANBERRA, libcanberra-gtk3 >= 0.10)
 PKG_CHECK_MODULES(X11, x11)
+AC_PATH_PROG(APPSTREAM_UTIL, [appstream-util], [unfound])
 
 dnl **** Check for libnotify ****
 PKG_CHECK_MODULES(NOTIFY, libnotify >= 0.7.0)
@@ -131,7 +130,7 @@ AC_ARG_ENABLE([systemd],
               [with_systemd=auto])
 
 PKG_CHECK_MODULES(SYSTEMD,
-                  [libsystemd-login polkit-gobject-1],
+                  [libsystemd polkit-gobject-1],
                   [have_systemd=yes], [have_systemd=no])
 
 AC_MSG_CHECKING([whether to use systemd])
@@ -206,23 +205,18 @@ po/Makefile.in
 data/Makefile
 data/appdata/Makefile
 docs/Makefile
-docs/dbus/Makefile
 data/icons/Makefile
 data/icons/16x16/Makefile
 data/icons/22x22/Makefile
 data/icons/24x24/Makefile
 data/icons/48x48/Makefile
 data/icons/scalable/Makefile
-data/icons/16x16/animations/Makefile
 data/icons/16x16/categories/Makefile
 data/icons/16x16/status/Makefile
-data/icons/22x22/animations/Makefile
 data/icons/22x22/categories/Makefile
 data/icons/22x22/status/Makefile
-data/icons/24x24/animations/Makefile
 data/icons/24x24/categories/Makefile
 data/icons/24x24/status/Makefile
-data/icons/48x48/animations/Makefile
 data/icons/48x48/categories/Makefile
 data/icons/48x48/status/Makefile
 data/icons/scalable/categories/Makefile

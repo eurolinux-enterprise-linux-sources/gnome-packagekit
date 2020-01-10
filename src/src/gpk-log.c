@@ -32,6 +32,7 @@
 #include <packagekit-glib2/packagekit.h>
 
 #include "gpk-common.h"
+#include "gpk-gnome.h"
 #include "gpk-debug.h"
 
 static GtkBuilder *builder = NULL;
@@ -58,6 +59,9 @@ enum
 	GPK_LOG_COLUMN_LAST
 };
 
+/**
+ * gpk_log_find_iter_model_cb:
+ **/
 static gboolean
 gpk_log_find_iter_model_cb (GtkTreeModel *model, GtkTreePath *path, GtkTreeIter *iter, const gchar *id)
 {
@@ -70,6 +74,9 @@ gpk_log_find_iter_model_cb (GtkTreeModel *model, GtkTreePath *path, GtkTreeIter 
 	return FALSE;
 }
 
+/**
+ * gpk_log_mark_nonactive_cb:
+ **/
 static gboolean
 gpk_log_mark_nonactive_cb (GtkTreeModel *model, GtkTreePath *path, GtkTreeIter *iter, gpointer data)
 {
@@ -77,12 +84,18 @@ gpk_log_mark_nonactive_cb (GtkTreeModel *model, GtkTreePath *path, GtkTreeIter *
 	return FALSE;
 }
 
+/**
+ * gpk_log_mark_nonactive:
+ **/
 static void
 gpk_log_mark_nonactive (GtkTreeModel *model)
 {
 	gtk_tree_model_foreach (model, (GtkTreeModelForeachFunc) gpk_log_mark_nonactive_cb, NULL);
 }
 
+/**
+ * gpk_log_remove_nonactive_cb:
+ **/
 static gboolean
 gpk_log_remove_nonactive_cb (GtkTreeModel *model, GtkTreePath *path, GtkTreeIter *iter, gboolean *ret)
 {
@@ -96,6 +109,9 @@ gpk_log_remove_nonactive_cb (GtkTreeModel *model, GtkTreePath *path, GtkTreeIter
 	return FALSE;
 }
 
+/**
+ * gpk_log_remove_nonactive:
+ **/
 static void
 gpk_log_remove_nonactive (GtkTreeModel *model)
 {
@@ -107,6 +123,9 @@ gpk_log_remove_nonactive (GtkTreeModel *model)
 	} while (ret);
 }
 
+/**
+ * gpk_log_model_get_iter:
+ **/
 static gboolean
 gpk_log_model_get_iter (GtkTreeModel *model, GtkTreeIter *iter, const gchar *id)
 {
@@ -122,6 +141,18 @@ gpk_log_model_get_iter (GtkTreeModel *model, GtkTreeIter *iter, const gchar *id)
 	return ret;
 }
 
+/**
+ * gpk_log_button_help_cb:
+ **/
+static void
+gpk_log_button_help_cb (GtkWidget *widget, gpointer data)
+{
+	gpk_gnome_help ("software-log");
+}
+
+/**
+ * gpk_log_get_localised_date:
+ **/
 static gchar *
 gpk_log_get_localised_date (const gchar *timespec)
 {
@@ -143,6 +174,9 @@ gpk_log_get_localised_date (const gchar *timespec)
 	return g_strdup (buffer);
 }
 
+/**
+ * gpk_log_get_type_line:
+ **/
 static gchar *
 gpk_log_get_type_line (gchar **array, PkInfoEnum info)
 {
@@ -151,23 +185,24 @@ gpk_log_get_type_line (gchar **array, PkInfoEnum info)
 	PkInfoEnum info_local;
 	const gchar *info_text;
 	GString *string;
-	g_autofree gchar *text = NULL;
+	gchar *text;
 	gchar *whole;
+	gchar **sections;
 
 	string = g_string_new ("");
 	size = g_strv_length (array);
 	info_text = gpk_info_enum_to_localised_past (info);
 
 	/* find all of this type */
-	for (i = 0; i < size; i++) {
-		g_auto(GStrv) sections = NULL;
+	for (i=0; i<size; i++) {
 		sections = g_strsplit (array[i], "\t", 0);
 		info_local = pk_info_enum_from_string (sections[0]);
 		if (info_local == info) {
-			g_autofree gchar *str = NULL;
-			str = gpk_package_id_format_oneline (sections[1], NULL);
-			g_string_append_printf (string, "%s, ", str);
+			text = gpk_package_id_format_oneline (sections[1], NULL);
+			g_string_append_printf (string, "%s, ", text);
+			g_free (text);
 		}
+		g_strfreev (sections);
 	}
 
 	/* nothing, so return NULL */
@@ -182,15 +217,19 @@ gpk_log_get_type_line (gchar **array, PkInfoEnum info)
 	/* add a nice header, and make text italic */
 	text = g_string_free (string, FALSE);
 	whole = g_strdup_printf ("<b>%s</b>: %s\n", info_text, text);
+	g_free (text);
 	return whole;
 }
 
+/**
+ * gpk_log_get_details_localised:
+ **/
 static gchar *
 gpk_log_get_details_localised (const gchar *timespec, const gchar *data)
 {
 	GString *string;
 	gchar *text;
-	g_auto(GStrv) array = NULL;
+	gchar **array;
 
 	string = g_string_new ("");
 	array = g_strsplit (data, "\n", 0);
@@ -208,6 +247,7 @@ gpk_log_get_details_localised (const gchar *timespec, const gchar *data)
 	if (text != NULL)
 		g_string_append (string, text);
 	g_free (text);
+	g_strfreev (array);
 
 	/* remove last \n */
 	if (string->len > 0)
@@ -216,6 +256,9 @@ gpk_log_get_details_localised (const gchar *timespec, const gchar *data)
 	return g_string_free (string, FALSE);
 }
 
+/**
+ * gpk_log_treeview_size_allocate_cb:
+ **/
 static void
 gpk_log_treeview_size_allocate_cb (GtkWidget *widget, GtkAllocation *allocation, GtkCellRenderer *cell)
 {
@@ -227,6 +270,9 @@ gpk_log_treeview_size_allocate_cb (GtkWidget *widget, GtkAllocation *allocation,
 	g_object_set (cell, "wrap-width", width - 10, NULL);
 }
 
+/**
+ * pk_treeview_add_general_columns:
+ **/
 static void
 pk_treeview_add_general_columns (GtkTreeView *treeview)
 {
@@ -293,6 +339,9 @@ pk_treeview_add_general_columns (GtkTreeView *treeview)
 	gtk_tree_view_column_set_sort_column_id (column, GPK_LOG_COLUMN_TOOL);
 }
 
+/**
+ * gpk_log_treeview_clicked_cb:
+ **/
 static void
 gpk_log_treeview_clicked_cb (GtkTreeSelection *selection, gpointer data)
 {
@@ -313,17 +362,22 @@ gpk_log_treeview_clicked_cb (GtkTreeSelection *selection, gpointer data)
 	}
 }
 
+/**
+ * gpk_log_filter:
+ **/
 static gboolean
 gpk_log_filter (PkTransactionPast *item)
 {
 	gboolean ret = FALSE;
 	guint i;
 	guint length;
-	g_auto(GStrv) packages = NULL;
-	g_autofree gchar *tid = NULL;
+	gchar **sections;
+	gchar **packages;
+	gchar **split;
+	gchar *tid;
 	gboolean succeeded;
-	g_autofree gchar *cmdline = NULL;
-	g_autofree gchar *data = NULL;
+	gchar *cmdline;
+	gchar *data;
 
 	/* get data */
 	g_object_get (item,
@@ -349,9 +403,7 @@ gpk_log_filter (PkTransactionPast *item)
 	/* look in all the data for the filter string */
 	packages = g_strsplit (data, "\n", 0);
 	length = g_strv_length (packages);
-	for (i = 0; i < length; i++) {
-		g_auto(GStrv) split = NULL;
-		g_auto(GStrv) sections = NULL;
+	for (i=0; i<length; i++) {
 		sections = g_strsplit (packages[i], "\t", 0);
 
 		/* check if type matches filter */
@@ -367,32 +419,44 @@ gpk_log_filter (PkTransactionPast *item)
 		if (split[2] != NULL && g_strrstr (split[2], filter) != NULL)
 			ret = TRUE;
 
+		g_strfreev (split);
+		g_strfreev (sections);
+
 		/* shortcut for speed */
 		if (ret)
 			break;
 	}
+
+	g_free (tid);
+	g_free (cmdline);
+	g_free (data);
+	g_strfreev (packages);
+
 	return ret;
 }
 
+/**
+ * gpk_log_add_item
+ **/
 static void
 gpk_log_add_item (PkTransactionPast *item)
 {
 	GtkTreeIter iter;
-	g_autofree gchar *details = NULL;
-	g_autofree gchar *date = NULL;
+	gchar *details;
+	gchar *date;
 	const gchar *icon_name;
 	const gchar *role_text;
 	const gchar *username = NULL;
 	const gchar *tool;
 	static guint count;
 	struct passwd *pw;
-	g_autofree gchar *tid = NULL;
-	g_autofree gchar *timespec = NULL;
+	gchar *tid;
+	gchar *timespec;
 	gboolean succeeded;
 	guint duration;
-	g_autofree gchar *cmdline = NULL;
+	gchar *cmdline;
 	guint uid;
-	g_autofree gchar *data = NULL;
+	gchar *data;
 	PkRoleEnum role;
 	GtkTreeView *treeview = GTK_TREE_VIEW (gtk_builder_get_object (builder, "treeview_simple"));
 	GtkTreeModel *model = gtk_tree_view_get_model (treeview);
@@ -426,27 +490,24 @@ gpk_log_add_item (PkTransactionPast *item)
 	}
 
 	/* get nice name for tool name */
-	if (strstr (cmdline, "pkcon") != NULL)
-		/* TRANSLATORS: user-friendly name for pkcon */
+	if (g_strcmp0 (cmdline, "pkcon") == 0)
+		/* TRANSLATORS: short name for pkcon */
 		tool = _("Command line client");
-	else if (strstr (cmdline, "gpk-application") != NULL)
-		/* TRANSLATORS: user-friendly name for gpk-update-viewer */
-		tool = _("GNOME Packages");
-	else if (strstr (cmdline, "gpk-update-viewer") != NULL)
-		/* TRANSLATORS: user-friendly name for gpk-update-viewer */
-		tool = _("GNOME Package Updater");
-	else if (strstr (cmdline, "gpk-update-icon") != NULL)
-		/* TRANSLATORS: user-friendly name for gpk-update-icon, which used to exist */
+	else if (g_strcmp0 (cmdline, "gpk-application") == 0)
+		/* TRANSLATORS: short name for gpk-update-viewer */
+		tool = _("Install Software");
+	else if (g_strcmp0 (cmdline, "gpk-update-viewer") == 0)
+		/* TRANSLATORS: short name for gpk-update-viewer */
+		tool = _("Update System");
+	else if (g_strcmp0 (cmdline, "gpk-update-icon") == 0)
+		/* TRANSLATORS: short name for gpk-update-icon */
 		tool = _("Update Icon");
-	else if (strstr (cmdline, "pk-command-not-found") != NULL)
-		/* TRANSLATORS: user-friendly name for the command not found plugin */
-		tool = _("Bash – Command Not Found");
-	else if (strstr (cmdline, "gnome-settings-daemon") != NULL)
-		/* TRANSLATORS: user-friendly name for gnome-settings-daemon, which used to handle updates */
+	else if (g_strcmp0 (cmdline, "/usr/libexec/pk-command-not-found") == 0)
+		/* TRANSLATORS: short name for the command not found plugin */
+		tool = _("Bash - Command Not Found");
+	else if (g_strcmp0 (cmdline, "/usr/libexec/gnome-settings-daemon") == 0)
+		/* TRANSLATORS: user friendly name for gnome-settings-daemon */
 		tool = _("GNOME Session");
-	else if (strstr (cmdline, "gnome-software") != NULL)
-		/* TRANSLATORS: user-friendly name for gnome-software */
-		tool = _("GNOME Software");
 	else
 		tool = cmdline;
 
@@ -467,8 +528,18 @@ gpk_log_add_item (PkTransactionPast *item)
 	if (count++ % 10 == 0)
 		while (gtk_events_pending ())
 			gtk_main_iteration ();
+
+	g_free (tid);
+	g_free (timespec);
+	g_free (cmdline);
+	g_free (data);
+	g_free (details);
+	g_free (date);
 }
 
+/**
+ * gpk_log_refilter
+ **/
 static void
 gpk_log_refilter (void)
 {
@@ -489,7 +560,7 @@ gpk_log_refilter (void)
 	else
 		filter = NULL;
 
-	g_debug ("len=%u", transactions->len);
+	g_debug ("len=%i", transactions->len);
 
 	/* mark the items as not used */
 	treeview = GTK_TREE_VIEW (gtk_builder_get_object (builder, "treeview_simple"));
@@ -497,7 +568,7 @@ gpk_log_refilter (void)
 	gpk_log_mark_nonactive (model);
 
 	/* go through the list, adding and removing the items as required */
-	for (i = 0; i < transactions->len; i++) {
+	for (i=0; i<transactions->len; i++) {
 		item = g_ptr_array_index (transactions, i);
 		ret = gpk_log_filter (item);
 		if (ret)
@@ -508,26 +579,30 @@ gpk_log_refilter (void)
 	gpk_log_remove_nonactive (model);
 }
 
+/**
+ * gpk_log_get_old_transactions_cb
+ **/
 static void
 gpk_log_get_old_transactions_cb (GObject *object, GAsyncResult *res, gpointer user_data)
 {
 //	PkClient *client = PK_CLIENT (object);
-	g_autoptr(GError) error = NULL;
+	GError *error = NULL;
 	PkResults *results = NULL;
-	g_autoptr(PkError) error_code = NULL;
+	PkError *error_code = NULL;
 
 	/* get the results */
 	results = pk_client_generic_finish (client, res, &error);
 	if (results == NULL) {
 		g_warning ("failed to get old transactions: %s", error->message);
-		return;
+		g_error_free (error);
+		goto out;
 	}
 
 	/* check error code */
 	error_code = pk_results_get_error_code (results);
 	if (error_code != NULL) {
 		g_warning ("failed to get old transactions: %s, %s", pk_error_enum_to_string (pk_error_get_code (error_code)), pk_error_get_details (error_code));
-		return;
+		goto out;
 	}
 
 	/* get the list */
@@ -535,8 +610,16 @@ gpk_log_get_old_transactions_cb (GObject *object, GAsyncResult *res, gpointer us
 		g_ptr_array_unref (transactions);
 	transactions = pk_results_get_transaction_array (results);
 	gpk_log_refilter ();
+out:
+	if (error_code != NULL)
+		g_object_unref (error_code);
+	if (results != NULL)
+		g_object_unref (results);
 }
 
+/**
+ * gpk_log_refresh
+ **/
 static void
 gpk_log_refresh (void)
 {
@@ -545,6 +628,9 @@ gpk_log_refresh (void)
 					      (GAsyncReadyCallback) gpk_log_get_old_transactions_cb, NULL);
 }
 
+/**
+ * gpk_log_button_refresh_cb:
+ **/
 static void
 gpk_log_button_refresh_cb (GtkWidget *widget, gpointer data)
 {
@@ -552,12 +638,18 @@ gpk_log_button_refresh_cb (GtkWidget *widget, gpointer data)
 	gpk_log_refresh ();
 }
 
+/**
+ * gpk_log_button_filter_cb:
+ **/
 static void
 gpk_log_button_filter_cb (GtkWidget *widget2, gpointer data)
 {
 	gpk_log_refilter ();
 }
 
+/**
+ * gpk_log_entry_filter_cb:
+ **/
 static gboolean
 gpk_log_entry_filter_cb (GtkWidget *widget, GdkEventKey *event, gpointer user_data)
 {
@@ -565,6 +657,18 @@ gpk_log_entry_filter_cb (GtkWidget *widget, GdkEventKey *event, gpointer user_da
 	return FALSE;
 }
 
+/**
+ * gpk_log_button_close_cb:
+ **/
+static void
+gpk_log_button_close_cb (GtkWidget *widget, GtkApplication *application)
+{
+	g_application_release (G_APPLICATION (application));
+}
+
+/**
+ * gpk_log_activate_cb:
+ **/
 static void
 gpk_log_activate_cb (GtkApplication *application, gpointer user_data)
 {
@@ -573,10 +677,16 @@ gpk_log_activate_cb (GtkApplication *application, gpointer user_data)
 	gtk_window_present (window);
 }
 
+/**
+ * gpk_log_startup_cb:
+ **/
 static void
 gpk_log_startup_cb (GtkApplication *application, gpointer user_data)
 {
-	g_autoptr(GError) error = NULL;
+	gboolean ret;
+	GError *error = NULL;
+	GSettings *settings;
+	GtkEntryCompletion *completion;
 	GtkTreeSelection *selection;
 	GtkWidget *widget;
 	GtkWindow *window;
@@ -589,11 +699,10 @@ gpk_log_startup_cb (GtkApplication *application, gpointer user_data)
 
 	/* get UI */
 	builder = gtk_builder_new ();
-	retval = gtk_builder_add_from_resource (builder,
-						"/org/gnome/packagekit/gpk-log.ui",
-						&error);
+	retval = gtk_builder_add_from_file (builder, GPK_DATA "/gpk-log.ui", &error);
 	if (retval == 0) {
 		g_warning ("failed to load ui: %s", error->message);
+		g_error_free (error);
 		goto out;
 	}
 
@@ -610,6 +719,13 @@ gpk_log_startup_cb (GtkApplication *application, gpointer user_data)
 		gtk_entry_set_text (GTK_ENTRY(widget), filter);
 	}
 
+	widget = GTK_WIDGET (gtk_builder_get_object (builder, "button_close"));
+	g_signal_connect (widget, "clicked",
+			  G_CALLBACK (gpk_log_button_close_cb), application);
+	gtk_widget_grab_default (widget);
+
+	widget = GTK_WIDGET (gtk_builder_get_object (builder, "button_help"));
+	g_signal_connect (widget, "clicked", G_CALLBACK (gpk_log_button_help_cb), NULL);
 	widget = GTK_WIDGET (gtk_builder_get_object (builder, "button_refresh"));
 	g_signal_connect (widget, "clicked", G_CALLBACK (gpk_log_button_refresh_cb), NULL);
 	gtk_widget_hide (widget);
@@ -621,7 +737,19 @@ gpk_log_startup_cb (GtkApplication *application, gpointer user_data)
 	g_signal_connect (widget, "activate", G_CALLBACK (gpk_log_button_filter_cb), NULL);
 
 	/* autocompletion can be turned off as it's slow */
-	g_signal_connect (widget, "key-release-event", G_CALLBACK (gpk_log_entry_filter_cb), NULL);
+	settings = g_settings_new (GPK_SETTINGS_SCHEMA);
+	ret = g_settings_get_boolean (settings, GPK_SETTINGS_AUTOCOMPLETE);
+	if (ret) {
+		/* create the completion object */
+		completion = gpk_package_entry_completion_new ();
+		widget = GTK_WIDGET (gtk_builder_get_object (builder, "entry_package"));
+		gtk_entry_set_completion (GTK_ENTRY (widget), completion);
+		g_object_unref (completion);
+	} else {
+		/* use search as you type */
+		g_signal_connect (widget, "key-release-event", G_CALLBACK (gpk_log_entry_filter_cb), NULL);
+	}
+	g_object_unref (settings);
 
 	/* create list stores */
 	list_store = gtk_list_store_new (GPK_LOG_COLUMN_LAST, G_TYPE_STRING, G_TYPE_STRING,
@@ -650,7 +778,7 @@ gpk_log_startup_cb (GtkApplication *application, gpointer user_data)
 
 	/* set the parent window if it is specified */
 	if (xid != 0) {
-		g_debug ("Setting xid %u", xid);
+		g_debug ("Setting xid %i", xid);
 		gpk_window_set_parent_xid (GTK_WINDOW (widget), xid);
 	}
 
@@ -665,13 +793,16 @@ out:
 		g_ptr_array_unref (transactions);
 }
 
+/**
+ * main:
+ **/
 int
 main (int argc, char *argv[])
 {
 	gboolean ret;
 	gint status = 1;
 	GOptionContext *context;
-	g_autoptr(GtkApplication) application = NULL;
+	GtkApplication *application = NULL;
 
 	const GOptionEntry options[] = {
 		{ "filter", 'f', 0, G_OPTION_ARG_STRING, &filter,
@@ -689,6 +820,7 @@ main (int argc, char *argv[])
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 	textdomain (GETTEXT_PACKAGE);
 
+	g_type_init ();
 	gtk_init (&argc, &argv);
 
 	context = g_option_context_new (NULL);
@@ -706,7 +838,7 @@ main (int argc, char *argv[])
 
 	/* add application specific icons to search path */
 	gtk_icon_theme_append_search_path (gtk_icon_theme_get_default (),
-					   PKGDATADIR G_DIR_SEPARATOR_S "icons");
+					   GPK_DATA G_DIR_SEPARATOR_S "icons");
 
 	/* are we already activated? */
 	application = gtk_application_new ("org.freedesktop.PackageKit.LogViewer", 0);
@@ -720,5 +852,7 @@ main (int argc, char *argv[])
 out:
 	if (builder != NULL)
 		g_object_unref (builder);
+	if (application != NULL)
+		g_object_unref (application);
 	return status;
 }

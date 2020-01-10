@@ -30,6 +30,27 @@
 static gboolean _verbose = FALSE;
 static gboolean _console = FALSE;
 
+/**
+ * gpk_debug_is_verbose:
+ *
+ * Returns: TRUE if we have debugging enabled
+ **/
+gboolean
+gpk_debug_is_verbose (void)
+{
+	/* local first */
+	if (_verbose)
+		 return TRUE;
+
+	/* fall back to env variable */
+	if (g_getenv ("VERBOSE") != NULL)
+		 return TRUE;
+	return FALSE;
+}
+
+/**
+ * gpk_debug_ignore_cb:
+ **/
 static void
 gpk_debug_ignore_cb (const gchar *log_domain, GLogLevelFlags log_level,
 		    const gchar *message, gpointer user_data)
@@ -48,6 +69,9 @@ gpk_debug_ignore_cb (const gchar *log_domain, GLogLevelFlags log_level,
 
 #define GPK_DEBUG_LOG_DOMAIN_LENGTH	20
 
+/**
+ * gpk_debug_handler_cb:
+ **/
 static void
 gpk_debug_handler_cb (const gchar *log_domain, GLogLevelFlags log_level,
 		     const gchar *message, gpointer user_data)
@@ -95,6 +119,9 @@ gpk_debug_handler_cb (const gchar *log_domain, GLogLevelFlags log_level,
 	}
 }
 
+/**
+ * gpk_debug_pre_parse_hook:
+ */
 static gboolean
 gpk_debug_pre_parse_hook (GOptionContext *context, GOptionGroup *group, gpointer data, GError **error)
 {
@@ -110,6 +137,9 @@ gpk_debug_pre_parse_hook (GOptionContext *context, GOptionGroup *group, gpointer
 	return TRUE;
 }
 
+/**
+ * gpk_debug_add_log_domain:
+ */
 void
 gpk_debug_add_log_domain (const gchar *log_domain)
 {
@@ -129,6 +159,9 @@ gpk_debug_add_log_domain (const gchar *log_domain)
 	}
 }
 
+/**
+ * gpk_debug_post_parse_hook:
+ */
 static gboolean
 gpk_debug_post_parse_hook (GOptionContext *context, GOptionGroup *group, gpointer data, GError **error)
 {

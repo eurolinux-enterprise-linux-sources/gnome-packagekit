@@ -25,6 +25,8 @@
 #include <glib/gi18n.h>
 #include <packagekit-glib2/packagekit.h>
 
+#include "egg-string.h"
+
 #include "gpk-enum.h"
 #include "gpk-common.h"
 
@@ -40,9 +42,6 @@ static const PkEnumMatch enum_info_icon_name[] = {
 	{PK_INFO_ENUM_BUGFIX,			"pk-update-bugfix"},
 	{PK_INFO_ENUM_ENHANCEMENT,		"pk-update-enhancement"},
 	{PK_INFO_ENUM_BLOCKED,			"pk-package-blocked"},
-#if PK_CHECK_VERSION(1,0,4)
-	{PK_INFO_ENUM_UNAVAILABLE,		"pk-package-blocked"},
-#endif
 	{PK_INFO_ENUM_DOWNLOADING,		"pk-package-download"},
 	{PK_INFO_ENUM_UPDATING,			"pk-package-update"},
 	{PK_INFO_ENUM_INSTALLING,		"pk-package-add"},
@@ -98,9 +97,46 @@ static const PkEnumMatch enum_status_icon_name[] = {
 	{PK_STATUS_ENUM_CHECK_EXECUTABLE_FILES,	"pk-package-info"},
 	{PK_STATUS_ENUM_CHECK_LIBRARIES,	"pk-package-info"},
 	{PK_STATUS_ENUM_COPY_FILES,		"pk-package-info"},
-#if PK_CHECK_VERSION(1,1,6)
-	{PK_STATUS_ENUM_RUN_HOOK,		"pk-setup"},
-#endif
+	{0, NULL}
+};
+
+static const PkEnumMatch enum_status_animation[] = {
+	{PK_STATUS_ENUM_UNKNOWN,		"help-browser"},
+	{PK_STATUS_ENUM_CANCEL,			"pk-action-cleanup"},
+	{PK_STATUS_ENUM_CLEANUP,		"pk-action-cleanup"},
+	{PK_STATUS_ENUM_COMMIT,			"pk-setup"},
+	{PK_STATUS_ENUM_DEP_RESOLVE,		"pk-action-testing"},
+	{PK_STATUS_ENUM_DOWNLOAD_CHANGELOG,	"pk-action-refresh-cache"},
+	{PK_STATUS_ENUM_DOWNLOAD_FILELIST,	"pk-action-refresh-cache"},
+	{PK_STATUS_ENUM_DOWNLOAD_GROUP,		"pk-action-refresh-cache"},
+	{PK_STATUS_ENUM_DOWNLOAD_PACKAGELIST,	"pk-action-refresh-cache"},
+	{PK_STATUS_ENUM_DOWNLOAD,		"pk-action-download"},
+	{PK_STATUS_ENUM_DOWNLOAD_REPOSITORY,	"pk-action-refresh-cache"},
+	{PK_STATUS_ENUM_DOWNLOAD_UPDATEINFO,	"pk-action-refresh-cache"},
+	{PK_STATUS_ENUM_FINISHED,		"pk-package-cleanup"},
+	{PK_STATUS_ENUM_GENERATE_PACKAGE_LIST,	"pk-action-searching"},
+	{PK_STATUS_ENUM_WAITING_FOR_LOCK,	"pk-action-waiting"},
+	{PK_STATUS_ENUM_WAITING_FOR_AUTH,	"pk-action-waiting"},
+	{PK_STATUS_ENUM_INFO,			"process-working"},
+	{PK_STATUS_ENUM_INSTALL,		"pk-action-installing"},
+	{PK_STATUS_ENUM_LOADING_CACHE,		"pk-action-refresh-cache"},
+	{PK_STATUS_ENUM_OBSOLETE,		"pk-package-cleanup"},
+	{PK_STATUS_ENUM_QUERY,			"pk-action-searching"},
+	{PK_STATUS_ENUM_REFRESH_CACHE,		"pk-action-refresh-cache"},
+	{PK_STATUS_ENUM_REMOVE,			"pk-action-removing"},
+	{PK_STATUS_ENUM_REPACKAGING,		"pk-package-info"},
+	{PK_STATUS_ENUM_REQUEST,		"process-working"},
+	{PK_STATUS_ENUM_RUNNING,		"pk-setup"},
+	{PK_STATUS_ENUM_SCAN_APPLICATIONS,	"pk-action-searching"},
+	{PK_STATUS_ENUM_SETUP,			"pk-package-info"},
+	{PK_STATUS_ENUM_SIG_CHECK,		"pk-package-info"},
+	{PK_STATUS_ENUM_TEST_COMMIT,		"pk-action-testing"},
+	{PK_STATUS_ENUM_UPDATE,			"pk-action-installing"},
+	{PK_STATUS_ENUM_WAIT,			"pk-action-waiting"},
+	{PK_STATUS_ENUM_SCAN_PROCESS_LIST,	"pk-package-info"},
+	{PK_STATUS_ENUM_CHECK_EXECUTABLE_FILES,	"pk-package-info"},
+	{PK_STATUS_ENUM_CHECK_LIBRARIES,	"pk-package-info"},
+	{PK_STATUS_ENUM_COPY_FILES,		"pk-package-info"},
 	{0, NULL}
 };
 
@@ -108,17 +144,16 @@ static const PkEnumMatch enum_role_icon_name[] = {
 	{PK_ROLE_ENUM_UNKNOWN,			"help-browser"},	/* fall though value */
 	{PK_ROLE_ENUM_ACCEPT_EULA,		"pk-package-info"},
 	{PK_ROLE_ENUM_CANCEL,			"process-stop"},
-	{PK_ROLE_ENUM_DEPENDS_ON,		"pk-package-info"},
 	{PK_ROLE_ENUM_DOWNLOAD_PACKAGES,	"pk-package-download"},
 	{PK_ROLE_ENUM_GET_CATEGORIES,		"pk-package-info"},
+	{PK_ROLE_ENUM_GET_DEPENDS,		"pk-package-info"},
 	{PK_ROLE_ENUM_GET_DETAILS,		"pk-package-info"},
-	{PK_ROLE_ENUM_GET_DETAILS_LOCAL,	"pk-package-search"},
 	{PK_ROLE_ENUM_GET_DISTRO_UPGRADES,	"pk-package-info"},
 	{PK_ROLE_ENUM_GET_FILES,		"pk-package-search"},
-	{PK_ROLE_ENUM_GET_FILES_LOCAL,		"pk-package-search"},
 	{PK_ROLE_ENUM_GET_OLD_TRANSACTIONS,	"pk-package-info"},
 	{PK_ROLE_ENUM_GET_PACKAGES,		"pk-package-search"},
 	{PK_ROLE_ENUM_GET_REPO_LIST,		"pk-package-sources"},
+	{PK_ROLE_ENUM_GET_REQUIRES,		"pk-package-info"},
 	{PK_ROLE_ENUM_GET_UPDATE_DETAIL,	"pk-package-info"},
 	{PK_ROLE_ENUM_GET_UPDATES,		"pk-package-info"},
 	{PK_ROLE_ENUM_INSTALL_FILES,		"pk-package-add"},
@@ -128,8 +163,6 @@ static const PkEnumMatch enum_role_icon_name[] = {
 	{PK_ROLE_ENUM_REMOVE_PACKAGES,		"pk-package-delete"},
 	{PK_ROLE_ENUM_REPO_ENABLE,		"pk-package-sources"},
 	{PK_ROLE_ENUM_REPO_SET_DATA,		"pk-package-sources"},
-	{PK_ROLE_ENUM_REPO_REMOVE,		"pk-package-sources"},
-	{PK_ROLE_ENUM_REQUIRED_BY,		"pk-package-info"},
 	{PK_ROLE_ENUM_RESOLVE,			"pk-package-search"},
 	{PK_ROLE_ENUM_SEARCH_DETAILS,		"pk-package-search"},
 	{PK_ROLE_ENUM_SEARCH_FILE,		"pk-package-search"},
@@ -137,10 +170,8 @@ static const PkEnumMatch enum_role_icon_name[] = {
 	{PK_ROLE_ENUM_SEARCH_NAME,		"pk-package-search"},
 	{PK_ROLE_ENUM_UPDATE_PACKAGES,		"pk-package-update"},
 	{PK_ROLE_ENUM_WHAT_PROVIDES,		"pk-package-search"},
-	{PK_ROLE_ENUM_REPAIR_SYSTEM,		"system-software-update"},
-#if PK_CHECK_VERSION(1,0,10)
 	{PK_ROLE_ENUM_UPGRADE_SYSTEM,		"system-software-update"},
-#endif
+	{PK_ROLE_ENUM_REPAIR_SYSTEM,		"system-software-update"},
 	{0, NULL}
 };
 
@@ -194,6 +225,40 @@ static const PkEnumMatch enum_restart_icon_name[] = {
 	{0, NULL}
 };
 
+static const PkEnumMatch enum_restart_dialog_icon_name[] = {
+	{PK_RESTART_ENUM_UNKNOWN,		"help-browser"},	/* fall though value */
+	{PK_RESTART_ENUM_NONE,			"dialog-information"},
+	{PK_RESTART_ENUM_SYSTEM,		"dialog-error"},
+	{PK_RESTART_ENUM_SESSION,		"dialog-warning"},
+	{PK_RESTART_ENUM_APPLICATION,		"dialog-warning"},
+	{PK_RESTART_ENUM_SECURITY_SYSTEM,	"dialog-error"},
+	{PK_RESTART_ENUM_SECURITY_SESSION,	"dialog-error"},
+	{0, NULL}
+};
+
+static const PkEnumMatch enum_message_icon_name[] = {
+	{PK_MESSAGE_ENUM_UNKNOWN,		"help-browser"},	/* fall though value */
+	{PK_MESSAGE_ENUM_BROKEN_MIRROR,		"dialog-error"},
+	{PK_MESSAGE_ENUM_CONNECTION_REFUSED,	"dialog-error"},
+	{PK_MESSAGE_ENUM_PARAMETER_INVALID,	"dialog-error"},
+	{PK_MESSAGE_ENUM_PRIORITY_INVALID,	"dialog-error"},
+	{PK_MESSAGE_ENUM_BACKEND_ERROR,		"dialog-error"},
+	{PK_MESSAGE_ENUM_DAEMON_ERROR,		"dialog-error"},
+	{PK_MESSAGE_ENUM_CACHE_BEING_REBUILT,	"dialog-information"},
+	{PK_MESSAGE_ENUM_NEWER_PACKAGE_EXISTS,	"dialog-information"},
+	{PK_MESSAGE_ENUM_COULD_NOT_FIND_PACKAGE,"dialog-error"},
+	{PK_MESSAGE_ENUM_CONFIG_FILES_CHANGED,	"dialog-information"},
+	{PK_MESSAGE_ENUM_PACKAGE_ALREADY_INSTALLED,	"dialog-information"},
+	{PK_MESSAGE_ENUM_AUTOREMOVE_IGNORED,	"dialog-information"},
+	{PK_MESSAGE_ENUM_REPO_METADATA_DOWNLOAD_FAILED,	"dialog-warning"},
+	{PK_MESSAGE_ENUM_REPO_FOR_DEVELOPERS_ONLY,	"dialog-warning"},
+	{PK_MESSAGE_ENUM_OTHER_UPDATES_HELD_BACK,	"dialog-information"},
+	{0, NULL}
+};
+
+/**
+ * gpk_media_type_enum_to_localised_text:
+ **/
 const gchar *
 gpk_media_type_enum_to_localised_text (PkMediaTypeEnum type)
 {
@@ -221,6 +286,9 @@ gpk_media_type_enum_to_localised_text (PkMediaTypeEnum type)
 	return text;
 }
 
+/**
+ * gpk_error_enum_to_localised_text:
+ **/
 const gchar *
 gpk_error_enum_to_localised_text (PkErrorEnum code)
 {
@@ -311,7 +379,7 @@ gpk_error_enum_to_localised_text (PkErrorEnum code)
 		text = _("Packages are not compatible");
 		break;
 	case PK_ERROR_ENUM_REPO_NOT_AVAILABLE:
-		text = _("Problem connecting to a package source");
+		text = _("Problem connecting to a software source");
 		break;
 	case PK_ERROR_ENUM_FAILED_INITIALIZATION:
 		text = _("Failed to initialize");
@@ -430,17 +498,15 @@ gpk_error_enum_to_localised_text (PkErrorEnum code)
 	case PK_ERROR_ENUM_LOCK_REQUIRED:
 		text = _("Lock required");
 		break;
-#if PK_CHECK_VERSION(1,1,4)
-	case PK_ERROR_ENUM_REPO_ALREADY_SET:
-		text = _("Source already set");
-		break;
-#endif
 	default:
-		g_warning ("Unknown error %i", code);
+		g_warning ("Unknown error");
 	}
 	return text;
 }
 
+/**
+ * gpk_error_enum_to_localised_message:
+ **/
 const gchar *
 gpk_error_enum_to_localised_message (PkErrorEnum code)
 {
@@ -473,14 +539,14 @@ gpk_error_enum_to_localised_message (PkErrorEnum code)
 			 "Please report this bug in your distribution bug tracker with the error description.");
 		break;
 	case PK_ERROR_ENUM_GPG_FAILURE:
-		text = _("A security trust relationship could not be made with package source.\n"
+		text = _("A security trust relationship could not be made with software source.\n"
 			 "Please check your security settings.");
 		break;
 	case PK_ERROR_ENUM_PACKAGE_NOT_INSTALLED:
 		text = _("The package that is trying to be removed or updated is not already installed.");
 		break;
 	case PK_ERROR_ENUM_PACKAGE_NOT_FOUND:
-		text = _("The package that is being modified was not found on your system or in any package source.");
+		text = _("The package that is being modified was not found on your system or in any software source.");
 		break;
 	case PK_ERROR_ENUM_PACKAGE_ALREADY_INSTALLED:
 		text = _("The package that is trying to be installed is already installed.");
@@ -514,8 +580,8 @@ gpk_error_enum_to_localised_message (PkErrorEnum code)
 			 "More information is available in the detailed report.");
 		break;
 	case PK_ERROR_ENUM_REPO_NOT_FOUND:
-		text = _("The remote package source name was not found.\n"
-			 "You may need to enable an item in Package Sources.");
+		text = _("The remote software source name was not found.\n"
+			 "You may need to enable an item in Software Sources.");
 		break;
 	case PK_ERROR_ENUM_CANNOT_REMOVE_SYSTEM_PACKAGE:
 		text = _("Removing a protected system package is not allowed.");
@@ -544,14 +610,14 @@ gpk_error_enum_to_localised_message (PkErrorEnum code)
 		break;
 	case PK_ERROR_ENUM_FILE_CONFLICTS:
 		text = _("Two packages provide the same file.\n"
-			 "This is usually due to mixing packages from different sources.");
+			 "This is usually due to mixing packages from different software sources.");
 		break;
 	case PK_ERROR_ENUM_PACKAGE_CONFLICTS:
 		text = _("Multiple packages exist that are not compatible with each other.\n"
-			 "This is usually due to mixing packages from different sources.");
+			 "This is usually due to mixing packages from different software sources.");
 		break;
 	case PK_ERROR_ENUM_REPO_NOT_AVAILABLE:
-		text = _("There was a (possibly temporary) problem connecting to a package source.\n"
+		text = _("There was a (possibly temporary) problem connecting to a software source.\n"
 			 "Please check the detailed error for further details.");
 		break;
 	case PK_ERROR_ENUM_FAILED_INITIALIZATION:
@@ -591,7 +657,7 @@ gpk_error_enum_to_localised_message (PkErrorEnum code)
 			 "The package file could be corrupt, or not a proper package.");
 		break;
 	case PK_ERROR_ENUM_PACKAGE_INSTALL_BLOCKED:
-		text = _("Installation of this package prevented by your packaging system’s configuration.");
+		text = _("Installation of this package prevented by your packaging system's configuration.");
 		break;
 	case PK_ERROR_ENUM_PACKAGE_CORRUPT:
 		text = _("The package that was downloaded is corrupt and needs to be downloaded again.");
@@ -604,11 +670,11 @@ gpk_error_enum_to_localised_message (PkErrorEnum code)
 			 "Check the file still exists and has not been deleted.");
 		break;
 	case PK_ERROR_ENUM_NO_MORE_MIRRORS_TO_TRY:
-		text = _("Required data could not be found on any of the configured package sources.\n"
+		text = _("Required data could not be found on any of the configured software sources.\n"
 			 "There were no more download mirrors that could be tried.");
 		break;
 	case PK_ERROR_ENUM_NO_DISTRO_UPGRADE_DATA:
-		text = _("Required upgrade data could not be found in any of the configured package sources.\n"
+		text = _("Required upgrade data could not be found in any of the configured software sources.\n"
 			 "The list of distribution upgrades will be unavailable.");
 		break;
 	case PK_ERROR_ENUM_INCOMPATIBLE_ARCHITECTURE:
@@ -642,7 +708,7 @@ gpk_error_enum_to_localised_message (PkErrorEnum code)
 		text = _("The information about what requires this package could not be obtained.");
 		break;
 	case PK_ERROR_ENUM_CANNOT_DISABLE_REPOSITORY:
-		text = _("The specified package source could not be disabled.");
+		text = _("The specified software source could not be disabled.");
 		break;
 	case PK_ERROR_ENUM_RESTRICTED_DOWNLOAD:
 		text = _("The download could not be done automatically and should be done manually.\n"
@@ -678,7 +744,7 @@ gpk_error_enum_to_localised_message (PkErrorEnum code)
 		text = _("The install root is invalid. Please contact your administrator.");
 		break;
 	case PK_ERROR_ENUM_CANNOT_FETCH_SOURCES:
-		text = _("The list of package sources could not be downloaded.");
+		text = _("The list of software sources could not be downloaded.");
 		break;
 	case PK_ERROR_ENUM_UNFINISHED_TRANSACTION:
 		text = _("A previous package management transaction was interrupted.");
@@ -689,17 +755,16 @@ gpk_error_enum_to_localised_message (PkErrorEnum code)
 	case PK_ERROR_ENUM_LOCK_REQUIRED:
 		text = _("A package manager lock is required.");
 		break;
-#if PK_CHECK_VERSION(1,1,4)
-	case PK_ERROR_ENUM_REPO_ALREADY_SET:
-		text = _("The software source is already in this state.");
-		break;
-#endif
 	default:
-		break;
+		g_warning ("Unknown error, please report a bug at " GPK_BUGZILLA_URL ".\n"
+			    "More information is available in the detailed report.");
 	}
 	return text;
 }
 
+/**
+ * gpk_restart_enum_to_localised_text_future:
+ **/
 const gchar *
 gpk_restart_enum_to_localised_text_future (PkRestartEnum restart)
 {
@@ -724,11 +789,14 @@ gpk_restart_enum_to_localised_text_future (PkRestartEnum restart)
 		text = _("A restart will be required due to a security update.");
 		break;
 	default:
-		g_warning ("restart unrecognized: %u", restart);
+		g_warning ("restart unrecognized: %i", restart);
 	}
 	return text;
 }
 
+/**
+ * gpk_restart_enum_to_localised_text:
+ **/
 const gchar *
 gpk_restart_enum_to_localised_text (PkRestartEnum restart)
 {
@@ -753,11 +821,99 @@ gpk_restart_enum_to_localised_text (PkRestartEnum restart)
 		text = _("A restart is required to remain secure.");
 		break;
 	default:
-		g_warning ("restart unrecognized: %u", restart);
+		g_warning ("restart unrecognized: %i", restart);
 	}
 	return text;
 }
 
+/**
+ * gpk_update_state_enum_to_localised_text:
+ **/
+const gchar *
+gpk_update_state_enum_to_localised_text (PkUpdateStateEnum state)
+{
+	const gchar *text = NULL;
+	switch (state) {
+	case PK_UPDATE_STATE_ENUM_STABLE:
+		/* TRANSLATORS: A distribution stability level */
+		text = _("Stable");
+		break;
+	case PK_UPDATE_STATE_ENUM_UNSTABLE:
+		/* TRANSLATORS: A distribution stability level */
+		text = _("Unstable");
+		break;
+	case PK_UPDATE_STATE_ENUM_TESTING:
+		/* TRANSLATORS: A distribution stability level */
+		text = _("Testing");
+		break;
+	default:
+		g_warning ("state unrecognized: %i", state);
+	}
+	return text;
+}
+
+/**
+ * gpk_message_enum_to_localised_text:
+ **/
+const gchar *
+gpk_message_enum_to_localised_text (PkMessageEnum message)
+{
+	const gchar *text = NULL;
+	switch (message) {
+	case PK_MESSAGE_ENUM_BROKEN_MIRROR:
+		text = _("A mirror is possibly broken");
+		break;
+	case PK_MESSAGE_ENUM_CONNECTION_REFUSED:
+		text = _("The connection was refused");
+		break;
+	case PK_MESSAGE_ENUM_PARAMETER_INVALID:
+		text = _("The parameter was invalid");
+		break;
+	case PK_MESSAGE_ENUM_PRIORITY_INVALID:
+		text = _("The priority was invalid");
+		break;
+	case PK_MESSAGE_ENUM_BACKEND_ERROR:
+		text = _("Backend warning");
+		break;
+	case PK_MESSAGE_ENUM_DAEMON_ERROR:
+		text = _("Daemon warning");
+		break;
+	case PK_MESSAGE_ENUM_CACHE_BEING_REBUILT:
+		text = _("The package list cache is being rebuilt");
+		break;
+	case PK_MESSAGE_ENUM_NEWER_PACKAGE_EXISTS:
+		text = _("A newer package exists");
+		break;
+	case PK_MESSAGE_ENUM_COULD_NOT_FIND_PACKAGE:
+		text = _("Could not find package");
+		break;
+	case PK_MESSAGE_ENUM_CONFIG_FILES_CHANGED:
+		text = _("Configuration files were changed");
+		break;
+	case PK_MESSAGE_ENUM_PACKAGE_ALREADY_INSTALLED:
+		text = _("Package is already installed");
+		break;
+	case PK_MESSAGE_ENUM_AUTOREMOVE_IGNORED:
+		text = _("Automatic cleanup is being ignored");
+		break;
+	case PK_MESSAGE_ENUM_REPO_METADATA_DOWNLOAD_FAILED:
+		text = _("Software source download failed");
+		break;
+	case PK_MESSAGE_ENUM_REPO_FOR_DEVELOPERS_ONLY:
+		text = _("This software source is for developers only");
+		break;
+	case PK_MESSAGE_ENUM_OTHER_UPDATES_HELD_BACK:
+		text = _("Other updates have been held back");
+		break;
+	default:
+		g_warning ("message unrecognized: %i", message);
+	}
+	return text;
+}
+
+/**
+ * gpk_status_enum_to_localised_text:
+ **/
 const gchar *
 gpk_status_enum_to_localised_text (PkStatusEnum status)
 {
@@ -907,18 +1063,57 @@ gpk_status_enum_to_localised_text (PkStatusEnum status)
 		/* TRANSLATORS: we are copying package files to prepare to install */
 		text = _("Copying files");
 		break;
-#if PK_CHECK_VERSION(1,1,6)
-	case PK_STATUS_ENUM_RUN_HOOK:
-		/* TRANSLATORS: we are running hooks pre or post transaction */
-		text = _("Running hooks");
-		break;
-#endif
 	default:
 		g_warning ("status unrecognized: %s", pk_status_enum_to_string (status));
 	}
 	return text;
 }
 
+/**
+ * gpk_update_enum_to_localised_text:
+ **/
+gchar *
+gpk_update_enum_to_localised_text (PkInfoEnum info, guint number)
+{
+	gchar *text = NULL;
+	switch (info) {
+	case PK_INFO_ENUM_LOW:
+		/* TRANSLATORS: type of update */
+		text = g_strdup_printf (ngettext ("%i trivial update", "%i trivial updates", number), number);
+		break;
+	case PK_INFO_ENUM_NORMAL:
+		/* TRANSLATORS: type of update in the case that we don't have any data */
+		text = g_strdup_printf (ngettext ("%i update", "%i updates", number), number);
+		break;
+	case PK_INFO_ENUM_IMPORTANT:
+		/* TRANSLATORS: type of update */
+		text = g_strdup_printf (ngettext ("%i important update", "%i important updates", number), number);
+		break;
+	case PK_INFO_ENUM_SECURITY:
+		/* TRANSLATORS: type of update */
+		text = g_strdup_printf (ngettext ("%i security update", "%i security updates", number), number);
+		break;
+	case PK_INFO_ENUM_BUGFIX:
+		/* TRANSLATORS: type of update */
+		text = g_strdup_printf (ngettext ("%i bug fix update", "%i bug fix updates", number), number);
+		break;
+	case PK_INFO_ENUM_ENHANCEMENT:
+		/* TRANSLATORS: type of update */
+		text = g_strdup_printf (ngettext ("%i enhancement update", "%i enhancement updates", number), number);
+		break;
+	case PK_INFO_ENUM_BLOCKED:
+		/* TRANSLATORS: number of updates that cannot be installed due to deps */
+		text = g_strdup_printf (ngettext ("%i blocked update", "%i blocked updates", number), number);
+		break;
+	default:
+		g_warning ("update info unrecognized: %s", pk_info_enum_to_string (info));
+	}
+	return text;
+}
+
+/**
+ * gpk_info_enum_to_localised_text:
+ **/
 const gchar *
 gpk_info_enum_to_localised_text (PkInfoEnum info)
 {
@@ -970,19 +1165,16 @@ gpk_info_enum_to_localised_text (PkInfoEnum info)
 		/* TRANSLATORS: The type of package */
 		text = _("Untrusted");
 		break;
-#if PK_CHECK_VERSION(1,0,4)
-	case PK_INFO_ENUM_UNAVAILABLE:
-		/* TRANSLATORS: The state of a package */
-		text = _("Unavailable");
-		break;
-#endif
 	default:
 		g_warning ("info unrecognized: %s", pk_info_enum_to_string (info));
 	}
 	return text;
 }
 
-static const gchar *
+/**
+ * gpk_info_enum_to_localised_present:
+ **/
+const gchar *
 gpk_info_enum_to_localised_present (PkInfoEnum info)
 {
 	const gchar *text = NULL;
@@ -1029,6 +1221,9 @@ gpk_info_enum_to_localised_present (PkInfoEnum info)
 	return text;
 }
 
+/**
+ * gpk_info_enum_to_localised_past:
+ **/
 const gchar *
 gpk_info_enum_to_localised_past (PkInfoEnum info)
 {
@@ -1076,6 +1271,149 @@ gpk_info_enum_to_localised_past (PkInfoEnum info)
 	return text;
 }
 
+/**
+ * gpk_role_enum_to_localised_present:
+ **/
+const gchar *
+gpk_role_enum_to_localised_present (PkRoleEnum role)
+{
+	const gchar *text = NULL;
+	switch (role) {
+	case PK_ROLE_ENUM_UNKNOWN:
+		/* TRANSLATORS: The role of the transaction, in present tense */
+		text = _("Unknown role type");
+		break;
+	case PK_ROLE_ENUM_GET_DEPENDS:
+		/* TRANSLATORS: The role of the transaction, in present tense */
+		text = _("Getting dependencies");
+		break;
+	case PK_ROLE_ENUM_GET_UPDATE_DETAIL:
+		/* TRANSLATORS: The role of the transaction, in present tense */
+		text = _("Getting update detail");
+		break;
+	case PK_ROLE_ENUM_GET_DETAILS:
+		/* TRANSLATORS: The role of the transaction, in present tense */
+		text = _("Getting details");
+		break;
+	case PK_ROLE_ENUM_GET_REQUIRES:
+		/* TRANSLATORS: The role of the transaction, in present tense */
+		text = _("Getting requires");
+		break;
+	case PK_ROLE_ENUM_GET_UPDATES:
+		/* TRANSLATORS: The role of the transaction, in present tense */
+		text = _("Getting updates");
+		break;
+	case PK_ROLE_ENUM_SEARCH_DETAILS:
+		/* TRANSLATORS: The role of the transaction, in present tense */
+		text = _("Searching details");
+		break;
+	case PK_ROLE_ENUM_SEARCH_FILE:
+		/* TRANSLATORS: The role of the transaction, in present tense */
+		text = _("Searching for file");
+		break;
+	case PK_ROLE_ENUM_SEARCH_GROUP:
+		/* TRANSLATORS: The role of the transaction, in present tense */
+		text = _("Searching groups");
+		break;
+	case PK_ROLE_ENUM_SEARCH_NAME:
+		/* TRANSLATORS: The role of the transaction, in present tense */
+		text = _("Searching for package name");
+		break;
+	case PK_ROLE_ENUM_REMOVE_PACKAGES:
+		/* TRANSLATORS: The role of the transaction, in present tense */
+		text = _("Removing");
+		break;
+	case PK_ROLE_ENUM_INSTALL_PACKAGES:
+		/* TRANSLATORS: The role of the transaction, in present tense */
+		text = _("Installing");
+		break;
+	case PK_ROLE_ENUM_INSTALL_FILES:
+		/* TRANSLATORS: The role of the transaction, in present tense */
+		text = _("Installing file");
+		break;
+	case PK_ROLE_ENUM_REFRESH_CACHE:
+		/* TRANSLATORS: The role of the transaction, in present tense */
+		text = _("Refreshing package cache");
+		break;
+	case PK_ROLE_ENUM_UPDATE_PACKAGES:
+		/* TRANSLATORS: The role of the transaction, in present tense */
+		text = _("Updating packages");
+		break;
+	case PK_ROLE_ENUM_CANCEL:
+		/* TRANSLATORS: The role of the transaction, in present tense */
+		text = _("Canceling");
+		break;
+	case PK_ROLE_ENUM_GET_REPO_LIST:
+		/* TRANSLATORS: The role of the transaction, in present tense */
+		text = _("Getting list of repositories");
+		break;
+	case PK_ROLE_ENUM_REPO_ENABLE:
+		/* TRANSLATORS: The role of the transaction, in present tense */
+		text = _("Enabling repository");
+		break;
+	case PK_ROLE_ENUM_REPO_SET_DATA:
+		/* TRANSLATORS: The role of the transaction, in present tense */
+		text = _("Setting repository data");
+		break;
+	case PK_ROLE_ENUM_RESOLVE:
+		/* TRANSLATORS: The role of the transaction, in present tense */
+		text = _("Resolving");
+		break;
+	case PK_ROLE_ENUM_GET_FILES:
+		/* TRANSLATORS: The role of the transaction, in present tense */
+		text = _("Getting file list");
+		break;
+	case PK_ROLE_ENUM_WHAT_PROVIDES:
+		/* TRANSLATORS: The role of the transaction, in present tense */
+		text = _("Getting what provides");
+		break;
+	case PK_ROLE_ENUM_INSTALL_SIGNATURE:
+		/* TRANSLATORS: The role of the transaction, in present tense */
+		text = _("Installing signature");
+		break;
+	case PK_ROLE_ENUM_GET_PACKAGES:
+		/* TRANSLATORS: The role of the transaction, in present tense */
+		text = _("Getting package lists");
+		break;
+	case PK_ROLE_ENUM_ACCEPT_EULA:
+		/* TRANSLATORS: The role of the transaction, in present tense */
+		text = _("Accepting EULA");
+		break;
+	case PK_ROLE_ENUM_DOWNLOAD_PACKAGES:
+		/* TRANSLATORS: The role of the transaction, in present tense */
+		text = _("Downloading packages");
+		break;
+	case PK_ROLE_ENUM_GET_DISTRO_UPGRADES:
+		/* TRANSLATORS: The role of the transaction, in present tense */
+		text = _("Getting distribution upgrade information");
+		break;
+	case PK_ROLE_ENUM_GET_CATEGORIES:
+		/* TRANSLATORS: The role of the transaction, in present tense */
+		text = _("Getting categories");
+		break;
+	case PK_ROLE_ENUM_GET_OLD_TRANSACTIONS:
+		/* TRANSLATORS: The role of the transaction, in present tense */
+		text = _("Getting old transactions");
+		break;
+	case PK_ROLE_ENUM_UPGRADE_SYSTEM:
+		/* TRANSLATORS: The role of the transaction, in present tense */
+		text = _("Upgrading system");
+		break;
+	case PK_ROLE_ENUM_REPAIR_SYSTEM:
+		/* TRANSLATORS: The role of the transaction, in present tense */
+		text = _("Repairing the system");
+		break;
+	default:
+		g_warning ("role unrecognized: %s", pk_role_enum_to_string (role));
+	}
+	return text;
+}
+
+/**
+ * gpk_role_enum_to_localised_past:
+ *
+ * These are past tense versions of the action
+ **/
 const gchar *
 gpk_role_enum_to_localised_past (PkRoleEnum role)
 {
@@ -1085,7 +1423,7 @@ gpk_role_enum_to_localised_past (PkRoleEnum role)
 		/* TRANSLATORS: The role of the transaction, in past tense */
 		text = _("Unknown role type");
 		break;
-	case PK_ROLE_ENUM_DEPENDS_ON:
+	case PK_ROLE_ENUM_GET_DEPENDS:
 		/* TRANSLATORS: The role of the transaction, in past tense */
 		text = _("Got dependencies");
 		break;
@@ -1094,11 +1432,10 @@ gpk_role_enum_to_localised_past (PkRoleEnum role)
 		text = _("Got update detail");
 		break;
 	case PK_ROLE_ENUM_GET_DETAILS:
-	case PK_ROLE_ENUM_GET_DETAILS_LOCAL:
 		/* TRANSLATORS: The role of the transaction, in past tense */
 		text = _("Got details");
 		break;
-	case PK_ROLE_ENUM_REQUIRED_BY:
+	case PK_ROLE_ENUM_GET_REQUIRES:
 		/* TRANSLATORS: The role of the transaction, in past tense */
 		text = _("Got requires");
 		break;
@@ -1154,10 +1491,6 @@ gpk_role_enum_to_localised_past (PkRoleEnum role)
 		/* TRANSLATORS: The role of the transaction, in past tense */
 		text = _("Enabled repository");
 		break;
-	case PK_ROLE_ENUM_REPO_REMOVE:
-		/* TRANSLATORS: The role of the transaction, in past tense */
-		text = _("Removed repository");
-		break;
 	case PK_ROLE_ENUM_REPO_SET_DATA:
 		/* TRANSLATORS: The role of the transaction, in past tense */
 		text = _("Set repository data");
@@ -1167,7 +1500,6 @@ gpk_role_enum_to_localised_past (PkRoleEnum role)
 		text = _("Resolved");
 		break;
 	case PK_ROLE_ENUM_GET_FILES:
-	case PK_ROLE_ENUM_GET_FILES_LOCAL:
 		/* TRANSLATORS: The role of the transaction, in past tense */
 		text = _("Got file list");
 		break;
@@ -1203,22 +1535,23 @@ gpk_role_enum_to_localised_past (PkRoleEnum role)
 		/* TRANSLATORS: The role of the transaction, in past tense */
 		text = _("Got old transactions");
 		break;
+	case PK_ROLE_ENUM_UPGRADE_SYSTEM:
+		/* TRANSLATORS: The role of the transaction, in past tense */
+		text = _("Upgraded system");
+		break;
 	case PK_ROLE_ENUM_REPAIR_SYSTEM:
 		/* TRANSLATORS: The role of the transaction, in past tense */
 		text = _("Repaired the system");
 		break;
-#if PK_CHECK_VERSION(1,0,10)
-	case PK_ROLE_ENUM_UPGRADE_SYSTEM:
-		/* TRANSLATORS: The role of the transaction, in past tense */
-		text = _("Upgrading the system");
-		break;
-#endif
 	default:
 		g_warning ("role unrecognized: %s", pk_role_enum_to_string (role));
 	}
 	return text;
 }
 
+/**
+ * gpk_group_enum_to_localised_text:
+ **/
 const gchar *
 gpk_group_enum_to_localised_text (PkGroupEnum group)
 {
@@ -1334,7 +1667,7 @@ gpk_group_enum_to_localised_text (PkGroupEnum group)
 		break;
 	case PK_GROUP_ENUM_REPOS:
 		/* TRANSLATORS: The group type */
-		text = _("Package sources");
+		text = _("Software sources");
 		break;
 	case PK_GROUP_ENUM_SCIENCE:
 		/* TRANSLATORS: The group type */
@@ -1365,35 +1698,59 @@ gpk_group_enum_to_localised_text (PkGroupEnum group)
 		text = _("Unknown group");
 		break;
 	default:
-		g_warning ("group unrecognized: %u", group);
+		g_warning ("group unrecognized: %i", group);
 	}
 	return text;
 }
 
+/**
+ * gpk_info_enum_to_icon_name:
+ **/
 const gchar *
 gpk_info_enum_to_icon_name (PkInfoEnum info)
 {
 	return pk_enum_find_string (enum_info_icon_name, info);
 }
 
+/**
+ * gpk_status_enum_to_icon_name:
+ **/
 const gchar *
 gpk_status_enum_to_icon_name (PkStatusEnum status)
 {
 	return pk_enum_find_string (enum_status_icon_name, status);
 }
 
+/**
+ * gpk_status_enum_to_animation:
+ **/
+const gchar *
+gpk_status_enum_to_animation (PkStatusEnum status)
+{
+	return pk_enum_find_string (enum_status_animation, status);
+}
+
+/**
+ * gpk_role_enum_to_icon_name:
+ **/
 const gchar *
 gpk_role_enum_to_icon_name (PkRoleEnum role)
 {
 	return pk_enum_find_string (enum_role_icon_name, role);
 }
 
+/**
+ * gpk_group_enum_to_icon_name:
+ **/
 const gchar *
 gpk_group_enum_to_icon_name (PkGroupEnum group)
 {
 	return pk_enum_find_string (enum_group_icon_name, group);
 }
 
+/**
+ * gpk_restart_enum_to_icon_name:
+ **/
 const gchar *
 gpk_restart_enum_to_icon_name (PkRestartEnum restart)
 {
@@ -1404,6 +1761,27 @@ gpk_restart_enum_to_icon_name (PkRestartEnum restart)
 	return tmp;
 }
 
+/**
+ * gpk_restart_enum_to_dialog_icon_name:
+ **/
+const gchar *
+gpk_restart_enum_to_dialog_icon_name (PkRestartEnum restart)
+{
+	return pk_enum_find_string (enum_restart_dialog_icon_name, restart);
+}
+
+/**
+ * gpk_message_enum_to_icon_name:
+ **/
+const gchar *
+gpk_message_enum_to_icon_name (PkMessageEnum message)
+{
+	return pk_enum_find_string (enum_message_icon_name, message);
+}
+
+/**
+ * gpk_info_status_enum_to_string:
+ **/
 const gchar *
 gpk_info_status_enum_to_string (GpkInfoStatusEnum info)
 {
@@ -1412,6 +1790,9 @@ gpk_info_status_enum_to_string (GpkInfoStatusEnum info)
 	return gpk_info_enum_to_localised_present (info);
 }
 
+/**
+ * gpk_info_status_enum_to_icon_name:
+ **/
 const gchar *
 gpk_info_status_enum_to_icon_name (GpkInfoStatusEnum info)
 {
@@ -1429,3 +1810,202 @@ gpk_info_status_enum_to_icon_name (GpkInfoStatusEnum info)
 	/* regular PkInfoEnum */
 	return gpk_info_enum_to_icon_name (info);
 }
+
+/***************************************************************************
+ ***                          MAKE CHECK TESTS                           ***
+ ***************************************************************************/
+#ifdef EGG_TEST
+#include "egg-test.h"
+
+void
+gpk_enum_test (gpointer data)
+{
+	guint i;
+	const gchar *string;
+	EggTest *test = (EggTest *) data;
+
+	if (!egg_test_start (test, "GpkEnum"))
+		return;
+
+	/************************************************************
+	 ****************     localized enums          **************
+	 ************************************************************/
+	egg_test_title (test, "check we convert all the localized past role enums");
+	for (i=0; i<PK_ROLE_ENUM_LAST; i++) {
+		string = gpk_role_enum_to_localised_past (i);
+		if (string == NULL) {
+			egg_test_failed (test, "failed to get %i", i);
+			break;
+		}
+	}
+	egg_test_success (test, NULL);
+
+	/************************************************************/
+	egg_test_title (test, "check we convert all the localized present role enums");
+	for (i=0; i<PK_ROLE_ENUM_LAST; i++) {
+		string = gpk_role_enum_to_localised_present (i);
+		if (string == NULL) {
+			egg_test_failed (test, "failed to get %i", i);
+			break;
+		}
+	}
+	egg_test_success (test, NULL);
+
+	/************************************************************/
+	egg_test_title (test, "check we convert all the role icon name enums");
+	for (i=PK_ROLE_ENUM_UNKNOWN+1; i<PK_ROLE_ENUM_LAST; i++) {
+		string = gpk_role_enum_to_icon_name (i);
+		if (string == NULL || g_strcmp0 (string, "help-browser") == 0) {
+			egg_test_failed (test, "failed to get %s", pk_role_enum_to_string (i));
+			break;
+		}
+	}
+	egg_test_success (test, NULL);
+
+	/************************************************************/
+	egg_test_title (test, "check we convert all the status animation enums");
+	for (i=PK_STATUS_ENUM_UNKNOWN+1; i<PK_STATUS_ENUM_UNKNOWN; i++) {
+		string = gpk_status_enum_to_animation (i);
+		if (string == NULL || g_strcmp0 (string, "help-browser") == 0) {
+			egg_test_failed (test, "failed to get %s", pk_status_enum_to_string (i));
+			break;
+		}
+	}
+	egg_test_success (test, NULL);
+
+	/************************************************************/
+	egg_test_title (test, "check we convert all the info icon names enums");
+	for (i=PK_INFO_ENUM_UNKNOWN+1; i<PK_INFO_ENUM_LAST; i++) {
+		string = gpk_info_enum_to_icon_name (i);
+		if (string == NULL || g_strcmp0 (string, "help-browser") == 0) {
+			egg_test_failed (test, "failed to get %s", pk_info_enum_to_string (i));
+			break;
+		}
+	}
+	egg_test_success (test, NULL);
+
+	/************************************************************/
+	egg_test_title (test, "check we convert all the localized status enums");
+	for (i=0; i<PK_STATUS_ENUM_LAST; i++) {
+		string = gpk_status_enum_to_localised_text (i);
+		if (string == NULL) {
+			egg_test_failed (test, "failed to get %i", i);
+			break;
+		}
+	}
+	egg_test_success (test, NULL);
+
+	/************************************************************/
+	egg_test_title (test, "check we convert all the status icon names enums");
+	for (i=PK_STATUS_ENUM_UNKNOWN+1; i<PK_STATUS_ENUM_LAST; i++) {
+		string = gpk_status_enum_to_icon_name (i);
+		if (string == NULL || g_strcmp0 (string, "help-browser") == 0) {
+			egg_test_failed (test, "failed to get %s", pk_status_enum_to_string (i));
+			break;
+		}
+	}
+	egg_test_success (test, NULL);
+
+	/************************************************************/
+	egg_test_title (test, "check we convert all the restart icon names enums");
+	for (i=PK_RESTART_ENUM_UNKNOWN+1; i<PK_RESTART_ENUM_NONE; i++) {
+		string = gpk_restart_enum_to_icon_name (i);
+		if (string == NULL) {
+			egg_test_failed (test, "failed to get %s", pk_restart_enum_to_string (i));
+			break;
+		}
+	}
+	egg_test_success (test, NULL);
+
+	/************************************************************/
+	egg_test_title (test, "check we convert all the localized error enums");
+	for (i=0; i<PK_ERROR_ENUM_LAST; i++) {
+		string = gpk_error_enum_to_localised_text (i);
+		if (string == NULL) {
+			egg_test_failed (test, "failed to get %s", pk_error_enum_to_string(i));
+			break;
+		}
+	}
+	egg_test_success (test, NULL);
+
+	/************************************************************/
+	egg_test_title (test, "check we convert all the localized error messages");
+	for (i=0; i<PK_ERROR_ENUM_LAST; i++) {
+		string = gpk_error_enum_to_localised_message (i);
+		if (string == NULL) {
+			egg_test_failed (test, "failed to get %s", pk_error_enum_to_string(i));
+			break;
+		}
+	}
+	egg_test_success (test, NULL);
+
+	/************************************************************/
+	egg_test_title (test, "check we convert all the localized restart enums");
+	for (i=PK_RESTART_ENUM_UNKNOWN+1; i<PK_RESTART_ENUM_LAST; i++) {
+		string = gpk_restart_enum_to_localised_text (i);
+		if (string == NULL) {
+			egg_test_failed (test, "failed to get %i", i);
+			break;
+		}
+	}
+	egg_test_success (test, NULL);
+
+	/************************************************************/
+	egg_test_title (test, "check we convert all the message icon name enums");
+	for (i=PK_MESSAGE_ENUM_UNKNOWN+1; i<PK_MESSAGE_ENUM_LAST; i++) {
+		string = gpk_message_enum_to_icon_name (i);
+		if (string == NULL || g_strcmp0 (string, "help-browser") == 0) {
+			egg_test_failed (test, "failed to get %s", pk_message_enum_to_string (i));
+			break;
+		}
+	}
+	egg_test_success (test, NULL);
+
+	/************************************************************/
+	egg_test_title (test, "check we convert all the localized message enums");
+	for (i=PK_MESSAGE_ENUM_UNKNOWN+1; i<PK_MESSAGE_ENUM_LAST; i++) {
+		string = gpk_message_enum_to_localised_text (i);
+		if (string == NULL) {
+			egg_test_failed (test, "failed to get %i", i);
+			break;
+		}
+	}
+	egg_test_success (test, NULL);
+
+	/************************************************************/
+	egg_test_title (test, "check we convert all the localized restart future enums");
+	for (i=PK_RESTART_ENUM_UNKNOWN+1; i<PK_RESTART_ENUM_LAST; i++) {
+		string = gpk_restart_enum_to_localised_text_future (i);
+		if (string == NULL) {
+			egg_test_failed (test, "failed to get %i", i);
+			break;
+		}
+	}
+	egg_test_success (test, NULL);
+
+	/************************************************************/
+	egg_test_title (test, "check we convert all the localized group enums");
+	for (i=0; i<PK_GROUP_ENUM_LAST; i++) {
+		string = gpk_group_enum_to_localised_text (i);
+		if (string == NULL) {
+			egg_test_failed (test, "failed to get %i", i);
+			break;
+		}
+	}
+	egg_test_success (test, NULL);
+
+	/************************************************************/
+	egg_test_title (test, "check we convert all the group icon name enums");
+	for (i=PK_GROUP_ENUM_UNKNOWN+1; i<PK_GROUP_ENUM_LAST; i++) {
+		string = gpk_group_enum_to_icon_name (i);
+		if (string == NULL || g_strcmp0 (string, "help-browser") == 0) {
+			egg_test_failed (test, "failed to get %s", pk_group_enum_to_string (i));
+			break;
+		}
+	}
+	egg_test_success (test, NULL);
+
+	egg_test_end (test);
+}
+#endif
+

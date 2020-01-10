@@ -31,6 +31,9 @@
 #include "gpk-common.h"
 #include "gpk-error.h"
 
+/**
+ * gpk_error_dialog_expanded_cb:
+ **/
 static void
 gpk_error_dialog_expanded_cb (GObject *object, GParamSpec *param_spec, GtkBuilder *builder)
 {
@@ -55,25 +58,24 @@ gpk_error_dialog_expanded_cb (GObject *object, GParamSpec *param_spec, GtkBuilde
  *
  * Shows a modal error, and blocks until the user clicks close
  **/
-static gboolean
+gboolean
 gpk_error_dialog_modal_with_time (GtkWindow *window, const gchar *title, const gchar *message, const gchar *details, guint timestamp)
 {
 	GtkWidget *widget;
-	g_autoptr(GtkBuilder) builder = NULL;
-	g_autoptr(GtkTextBuffer) buffer = NULL;
+	GtkBuilder *builder;
+	GtkTextBuffer *buffer = NULL;
 	guint retval;
-	g_autoptr(GError) error = NULL;
+	GError *error = NULL;
 
 	g_return_val_if_fail (message != NULL, FALSE);
 
 	/* get UI */
 	builder = gtk_builder_new ();
-	retval = gtk_builder_add_from_resource (builder,
-						"/org/gnome/packagekit/gpk-error.ui",
-						&error);
+	retval = gtk_builder_add_from_file (builder, GPK_DATA "/gpk-error.ui", &error);
 	if (retval == 0) {
 		g_warning ("failed to load ui: %s", error->message);
-		return FALSE;
+		g_error_free (error);
+		goto out_build;
 	}
 
 	/* connect up actions */
@@ -132,6 +134,10 @@ gpk_error_dialog_modal_with_time (GtkWindow *window, const gchar *title, const g
 	/* hide window */
 	if (GTK_IS_WIDGET (widget))
 		gtk_widget_hide (widget);
+	if (buffer != NULL)
+		g_object_unref (buffer);
+out_build:
+	g_object_unref (builder);
 	return TRUE;
 }
 
@@ -149,3 +155,44 @@ gpk_error_dialog_modal (GtkWindow *window, const gchar *title, const gchar *mess
 {
 	return gpk_error_dialog_modal_with_time (window, title, message, details, 0);
 }
+
+/**
+ * gpk_error_dialog:
+ * @title: the localized text to put in bold as a title
+ * @message: the localized text to put as a message
+ * @details: the geeky text to in the expander, or %NULL if nothing
+ *
+ * Shows a modal error, and blocks until the user clicks close
+ **/
+gboolean
+gpk_error_dialog (const gchar *title, const gchar *message, const gchar *details)
+{
+	return gpk_error_dialog_modal (NULL, title, message, details);
+}
+
+/***************************************************************************
+ ***                          MAKE CHECK TESTS                           ***
+ ***************************************************************************/
+#ifdef EGG_TEST
+#include "egg-test.h"
+
+void
+gpk_error_test (EggTest *test)
+{
+	gboolean ret;
+
+	if (!egg_test_start (test, "GpkError"))
+		return;
+
+	/************************************************************/
+	egg_test_title (test, "do dialog");
+	ret = gpk_error_dialog ("No space is left on the disk",
+				"There is insufficient space on the device.\n"
+				"Free some space on the system disk to perform this operation.",
+				"[Errno 28] No space left on device");
+	egg_test_assert (test, ret);
+
+	egg_test_end (test);
+}
+#endif
+

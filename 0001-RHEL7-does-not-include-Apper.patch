@@ -1,0 +1,48 @@
+From 8a94a240808256fbe33d9e874ef570b7dfd2d10c Mon Sep 17 00:00:00 2001
+From: Richard Hughes <richard@hughsie.com>
+Date: Mon, 25 Nov 2013 15:45:31 +0000
+Subject: [PATCH] RHEL7 does not include Apper
+
+Resolves: https://bugzilla.redhat.com/show_bug.cgi?id=1033672
+---
+ data/gpk-application.desktop.in   | 1 -
+ data/gpk-prefs.desktop.in         | 1 -
+ data/gpk-update-viewer.desktop.in | 1 -
+ 3 files changed, 3 deletions(-)
+
+diff --git a/data/gpk-application.desktop.in b/data/gpk-application.desktop.in
+index 73ea8e7..ef7e7e4 100644
+--- a/data/gpk-application.desktop.in
++++ b/data/gpk-application.desktop.in
+@@ -7,6 +7,5 @@ Terminal=false
+ Type=Application
+ Categories=GNOME;GTK;System;
+ _Keywords=Updates;Upgrade;Sources;Repositories;Preferences;Install;Store;
+-NotShowIn=KDE;
+ StartupNotify=true
+ X-GNOME-UsesNotifications=true
+diff --git a/data/gpk-prefs.desktop.in b/data/gpk-prefs.desktop.in
+index 80adc54..93bbe71 100644
+--- a/data/gpk-prefs.desktop.in
++++ b/data/gpk-prefs.desktop.in
+@@ -6,6 +6,5 @@ Exec=gpk-prefs
+ Terminal=false
+ Type=Application
+ Categories=Settings;X-GNOME-SystemSettings;
+-NotShowIn=KDE;
+ StartupNotify=true
+ NoDisplay=true
+diff --git a/data/gpk-update-viewer.desktop.in b/data/gpk-update-viewer.desktop.in
+index 0b07c8b..769fb37 100644
+--- a/data/gpk-update-viewer.desktop.in
++++ b/data/gpk-update-viewer.desktop.in
+@@ -6,6 +6,5 @@ Exec=gpk-update-viewer
+ Terminal=false
+ Type=Application
+ Categories=GNOME;GTK;System;
+-NotShowIn=KDE;
+ StartupNotify=true
+ X-GNOME-UsesNotifications=true
+-- 
+1.8.4.2
+

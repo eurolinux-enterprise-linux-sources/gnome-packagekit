@@ -11,7 +11,6 @@ msgstr ""
 "PO-Revision-Date: 2008-09-20 20:38+0100\n"
 "Last-Translator: Iestyn Pryce <dylunio@gmail.com>\n"
 "Language-Team: Welsh <gnome-cy@lists.linux.org.uk>\n"
-"Language: cy\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1166,7 +1165,7 @@ msgstr ""
 msgid "Enter a package name and then click find to get started."
 msgstr ""
 
-#. TRANSLATORS: title: all of the packages on the system and available in sources
+#. TRANSLATORS: title: all of the packages on the system and availble in sources
 #: ../src/gpk-application.c:3358 ../src/gpk-application.c:3427
 msgid "All packages"
 msgstr "Pob pecyn"

@@ -1,26 +1,46 @@
-data/appdata/org.gnome.Packages.appdata.xml.in
-data/appdata/org.gnome.PackageUpdater.appdata.xml.in
-data/org.gnome.Packages.desktop.in
-src/gpk-application.ui
-src/gpk-client.ui
-src/gpk-error.ui
-src/gpk-eula.ui
+[encoding: UTF-8]
+# List of source files containing translatable strings.
+# Please keep this file sorted alphabetically.
+data/org.gnome.packagekit.gschema.xml
+data/gpk-application.desktop.in
+[type: gettext/glade]data/gpk-application.ui
+[type: gettext/glade]data/gpk-client.ui
+[type: gettext/glade]data/gpk-error.ui
+[type: gettext/glade]data/gpk-eula.ui
+data/gpk-dbus-service.desktop.in
+data/gpk-install-catalog.desktop.in
 data/gpk-install-local-file.desktop.in
 data/gpk-log.desktop.in
-src/gpk-log.ui
+[type: gettext/glade]data/gpk-log.ui
 data/gpk-prefs.desktop.in
-src/gpk-prefs.ui
-src/gpk-signature.ui
-data/org.gnome.PackageUpdater.desktop.in
-src/gpk-update-viewer.ui
-data/org.gnome.packagekit.gschema.xml
+[type: gettext/glade]data/gpk-prefs.ui
+[type: gettext/glade]data/gpk-service-pack.desktop.in
+[type: gettext/glade]data/gpk-service-pack.ui
+[type: gettext/glade]data/gpk-signature.ui
+data/gpk-update-viewer.desktop.in
+data/gpk-distro-upgrade.desktop.in
+[type: gettext/glade]data/gpk-update-viewer.ui
+python/packagekit/gtkwidgets.py
 src/gpk-application.c
 src/gpk-common.c
-src/gpk-debug.c
+src/gpk-dbus-task.c
+src/gpk-desktop.c
 src/gpk-dialog.c
+src/gpk-distro-upgrade.c
 src/gpk-enum.c
 src/gpk-error.c
-src/gpk-log.c
-src/gpk-prefs.c
+src/gpk-helper-chooser.c
 src/gpk-task.c
+src/gpk-helper-run.c
+src/gpk-install-catalog.c
+src/gpk-install-local-file.c
+src/gpk-install-mime-type.c
+src/gpk-install-package-name.c
+src/gpk-install-provide-file.c
+src/gpk-log.c
+src/gpk-modal-dialog.c
+src/gpk-prefs.c
+src/gpk-service-pack.c
 src/gpk-update-viewer.c
+src/gpk-dbus-service.c
+src/gpk-debug.c

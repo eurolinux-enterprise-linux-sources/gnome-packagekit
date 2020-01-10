@@ -1,0 +1,26 @@
+From 420a36962d10b9ad37b701f1837faab90660a4ee Mon Sep 17 00:00:00 2001
+From: Matthias Clasen <mclasen@redhat.com>
+Date: Mon, 13 Jan 2014 13:08:47 -0500
+Subject: [PATCH] Don't hide titlebar when maximized
+
+This is not a good idea, since we end up without a close
+button.
+---
+ data/gpk-application.ui | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/data/gpk-application.ui b/data/gpk-application.ui
+index 8dfd390..a7f3552 100644
+--- a/data/gpk-application.ui
++++ b/data/gpk-application.ui
+@@ -11,7 +11,6 @@
+     <property name="can_focus">False</property>
+     <property name="title" translatable="yes">Software</property>
+     <property name="window_position">center</property>
+-    <property name="hide_titlebar_when_maximized">True</property>
+     <property name="icon_name">gtk-info</property>
+     <child>
+       <object class="GtkVBox" id="vbox1">
+-- 
+1.8.4.2
+

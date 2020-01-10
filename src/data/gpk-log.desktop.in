@@ -1,7 +1,6 @@
 [Desktop Entry]
-Name=Package Log
-Comment=View past package management tasks
-# Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+_Name=Software Log Viewer
+_Comment=View past package management tasks
 Icon=gpk-log
 Exec=gpk-log
 Terminal=false

@@ -25,6 +25,7 @@
 #include <packagekit-glib2/packagekit.h>
 
 #include "gpk-task.h"
+#include "gpk-gnome.h"
 #include "gpk-common.h"
 #include "gpk-enum.h"
 #include "gpk-dialog.h"
@@ -33,6 +34,11 @@ static void     gpk_task_finalize	(GObject     *object);
 
 #define GPK_TASK_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GPK_TYPE_TASK, GpkTaskPrivate))
 
+/**
+ * GpkTaskPrivate:
+ *
+ * Private #GpkTask data
+ **/
 struct _GpkTaskPrivate
 {
 	gpointer		 user_data;
@@ -48,6 +54,9 @@ struct _GpkTaskPrivate
 
 G_DEFINE_TYPE (GpkTask, gpk_task, PK_TYPE_TASK)
 
+/**
+ * gpk_task_set_parent_window:
+ **/
 gboolean
 gpk_task_set_parent_window (GpkTask *task, GtkWindow *parent_window)
 {
@@ -57,6 +66,9 @@ gpk_task_set_parent_window (GpkTask *task, GtkWindow *parent_window)
 	return TRUE;
 }
 
+/**
+ * gpk_task_button_accept_cb:
+ **/
 static void
 gpk_task_button_accept_cb (GtkWidget *widget, GpkTask *task)
 {
@@ -66,6 +78,9 @@ gpk_task_button_accept_cb (GtkWidget *widget, GpkTask *task)
 	task->priv->current_window = NULL;
 }
 
+/**
+ * gpk_task_button_decline_cb:
+ **/
 static void
 gpk_task_button_decline_cb (GtkWidget *widget, GpkTask *task)
 {
@@ -75,6 +90,9 @@ gpk_task_button_decline_cb (GtkWidget *widget, GpkTask *task)
 	task->priv->current_window = NULL;
 }
 
+/**
+ * gpk_task_dialog_response_cb:
+ **/
 static void
 gpk_task_dialog_response_cb (GtkDialog *dialog, gint response_id, GpkTask *task)
 {
@@ -86,11 +104,24 @@ gpk_task_dialog_response_cb (GtkDialog *dialog, gint response_id, GpkTask *task)
 	gpk_task_button_decline_cb (GTK_WIDGET(dialog), task);
 }
 
+/**
+ * gpk_task_button_help_cb:
+ **/
+static void
+gpk_task_button_help_cb (GtkWidget *widget, GpkTask *task)
+{
+	/* show the help */
+	gpk_gnome_help (task->priv->help_id);
+}
+
+/**
+ * gpk_task_untrusted_question:
+ **/
 static void
 gpk_task_untrusted_question (PkTask *task, guint request, PkResults *results)
 {
 	GtkWidget *widget;
-	g_autofree gchar *message = NULL;
+	gchar *message;
 	PkRoleEnum role;
 	GpkTaskPrivate *priv = GPK_TASK(task)->priv;
 
@@ -126,6 +157,7 @@ gpk_task_untrusted_question (PkTask *task, guint request, PkResults *results)
 	}
 	widget = GTK_WIDGET (gtk_builder_get_object (priv->builder_untrusted, "label_message"));
 	gtk_label_set_markup (GTK_LABEL (widget), message);
+	g_free (message);
 
 	/* show window */
 	priv->current_window = GTK_WINDOW(gtk_builder_get_object (priv->builder_untrusted, "dialog_error"));
@@ -139,17 +171,20 @@ gpk_task_untrusted_question (PkTask *task, guint request, PkResults *results)
 	gtk_widget_show (GTK_WIDGET(priv->current_window));
 }
 
+/**
+ * gpk_task_key_question:
+ **/
 static void
 gpk_task_key_question (PkTask *task, guint request, PkResults *results)
 {
-	g_autoptr(GPtrArray) array = NULL;
+	GPtrArray *array;
 	GtkWidget *widget;
-	g_autofree gchar *printable = NULL;
-	g_autofree gchar *package_id = NULL;
-	g_autofree gchar *repository_name = NULL;
-	g_autofree gchar *key_url = NULL;
-	g_autofree gchar *key_userid = NULL;
-	g_autofree gchar *key_id = NULL;
+	gchar *printable = NULL;
+	gchar *package_id = NULL;
+	gchar *repository_name = NULL;
+	gchar *key_url = NULL;
+	gchar *key_userid = NULL;
+	gchar *key_id = NULL;
 	PkRepoSignatureRequired *item;
 	GpkTaskPrivate *priv = GPK_TASK(task)->priv;
 
@@ -160,7 +195,7 @@ gpk_task_key_question (PkTask *task, guint request, PkResults *results)
 	array = pk_results_get_repo_signature_required_array (results);
 	if (array->len != 1) {
 		g_warning ("array length %i, aborting", array->len);
-		return;
+		goto out;
 	}
 
 	/* only one item supported */
@@ -197,20 +232,31 @@ gpk_task_key_question (PkTask *task, guint request, PkResults *results)
 	}
 	priv->help_id = "gpg-signature";
 	gtk_widget_show (GTK_WIDGET(priv->current_window));
+out:
+	g_free (printable);
+	g_free (package_id);
+	g_free (repository_name);
+	g_free (key_url);
+	g_free (key_userid);
+	g_free (key_id);
+	g_ptr_array_unref (array);
 }
 
+/**
+ * gpk_task_eula_question:
+ **/
 static void
 gpk_task_eula_question (PkTask *task, guint request, PkResults *results)
 {
-	g_autoptr(GPtrArray) array = NULL;
+	GPtrArray *array;
 	GtkWidget *widget;
-	g_autoptr(GtkTextBuffer) buffer = NULL;
-	g_autofree gchar *printable = NULL;
-	g_auto(GStrv) split = NULL;
+	GtkTextBuffer *buffer;
+	gchar *printable = NULL;
+	gchar **split = NULL;
 	PkEulaRequired *item;
-	g_autofree gchar *package_id = NULL;
-	g_autofree gchar *vendor_name = NULL;
-	g_autofree gchar *license_agreement = NULL;
+	gchar *package_id = NULL;
+	gchar *vendor_name = NULL;
+	gchar *license_agreement = NULL;
 	GpkTaskPrivate *priv = GPK_TASK(task)->priv;
 
 	/* save the current request */
@@ -220,7 +266,7 @@ gpk_task_eula_question (PkTask *task, guint request, PkResults *results)
 	array = pk_results_get_eula_required_array (results);
 	if (array->len != 1) {
 		g_warning ("array length %i, aborting", array->len);
-		return;
+		goto out;
 	}
 
 	/* only one item supported */
@@ -235,7 +281,7 @@ gpk_task_eula_question (PkTask *task, guint request, PkResults *results)
 	widget = GTK_WIDGET (gtk_builder_get_object (priv->builder_eula, "label_title"));
 
 	split = pk_package_id_split (package_id);
-	printable = g_markup_printf_escaped("<b><big>License required for %s by %s</big></b>", split[0], vendor_name);
+	printable = g_strdup_printf ("<b><big>License required for %s by %s</big></b>", split[0], vendor_name);
 	gtk_label_set_label (GTK_LABEL (widget), printable);
 
 	buffer = gtk_text_buffer_new (NULL);
@@ -256,15 +302,27 @@ gpk_task_eula_question (PkTask *task, guint request, PkResults *results)
 	}
 	priv->help_id = "eula";
 	gtk_widget_show (GTK_WIDGET(priv->current_window));
+
+	g_object_unref (buffer);
+out:
+	g_free (printable);
+	g_free (package_id);
+	g_free (vendor_name);
+	g_free (license_agreement);
+	g_strfreev (split);
+	g_ptr_array_unref (array);
 }
 
+/**
+ * gpk_task_media_change_question:
+ **/
 static void
 gpk_task_media_change_question (PkTask *task, guint request, PkResults *results)
 {
-	g_autoptr(GPtrArray) array = NULL;
+	GPtrArray *array;
 	PkMediaChangeRequired *item;
 	const gchar *name;
-	g_autofree gchar *message = NULL;
+	gchar *message = NULL;
 	gchar *media_id;
 	PkMediaTypeEnum media_type;
 	gchar *media_text;
@@ -277,7 +335,7 @@ gpk_task_media_change_question (PkTask *task, guint request, PkResults *results)
 	array = pk_results_get_media_change_required_array (results);
 	if (array->len != 1) {
 		g_warning ("array length %i, aborting", array->len);
-		return;
+		goto out;
 	}
 
 	/* only one item supported */
@@ -290,7 +348,7 @@ gpk_task_media_change_question (PkTask *task, guint request, PkResults *results)
 
 	name = gpk_media_type_enum_to_localised_text (media_type);
 	/* TRANSLATORS: dialog body, explains to the user that they need to insert a disk to continue. The first replacement is DVD, CD etc */
-	message = g_strdup_printf (_("Additional media is required. Please insert the %s labeled “%s” to continue."), name, media_text);
+	message = g_strdup_printf (_("Additional media is required. Please insert the %s labeled '%s' to continue."), name, media_text);
 
 	priv->current_window = GTK_WINDOW (gtk_message_dialog_new (priv->parent_window,
 								   GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
@@ -306,18 +364,24 @@ gpk_task_media_change_question (PkTask *task, guint request, PkResults *results)
 
 	g_signal_connect (priv->current_window, "response", G_CALLBACK (gpk_task_dialog_response_cb), task);
 	gtk_widget_show_all (GTK_WIDGET(priv->current_window));
+out:
+	g_free (message);
+	g_ptr_array_unref (array);
 }
 
+/**
+ * gpk_task_add_dialog_deps_section:
+ **/
 static void
 gpk_task_add_dialog_deps_section (PkTask *task,
 				  GtkNotebook *tabbed_widget,
 				  PkPackageSack *sack,
 				  PkInfoEnum info)
 {
-	g_autoptr(PkPackageSack) sack_tmp = NULL;
-	g_autoptr(GPtrArray) array_tmp = NULL;
+	PkPackageSack *sack_tmp;
+	GPtrArray *array_tmp = NULL;
 	gboolean ret;
-	g_autoptr(GError) error = NULL;
+	GError *error = NULL;
 	guint64 size;
 	const gchar *title;
 	GtkWidget *tab_page;
@@ -326,7 +390,7 @@ gpk_task_add_dialog_deps_section (PkTask *task,
 	sack_tmp = pk_package_sack_filter_by_info (sack, info);
 	if (pk_package_sack_get_size (sack_tmp) == 0) {
 		g_debug ("no packages with %s", pk_info_enum_to_string (info));
-		return;
+		goto out;
 	}
 
 	tab_page = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
@@ -375,6 +439,7 @@ gpk_task_add_dialog_deps_section (PkTask *task,
 	ret = pk_package_sack_get_details (sack_tmp, NULL, &error);
 	if (!ret) {
 		g_warning ("failed to get details about packages: %s", error->message);
+		g_error_free (error);
 	}
 	size = pk_package_sack_get_total_bytes (sack_tmp);
 
@@ -383,16 +448,23 @@ gpk_task_add_dialog_deps_section (PkTask *task,
 	gpk_dialog_tabbed_download_size_widget (tab_page, title, size);
 	gpk_dialog_tabbed_package_list_widget (tab_page, array_tmp);
 	gtk_notebook_append_page (tabbed_widget, tab_page, tab_label);
+out:
+	if (array_tmp != NULL)
+		g_ptr_array_unref (array_tmp);
+	g_object_unref (sack_tmp);
 }
 
+/**
+ * gpk_task_simulate_question:
+ **/
 static void
 gpk_task_simulate_question (PkTask *task, guint request, PkResults *results)
 {
 	gboolean ret;
-	g_autoptr(GPtrArray) array = NULL;
+	GPtrArray *array = NULL;
 	GpkTaskPrivate *priv = GPK_TASK(task)->priv;
 	PkRoleEnum role;
-	g_autoptr(PkPackageSack) sack = NULL;
+	PkPackageSack *sack = NULL;
 	guint inputs;
 	const gchar *title;
 	const gchar *message = NULL;
@@ -416,7 +488,7 @@ gpk_task_simulate_question (PkTask *task, guint request, PkResults *results)
 		if (!ret) {
 			g_debug ("we've said we don't want the dep dialog");
 			pk_task_user_accepted (PK_TASK(task), priv->request);
-			return;
+			goto out;
 		}
 	}
 
@@ -495,22 +567,30 @@ gpk_task_simulate_question (PkTask *task, guint request, PkResults *results)
 
 	g_signal_connect (priv->current_window, "response", G_CALLBACK (gpk_task_dialog_response_cb), task);
 	gtk_widget_show_all (GTK_WIDGET(priv->current_window));
+out:
+	if (sack != NULL)
+		g_object_unref (sack);
+	if (array != NULL)
+		g_ptr_array_unref (array);
 }
 
+/**
+ * gpk_task_setup_dialog_untrusted:
+ **/
 static void
 gpk_task_setup_dialog_untrusted (GpkTask *task)
 {
 	GtkWidget *widget;
+	GtkWidget *button;
 	guint retval;
-	g_autoptr(GError) error = NULL;
+	GError *error = NULL;
 
 	/* get UI */
 	task->priv->builder_untrusted = gtk_builder_new ();
-	retval = gtk_builder_add_from_resource (task->priv->builder_untrusted,
-						"/org/gnome/packagekit/gpk-error.ui",
-						&error);
+	retval = gtk_builder_add_from_file (task->priv->builder_untrusted, GPK_DATA "/gpk-error.ui", &error);
 	if (retval == 0) {
 		g_warning ("failed to load ui: %s", error->message);
+		g_error_free (error);
 	}
 
 	/* connect up default actions */
@@ -518,6 +598,7 @@ gpk_task_setup_dialog_untrusted (GpkTask *task)
 	g_signal_connect (widget, "delete_event", G_CALLBACK (gpk_task_button_decline_cb), task);
 
 	/* set icon name */
+	widget = GTK_WIDGET (gtk_builder_get_object (task->priv->builder_untrusted, "dialog_error"));
 	gtk_window_set_icon_name (GTK_WINDOW(widget), GPK_ICON_SOFTWARE_INSTALLER);
 
 	/* connect up buttons */
@@ -528,26 +609,36 @@ gpk_task_setup_dialog_untrusted (GpkTask *task)
 	widget = GTK_WIDGET (gtk_builder_get_object (task->priv->builder_untrusted, "expander_details"));
 	gtk_widget_hide (widget);
 
-	/* add to dialog */
-	widget = GTK_WIDGET (gtk_builder_get_object (task->priv->builder_untrusted, "button_force"));
-	g_signal_connect (widget, "clicked", G_CALLBACK (gpk_task_button_accept_cb), task);
-	gtk_widget_show (widget);
+	/* TRANSLATORS: button label, force the install, even though it's untrusted */
+	button = gtk_button_new_with_mnemonic (_("_Force install"));
+	g_signal_connect (button, "clicked", G_CALLBACK (gpk_task_button_accept_cb), task);
+
+	/* TRANSLATORS: button tooltip */
+	gtk_widget_set_tooltip_text (button, _("Force installing package"));
+
+	/* add to box */
+	widget = GTK_WIDGET (gtk_builder_get_object (task->priv->builder_untrusted, "dialog_error"));
+	widget = gtk_dialog_get_action_area (GTK_DIALOG(widget));
+	gtk_box_pack_start (GTK_BOX (widget), button, FALSE, FALSE, 0);
+	gtk_widget_show (button);
 }
 
+/**
+ * gpk_task_setup_dialog_signature:
+ **/
 static void
 gpk_task_setup_dialog_signature (GpkTask *task)
 {
 	GtkWidget *widget;
 	guint retval;
-	g_autoptr(GError) error = NULL;
+	GError *error = NULL;
 
 	/* get UI */
 	task->priv->builder_signature = gtk_builder_new ();
-	retval = gtk_builder_add_from_resource (task->priv->builder_signature,
-						"/org/gnome/packagekit/gpk-signature.ui",
-						&error);
+	retval = gtk_builder_add_from_file (task->priv->builder_signature, GPK_DATA "/gpk-signature.ui", &error);
 	if (retval == 0) {
 		g_warning ("failed to load ui: %s", error->message);
+		g_error_free (error);
 	}
 
 	/* connect up default actions */
@@ -561,24 +652,28 @@ gpk_task_setup_dialog_signature (GpkTask *task)
 	/* connect up buttons */
 	widget = GTK_WIDGET (gtk_builder_get_object (task->priv->builder_signature, "button_yes"));
 	g_signal_connect (widget, "clicked", G_CALLBACK (gpk_task_button_accept_cb), task);
+	widget = GTK_WIDGET (gtk_builder_get_object (task->priv->builder_signature, "button_help"));
+	g_signal_connect (widget, "clicked", G_CALLBACK (gpk_task_button_help_cb), task);
 	widget = GTK_WIDGET (gtk_builder_get_object (task->priv->builder_signature, "button_no"));
 	g_signal_connect (widget, "clicked", G_CALLBACK (gpk_task_button_decline_cb), task);
 }
 
+/**
+ * gpk_task_setup_dialog_eula:
+ **/
 static void
 gpk_task_setup_dialog_eula (GpkTask *task)
 {
 	GtkWidget *widget;
 	guint retval;
-	g_autoptr(GError) error = NULL;
+	GError *error = NULL;
 
 	/* get UI */
 	task->priv->builder_eula = gtk_builder_new ();
-	retval = gtk_builder_add_from_resource (task->priv->builder_eula,
-						"/org/gnome/packagekit/gpk-eula.ui",
-						&error);
+	retval = gtk_builder_add_from_file (task->priv->builder_eula, GPK_DATA "/gpk-eula.ui", &error);
 	if (retval == 0) {
 		g_warning ("failed to load ui: %s", error->message);
+		g_error_free (error);
 	}
 
 	/* connect up default actions */
@@ -592,10 +687,15 @@ gpk_task_setup_dialog_eula (GpkTask *task)
 	/* connect up buttons */
 	widget = GTK_WIDGET (gtk_builder_get_object (task->priv->builder_eula, "button_agree"));
 	g_signal_connect (widget, "clicked", G_CALLBACK (gpk_task_button_accept_cb), task);
+	widget = GTK_WIDGET (gtk_builder_get_object (task->priv->builder_eula, "button_help"));
+	g_signal_connect (widget, "clicked", G_CALLBACK (gpk_task_button_help_cb), task);
 	widget = GTK_WIDGET (gtk_builder_get_object (task->priv->builder_eula, "button_cancel"));
 	g_signal_connect (widget, "clicked", G_CALLBACK (gpk_task_button_decline_cb), task);
 }
 
+/**
+ * gpk_task_class_init:
+ **/
 static void
 gpk_task_class_init (GpkTaskClass *klass)
 {
@@ -612,6 +712,10 @@ gpk_task_class_init (GpkTaskClass *klass)
 	g_type_class_add_private (klass, sizeof (GpkTaskPrivate));
 }
 
+/**
+ * gpk_task_init:
+ * @task: This class instance
+ **/
 static void
 gpk_task_init (GpkTask *task)
 {
@@ -627,6 +731,10 @@ gpk_task_init (GpkTask *task)
 	gpk_task_setup_dialog_signature (task);
 }
 
+/**
+ * gpk_task_finalize:
+ * @object: The object to finalize
+ **/
 static void
 gpk_task_finalize (GObject *object)
 {
@@ -640,6 +748,11 @@ gpk_task_finalize (GObject *object)
 	G_OBJECT_CLASS (gpk_task_parent_class)->finalize (object);
 }
 
+/**
+ * gpk_task_new:
+ *
+ * Return value: a new GpkTask object.
+ **/
 GpkTask *
 gpk_task_new (void)
 {
@@ -647,3 +760,96 @@ gpk_task_new (void)
 	task = g_object_new (GPK_TYPE_TASK, NULL);
 	return GPK_TASK (task);
 }
+
+/***************************************************************************
+ ***                          MAKE CHECK TESTS                           ***
+ ***************************************************************************/
+#ifdef EGG_TEST
+#include "egg-test.h"
+
+static void
+gpk_task_test_install_packages_cb (GObject *object, GAsyncResult *res, EggTest *test)
+{
+	GpkTask *task = GPK_TASK (object);
+	GError *error = NULL;
+	PkResults *results;
+	GPtrArray *packages;
+	PkError *error_code = NULL;
+
+	/* get the results */
+	results = pk_task_generic_finish (PK_TASK(task), res, &error);
+	if (results == NULL) {
+		egg_test_failed (test, "failed to resolve: %s", error->message);
+		g_error_free (error);
+		goto out;
+	}
+
+	/* check error code */
+	error_code = pk_results_get_error_code (results);
+	if (error_code != NULL)
+		egg_test_failed (test, "failed to resolve success: %s", pk_error_get_details (error_code));
+
+	packages = pk_results_get_package_array (results);
+	if (packages == NULL)
+		egg_test_failed (test, "no packages!");
+
+	if (packages->len != 4)
+		egg_test_failed (test, "invalid number of packages: %i", packages->len);
+
+	g_ptr_array_unref (packages);
+out:
+	if (error_code != NULL)
+		g_object_unref (error_code);
+	if (results != NULL)
+		g_object_unref (results);
+	egg_test_loop_quit (test);
+}
+
+static void
+gpk_task_test_progress_cb (PkProgress *progress, PkProgressType type, EggTest *test)
+{
+	PkStatusEnum status;
+	if (type == PK_PROGRESS_TYPE_STATUS) {
+		g_object_get (progress,
+			      "status", &status,
+			      NULL);
+		g_debug ("now %s", pk_status_enum_to_string (status));
+	}
+}
+
+void
+gpk_task_test (gpointer user_data)
+{
+	EggTest *test = (EggTest *) user_data;
+	GpkTask *task;
+	gchar **package_ids;
+
+	if (!egg_test_start (test, "GpkTask"))
+		return;
+
+	/************************************************************/
+	egg_test_title (test, "get task");
+	task = gpk_task_new ();
+	egg_test_assert (test, task != NULL);
+
+	/* For testing, you will need to manually do:
+	pkcon repo-set-data dummy use-gpg 1
+	pkcon repo-set-data dummy use-eula 1
+	pkcon repo-set-data dummy use-media 1
+	*/
+
+	/************************************************************/
+	egg_test_title (test, "install package");
+	package_ids = pk_package_ids_from_id ("vips-doc;7.12.4-2.fc8;noarch;linva");
+	pk_task_install_packages_async (PK_TASK(task), package_ids, NULL,
+				        (PkProgressCallback) gpk_task_test_progress_cb, test,
+				        (GAsyncReadyCallback) gpk_task_test_install_packages_cb, test);
+	g_strfreev (package_ids);
+	egg_test_loop_wait (test, 150000);
+	egg_test_success (test, "installed in %i", egg_test_elapsed (test));
+
+	g_object_unref (task);
+	egg_test_end (test);
+}
+#endif
+

@@ -14,7 +14,7 @@ msgstr ""
 "PO-Revision-Date: 2013-03-07 20:34+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
-"Language: ug\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -821,7 +821,7 @@ msgstr "بوغچا ئاتىنى كىرگۈزۈپ ئىزدەشنى باشلاڭ."
 msgid "Exiting as properties could not be retrieved"
 msgstr "خاسلىققا ئېرىشكىلى بولمىغانلىقتىن چېكىنىۋاتىدۇ"
 
-#. TRANSLATORS: title: all of the packages on the system and available in sources
+#. TRANSLATORS: title: all of the packages on the system and availble in sources
 #: ../src/gpk-application.c:3102
 msgid "All packages"
 msgstr "بارلىق بوغچىلار"

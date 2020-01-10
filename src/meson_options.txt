@@ -1,3 +1,0 @@
-option('tests', type : 'boolean', value : true, description : 'enable tests')
-option('small-form-factor', type : 'boolean', value : true, description : 'enable small form factor mode')
-option('systemd', type : 'boolean', value : true, description : 'if systemd is used for session tracking')

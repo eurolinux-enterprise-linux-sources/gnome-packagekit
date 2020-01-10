@@ -27,13 +27,6 @@
 
 #include "gpk-cell-renderer-size.h"
 
-struct _GpkCellRendererSize
-{
-	GtkCellRendererText	 parent_instance;
-	guint			 value;
-	gchar			*markup;
-};
-
 enum {
 	PROP_0,
 	PROP_VALUE
@@ -81,6 +74,10 @@ gpk_cell_renderer_size_set_property (GObject *object, guint param_id,
 	}
 }
 
+/**
+ * gpk_cell_renderer_finalize:
+ * @object: The object to finalize
+ **/
 static void
 gpk_cell_renderer_finalize (GObject *object)
 {
@@ -106,11 +103,19 @@ gpk_cell_renderer_size_class_init (GpkCellRendererSizeClass *class)
 					 "VALUE", 0, G_MAXUINT, 0, G_PARAM_READWRITE));
 }
 
+/**
+ * gpk_cell_renderer_size_init:
+ **/
 static void
 gpk_cell_renderer_size_init (GpkCellRendererSize *cru)
 {
+	cru->value = 0;
+	cru->markup = NULL;
 }
 
+/**
+ * gpk_cell_renderer_size_new:
+ **/
 GtkCellRenderer *
 gpk_cell_renderer_size_new (void)
 {

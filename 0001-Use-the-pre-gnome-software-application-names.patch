@@ -1,0 +1,149 @@
+From 5a78842f2379845ad8512bcdb7afe039757f7226 Mon Sep 17 00:00:00 2001
+From: Richard Hughes <richard@hughsie.com>
+Date: Thu, 9 Jul 2015 10:08:52 +0100
+Subject: [PATCH] Use the pre-gnome-software application names
+
+---
+ data/gpk-application.desktop.in   | 2 +-
+ data/gpk-application.ui           | 6 +++---
+ data/gpk-log.desktop.in           | 2 +-
+ data/gpk-log.ui                   | 2 +-
+ data/gpk-prefs.desktop.in         | 4 ++--
+ data/gpk-prefs.ui                 | 2 +-
+ data/gpk-update-viewer.desktop.in | 2 +-
+ data/gpk-update-viewer.ui         | 2 +-
+ src/gpk-application.c             | 2 +-
+ 9 files changed, 12 insertions(+), 12 deletions(-)
+
+diff --git a/data/gpk-application.desktop.in b/data/gpk-application.desktop.in
+index 967e089..87f85d0 100644
+--- a/data/gpk-application.desktop.in
++++ b/data/gpk-application.desktop.in
+@@ -1,5 +1,5 @@
+ [Desktop Entry]
+-_Name=Packages
++_Name=Software
+ _Comment=Add or remove software installed on the system
+ Icon=system-software-install
+ Exec=gpk-application
+diff --git a/data/gpk-application.ui b/data/gpk-application.ui
+index b154131..58526e0 100644
+--- a/data/gpk-application.ui
++++ b/data/gpk-application.ui
+@@ -9,7 +9,7 @@
+   </object>
+   <object class="GtkApplicationWindow" id="window_manager">
+     <property name="can_focus">False</property>
+-    <property name="title" translatable="yes">Packages</property>
++    <property name="title" translatable="yes">Software</property>
+     <property name="window_position">center</property>
+     <property name="hide_titlebar_when_maximized">True</property>
+     <property name="icon_name">gtk-info</property>
+@@ -582,7 +582,7 @@
+         <attribute name="action">app.updates</attribute>
+       </item>
+       <item>
+-        <attribute name="label" translatable="yes">Package Sources</attribute>
++        <attribute name="label" translatable="yes">Software Sources</attribute>
+         <attribute name="action">app.sources</attribute>
+       </item>
+       <item>
+@@ -590,7 +590,7 @@
+         <attribute name="action">app.refresh</attribute>
+       </item>
+       <item>
+-        <attribute name="label" translatable="yes">Package Log</attribute>
++        <attribute name="label" translatable="yes">Software Log</attribute>
+         <attribute name="action">app.log</attribute>
+       </item>
+     </section>
+diff --git a/data/gpk-log.desktop.in b/data/gpk-log.desktop.in
+index 4c15e65..9719ef5 100644
+--- a/data/gpk-log.desktop.in
++++ b/data/gpk-log.desktop.in
+@@ -1,5 +1,5 @@
+ [Desktop Entry]
+-_Name=Package Log
++_Name=Software Log Viewer
+ _Comment=View past package management tasks
+ Icon=gpk-log
+ Exec=gpk-log
+diff --git a/data/gpk-log.ui b/data/gpk-log.ui
+index 637f517..e536c80 100644
+--- a/data/gpk-log.ui
++++ b/data/gpk-log.ui
+@@ -5,7 +5,7 @@
+   <object class="GtkDialog" id="dialog_simple">
+     <property name="can_focus">False</property>
+     <property name="border_width">6</property>
+-    <property name="title" translatable="yes">Package Log</property>
++    <property name="title" translatable="yes">Software Log Viewer</property>
+     <property name="window_position">center-on-parent</property>
+     <property name="type_hint">normal</property>
+     <child internal-child="vbox">
+diff --git a/data/gpk-prefs.desktop.in b/data/gpk-prefs.desktop.in
+index 8573197..80adc54 100644
+--- a/data/gpk-prefs.desktop.in
++++ b/data/gpk-prefs.desktop.in
+@@ -1,6 +1,6 @@
+ [Desktop Entry]
+-_Name=Package Sources
+-_Comment=Enable or disable package repositories
++_Name=Software Settings
++_Comment=Change software update preferences and enable or disable software sources
+ Icon=gpk-prefs
+ Exec=gpk-prefs
+ Terminal=false
+diff --git a/data/gpk-prefs.ui b/data/gpk-prefs.ui
+index dc02456..f128f3f 100644
+--- a/data/gpk-prefs.ui
++++ b/data/gpk-prefs.ui
+@@ -5,7 +5,7 @@
+   <object class="GtkDialog" id="dialog_prefs">
+     <property name="can_focus">False</property>
+     <property name="border_width">5</property>
+-    <property name="title" translatable="yes">Package Sources</property>
++    <property name="title" translatable="yes">Software Update Preferences</property>
+     <property name="default_height">450</property>
+     <property name="type_hint">dialog</property>
+     <child internal-child="vbox">
+diff --git a/data/gpk-update-viewer.desktop.in b/data/gpk-update-viewer.desktop.in
+index c83e438..8fed3d8 100644
+--- a/data/gpk-update-viewer.desktop.in
++++ b/data/gpk-update-viewer.desktop.in
+@@ -1,5 +1,5 @@
+ [Desktop Entry]
+-_Name=Package Updater
++_Name=Software Update
+ _Comment=Update software installed on the system
+ Icon=system-software-update
+ Exec=gpk-update-viewer
+diff --git a/data/gpk-update-viewer.ui b/data/gpk-update-viewer.ui
+index 56bff93..631488b 100644
+--- a/data/gpk-update-viewer.ui
++++ b/data/gpk-update-viewer.ui
+@@ -4,7 +4,7 @@
+   <object class="GtkDialog" id="dialog_updates">
+     <property name="can_focus">False</property>
+     <property name="border_width">5</property>
+-    <property name="title" translatable="yes">Package Updater</property>
++    <property name="title" translatable="yes">Software Update</property>
+     <property name="window_position">center</property>
+     <property name="icon_name">software-update-available</property>
+     <property name="type_hint">normal</property>
+diff --git a/src/gpk-application.c b/src/gpk-application.c
+index e574b58..25026de 100644
+--- a/src/gpk-application.c
++++ b/src/gpk-application.c
+@@ -2513,7 +2513,7 @@ gpk_application_activate_about_cb (GSimpleAction *action,
+ 
+ 	gtk_window_set_default_icon_name (GPK_ICON_SOFTWARE_INSTALLER);
+ 	gtk_show_about_dialog (GTK_WINDOW (main_window),
+-                               "program-name", _("Packages"),
++                               "program-name", _("Software"),
+ 			       "version", PACKAGE_VERSION,
+ 			       "copyright", "Copyright \xc2\xa9 2007-2009 Richard Hughes",
+ 			       "license", license_trans,
+-- 
+2.4.3
+

@@ -1,0 +1,25 @@
+From 7a8227fc7f4a8a48a62db055f46565aefa3546d3 Mon Sep 17 00:00:00 2001
+From: Richard Hughes <richard@hughsie.com>
+Date: Thu, 6 Mar 2014 14:12:37 +0000
+Subject: [PATCH] Change the UI policy to show the comps tree
+
+---
+ data/org.gnome.packagekit.gschema.xml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/data/org.gnome.packagekit.gschema.xml b/data/org.gnome.packagekit.gschema.xml
+index 3c16505..4dfa56a 100644
+--- a/data/org.gnome.packagekit.gschema.xml
++++ b/data/org.gnome.packagekit.gschema.xml
+@@ -46,7 +46,7 @@
+       <description>Only show native packages matching the machine architecture in the file lists.</description>
+     </key>
+     <key name="category-groups" type="b">
+-      <default>false</default>
++      <default>true</default>
+       <summary>Show the category group menu</summary>
+       <description>Show the category group menu. This is more complete and custom to the distribution, but takes longer to populate.</description>
+     </key>
+-- 
+1.8.5.3
+
